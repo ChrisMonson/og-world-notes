@@ -38,6 +38,10 @@
            border: 1px solid var(--accent); background: var(--accent); color: var(--bg); }
   button:disabled { opacity: .5; cursor: default; }
   ul.runs { padding-left: 20px; }
+  .which { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 16px; }
+  .which button { flex: 1 1 240px; text-align: left; line-height: 1.35; }
+  .which button span { display: block; font-size: .85rem; opacity: .85; }
+  button.quiet { background: transparent; color: var(--accent); }
   .hidden { display: none; }
 </style>
 </head>
@@ -55,9 +59,13 @@
   </section>
 
   <section id="game" class="hidden">
-    <p class="note">You are alone here. Nobody else is playing, and nobody is tending this world any more:
-      it is as the caretaker left it, and whatever you do to it lasts until you leave this page.
+    <p class="note">You are alone here. Nobody else is playing, and nobody is tending this world any more.
+      Whatever you do to it lasts until you leave this page.
       Type what you want to do in plain words. <code>help</code> lists the verbs the world knows.</p>
+    <div class="which hidden" id="which">
+      <button type="button" id="as-left">As it was left<span>with its dead, the words people left on its walls, and whatever was lying on the floor when the run ended</span></button>
+      <button type="button" id="as-built" class="quiet">As it was built<span>the same world, before anyone had been through it</span></button>
+    </div>
     <div id="screen" role="log" aria-live="polite"></div>
     <div class="status" id="status"></div>
     <form id="form" autocomplete="off">
@@ -125,7 +133,20 @@ async function start() {
   const { Game } = await runtime.getAssemblyExports(runtime.getConfig().mainAssemblyName);
   const call = (f, ...a) => JSON.parse(Game[f](...a));
 
-  const loaded = call("Load", world, JSON.stringify({ seed: config.seed ?? 0, tick: config.tick ?? [], welcome: config.welcome ?? [], fragments }));
+  let state = null;
+  if (config.state) {
+    screen.textContent = "";
+    add("Which world do you want to walk into?", "sys");
+    $("which").classList.remove("hidden");
+    const left = await new Promise(resolve => {
+      $("as-left").onclick = () => resolve(true);
+      $("as-built").onclick = () => resolve(false);
+    });
+    $("which").classList.add("hidden");
+    if (left) state = await text(`${run}/${config.state}`);
+  }
+
+  const loaded = call("Load", world, JSON.stringify({ seed: config.seed ?? 0, tick: config.tick ?? [], welcome: config.welcome ?? [], fragments, state }));
   if (loaded.type !== "loaded") throw new Error(loaded.message);
   if (loaded.missing?.length) console.warn("this engine has no", loaded.missing.join(", "));
   screen.textContent = "";

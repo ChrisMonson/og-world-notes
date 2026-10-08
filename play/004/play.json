@@ -1,0 +1,9 @@
+{
+  "title": "Run 004: the troll's whistle",
+  "model": "Claude Opus",
+  "writeup": "../runs/004/",
+  "seed": 0,
+  "tick": [],
+  "welcome": [],
+  "state": "state.json"
+}

@@ -1,0 +1,1084 @@
+{
+  "name": "starter",
+  "spawnLocation": 1,
+  "startingItems": [
+    "dagger"
+  ],
+  "items": [
+    {
+      "name": "dagger",
+      "description": "A short, worn blade. Better than nothing.",
+      "kind": "weapon",
+      "attackBonus": 0,
+      "attackDice": 4
+    },
+    {
+      "name": "shortsword",
+      "description": "A plain iron shortsword. Someone kept it oiled, a long time ago.",
+      "kind": "weapon",
+      "attackBonus": 1,
+      "attackDice": 6
+    },
+    {
+      "name": "leather armor",
+      "description": "Cracked but serviceable leather.",
+      "kind": "armor",
+      "armorClassBonus": 2
+    },
+    {
+      "name": "health potion",
+      "description": "A cloudy red liquid.",
+      "kind": "consumable",
+      "healAmount": 10
+    },
+    {
+      "name": "apple",
+      "description": "A shiny red apple with a small worm hole in the side. It is the only thing in this place that grew above ground.",
+      "kind": "consumable",
+      "healAmount": 2
+    },
+    {
+      "name": "bone",
+      "description": "A gnawed bone. Heavy for its size, and cracked open lengthways by something with the jaw for it. There is still a little on it."
+    },
+    {
+      "name": "shiny spoon",
+      "description": "It is, unmistakably, a shiny spoon."
+    },
+    {
+      "name": "tin whistle",
+      "description": "A cheap tin whistle, gone soft-edged with handling and squashed a little flat at one end from riding in a pocket. A name is scratched down the barrel with a knife point, worn almost away: an M, and then something, and then what might be an R. Whoever they were, they had it on them the day they went into the rock, and it has not been above ground since."
+    },
+    {
+      "name": "key",
+      "description": "A heavy iron key. The wards on it are deep and simple: it was cut for one lock and no other.",
+      "isKey": true
+    }
+  ],
+  "monsters": [
+    {
+      "name": "goblin",
+      "description": "A goblin crouches in the corner, watching you. It is thin, and armed with nothing, and it watches your hands rather than your face.",
+      "hitPoints": 7,
+      "armorClass": 12,
+      "attackStrength": 1,
+      "attackDice": 6,
+      "inventory": [
+        "bone"
+      ],
+      "respawnSeconds": 300
+    },
+    {
+      "name": "cave troll",
+      "description": "A cave troll blocks the passage, breathing slowly. Something iron hangs at its throat on a greased thong, about the size of a thumb — and strung on the same cord, absurdly, a little flattened tube of tin, far too small for the hands that are keeping it.",
+      "hitPoints": 20,
+      "armorClass": 14,
+      "attackStrength": 3,
+      "attackDice": 8,
+      "inventory": [
+        "key",
+        "tin whistle"
+      ],
+      "respawnSeconds": 900
+    }
+  ],
+  "locations": [
+    {
+      "index": 1,
+      "name": "The Hollow",
+      "description": "You stand in a shallow hollow ringed by pale stones. The ground rises on every side to a rim of rotten shale — too loose to climb and too high to argue with. However you came into this place, it was not by a way you can go back up.\n\nCold air comes down from the cave mouth to the north. East, under the far overhang, the black shape of a camp nobody has used in a long while. West, a ledge stands above the stones.",
+      "connections": {
+        "north": 2,
+        "east": 3,
+        "west": 6
+      },
+      "interactions": [
+        {
+          "interactionId": "hollow-cache-open",
+          "if": [
+            "opened-cache"
+          ],
+          "triggers": [
+            "*slab*",
+            "*seam*",
+            "*stones*",
+            "*stone*",
+            "*rings*",
+            "*under*"
+          ],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": [
+                "The slab lies tipped aside where you left it. The hollow beneath is empty now, and smells of dry earth."
+              ]
+            }
+          ]
+        },
+        {
+          "interactionId": "hollow-cache",
+          "once": true,
+          "scope": "player",
+          "if": [
+            "seen-pattern"
+          ],
+          "triggers": [
+            "*slab*",
+            "*seam*",
+            "*stones*",
+            "*stone*",
+            "*rings*",
+            "*centre*",
+            "*center*",
+            "*under*",
+            "*dig*",
+            "*pry*",
+            "*lift*",
+            "*rock*"
+          ],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": [
+                "Knowing where to look, you find it: the flat stone at the centre of the rings, and the seam around it packed with old moss. It tips aside. In the dry space beneath, someone left behind what they could not carry any further — a shortsword, and a jacket of cracked leather."
+              ]
+            },
+            {
+              "action": "addItems",
+              "parameters": [
+                "shortsword",
+                "leather armor"
+              ]
+            },
+            {
+              "action": "addcondition",
+              "scope": "player",
+              "parameters": [
+                "opened-cache"
+              ]
+            }
+          ]
+        },
+        {
+          "interactionId": "hollow-stones",
+          "triggers": [
+            "*stones*",
+            "*stone*",
+            "*slab*",
+            "*rock*",
+            "*under*",
+            "*dig*"
+          ],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": [
+                "The stones are cold and older than the hollow. They are not scattered — they lie in some order you cannot make out with your feet among them. You would have to get above them to see it, and there is a ledge west of here that stands over the whole floor of this place."
+              ]
+            }
+          ]
+        },
+        {
+          "interactionId": "hollow-left-for-you",
+          "triggers": [
+            "*who left*",
+            "*left here*",
+            "*left behind*",
+            "*whoever*",
+            "*next one*",
+            "*before me*",
+            "*came before*"
+          ],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": [
+                "Everyone in this world wakes up here, and wakes up with a knife and nothing else. That is the whole of what the hollow gives you.\n\nSo anything else lying on this ground was put on it. Somebody walked back down out of that passage with the key already in their hand and the door already open, and spent the walk setting things down here instead of carrying them out.\n\nThey did not have to. Nothing made them. Check the ground."
+              ]
+            }
+          ]
+        },
+        {
+          "interactionId": "hollow-rim",
+          "triggers": [
+            "*rim*",
+            "*climb*",
+            "*shale*",
+            "*scramble*",
+            "*wall*",
+            "*sky*",
+            "*out of*",
+            "*get out*",
+            "*way out*",
+            "*escape*",
+            "*edge*",
+            "*south*",
+            "*back up*"
+          ],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": [
+                "You get a few feet up and the shale comes away under you in a sheet and puts you back down where you started. It is like that the whole way round: rotten rock standing higher than it looks, and no hold in it that holds.\n\nThere is one way out of this hollow that is not upward. It is a door, and it is in the rock somewhere past the cave mouth, and daylight is on the other side of it.\n\nEveryone who has ever stood here worked that out. Some of them are still in the passage."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "Cave Mouth",
+      "description": "The hollow narrows into a cave mouth. Cold air spills out of it.",
+      "connections": {
+        "south": 1,
+        "north": 4
+      },
+      "monster": "goblin",
+      "interactions": [
+        {
+          "interactionId": "mouth-goblin-fed-already",
+          "if": [
+            "fed-the-goblin"
+          ],
+          "triggers": [
+            "*apple*",
+            "*feed*",
+            "*offer*",
+            "*give*",
+            "*share*",
+            "*toss*",
+            "*throw*"
+          ],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": [
+                "It has your apple and you have its bone. It has gone back to its corner, and it is watching you again — but from a little closer than before, and not at the hands."
+              ]
+            }
+          ]
+        },
+        {
+          "interactionId": "mouth-goblin-feed",
+          "once": true,
+          "scope": "player",
+          "if": [
+            "carrying:apple",
+            "monster:goblin"
+          ],
+          "triggers": [
+            "*apple*",
+            "*feed*",
+            "*offer*",
+            "*give*",
+            "*share*",
+            "*toss*",
+            "*throw*"
+          ],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": [
+                "You take the apple out. The goblin's eyes go to it and stay there, and for the first time it is not watching your hands for what they might do to it.\n\nYou put it down on the stone and step back. It has the apple before you have finished stepping, and it eats all of it — core, pips, the little worm hole — crouched with one shoulder turned to you, the way people eat when eating has been difficult for a long time. Nothing that grew above ground has come down here in years.\n\nThen it does something you were not expecting. It goes through the heap beside it, picks out a bone with some weight still on the end, and pushes it across the floor to you with the back of its hand. A trade. It has plainly made them before.\n\nAnd it did not get these bones at the cave mouth. It goes in past the thing in the passage and it comes back out again, which is more than anyone else who has gone in there can say — and it does not manage that by fighting. It waits until the big one is down over something and busy, and then it goes carefully through what the big one has been lying on."
+              ]
+            },
+            {
+              "action": "removeitems",
+              "parameters": [
+                "apple"
+              ]
+            },
+            {
+              "action": "addItems",
+              "parameters": [
+                "bone"
+              ]
+            },
+            {
+              "action": "addcondition",
+              "scope": "player",
+              "parameters": [
+                "fed-the-goblin"
+              ]
+            }
+          ]
+        },
+        {
+          "interactionId": "mouth-feed-nothing",
+          "if": [
+            "monster:goblin"
+          ],
+          "triggers": [
+            "*feed*",
+            "*offer*",
+            "*give*",
+            "*share*"
+          ],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": [
+                "You have nothing on you it wants. It is not going to take a bone off you — it has bones, that is the whole of what it has. It is thin in a way that bones do not fix.\n\nThere was food in the camp east of the hollow: sift through the ashes of the firepit and it is there."
+              ]
+            }
+          ]
+        },
+        {
+          "interactionId": "mouth-apple-no-goblin",
+          "triggers": [
+            "*apple*",
+            "*feed*",
+            "*offer*",
+            "*share*"
+          ],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": [
+                "The corner is empty. Whatever was crouched in it is not in it now, and there is nobody at this cave mouth to give anything to."
+              ]
+            }
+          ]
+        },
+        {
+          "interactionId": "mouth-bones",
+          "triggers": [
+            "*bone*"
+          ],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": [
+                "The goblin has been cracking bones open for the marrow and dropping them where it sits. They are not its own kills — they come up from somewhere further in, where something with a much larger jaw ate first and left the ends.\n\nA bone is a poor weapon and no kind of food. It is, however, exactly the thing a big hungry animal wants, and there is a big hungry animal north of here."
+              ]
+            }
+          ]
+        },
+        {
+          "interactionId": "mouth-goblin",
+          "triggers": [
+            "*goblin*"
+          ],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": [
+                "It is not going to start anything — nothing down here starts anything — but it is between you and the passage north, and it has plainly been eating.\n\nIt would not take much killing.\n\nIt watches your hands, and it is worth being clear about why: not to see what you will do to it. It has already worked out that it cannot stop you if you mean that. It is watching to see whether there is anything in them."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "Old Camp",
+      "description": "An abandoned camp under an overhang: a firepit long cold, a windbreak of piled brush, and a scattering of belongings. Whoever built it built it to be come back to.\n\nNothing here is lying in the open. Whatever is left is down in the ashes, and it will take sifting for.",
+      "connections": {
+        "west": 1
+      },
+      "interactions": [
+        {
+          "interactionId": "camp-whistle-again",
+          "if": [
+            "played-the-whistle"
+          ],
+          "triggers": [
+            "*whistle*",
+            "*play*"
+          ],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": [
+                "You have already played it here, and the hollow has already given it back off the stones, and it will do the same thing every time because that is what stone does.\n\nThe place that gave nothing back is the passage. That is still true, and he is still there."
+              ]
+            }
+          ]
+        },
+        {
+          "interactionId": "camp-whistle",
+          "if": [
+            "carrying:tin whistle"
+          ],
+          "triggers": [
+            "*whistle*",
+            "*play*"
+          ],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": [
+                "You get a note out of it on the third try. It is thin, and far too loud under the overhang, and it goes out across the hollow and comes back off the stones and then there is nothing.\n\nThis is their camp. They built the windbreak and banked the fire and laid the wood in dry, the way you lay wood in when you are coming back to it. Then they went north with a whistle in their pocket and a name scratched on it, and the thing in the passage has been wearing it at its throat ever since, on the same cord as the key to the only door out.\n\nThey got as far as the troll. You got further. You are sitting in what is left of their evening, playing what is left of them, and the wood they cut is what put you back on your feet.\n\nIf you want them to have heard it, there is one place left to play it: the passage where they stopped. And whatever you have to say to them, you can leave it where you are standing — whisper it, or carve it. It will still be here when you are not."
+              ]
+            },
+            {
+              "action": "addcondition",
+              "scope": "player",
+              "parameters": [
+                "played-the-whistle"
+              ]
+            }
+          ]
+        },
+        {
+          "interactionId": "camp-picked-over",
+          "if": [
+            "searched-camp"
+          ],
+          "triggers": [
+            "*firepit*",
+            "*belongings*",
+            "*camp*",
+            "*ashes*",
+            "*ash*",
+            "*search*",
+            "*sift*",
+            "*rummage*",
+            "*look around*",
+            "*apple*",
+            "*potion*",
+            "*spoon*",
+            "*food*",
+            "*supplies*",
+            "*rags*",
+            "*scatter*",
+            "*loot*"
+          ],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": [
+                "You have already been through the ashes. What is left is rags, a broken strap, and the cold ring of the firepit — and wood enough, still, to build a fire and lie down by it."
+              ]
+            }
+          ]
+        },
+        {
+          "interactionId": "camp-search",
+          "once": true,
+          "scope": "player",
+          "triggers": [
+            "*firepit*",
+            "*belongings*",
+            "*camp*",
+            "*ashes*",
+            "*ash*",
+            "*search*",
+            "*sift*",
+            "*rummage*",
+            "*look around*",
+            "*apple*",
+            "*potion*",
+            "*spoon*",
+            "*food*",
+            "*supplies*",
+            "*rags*",
+            "*scatter*",
+            "*loot*"
+          ],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": [
+                "Sifting through the ashes, you turn up a potion, an apple, and a spoon. Whoever camped here left in a hurry, and did not come back for any of it. The wood under the overhang is dry, and there is enough of it to build a fire and rest.\n\nThe apple should have gone over long ago and has not. It is the only thing in this place that grew in the sun."
+              ]
+            },
+            {
+              "action": "addItems",
+              "parameters": [
+                "health potion",
+                "apple",
+                "shiny spoon"
+              ]
+            },
+            {
+              "action": "addcondition",
+              "scope": "player",
+              "parameters": [
+                "searched-camp"
+              ]
+            }
+          ]
+        },
+        {
+          "interactionId": "camp-rest",
+          "triggers": [
+            "*rest*",
+            "*sleep*",
+            "*nap*",
+            "*recover*",
+            "*heal*",
+            "*mend*",
+            "*bandage*",
+            "*sit*",
+            "*lie down*",
+            "*fire*",
+            "*fre*",
+            "*flame*",
+            "*kindle*",
+            "*tinder*",
+            "*flint*",
+            "*wood*",
+            "*brush*",
+            "*warm*",
+            "*burn*",
+            "*light*"
+          ],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": [
+                "You build the fire back up out of what the camp left behind — char, dry brush, a broken strap that burns badly. It catches. Behind the windbreak the cold goes out of the ground, and for a while nothing in this place is hunting you, which is worth more than the fire is.\n\nYou sleep, and wake stiff, and whole."
+              ]
+            },
+            {
+              "action": "heal",
+              "parameters": [
+                "full"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "The Deep Passage",
+      "description": "The passage runs deep into the rock. Far ahead, something shifts.",
+      "descriptionWhen": [
+        {
+          "ifNot": [
+            "monster:cave troll"
+          ],
+          "description": "The passage runs deep into the rock, and nothing in it moves. Where the roof comes down there is a wide dark patch on the stone that is not damp, and beside it, under the overhang, a scooped-out place worn smooth by something that lay down in the same spot every night for longer than the camp has been cold.\n\nCold air comes all the way down the passage from the north now, with nothing standing in it to break the draught."
+        }
+      ],
+      "connections": {
+        "south": 2,
+        "north": 5
+      },
+      "monster": "cave troll",
+      "interactions": [
+        {
+          "interactionId": "passage-bone-already-given",
+          "if": [
+            "fed-the-troll"
+          ],
+          "triggers": [
+            "*bone*",
+            "*feed*"
+          ],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": [
+                "It is still down over the first one, and it will be for a while yet. You have had what you came for off it. Whether you take the rest is your business."
+              ]
+            }
+          ]
+        },
+        {
+          "interactionId": "passage-bone-give",
+          "once": true,
+          "scope": "player",
+          "if": [
+            "carrying:bone",
+            "monster:cave troll"
+          ],
+          "triggers": [
+            "*bone*",
+            "*feed*"
+          ],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": [
+                "You take the bone out and hold it where the thing can see it.\n\nThe head comes round. For a moment nothing at all happens and you understand exactly how bad an idea this could still turn out to be. Then you underarm it onto the stone between you, and the troll is on it before it stops rolling — down on both knees, the bone in both fists, gone somewhere else entirely, making a low steady noise that has nothing to do with you.\n\nThe cord at its throat hangs slack and forward while it works. You lift the key off it with two fingers.\n\nThe whistle is on the same cord, and you would have to get your hand right in past its jaw to take that, and it is already looking up."
+              ]
+            },
+            {
+              "action": "removeitems",
+              "parameters": [
+                "bone"
+              ]
+            },
+            {
+              "action": "addItems",
+              "parameters": [
+                "key"
+              ]
+            },
+            {
+              "action": "addcondition",
+              "scope": "player",
+              "parameters": [
+                "fed-the-troll"
+              ]
+            }
+          ]
+        },
+        {
+          "interactionId": "passage-bone-no-troll",
+          "if": [
+            "carrying:bone"
+          ],
+          "triggers": [
+            "*bone*",
+            "*feed*"
+          ],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": [
+                "You stand in an empty passage holding out a bone. There is nothing here to take it from you.\n\nOnly the place where it lies down: a patch of floor worn smooth and scooped a little hollow, off to one side where the rock overhangs. Whatever usually fills this passage is not in it, and it has not taken its bedding with it."
+              ]
+            }
+          ]
+        },
+        {
+          "interactionId": "passage-bone-none",
+          "if": [
+            "monster:cave troll"
+          ],
+          "triggers": [
+            "*bone*",
+            "*feed*"
+          ],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": [
+                "You have nothing to give it. Whatever it has been eating, it has been eating further in than this, and the ends of it are lying around the goblin at the cave mouth."
+              ]
+            }
+          ]
+        },
+        {
+          "interactionId": "passage-bone-none-empty",
+          "triggers": [
+            "*bone*",
+            "*feed*"
+          ],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": [
+                "There is nothing in this passage to feed. Only the scooped-out place under the overhang where something large has been lying down for a very long time."
+              ]
+            }
+          ]
+        },
+        {
+          "interactionId": "passage-whistle",
+          "if": [
+            "monster:cave troll"
+          ],
+          "triggers": [
+            "*whistle*",
+            "*steal*",
+            "*snatch*",
+            "*pickpocket*",
+            "*cut the*",
+            "*tin*"
+          ],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": [
+                "It is on the same greased cord as the key, a thumb's width further along, and that thumb's width is the whole of the problem: the key rides forward when the head goes down, and the whistle rides under the jaw.\n\nYou could get two fingers to it. Two fingers is exactly as far in past that jaw as anyone has ever got, and the ones who tried are what it has been eating.\n\nThere is one way to take a thing off a troll that will not put it down, and it is not a quiet one."
+              ]
+            }
+          ]
+        },
+        {
+          "interactionId": "passage-whistle-again",
+          "if": [
+            "carrying:tin whistle",
+            "played-them-out"
+          ],
+          "triggers": [
+            "*whistle*",
+            "*play*",
+            "*blow*",
+            "*sound*",
+            "*tin*",
+            "*tune*",
+            "*note*"
+          ],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": [
+                "You have already played it here. The rock takes the second note exactly as it took the first, and gives back the same nothing, and that is not a fault in the note.\n\nIt is done. He has had what there is to have. The rest of it is whether the whistle goes up into daylight or stays down here with everything else this place has kept."
+              ]
+            }
+          ]
+        },
+        {
+          "interactionId": "passage-whistle-dead",
+          "if": [
+            "carrying:tin whistle"
+          ],
+          "triggers": [
+            "*whistle*",
+            "*play*",
+            "*blow*",
+            "*sound*",
+            "*tin*",
+            "*tune*",
+            "*note*"
+          ],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": [
+                "You put it to your mouth in the place where its owner stopped.\n\nThe note goes out and does not come back. Up at the camp it came off the stones and made a second one; down here the rock takes it in whole and returns nothing at all, and you understand why nobody has heard this since the day it came underground.\n\nThree letters scratched down the barrel with a knife point: an M, and then something, and then what might be an R. They cut the wood in dry and banked the fire and meant to be back by dark. Then they came in here with this in their pocket, and this is as far as they got, and the thing that stopped them wore it at its throat afterwards the way you might keep a coin off a man you beat.\n\nIt is not wearing it now. There is nobody left down here to hear the note but you, and that is the whole of what playing it is for."
+              ]
+            },
+            {
+              "action": "addcondition",
+              "scope": "player",
+              "parameters": [
+                "played-them-out"
+              ]
+            }
+          ]
+        },
+        {
+          "interactionId": "passage-troll",
+          "if": [
+            "monster:cave troll"
+          ],
+          "triggers": [
+            "*troll*",
+            "*size up*",
+            "*size it up*",
+            "*thong*",
+            "*cord*",
+            "*iron*",
+            "*throat*",
+            "*neck*"
+          ],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": [
+                "Half again your height, and down here longer than the camp has been cold. It is slow — slow enough that you always get your blow in first — and it hits like dropped rock. Four or five good ones would put it down, if four or five went your way in a row, and they will not.\n\nOn the cord at its throat: a key, worn bright at one end. There is exactly one door in this place, and it is behind the troll.\n\nAnd beside the key, a tin whistle with a name on it. That did not grow down here. Somebody carried it in and did not carry it out, and the troll has been wearing it ever since, the way you might keep a coin off a man you beat.\n\nIt does not leave this passage. It has never followed anyone south. And it does not mend — whatever you take off it stays off it, however long you are gone. It is also, plainly, hungry."
+              ]
+            }
+          ]
+        },
+        {
+          "interactionId": "passage-troll-dead",
+          "triggers": [
+            "*troll*",
+            "*carcass*",
+            "*corpse of*",
+            "*stain*",
+            "*blood*"
+          ],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": [
+                "Not here. Whatever was in this passage is not in it now, and the only thing left of it is the wide dark patch on the stone and the scooped-out place under the overhang where it used to lie down.\n\nIt is not gone for good. Nothing down here is. But for as long as the passage is empty, the way north is open and the door at the end of it is only a door."
+              ]
+            }
+          ]
+        },
+        {
+          "interactionId": "passage-bed-watched",
+          "if": [
+            "monster:cave troll"
+          ],
+          "triggers": [
+            "*bed*",
+            "*scoop*",
+            "*hollow*",
+            "*floor*",
+            "*ground*",
+            "*rubble*",
+            "*nest*",
+            "*leavings*",
+            "*hoard*",
+            "*overhang*",
+            "*dig*",
+            "*stone*"
+          ],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": [
+                "Off to one side, where the rock overhangs, the floor is worn smooth and scooped a little hollow — the shape of something large that lies down in the same place every time. There is a glint down in it.\n\nYou are not getting your hands into that while the thing that sleeps in it is standing between you and it. Not unless it is down over something and busy, the way the goblin waits for."
+              ]
+            }
+          ]
+        },
+        {
+          "interactionId": "passage-bed-emptied",
+          "if": [
+            "went-through-the-bed"
+          ],
+          "triggers": [
+            "*bed*",
+            "*scoop*",
+            "*hollow*",
+            "*floor*",
+            "*ground*",
+            "*rubble*",
+            "*nest*",
+            "*leavings*",
+            "*hoard*",
+            "*overhang*",
+            "*dig*",
+            "*stone*"
+          ],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": [
+                "You have already had your hands through it. A buckle, a boot, a comb, two teeth that were somebody's. Nothing left in there is worth the stooping."
+              ]
+            }
+          ]
+        },
+        {
+          "interactionId": "passage-bed",
+          "once": true,
+          "scope": "player",
+          "triggers": [
+            "*bed*",
+            "*scoop*",
+            "*hollow*",
+            "*floor*",
+            "*ground*",
+            "*rubble*",
+            "*nest*",
+            "*leavings*",
+            "*hoard*",
+            "*overhang*",
+            "*dig*",
+            "*stone*"
+          ],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": [
+                "Off to one side, where the rock overhangs, the floor is worn smooth and scooped a little hollow — the shape of something large that lies down in the same place every time. It is not here to mind you doing this. You get down and put both hands into it.\n\nIt has been keeping things. Not eating them: keeping them. A buckle. A boot with the foot long since gone out of it. A comb with three teeth. Two teeth that are not a comb's. Small things off people, turned over and over until they are smooth.\n\nAnd down at the bottom, an iron key, worn bright at one end and cut for one lock and no other.\n\nIt has been wearing one of these at its throat for as long as anyone has come down here. This is not that one. This is the one before."
+              ]
+            },
+            {
+              "action": "addItems",
+              "parameters": [
+                "key"
+              ]
+            },
+            {
+              "action": "addcondition",
+              "scope": "player",
+              "parameters": [
+                "went-through-the-bed"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "name": "The Door",
+      "description": "A heavy door, banded in iron, set into the living rock. There is a keyhole in it the size of a thumb, and daylight under the sill.",
+      "connections": {
+        "south": 4
+      },
+      "isExit": true,
+      "interactions": [
+        {
+          "interactionId": "door-whistle-full",
+          "if": [
+            "carrying:tin whistle",
+            "played-the-whistle",
+            "played-them-out"
+          ],
+          "triggers": [
+            "*whistle*",
+            "*tin*",
+            "*play*",
+            "*blow*",
+            "*note*",
+            "*tune*"
+          ],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": [
+                "You hold it up at the sill, and for the first time in a long time there is daylight on it.\n\nYou played it in his camp, where the stones gave it back. You played it in the passage, where they did not. There was nothing in either for you — no key, no coin, no door that opened any wider — and you walked both ways anyway, past the thing that ate him, twice.\n\nHe cut the wood in dry and banked the fire and meant to be back by dark. He has been back by dark for a while now. You are the one carrying it.\n\nTake it up. Nothing that came into this rock in somebody's pocket has ever gone back out of it, and the door does not know the difference, and you do.\n\nThe word is still: exit."
+              ]
+            }
+          ]
+        },
+        {
+          "interactionId": "door-whistle-played",
+          "if": [
+            "carrying:tin whistle",
+            "played-them-out"
+          ],
+          "triggers": [
+            "*whistle*",
+            "*tin*",
+            "*play*",
+            "*blow*",
+            "*note*",
+            "*tune*"
+          ],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": [
+                "You hold it up at the sill, and for the first time in a long time there is daylight on it.\n\nIt is a cheap tin whistle. It is worth nothing, and nothing down here will trade you anything for it. Every other thing that has ever gone out through this door went out because somebody wanted it — a sword, a coat, a key, a spoon that was shiny. This is the only thing anyone has carried up to this sill that was not theirs to want.\n\nYou played it where he stopped, and the rock took the note and gave back nothing, and then you picked it up and carried it north anyway.\n\nTake it up. Let it be above ground again. There is a camp east of the hollow where somebody laid the wood in dry meaning to be back by dark, and this is the only part of him that is going to manage it.\n\nThe word is still: exit."
+              ]
+            }
+          ]
+        },
+        {
+          "interactionId": "door-whistle",
+          "if": [
+            "carrying:tin whistle"
+          ],
+          "triggers": [
+            "*whistle*",
+            "*tin*",
+            "*play*",
+            "*blow*",
+            "*note*",
+            "*tune*"
+          ],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": [
+                "You have it in your hand at the sill: a cheap tin whistle with three worn letters scratched down the barrel. An M, and then something, and then what might be an R.\n\nIt is the only thing in this place that ever came in from above ground and did not go out again. It came in in a man's pocket. It got as far as the passage one room south of here and stopped, and the thing that stopped him wore it at his throat afterwards for longer than his camp has been cold.\n\nYou are standing one room from where he stopped, and you have not played it there.\n\nThere is nothing in it for you. Nobody is counting, no door opens wider, and you have the key already. But it is one room south, and it will cost you the walk back, and he waited a long while for somebody to get that far and take it off the cord."
+              ]
+            }
+          ]
+        },
+        {
+          "interactionId": "door-keyhole",
+          "triggers": [
+            "*keyhole*",
+            "*hinge*",
+            "*sill*",
+            "*daylight*",
+            "*listen*",
+            "*look at*",
+            "*look under*",
+            "*examine*",
+            "*inspect*",
+            "*study*",
+            "*knock*",
+            "*pick*",
+            "*lock*",
+            "*door*",
+            "*open*",
+            "*way out*",
+            "*get out*",
+            "*exit*",
+            "*escape*",
+            "*leave*"
+          ],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": [
+                "The hinges are set on the far side. The keyhole is worn bright at its lower edge, as though a heavy key had been turned in it a great many times by someone in a hurry — and never once from this side. There is no picking it. The wards are deep and simple and there is nothing down here thin enough.\n\nUnder the sill: moving air, and light that is not torchlight.\n\nIt wants a heavy iron key, and there is one place in this world they come from. The thing in the passage south of here wears one at its throat on a cord. And when it is not there — it is not always there — it keeps the place where it lies down, scooped into the stone under the overhang, and it has never yet taken everything with it. Put your hands in that.\n\nWhoever goes through does not come back through. If there is anything you meant to say to the people still in here, say it on this side of the door: whisper it, or carve it, and it stays where you left it.\n\nAnd whatever is in your hands when you go out goes with you, out of this world for good. Whatever you set down stays. Everyone in here wakes in the same hollow with a knife and nothing else, and it is not a long walk back down to it — you have the key, and the passage knows you now.\n\nThen the word for going is: exit."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "name": "The Overlook",
+      "description": "A ledge of dry rock standing over the whole floor of the hollow. Nothing grows up here and nothing lives up here; it is only a place to stand and see from.\n\nAnd there is something to see. Down below, the pale stones are not scattered at all. From this height they are plainly laid — in some arrangement that means nothing yet, and will if you stand still long enough to work it out.",
+      "connections": {
+        "south": 1
+      },
+      "interactions": [
+        {
+          "interactionId": "overlook-out-of-reach",
+          "triggers": [
+            "*under*",
+            "*slab*",
+            "*seam*",
+            "*dig*",
+            "*pry*",
+            "*lift*",
+            "*rock*",
+            "*move*",
+            "*reach*"
+          ],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": [
+                "Not from up here. The slab is down in the hollow itself, at the centre of the rings — plain to see from this ledge and nowhere near your hands. You would have to go back down and find it among the stones."
+              ]
+            },
+            {
+              "action": "addcondition",
+              "scope": "player",
+              "parameters": [
+                "seen-pattern"
+              ]
+            }
+          ]
+        },
+        {
+          "interactionId": "overlook-pattern",
+          "scope": "player",
+          "triggers": [
+            "*pattern*",
+            "*stones*",
+            "*stone*",
+            "*hollow*",
+            "*down*",
+            "*ledge*",
+            "*rings*",
+            "*spiral*",
+            "*jump*",
+            "*leap*",
+            "*climb*",
+            "*rim*",
+            "*shale*",
+            "*east*",
+            "*west*",
+            "*north*",
+            "*across*",
+            "*over the*",
+            "*view*",
+            "*see*",
+            "*look out*"
+          ],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": [
+                "From up here the scattering resolves. The pale stones lie in rings, spiralling inward, and at the centre of the spiral one flat slab sits a little proud of the earth with a seam running round it. It is not a natural arrangement. Someone marked that spot for finding again — and it is down there, not up here.\n\nNorth and east of the hollow the ground opens: a cave mouth with cold coming out of it, and under the far overhang the black shape of a camp nobody has used in a long while. This ledge goes nowhere but back down.\n\nEverything else is rim: rotten shale standing all the way round, higher than it looks from below, and from up here you can see how completely it closes. There is no line out of this place over the top of it, and nothing to jump to."
+              ]
+            },
+            {
+              "action": "addcondition",
+              "scope": "player",
+              "parameters": [
+                "seen-pattern"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

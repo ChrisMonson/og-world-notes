@@ -29,7 +29,7 @@ public static partial class Game
     /// Loads a world. Options: seed, tick (names of extra parameterless engine
     /// methods the run's server called on every tick), welcome (lines the run's
     /// server said to a newborn character), fragments (file name to contents, for
-    /// a world kept in several files).
+    /// a world kept in several files), state (a saved world snapshot to apply).
     /// </summary>
     [JSExport]
     public static string Load(string worldJson, string optionsJson)
@@ -51,6 +51,12 @@ public static partial class Game
         var issues = WorldValidator.Validate(world);
         if (WorldValidator.HasErrors(issues))
             return Reply(new { type = "error", message = "the world failed validation", issues = issues.Select(i => i.ToString()).ToArray() });
+
+        if (!string.IsNullOrWhiteSpace(options.State))
+        {
+            try { ApplyState(world, options.State); }
+            catch (Exception e) { return Reply(new { type = "error", message = $"the saved state could not be applied: {e.Message}" }); }
+        }
 
         _engine = new GameEngine(world, _events, options.Seed);
         _session = null;
@@ -89,6 +95,28 @@ public static partial class Game
             File.WriteAllText(Path.Combine(fragmentDirectory, Path.GetFileName(name)), json);
 
         try { return (World)load.Invoke(null, [path])!; }
+        catch (TargetInvocationException e) when (e.InnerException is not null) { throw e.InnerException; }
+    }
+
+    /// <summary>
+    /// What had happened to the world by the time its run ended -- the dead, the
+    /// words left in places, what was lying on the floor -- applied the way that
+    /// run's server applied it at startup: its own snapshot type, its own mapper.
+    /// </summary>
+    private static void ApplyState(World world, string stateJson)
+    {
+        var assembly = typeof(World).Assembly;
+        var snapshotType = assembly.GetType("Og.Core.Persistence.WorldSnapshot")
+            ?? throw new InvalidOperationException("this engine has no world snapshot");
+        var apply = assembly.GetType("Og.Core.Persistence.SnapshotMapper")?
+            .GetMethods(BindingFlags.Public | BindingFlags.Static)
+            .FirstOrDefault(m => m.Name == "Apply" && m.GetParameters() is [var a, var b]
+                && a.ParameterType == snapshotType && b.ParameterType == typeof(World))
+            ?? throw new InvalidOperationException("this engine cannot apply a world snapshot");
+
+        var snapshot = JsonSerializer.Deserialize(stateJson, snapshotType, new JsonSerializerOptions { PropertyNameCaseInsensitive = true })
+            ?? throw new InvalidOperationException("the saved state is empty");
+        try { apply.Invoke(null, [snapshot, world]); }
         catch (TargetInvocationException e) when (e.InnerException is not null) { throw e.InnerException; }
     }
 
@@ -184,6 +212,7 @@ public static partial class Game
         public string[]? Tick { get; set; }
         public string[]? Welcome { get; set; }
         public Dictionary<string, string>? Fragments { get; set; }
+        public string? State { get; set; }
     }
 
     private sealed class Lines : IOutputSink

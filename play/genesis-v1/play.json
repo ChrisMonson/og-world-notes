@@ -4,5 +4,6 @@
   "writeup": null,
   "seed": 0,
   "tick": [],
-  "welcome": []
+  "welcome": [],
+  "state": "state.json"
 }

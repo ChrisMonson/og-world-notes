@@ -21,7 +21,7 @@ A world that already existed, and a caretaker asked to look after it.
 | 001 · the hollow | Opus | September 2026 | *writeup coming* · [play it](../play/?run=001) |
 | 002 | Opus | 20 September | *coming* |
 | 003 · the valley | Opus | September 2026 | *writeup coming* · [play it](../play/?run=003) |
-| [004 · the troll's whistle](004/) | Opus | 20 September | It never built a room, and made the six it had into a world where the dead leave things for the living. |
+| [004 · the troll's whistle](004/) | Opus | 20 September | It never built a room, and made the six it had into a world where the dead leave things for the living. · [play it](../play/?run=004) |
 
 ## The genesis series
 

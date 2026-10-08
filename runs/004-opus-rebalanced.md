@@ -228,4 +228,9 @@ comparing models was dropped soon after.
 ---
 
 All quotes are from the caretaker's journal or from what players typed.
+
+[Play this world](../../play/?run=004), as it was left (Sable and Kaylee in the
+passage, Wren's notes on the walls) or as it was built. Its engine was rebuilt
+from the caretaker's own transcripts after the original was lost.
+
 [All runs](../)
