@@ -1,0 +1,78 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Engine check</title>
+<style>
+  body { font: 14px/1.5 ui-monospace, monospace; margin: 16px; background: #fff; color: #111; }
+  pre { white-space: pre-wrap; }
+  .pass { color: #176317; } .fail { color: #b00020; }
+</style>
+<h1>Engine check</h1>
+<p>Loads the engine built into <code>_build/dev</code> with the fixture world and walks it through a life, a respawn, a death and a second life.</p>
+<pre id="log">loading…</pre>
+<script type="module">
+const log = document.getElementById("log");
+const lines = [];
+const say = (s, cls) => { lines.push(cls ? `<span class="${cls}">${s}</span>` : s); log.innerHTML = lines.join("\n"); };
+const results = [];
+const check = (name, ok, detail = "") => { results.push(ok); say(`${ok ? "PASS" : "FAIL"}  ${name}${detail ? "  — " + detail : ""}`, ok ? "pass" : "fail"); };
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+
+try {
+  const { dotnet } = await import("../../_build/dev/engine/dotnet.js");
+  const runtime = await dotnet.create();
+  const { Game } = await runtime.getAssemblyExports(runtime.getConfig().mainAssemblyName);
+  const call = (f, ...a) => JSON.parse(Game[f](...a));
+  lines.length = 0;
+
+  const world = await (await fetch("fixture.json")).text();
+  const loaded = call("Load", world, JSON.stringify({ seed: 1, tick: ["NoSuchHook"], welcome: ["Welcome, stranger."] }));
+  check("world loads", loaded.type === "loaded" && loaded.world === "fixture", JSON.stringify(loaded));
+  check("an unknown tick hook is reported, not fatal", loaded.missing?.[0] === "NoSuchHook");
+
+  const a = call("Arrive", "Tester");
+  check("arrive describes the first room", a.alive && a.text.some(t => t.includes("shallow hollow")), a.text.join(" | "));
+  check("the welcome lines follow", a.text.includes("Welcome, stranger."));
+  check("status carries the place and health", a.place === "The Hollow" && a.hitPoints > 0, `${a.place} ${a.hitPoints}/${a.maxHitPoints}`);
+
+  const east = call("Send", "east");
+  const search = call("Send", "search the camp");
+  check("interactions answer", search.text.some(t => t.includes("turn over the ashes")), search.text.join(" | "));
+
+  call("Send", "west");
+  const north = call("Send", "north");
+  check("the goblin is there", north.text.join(" ").includes("goblin"), north.text.join(" | "));
+  let fight; for (let i = 0; i < 10; i++) { fight = call("Send", "attack"); if (!call("Send", "look").text.join(" ").includes("goblin crouches")) break; }
+  const after = call("Send", "look").text.join(" ");
+  check("the goblin can be killed", !after.includes("goblin crouches"), after);
+
+  say("waiting six seconds for the goblin to come back…");
+  await sleep(6000);
+  const idle = call("Idle");
+  const back = idle.text.join(" ") + " " + call("Send", "look").text.join(" ");
+  check("Idle brings monsters back, and the player sees it", back.includes("goblin"), back);
+
+  call("Send", "south");
+  call("Send", "west");
+  let dead;
+  for (let i = 0; i < 30; i++) { dead = call("Send", "attack"); if (!dead.alive) break; }
+  check("the troll kills", dead && !dead.alive, dead?.text.join(" | "));
+  const over = call("Send", "look");
+  check("a finished life takes no more commands", over.type === "over" && !over.alive);
+
+  const b = call("Arrive", "Second");
+  check("a new life arrives in the same world", b.alive && b.name === "Second" && b.place === "The Hollow", JSON.stringify(b));
+  call("Send", "west");
+  const floor = call("Send", "look").text.join(" ");
+  check("the last life's belongings are still on the floor", floor.toLowerCase().includes("dagger") || floor.toLowerCase().includes("spoon"), floor);
+  const twice = call("Arrive", "Third");
+  check("arriving again mid-life is refused", twice.type === "error");
+
+  say("");
+  say(results.every(Boolean) ? `ALL ${results.length} PASSED` : `${results.filter(r => !r).length} FAILED`, results.every(Boolean) ? "pass" : "fail");
+  window.__engineCheck = { passed: results.every(Boolean), count: results.length };
+} catch (e) {
+  say("ERROR " + (e.stack || e), "fail");
+  window.__engineCheck = { passed: false, error: String(e) };
+}
+</script>

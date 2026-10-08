@@ -1,3 +1,6 @@
 _site/
 .jekyll-cache/
 .DS_Store
+bin/
+obj/
+_build/

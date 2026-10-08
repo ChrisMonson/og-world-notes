@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.WebAssembly">
+  <!--
+    The engine in the browser. Built once per run, against the engine that run
+    ended with: pass EngineDir, the directory holding that run's Og.Core.csproj.
+  -->
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <!-- Worlds are read, and turns written, with reflection-based JSON. -->
+    <JsonSerializerIsReflectionEnabledByDefault>true</JsonSerializerIsReflectionEnabledByDefault>
+    <TrimMode>partial</TrimMode>
+    <InvariantGlobalization>true</InvariantGlobalization>
+    <EngineDir Condition="'$(EngineDir)' == ''">$(MSBuildThisFileDirectory)../../../og-world/src/Og.Core</EngineDir>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="$(EngineDir)/Og.Core.csproj" />
+    <!-- Kept whole, so a per-run tick hook found by name is still there. -->
+    <TrimmerRootAssembly Include="Og.Core" />
+  </ItemGroup>
+</Project>

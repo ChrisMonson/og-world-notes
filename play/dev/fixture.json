@@ -1,0 +1,29 @@
+{
+  "name": "fixture",
+  "spawnLocation": 1,
+  "startingItems": ["dagger"],
+  "items": [
+    { "name": "dagger", "description": "A short blade.", "kind": "weapon", "attackDice": 4 },
+    { "name": "shiny spoon", "description": "A spoon, and shiny." }
+  ],
+  "monsters": [
+    { "name": "goblin", "description": "A goblin crouches here.", "hitPoints": 1,
+      "armorClass": 1, "attackStrength": 0, "attackDice": 1, "respawnSeconds": 5 },
+    { "name": "troll", "description": "A troll fills the room.", "hitPoints": 500,
+      "armorClass": 30, "attackStrength": 30, "attackDice": 6, "respawnSeconds": 60 }
+  ],
+  "locations": [
+    { "index": 1, "name": "The Hollow", "description": "You stand in a shallow hollow. There are ways north, east and west.",
+      "connections": { "north": 2, "east": 3, "west": 4 } },
+    { "index": 2, "name": "The North Room", "description": "A room north of the hollow.",
+      "connections": { "south": 1 }, "monster": "goblin" },
+    { "index": 3, "name": "The Camp", "description": "A cold camp east of the hollow.",
+      "connections": { "west": 1 },
+      "interactions": [ { "interactionId": "camp-search", "scope": "Player", "once": true,
+        "triggers": ["*search the camp*"],
+        "actions": [ { "action": "describe", "parameters": ["You turn over the ashes and find something."] },
+                     { "action": "addItems", "parameters": ["shiny spoon"] } ] } ] },
+    { "index": 4, "name": "The Troll's Room", "description": "It smells of troll.",
+      "connections": { "east": 1 }, "monster": "troll" }
+  ]
+}
