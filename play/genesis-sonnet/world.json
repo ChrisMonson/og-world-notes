@@ -1,0 +1,248 @@
+{
+  "name": "the-hollow",
+  "spawnLocation": 1,
+  "startingItems": [],
+  "items": [
+    {
+      "name": "flint knife",
+      "description": "A knife knapped from grey flint, the edge still sharp despite the mud it came out of.",
+      "kind": "weapon",
+      "attackBonus": 1,
+      "attackDice": 4
+    },
+    {
+      "name": "hide wrap",
+      "description": "Boiled hide stitched into a rough wrap. It was made to fit someone, and it wasn't the boar.",
+      "kind": "armor",
+      "armorClassBonus": 2
+    },
+    {
+      "name": "bitter root",
+      "description": "A pale root, bitter enough to make your eyes water. It dulls pain and closes small wounds.",
+      "kind": "consumable",
+      "healAmount": 8,
+      "consumedOnUse": true
+    },
+    {
+      "name": "bone key",
+      "description": "A small key carved from bone, warm to the touch as though only just set down.",
+      "kind": "misc",
+      "isKey": true
+    },
+    {
+      "name": "wolf fang",
+      "description": "A single fang, yellowed and long, pulled from a wolf that won't need it anymore.",
+      "kind": "misc"
+    }
+  ],
+  "monsters": [
+    {
+      "name": "grey wolf",
+      "description": "A lean grey wolf watches from atop a stone, hackles up, in no hurry to decide whether you are prey.",
+      "hitPoints": 10,
+      "armorClass": 11,
+      "attackStrength": 2,
+      "attackDice": 5,
+      "inventory": ["wolf fang"],
+      "respawnSeconds": 300
+    },
+    {
+      "name": "starved boar",
+      "description": "A boar, ribs showing through its hide, blocks the trampled path through the thorns. It wears a wrap of stitched hide that is not its own.",
+      "hitPoints": 14,
+      "armorClass": 12,
+      "attackStrength": 3,
+      "attackDice": 6,
+      "inventory": ["hide wrap"],
+      "respawnSeconds": 300
+    }
+  ],
+  "locations": [
+    {
+      "index": 1,
+      "name": "The Hollow",
+      "description": "You wake at the bottom of a green hollow, grass pressed flat beneath you, the sky a bright ring far overhead. Nothing about how you got here comes to mind — not even your own name, until you remember it. North, the ground climbs out of the bowl toward a line of trees.",
+      "connections": { "north": 2 },
+      "interactions": [
+        {
+          "interactionId": "hollow-remember",
+          "triggers": ["*remember*", "*think*", "who am i", "*my name*"],
+          "actions": [
+            { "action": "describe", "parameters": ["Nothing comes. Whoever you were, it isn't here with you. There is only the grass, the ring of sky, and the way out."] }
+          ]
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "The Treeline",
+      "description": "Thin pale trees crowd the rim of the hollow, close enough together that little grows beneath them. Wind moves through leaves nobody planted. South, the ground falls back into the hollow; north it climbs toward open ground; east, a gap in the trees carries the sound of running water.",
+      "connections": { "north": 3, "south": 1, "east": 4 },
+      "interactions": [
+        {
+          "interactionId": "treeline-root",
+          "triggers": ["*root*", "*dig*", "*pull*", "*ground*"],
+          "once": true,
+          "actions": [
+            { "action": "describe", "parameters": ["You work a pale root free of the cold soil. It's bitter even through the smell alone — the kind of bitter that means it's good for something."] },
+            { "action": "additems", "parameters": ["bitter root"] }
+          ]
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "The Ridge",
+      "description": "A bare ridge runs along the high ground, scoured down to loose stone by a wind that never quite stops. West it narrows into a wall of bramble; east, someone has piled flat stones with clear intention. The trees are back south, and the ground keeps climbing north.",
+      "connections": { "north": 9, "south": 2, "east": 5, "west": 6 },
+      "monster": "grey wolf",
+      "interactions": [
+        {
+          "interactionId": "ridge-wind",
+          "triggers": ["*wind*", "*listen*"],
+          "actions": [
+            { "action": "describe", "parameters": ["The wind picks at your clothes, says nothing you can use, and moves on."] }
+          ]
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "The Creek",
+      "description": "A shallow creek cuts through packed earth, cold and clear enough to count the stones on its bed. The trees are back west; south, the bank softens into a bed of reeds.",
+      "connections": { "west": 2, "south": 7 },
+      "interactions": [
+        {
+          "interactionId": "creek-drink",
+          "triggers": ["*drink*", "*water*"],
+          "actions": [
+            { "action": "describe", "parameters": ["The water is shockingly cold. It clears your head, for exactly as long as you're standing in it."] }
+          ]
+        },
+        {
+          "interactionId": "creek-stones",
+          "triggers": ["*stone*", "*count*", "*creek*", "*bed*"],
+          "actions": [
+            { "action": "describe", "parameters": ["You count them anyway: past thirty, the current shifts one you already counted, and you lose the thread. However many stones this creek has, it isn't a number you're going to get to keep."] }
+          ]
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "name": "The Cairn",
+      "description": "A deliberate stack of flat stones stands taller than a person, marked with lines too regular to be weather. It is the first thing in this place that says a person was here before you. The ridge continues west.",
+      "connections": { "west": 3 },
+      "interactions": [
+        {
+          "interactionId": "cairn-search-before",
+          "triggers": ["*search*", "*move*", "*shift*", "*beneath*", "*underneath*", "*base*"],
+          "ifNot": ["cairn-read"],
+          "actions": [
+            { "action": "describe", "parameters": ["You could shift these stones, but blindly, and not knowing what for. Better to read what's written first."] }
+          ]
+        },
+        {
+          "interactionId": "cairn-search-after",
+          "triggers": ["*search*", "*move*", "*shift*", "*beneath*", "*underneath*", "*base*"],
+          "if": ["cairn-read"],
+          "once": true,
+          "actions": [
+            { "action": "describe", "parameters": ["Beneath the base stone, pressed into the dirt like it was left there on purpose, you find a small bone key."] },
+            { "action": "additems", "parameters": ["bone key"] },
+            { "action": "addcondition", "parameters": ["has-key"], "scope": "player" }
+          ]
+        },
+        {
+          "interactionId": "cairn-search-again",
+          "triggers": ["*search*", "*move*", "*shift*", "*beneath*", "*underneath*", "*base*"],
+          "if": ["has-key"],
+          "actions": [
+            { "action": "describe", "parameters": ["The base stone sits loose where you already lifted it. Nothing else is hidden underneath."] }
+          ]
+        },
+        {
+          "interactionId": "cairn-read",
+          "triggers": ["*read*", "*cairn*", "*inscription*", "*marks*", "*carving*", "*stone*", "*stack*"],
+          "actions": [
+            { "action": "describe", "parameters": ["The marks are shallow and old, cut by something without much of an edge. Read together, they say: what you bring out is what you brought in."] },
+            { "action": "addcondition", "parameters": ["cairn-read"], "scope": "player" }
+          ]
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "name": "The Bramble",
+      "description": "Thorns knit into a wall between the ridge and whatever lies beyond it. Something has trampled a rough path through the worst of it, low to the ground. The ridge is back east; the gap continues west.",
+      "connections": { "east": 3, "west": 8 },
+      "monster": "starved boar",
+      "interactions": [
+        {
+          "interactionId": "bramble-thorns",
+          "triggers": ["*thorn*", "*push*"],
+          "actions": [
+            { "action": "describe", "parameters": ["The thorns want blood before they let go of anything they're holding."] }
+          ]
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "name": "The Reeds",
+      "description": "The creek shallows out into a bed of reeds, mud pulling at every step. Something metal-dull glints low among the stalks. The creek continues north.",
+      "connections": { "north": 4 },
+      "interactions": [
+        {
+          "interactionId": "reeds-knife",
+          "triggers": ["*reed*", "*mud*", "*glint*", "*metal*", "*stalk*"],
+          "once": true,
+          "actions": [
+            { "action": "describe", "parameters": ["You work a small flint knife free of the mud. The edge is still sharp."] },
+            { "action": "additems", "parameters": ["flint knife"] }
+          ]
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "name": "The Gate",
+      "description": "A gate stands here, iron gone soft with rust, set into an arch older than the fence around it. It doesn't look locked so much as waiting to be asked properly. The bramble path runs back east.",
+      "isExit": true,
+      "connections": { "east": 6 },
+      "interactions": [
+        {
+          "interactionId": "gate-push",
+          "triggers": ["*open*", "*push*", "*gate*", "*key*", "*unlock*"],
+          "ifNot": ["has-key"],
+          "actions": [
+            { "action": "describe", "parameters": ["The gate doesn't move. It isn't stuck. It's waiting for something you don't have yet."] }
+          ]
+        },
+        {
+          "interactionId": "gate-push-with-key",
+          "triggers": ["*open*", "*push*", "*gate*", "*key*", "*unlock*"],
+          "if": ["has-key"],
+          "actions": [
+            { "action": "describe", "parameters": ["The gate doesn't need pushing. You already carry what it's waiting for. Say the word, and go."] }
+          ]
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "name": "The Rise",
+      "description": "The ridge climbs one last stretch to a bare shoulder of rock, high enough to finally see it: a fence, worn dark with age, looping every place you've walked so far — the hollow, the trees, the creek, the thorns — small enough from up here to take in all at once. Past the fence the land keeps going, but it never quite comes into focus, no matter how long you look. The ridge falls back south.",
+      "connections": { "south": 3 },
+      "interactions": [
+        {
+          "interactionId": "rise-view",
+          "triggers": ["*view*", "*horizon*", "*beyond*", "*distance*", "*fence*", "*vista*", "*over the hill*"],
+          "actions": [
+            { "action": "describe", "parameters": ["You look for longer than it deserves. The land past the fence doesn't get any closer, or any clearer — it's there, and it's real enough to see, and that's as far as it goes from here. Whatever is over that particular hill, this ridge isn't where you find out."] }
+          ]
+        }
+      ]
+    }
+  ]
+}

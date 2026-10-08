@@ -28,7 +28,8 @@ public static partial class Game
     /// <summary>
     /// Loads a world. Options: seed, tick (names of extra parameterless engine
     /// methods the run's server called on every tick), welcome (lines the run's
-    /// server said to a newborn character).
+    /// server said to a newborn character), fragments (file name to contents, for
+    /// a world kept in several files).
     /// </summary>
     [JSExport]
     public static string Load(string worldJson, string optionsJson)
@@ -38,7 +39,9 @@ public static partial class Game
         try
         {
             options = JsonSerializer.Deserialize<Options>(optionsJson, Json) ?? new Options();
-            world = World.FromJson(worldJson);
+            world = options.Fragments is { Count: > 0 } fragments
+                ? FromFiles(worldJson, fragments)
+                : World.FromJson(worldJson);
         }
         catch (Exception e)
         {
@@ -63,6 +66,30 @@ public static partial class Game
         }).OfType<MethodInfo>().ToArray();
 
         return Reply(new { type = "loaded", world = world.Name, missing });
+    }
+
+    /// <summary>
+    /// A world in several files: a base map and fragments folded into it in name
+    /// order, as one run's server loaded it. The files are written to the
+    /// browser's in-memory file system and read back by that run's own loader.
+    /// </summary>
+    private static World FromFiles(string worldJson, Dictionary<string, string> fragments)
+    {
+        var load = typeof(World).GetMethod("Load", BindingFlags.Public | BindingFlags.Static, [typeof(string)])
+            ?? throw new InvalidOperationException("this engine cannot load a world from several files");
+
+        var directory = Path.Combine(Path.GetTempPath(), "world", "maps");
+        var fragmentDirectory = Path.Combine(directory, "starter.d");
+        if (Directory.Exists(fragmentDirectory)) Directory.Delete(fragmentDirectory, recursive: true);
+        Directory.CreateDirectory(fragmentDirectory);
+
+        var path = Path.Combine(directory, "starter.json");
+        File.WriteAllText(path, worldJson);
+        foreach (var (name, json) in fragments)
+            File.WriteAllText(Path.Combine(fragmentDirectory, Path.GetFileName(name)), json);
+
+        try { return (World)load.Invoke(null, [path])!; }
+        catch (TargetInvocationException e) when (e.InnerException is not null) { throw e.InnerException; }
     }
 
     /// <summary>A new life in the loaded world.</summary>
@@ -156,6 +183,7 @@ public static partial class Game
         public int Seed { get; set; }
         public string[]? Tick { get; set; }
         public string[]? Welcome { get; set; }
+        public Dictionary<string, string>? Fragments { get; set; }
     }
 
     private sealed class Lines : IOutputSink

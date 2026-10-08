@@ -1,0 +1,1062 @@
+{
+  "name": "ambroke",
+  "spawnLocation": 1,
+  "startingItems": ["clasp-knife", "oilskin coat"],
+
+  "items": [
+    {
+      "name": "clasp-knife",
+      "description": "A fisherman's clasp-knife, the blade worn narrow by sharpening. Yours, apparently.",
+      "kind": "weapon",
+      "attackBonus": 0,
+      "attackDice": 4
+    },
+    {
+      "name": "oilskin coat",
+      "description": "Stiff, black, smelling of tar and old weather. It has kept somebody dry for years.",
+      "kind": "armor",
+      "armorClassBonus": 1
+    },
+    {
+      "name": "stopped apple",
+      "description": "Small, green-red, and cold as a stone from a stream. The rain on its skin has not moved since you picked it. Eat it and it will mend some of what a fight has taken out of you.",
+      "kind": "consumable",
+      "healAmount": 8,
+      "consumedOnUse": true
+    },
+    {
+      "name": "drowned lamp",
+      "description": "A keeper's storm-lamp, brass gone green, the glass whole. There is still oil in it. It has been down that well a long time and it is still, somehow, ready. A lamp like this is no use in your hand: it wants hanging on its hook, on the quay, and lighting there.",
+      "kind": "misc"
+    },
+    {
+      "name": "oar",
+      "description": "One oar from Ambroke's last boat, worn thin where two hands went. It will get you out of here if you mean it.",
+      "kind": "misc",
+      "isKey": true
+    },
+    {
+      "name": "windfall apple",
+      "description": "Picked up off wet grass, bruised on one side, cold with ordinary rain. Perfectly good. Eat it and it will mend some of what a fight has taken out of you.",
+      "kind": "consumable",
+      "healAmount": 8,
+      "consumedOnUse": true
+    },
+    {
+      "name": "grey feather",
+      "description": "A long grey feather. You took it off something that was only standing there.",
+      "kind": "misc"
+    }
+  ],
+
+  "monsters": [
+    {
+      "name": "grey heron",
+      "description": "A grey heron stands at the end of the quay, one leg drawn up, watching you with an eye like a bead of amber. It is taller than you thought a heron was. Its bill is a spear and it has not blinked.",
+      "hitPoints": 12,
+      "armorClass": 15,
+      "attackStrength": 2,
+      "attackDice": 4,
+      "inventory": ["grey feather"],
+      "respawnSeconds": 900
+    }
+  ],
+
+  "locations": [
+    {
+      "index": 1,
+      "name": "The Shingle",
+      "description": "Black stones, wet and clicking, run down to where the sea should be. The sea is not where it should be: east of the village it stands upright, a green wall of water three houses high, holding still as glass. The light that comes through it is aquarium light, and it lies on everything.\n\nYou are not drowned. That appears to have been somebody's decision.\n\nA board has been nailed to a post at the head of the path. Somebody has chalked one word across it, very large, and underlined it twice: HELP.",
+      "connections": { "north": 2 },
+      "interactions": [
+        {
+          "interactionId": "shingle-sign",
+          "triggers": ["write my name", "*write my name*", "*write your name*", "*sign the board*", "*sign board*", "*write on the board*", "*write on board*", "*add my name*", "*leave my name*", "*leave a name*", "*write in the space*", "write", "*write*"],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": ["There is no chalk on this beach. Whatever wrote HELP here went back up the hill with the one who wrote it, a long time ago.\n\nThe chalk is in the schoolhouse, on the ledge under the big slate, which is where this village kept names in the first place. Put yours under the list. That is what a list is for."]
+            }
+          ]
+        },
+        {
+          "interactionId": "shingle-board-lit",
+          "if": ["wave_fallen"],
+          "triggers": ["read the board", "*read the board*", "*the board*", "*board*", "read the sign", "*sign*", "*the post*", "*post*", "*chalk*", "*help*"],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": ["The spray has been at it, but it is all still there, burnt into the wood in a hand that pressed hard:\n\n  SPEAK PLAINLY. THE PLACE IS LISTENING.\n  GO NORTH.\n  LOOK AT THINGS. TAKE WHAT YOU NEED.\n  RING THE BELL. READ THE NAMES.\n  LIGHT THE LAMP LAST.\n\nUnderneath, smaller, not burnt but scratched with a nail:\n  i did them out of order. dont.\n\nAnd under that, in schoolhouse chalk, so recent it is still white:\n  done. its down. the lamp is lit and im leaving it lit.\n  if you want it back the bell is in the tower.\n\nThere is no name on it. There is a space where a name would go."]
+            }
+          ]
+        },
+        {
+          "interactionId": "shingle-board",
+          "triggers": ["read the board", "*read the board*", "*the board*", "*board*", "read the sign", "*sign*", "*the post*", "*post*", "*chalk*", "*help*"],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": ["Burnt into the wood, in a hand that pressed hard:\n\n  SPEAK PLAINLY. THE PLACE IS LISTENING.\n  GO NORTH.\n  LOOK AT THINGS. TAKE WHAT YOU NEED.\n  RING THE BELL. READ THE NAMES.\n  LIGHT THE LAMP LAST.\n\nUnderneath, smaller, not burnt but scratched with a nail:\n  i did them out of order. dont."]
+            }
+          ]
+        },
+        {
+          "interactionId": "shingle-sea-fallen",
+          "if": ["wave_fallen"],
+          "triggers": ["touch the wave", "*touch the wave*", "*touch the water*", "swim", "*enter the wave*", "*wave*", "*the sea*", "*sea*", "*water*"],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": ["It is a sea. It comes up the stones and goes back down them and is extremely cold, and there is nothing standing in it anywhere.\n\nOut on the flat sand the old line of footprints is still faintly there, going east, stopping. The tide has been over them twice now and in another week they will be gone.\n\nSomebody put this down. It was up for a long time and it is not up any more, and whoever did it is not here."]
+            }
+          ]
+        },
+        {
+          "interactionId": "shingle-wave",
+          "triggers": ["touch the wave", "*touch the wave*", "*touch the water*", "swim", "*enter the wave*", "*wave*", "*the sea*", "*sea*", "*water*"],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": ["From here the wave is a quarter-mile off and the length of the village wide. You could walk to it. People have: there is a track of footprints going out over the sand that the sea forgot to take back, and it stops, and it does not come back."]
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "index": 2,
+      "name": "Ambroke Lane",
+      "description": "One street of grey stone houses with their doors standing open. Nobody has gone through those doorways in a long while — the dust on the sills is unmarked, and lies thick and even, like something that has been allowed to finish.\n\nNothing here is broken. That is worse than if it were.\n\nNorth stands a squat tower. East, a schoolhouse with its windows steamed on the inside. West, an orchard wall.",
+      "connections": { "north": 3, "east": 4, "west": 5, "south": 1 },
+      "interactions": [
+        {
+          "interactionId": "lane-houses",
+          "triggers": ["enter a house", "go inside", "go in", "*go inside*", "*go into a house*", "*the doors*", "*the houses*", "knock", "*knock on*", "*look inside*", "*house*", "*door*", "*dust*", "*window*"],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": ["The nearest house: a table laid for four, a pot gone cold and then gone dry, a chair pushed back and never pushed in. No bodies. Not in this one, not in the next, not in any of them.\n\nWhatever happened to Ambroke, everybody heard it coming, and everybody went outside."]
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "index": 3,
+      "name": "The Bell Tower",
+      "description": "Inside the tower it smells of rope and salt. The bell hangs in its frame above you, mouth down, big as a bathtub. The rope comes to a stop at chest height, spliced and waiting, with old grease on it where hands went.\n\nThrough the eastern arch: the quay, and above the quay, the standing wave.",
+      "connections": { "south": 2, "east": 6 },
+      "interactions": [
+        {
+          "interactionId": "bell-return",
+          "if": ["wave_fallen"],
+          "triggers": ["ring the bell", "ring bell", "*ring the bell*", "*ring bell*", "pull the rope", "pull rope", "*pull the rope*", "*pull rope*", "toll the bell", "toll bell", "*toll the bell*", "*the bell*", "*bell*", "*the rope*", "*rope*"],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": ["You take the rope in both hands and pull, and the bell says one enormous word.\n\nOut past the quay the sea gathers itself, stands up, and stops — three houses high, green as glass, holding. The lamp in its hook on the quay goes out with a small click. In the orchard the rain halts in the air, each drop a bead of nothing falling. The dust settles back onto the sills as though it had been asked politely.\n\nAmbroke is asleep again, and waiting for somebody else.\n\nYou can still leave. The boat is under the wave, where it always was."]
+            },
+            {
+              "action": "announce",
+              "parameters": ["A bell rings once, enormously, and every window in Ambroke goes green.\n\nOut past the quay the sea gathers itself, stands up, and stops. The rain in the orchard halts in the air. Wherever you are standing, the dust settles back onto the sills as though it had been asked politely.\n\nSomebody has put the village back to sleep."]
+            },
+            { "action": "removecondition", "parameters": ["wave_fallen"] },
+            { "action": "removecondition", "parameters": ["bell_rung"] },
+            { "action": "removecondition", "parameters": ["names_read"] },
+            { "action": "removecondition", "parameters": ["lamp_lit"] },
+            {
+              "action": "setlocationdescription",
+              "parameters": ["1", "Black stones, wet and clicking, run down to where the sea should be. The sea is not where it should be: east of the village it stands upright, a green wall of water three houses high, holding still as glass. The light that comes through it is aquarium light, and it lies on everything.\n\nYou are not drowned. That appears to have been somebody's decision.\n\nA board has been nailed to a post at the head of the path. Somebody has chalked one word across it, very large, and underlined it twice: HELP."]
+            },
+            {
+              "action": "setlocationdescription",
+              "parameters": ["2", "One street of grey stone houses with their doors standing open. Nobody has gone through those doorways in a long while — the dust on the sills is unmarked, and lies thick and even, like something that has been allowed to finish.\n\nNothing here is broken. That is worse than if it were.\n\nNorth stands a squat tower. East, a schoolhouse with its windows steamed on the inside. West, an orchard wall."]
+            },
+            {
+              "action": "setlocationdescription",
+              "parameters": ["3", "Inside the tower it smells of rope and salt. The bell hangs in its frame above you, mouth down, big as a bathtub. The rope comes to a stop at chest height, spliced and waiting, with old grease on it where hands went.\n\nThrough the eastern arch: the quay, and above the quay, the standing wave."]
+            },
+            {
+              "action": "setlocationdescription",
+              "parameters": ["5", "Apple trees in wet rows, and the rain that was falling when everything stopped is falling still: every drop a bead of glass held at the height it had got to, motionless, catching what light there is. Walking here means going carefully between them, and you will not manage it perfectly, and each one you touch comes apart on your sleeve without a sound.\n\nNorth, the ground rises to a wellhead."]
+            },
+            {
+              "action": "setlocationdescription",
+              "parameters": ["6", "A short stone quay with a boat still tied to it, and over both of them the wave — sheer, standing, close enough to put your hand on, with three fish in it turned to face the village. Everything on the quay is green with the light coming through.\n\nAn iron hook is set into the wall at head height. It is empty, and there is soot on the stone above it."]
+            },
+            {
+              "action": "setlocationdescription",
+              "parameters": ["7", "A low wall of mossed brick around a black circle. The bucket is up on its rope and has been dry for years.\n\nA long way down — further than a village well has any business going — something gives back a very small amount of light.\n\nThis is where Ambroke's lamp-keeper went in, the last time anybody here chose anything."]
+            }
+          ]
+        },
+        {
+          "interactionId": "bell-already",
+          "if": ["bell_rung"],
+          "triggers": ["ring the bell", "ring bell", "*ring the bell*", "*ring bell*", "pull the rope", "pull rope", "*pull the rope*", "*pull rope*", "toll the bell", "toll bell", "*toll the bell*", "*the bell*", "*bell*", "*the rope*", "*rope*"],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": ["You put your hand on the rope. The bell is still going, so far down in itself that it is more of a feeling in your teeth than a sound. It has been rung. Ambroke heard it.\n\nBeing called is not the same as being counted. There are names on the schoolhouse wall — east off the lane — and until they have been read aloud the village is awake and not yet answered, and the lamp on the quay will drown any flame you put to it.\n\nThey may have been read already. If it was you who read them, you would know it; if it was not, then somebody stood where you are standing and went east."]
+            }
+          ]
+        },
+        {
+          "interactionId": "bell-ring",
+          "triggers": ["ring the bell", "ring bell", "*ring the bell*", "*ring bell*", "pull the rope", "pull rope", "*pull the rope*", "*pull rope*", "toll the bell", "toll bell", "*toll the bell*", "*the bell*", "*bell*", "*the rope*", "*rope*"],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": ["The rope is colder than the room. You pull, and nothing happens, and you pull again with your whole weight —\n\nand the bell turns over and speaks, once, enormously, into a village that has not been spoken to in a very long time.\n\nDust lifts off every sill in Ambroke at the same instant and hangs there. Out on the quay, in the standing water, three fish turn to face the sound.\n\nSomething in the place is awake now and listening back."]
+            },
+            { "action": "addcondition", "parameters": ["bell_rung"] }
+          ]
+        }
+      ]
+    },
+
+    {
+      "index": 4,
+      "name": "The Schoolhouse",
+      "description": "Forty desks, and on each desk a slate, and on each slate the same letters practised in the same round hand. The windows are steamed on the inside, which means it was warm in here when it stopped.\n\nAt the front, a larger slate holds a list of names in the teacher's careful writing. Forty-one of them. The last is unfinished — two letters and a stop, as though the chalk had been set down so she could listen to something.\n\nThe chalk is still on the ledge.",
+      "connections": { "west": 2 },
+      "interactions": [
+        {
+          "interactionId": "school-slates",
+          "triggers": [
+            "take slate",
+            "take a slate",
+            "take the slate",
+            "*take a slate*",
+            "*take one of the slates*",
+            "*take one of slates*",
+            "*look at slates*",
+            "*examine slates*",
+            "take desk slate",
+            "pick up slate",
+            "pick up a slate",
+            "*pick up a slate*",
+            "look at slate",
+            "look at a slate",
+            "look at the slates",
+            "*look at the slates*",
+            "examine slate",
+            "examine the slates",
+            "*desk slate*",
+            "look at desks",
+            "look at the desks",
+            "examine desks",
+            "*forty desks*"
+          ],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": [
+                "You lift one off the nearest desk. It is the size of a book and heavier than it looks, wood-framed, the frame worn pale at the two corners where a child's thumbs went.\n\nThe letters on it are the ones on every other slate in the room: a copied line, practised four times, the fourth attempt the neatest. A damp cloth hangs on a nail by the door for wiping them. Nobody wiped them.\n\nYou could carry it off. There are thirty-nine more exactly like it, and that is the reason not to — they are worth something only all together, forty of them, one to a desk. You put it back where the thumbs were."
+              ]
+            }
+          ]
+        },
+        {
+          "interactionId": "school-burn",
+          "triggers": ["burn the school down", "*burn*", "*set fire*", "*set it alight*", "*alight*", "*torch*", "*smash*", "*break the slates*", "*break slates*", "*break the desks*", "*break desks*", "*destroy*", "*wreck*", "*tear down*", "*kick over*", "*knock over*"],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": ["You look for the way to do it and the room is against you from the first second. The windows are steamed on the inside; everything in here has been damp for years — the desks, the boards under them, the chalk-dust gone to paste in the corners. And there is no flame anywhere in Ambroke. The one there was is at the bottom of the well above the orchard, in a lamp, under water, and it is wanted on the quay.\n\nThe other thing is what would go first. It is a list of forty-one names in a careful hand with the last one unfinished, and it is the only place any of them still are.\n\nYou put your palm flat on the nearest desk instead. It is cold. Nothing in this room did anything to anybody."]
+            }
+          ]
+        },
+        {
+          "interactionId": "names-already",
+          "if": ["names_read"],
+          "triggers": ["read the names", "read names", "*read the names*", "read the slate", "read slate", "*read the slate*", "*read slate*", "*read the list*", "*read list*", "*the forty-one*", "*forty-one*", "*read them aloud*", "*names*", "*big slate*", "*large slate*", "*the list*", "*list*"],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": ["The names have been read. You can tell: the room has the particular stillness of a room where something was said out loud not long ago and nobody has said anything since.\n\nIt may have been you. If it was not, then somebody stood where you are standing and got to the forty-first, which is two letters and a full stop — Mi — and said it anyway.\n\nA list of names only needs reading to a village once. This one has had its once."]
+            }
+          ]
+        },
+        {
+          "interactionId": "names-read",
+          "triggers": ["read the names", "read names", "*read the names*", "read the slate", "read slate", "*read the slate*", "*read slate*", "*read the list*", "*read list*", "*the forty-one*", "*forty-one*", "*read them aloud*", "*names*", "*big slate*", "*large slate*", "*the list*", "*list*"],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": ["You read them out. Not in your head — aloud, because a list of names read silently is just handwriting.\n\nAgnes Loam. Peter Loam. Thomas Wry. Hester Wry. Small Dan Wry. Bell Carraway, and her brother, and the brother's dog, who is on the list because she made a fuss until he was. Forty of them, and then the forty-first, which is two letters and a full stop: Mi.\n\nYou say 'Mi' into the quiet, and it does not sound like nothing. It sounds like a name that was going to be finished.\n\nSomewhere north of here the dust has not come down yet."]
+            },
+            { "action": "addcondition", "parameters": ["names_read"] }
+          ]
+        },
+        {
+          "interactionId": "slate-sign",
+          "triggers": ["write my name", "*write my name*", "*write your name*", "sign the slate", "sign slate", "*sign the slate*", "*sign slate*", "take chalk",
+        "take the chalk",
+        "get chalk",
+        "get the chalk",
+        "pick up chalk",
+        "pick up the chalk",
+        "use the chalk",
+        "use chalk",
+        "*chalk*", "*the chalk*", "*finish the name*", "*finish name*", "write", "*add my name*"],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": ["The chalk is soft and leaves more of itself than you expect. You do not finish her name — that is not yours to finish — but you put a mark of your own below the list, where the teacher would have gone on.\n\nThere are other marks down there. Some are older than yours by a good deal. None of them are hers."]
+            },
+            { "action": "addcondition", "parameters": ["slate_marked"] },
+            {
+              "action": "setlocationdescription",
+              "parameters": ["4", "Forty desks, and on each desk a slate, and on each slate the same letters practised in the same round hand. The windows are steamed on the inside, which means it was warm in here when it stopped.\n\nAt the front, a larger slate holds a list of names in the teacher's careful writing. Forty-one of them. The last is unfinished — two letters and a stop: Mi.\n\nBelow the list, where the teacher would have gone on, other hands have left marks. Some are grey with age. At least one is white and recent and still has chalk-dust under it on the floor.\n\nThe chalk is still on the ledge."]
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "index": 5,
+      "name": "The Orchard",
+      "description": "Apple trees in wet rows, and the rain that was falling when everything stopped is falling still: every drop a bead of glass held at the height it had got to, motionless, catching what light there is. Walking here means going carefully between them, and you will not manage it perfectly, and each one you touch comes apart on your sleeve without a sound.\n\nNorth, the ground rises to a wellhead.",
+      "connections": { "east": 2, "north": 7 },
+      "interactions": [
+        {
+          "interactionId": "orchard-apple-fallen",
+          "if": ["wave_fallen"],
+          "triggers": ["take an apple", "pick an apple", "*pick an apple*", "*take an apple*", "*the apples*", "eat an apple", "*apple*", "*apple from the tree*", "*the trees*", "*trees*", "*the rain*", "*rain*", "*windfall*", "*windfall*"],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": ["The rain is going through the trees in lines and making noise on the leaves, and the ground is covered in apples that have come down since the water did. You pick one out of the wet grass.\n\nThere is nothing strange about it at all, which took some doing."]
+            },
+            { "action": "additems", "parameters": ["windfall apple"] }
+          ]
+        },
+        {
+          "interactionId": "orchard-apple-again",
+          "triggers": [
+            "take an apple",
+            "pick an apple",
+            "*pick an apple*",
+            "*take an apple*",
+            "*the apples*",
+            "eat an apple",
+            "*apple*",
+            "*apple from the tree*",
+            "*the trees*",
+            "*trees*",
+            "*the rain*",
+            "*rain*", "*windfall*"
+          ],
+          "scope": "World",
+          "if": ["took_stopped_apple"],
+          "ifNot": ["wave_fallen"],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": [
+                "You already have one, cold in your pocket, with the rain still sitting on its skin where it was when everything stopped.\n\nYou could take another. There are hundreds. But a whole orchard of held rain is not improved by being carried off an armful at a time, and one is exactly as much of this as a person can usefully own.\n\nYou leave the rest where they are, waiting, which is what they are for."
+              ],
+              "scope": "World"
+            }
+          ]
+        },
+        {
+          "interactionId": "orchard-apple",
+          "triggers": ["take an apple", "pick an apple", "*pick an apple*", "*take an apple*", "*the apples*", "eat an apple", "*apple*", "*apple from the tree*", "*the trees*", "*trees*", "*the rain*", "*rain*", "*windfall*"],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": ["You pick one. It comes away with the small clean sound of a thing that was ready to be picked and then had to wait."]
+            },
+            { "action": "additems", "parameters": ["stopped apple"] },
+        { "action": "addcondition", "scope": "Player", "parameters": ["took_stopped_apple"] }
+          ]
+        }
+      ]
+    },
+
+    {
+      "index": 6,
+      "name": "The Quay",
+      "description": "A short stone quay with a boat still tied to it, and over both of them the wave — sheer, standing, close enough to put your hand on, with three fish in it turned to face the village. Everything on the quay is green with the light coming through.\n\nAn iron hook is set into the wall at head height. It is empty, and there is soot on the stone above it.",
+      "connections": { "west": 3 },
+      "isExit": true,
+      "exitRequires": ["wave_fallen"],
+      "farewell": "You put the oar over the stern and lean on it, and the quay goes away from you, which is the right way round at last.\n\nThe lamp is the last of it to go. Not the tower, not the orchard — the lamp: a small yellow point in broad daylight, burning in a village with nobody left in it who needs the light. It holds a long time. Longer than the houses do. Then the headland takes it, the way the headland takes everything, and there is only weather.\n\nBehind you Ambroke goes on having an ordinary afternoon. It is not much. It is the first one in a great many years, and you are the reason for it.\n\nThe water is open. Scull out.",
+      "monster": "grey heron",
+      "interactions": [
+        {
+          "interactionId": "the-turning",
+          "if": ["has_lamp", "bell_rung", "names_read"],
+          "triggers": ["hang the lamp", "*hang the lamp*", "light the lamp", "*light the lamp*", "hang lamp", "light lamp", "*hang the lantern*", "*hang lantern*", "*light the lantern*", "*light lantern*", "*lamp on the hook*", "*lamp on hook*", "put the lamp on the hook", "*put the lamp*", "*put lamp*", "*hook the lamp*", "*hook lamp*", "*hang it on the hook*", "*hang it*", "*light it*", "*use the lamp*", "*use lamp*", "*strike the lamp*", "*strike lamp*"],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": ["The lamp settles onto the hook as though the hook had been made for it, which it was. The wick catches on the second try.\n\nThen a sound like a held breath being let go, from everywhere at once — and the wave, which has not moved in the time it takes for dust to lie down, leans.\n\nIt comes down slowly, for something that size. Green light swings across the lane and the orchard and the forty desks. Water goes up the street ankle-deep and comes back out again, taking the dust with it, leaving weed on the doorsteps and one small fish on the step of the schoolhouse, which flips twice and is gone.\n\nAnd then the ordinary noise of the sea, which you did not know you had been missing until it came back.\n\nBehind you the bell is still ringing itself quietly down to nothing."]
+            },
+            {
+              "action": "announce",
+              "parameters": ["Somewhere west of you a bell stops ringing.\n\nThen a sound like a held breath being let go, from everywhere at once, and the light changes — the green goes out of it. A great deal of water is coming down, slowly, and going where water goes. Whatever room you are standing in, the dust lifts off the sills and does not come back.\n\nSomebody has lit the lamp on the quay."]
+            },
+            { "action": "removeitems", "parameters": ["drowned lamp"] },
+            { "action": "removecondition", "parameters": ["has_lamp"], "scope": "player" },
+            { "action": "addcondition", "parameters": ["wave_fallen"] },
+            { "action": "addcondition", "parameters": ["lamp_lit"] },
+            {
+              "action": "setlocationdescription",
+              "parameters": ["1", "Black stones running down to the sea — the ordinary sea, breathing in and out, doing what it does. The tideline is an honest mess of weed and rope and one blue plastic crate. It smells of iodine and diesel and cold.\n\nThe board is still nailed to its post at the head of the path, gone soft with spray. The chalked HELP has run down it in streaks, and is still perfectly readable."]
+            },
+            {
+              "action": "setlocationdescription",
+              "parameters": ["2", "One street of grey stone houses in daylight. The doors still stand open, but the dust is off the sills — wind took some and the water took the rest, and there are gull prints on a windowsill where nothing has walked for years.\n\nSomewhere a shutter knocks, gets bored, knocks again.\n\nNorth, the tower. East, the schoolhouse. West, the orchard."]
+            },
+            {
+              "action": "setlocationdescription",
+              "parameters": ["3", "The bell is quiet now, and the iron frame hums faintly, the way iron does for a long time after. Salt water has run down the inside walls and dried into tidelines you can put a finger on.\n\nThe rope hangs at chest height, spliced and waiting, exactly as it did before.\n\nThe thought arrives whole, and not entirely as your own: a bell that was rung once can be rung again. The wave came down when it was called. It would go back up the same way, and Ambroke would be asleep again, and somebody else could be the one to wake it."]
+            },
+            {
+              "action": "setlocationdescription",
+              "parameters": ["5", "Apple trees in wet rows with the rain going through them properly, in lines, making noise on the leaves. The ground has gone soft. There are windfalls everywhere and all of them are fresh.\n\nNorth, the ground rises to a wellhead."]
+            },
+            {
+              "action": "setlocationdescription",
+              "parameters": ["6", "The quay, wet, with the sea moving against it at the height a sea is supposed to be. The boat sits on the water and pulls at its line like it has been waiting to.\n\nThe lamp burns in the iron hook above — small, steady, and in daylight completely pointless. Nobody is going to put it out."]
+            },
+            {
+              "action": "setlocationdescription",
+              "parameters": ["7", "A low wall of mossed brick around a black circle. The bucket is up on its rope and has been dry for years.\n\nA long way down there is water, and the cold smell of brick, and no light at all. Whatever was giving light back down there has been got out of it, and is burning in the iron hook on the quay, which is where a lamp belongs.\n\nThis is where Ambroke's lamp-keeper went in, the last time anybody here chose anything."]
+            }
+          ]
+        },
+        {
+          "interactionId": "lamp-wont-hold",
+          "if": ["has_lamp"],
+          "triggers": ["hang the lamp", "*hang the lamp*", "light the lamp", "*light the lamp*", "hang lamp", "light lamp", "*hang the lantern*", "*hang lantern*", "*light the lantern*", "*light lantern*", "*lamp on the hook*", "*lamp on hook*", "put the lamp on the hook", "*put the lamp*", "*put lamp*", "*hook the lamp*", "*hook lamp*", "*hang it on the hook*", "*hang it*", "*light it*", "*use the lamp*", "*use lamp*", "*strike the lamp*", "*strike lamp*"],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": ["You hang it on the hook and put a flame to the wick. It takes, goes blue, and drowns — there is no other word for it — as though the air itself were water.\n\nThe lamp is not the first thing. Ambroke is still asleep: it has not been called, or it has not been counted. A bell has a village's attention. A list of names is what there is to say to it.\n\nYou take the lamp down again. It is still warm."]
+            }
+          ]
+        },
+        {
+          "interactionId": "lamp-burning",
+          "if": ["wave_fallen"],
+          "triggers": ["take lamp", "take the lamp", "*take the lamp*", "*get the lamp*", "*find the lamp*", "*where is the lamp*", "*put out the lamp*", "put the light out", "*put the light out*", "*put out the light*", "*put light out*", "*put out light*", "*blow out the*", "*blow out*", "*snuff*", "*extinguish*", "*douse*", "*put out the lamp*", "put the light out", "*put the light out*", "*put out the light*", "*put light out*", "*put out light*", "*blow out the*", "*blow out*", "*snuff*", "*extinguish*", "*douse*", "hang the lamp", "hang lamp", "*hang the lamp*", "light the lamp", "light lamp", "*light the lamp*", "*light the lantern*", "*light lantern*", "*hang the lantern*", "*hang lantern*", "*lamp on the hook*", "*lamp on hook*", "*put the lamp*", "*put lamp*", "*hook the lamp*", "*hook lamp*", "*use the lamp*", "*use lamp*", "*strike the lamp*", "*strike lamp*", "*light it*", "*the lamp*", "*lamp*"],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": ["The lamp is up in the iron hook where you put it, burning small and steady and, in this daylight, completely pointless.\n\nYou could lift it down. You are not going to. It is the one thing in Ambroke that is doing its job, and whoever comes over that hill next in the dark should find it lit."]
+            }
+          ]
+        },
+        {
+          "interactionId": "lamp-none",
+          "triggers": ["hang the lamp", "*hang the lamp*", "light the lamp", "*light the lamp*", "hang lamp", "light lamp", "*hang the lantern*", "*hang lantern*", "*light the lantern*", "*light lantern*", "*lamp on the hook*", "*lamp on hook*", "put the lamp on the hook", "*put the lamp*", "*put lamp*", "*hook the lamp*", "*hook lamp*", "*hang it on the hook*", "*hang it*", "*light it*", "*use the lamp*", "*use lamp*", "*strike the lamp*", "*strike lamp*", "take lamp", "take the lamp", "*take the lamp*", "*get the lamp*", "*find the lamp*", "*where is the lamp*", "*put out the lamp*", "put the light out", "*put the light out*", "*put out the light*", "*put light out*", "*put out light*", "*blow out the*", "*blow out*", "*snuff*", "*extinguish*", "*douse*", "*the lamp*", "*lamp*"],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": ["Your hands are empty and the hook stays empty. There was a lamp — the soot above the hook is proof of it — and the keeper of it went into the well at the top of the orchard, the last time anybody in Ambroke chose anything."]
+            }
+          ]
+        },
+        {
+          "interactionId": "boat-adrift",
+          "triggers": [
+            "the boat", "untie the boat", "untie boat", "*untie*", "*untie the boat*",
+            "board the boat", "board boat", "*get in the boat*", "*get in boat*", "row",
+            "take oar", "take the oar", "*take the oar*", "*the oar*", "*oar*",
+            "*the boat*", "*boat*", "*the line*", "*line*"
+          ],
+          "if": ["wave_fallen", "boat_untied"],
+          "actions": [
+            { "action": "describe", "parameters": ["There is nothing left to untie. The line is off the bollard and lying in coils on the stone, and the boat is loose against the quay, knocking, riding up and down on a sea that is doing what a sea does.\n\nThe oar is already in your hand. It has been since you took it out from under the thwart, wrapped in sacking against exactly this long a wait.\n\nWhatever is keeping you here now, it is not the rope."] }
+          ]
+        },
+        {
+          "interactionId": "boat-free",
+          "if": ["wave_fallen"],
+          "triggers": ["the boat", "untie the boat", "untie boat", "*untie*", "*untie the boat*", "board the boat", "board boat", "*get in the boat*", "*get in boat*", "row", "take oar", "take the oar", "*take the oar*", "*the oar*", "*oar*", "*the boat*", "*boat*", "*the line*", "*line*"],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": ["The line comes off the bollard in one movement, the way a rope does when it is glad. The boat is dry inside. Under the thwart, wrapped in sacking against exactly this long a wait, is one oar.\n\nOne oar is enough to scull with, if you know how. If you do not, you will learn out there, which is how everybody learned."]
+            },
+            { "action": "additems", "parameters": ["oar"] },
+            { "action": "addcondition", "parameters": ["boat_untied"], "scope": "player" }
+          ]
+        },
+        {
+          "interactionId": "boat-under-wave",
+          "triggers": ["the boat", "untie the boat", "untie boat", "*untie*", "*untie the boat*", "board the boat", "board boat", "*get in the boat*", "*get in boat*", "row", "take oar", "take the oar", "*take the oar*", "*the oar*", "*oar*", "*the boat*", "*boat*", "*the line*", "*line*"],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": ["The boat is tied under a wall of standing water. You can get into it. You can sit in it, and look up through the green at the fish that have been going nowhere for years, and understand with great clarity that if you cast off you will simply be a thing inside a wave when it decides to come down.\n\nYou get out again."]
+            }
+          ]
+        },
+        {
+          "interactionId": "quay-heron-killed",
+      "triggers": [
+        "look at the heron", "look at heron", "*look at the heron*", "*look at heron*",
+        "examine the heron", "examine heron", "*examine the heron*", "*examine heron*",
+        "*look at the bird*", "*look at bird*", "*examine the bird*", "*examine bird*",
+        "*watch the heron*", "*watch heron*", "*look at the grey heron*", "*look at grey heron*",
+        "*the feathers*", "*feathers*", "*grey feathers*", "*the dead heron*", "*dead heron*",
+        "*touch the heron*", "*touch heron*", "*grab the heron*", "*grab heron*",
+        "*catch the heron*", "*catch heron*", "*take the heron*", "*take heron*",
+        "*pet the heron*", "*pet heron*", "*stroke the heron*", "*stroke heron*",
+        "*chase the heron*", "*chase heron*", "*scare the heron*", "*scare heron*",
+        "*pick up the heron*", "*pick up heron*"
+      ],
+      "if": ["slain_grey_heron"],
+      "actions": [
+        {
+          "action": "describe",
+          "parameters": ["Grey feathers have got into everything down here — along the wet stone, caught in the weed at the edge, one going over and over against the bollard and not getting anywhere. A heron was killed on this quay. Nobody swept up after it and nobody is going to.\n\nThe end of the stone where it used to stand is empty, and the quay is quieter than you would expect a thing that never made a sound to leave it.\n\nHerons come back. Not this one. That is a fact about herons and it is not an opinion about you, and the quay keeps what happened on it the way stone keeps things: without comment."]
+        }
+      ]
+    },
+    {
+      "interactionId": "quay-heron-killed-blow",
+      "triggers": [
+        "attack", "fight", "kill", "stab", "attack it", "kill it", "stab it", "fight it",
+        "attack the heron", "attack heron", "kill the heron", "kill heron",
+        "stab the heron", "stab heron", "fight the heron", "fight heron",
+        "attack the bird", "attack bird", "kill the bird", "kill bird",
+        "*attack the heron*", "*kill the heron*", "*stab the heron*", "*fight the heron*"
+      ],
+      "if": ["slain_grey_heron"],
+      "actions": [
+        {
+          "action": "describe",
+          "parameters": ["There is nothing on this quay to put a knife into. There was, and it is finished, and what is left of it is feathers going along the wet stone in the wind.\n\nThe blade stays open in your hand for a moment longer than it needs to, which is the part nobody writes down."]
+        }
+      ]
+    },
+    {
+      "interactionId": "quay-heron-knife", "triggers": [ "attack", "fight", "kill", "stab", "attack it", "kill it", "stab it", "fight it", "attack the heron", "attack heron", "kill the heron", "kill heron", "stab the heron", "stab heron", "fight the heron", "fight heron", "attack the bird", "attack bird", "kill the bird", "kill bird", "stab the bird", "stab bird", "fight the bird", "fight bird", "attack the heron with the knife", "stab the heron with the knife", "kill the heron with the knife", "*hit the heron*", "*hit heron*", "*strike the heron*", "*strike heron*", "*cut the heron*", "*cut heron*", "*knife the heron*", "*knife heron*", "attack heron with knife", "stab heron with knife", "kill heron with knife", "*attack the heron*", "*kill the heron*", "*stab the heron*", "*fight the heron*" ], "scope": "World", "once": true, "disabled": false, "if": [], "ifNot": [], "actions": [ { "action": "describe", "parameters": [ "The knife comes open one-handed, the way a knife like this is built to, and the heron watches you do it.\n\nThat is the whole of its answer. It does not back off and it does not set itself. Nothing on this quay has come to anything in years — not the sea, not the village, not one thing anybody has walked down here and started — and it has no reason yet to think a knife is different.\n\nSo look at it properly first. Grey, on one leg, a bill like a spear held level with your eye, and the only thing in Ambroke that has been awake the whole time. It will not start this. If you do, it will finish it, it will not be quick, and there is nothing in this village that will call it off for you.\n\nNothing has happened to the bird. The blade is open, your hand is up, and it is standing exactly where it was. Say it again and it lands." ], "scope": "world" } ] }, { "interactionId": "heron-hands",
+      "triggers": [
+        "take heron", "take the heron", "grab heron", "grab the heron",
+        "catch heron", "catch the heron", "sneak up on heron", "sneak up on the heron",
+        "sneak up to the heron", "sneak up to heron", "touch heron", "touch the heron",
+        "pet the heron", "pet heron", "stroke the heron", "stroke heron", "pick up the heron", "pick up heron",
+        "scare the heron", "scare heron", "shoo the heron", "shoo heron",
+        "chase the heron", "chase heron", "wave at the heron", "wave at heron"
+      ],
+      "actions": [
+        {
+          "action": "describe",
+          "parameters": [
+            "You go at it slowly, the way you would a bird, and there is no need. It lets you come the whole way. At arm's reach it turns its head and looks at you along that grey spear of a bill, and its eye is the flat yellow of a thing that has run out of reasons to be afraid.\n\nWhen your hand gets there it simply is not there any more — one long step down the stones, unhurried, no wings. It waits again at the new distance.\n\nIt is not tame. It has been standing on this quay since the sea stopped, and it has learned that nothing here comes to anything. You could put the knife in it. It would let you do that too."
+          ]
+        }
+      ]
+    },
+    {
+      "interactionId": "quay-leave-again",
+          "triggers": [
+            "exit",
+            "escape",
+            "leave",
+            "*leave ambroke*",
+            "*go home*",
+            "*sail*",
+            "*cast off*",
+            "*set out*",
+            "*leave by sea*",
+            "*get out of here*",
+            "*go out*", "*how do i leave*", "*how do i get out*", "*let me out*", "*quit*",
+            "*how do i leave*",
+            "*how do i get out*",
+            "*let me out*",
+            "*quit*"
+          ],
+          "if": ["wave_fallen", "has_left"],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": [
+                "You have been out that way once already, off the end of this quay and onto the water, and then you came back in, and both of those were you.\n\nThere is no gate here, and no word that opens one. The boat is still knocking against the stone and the oar is still yours, and there is nothing whatever stopping you — only that going is something you do, not something you ask for.\n\nAmbroke has no door that shuts behind anybody. Nobody here is going to walk you to the edge of it and wave you off, and nobody stopped you walking back in either. You leave this place by standing up and going, whenever you like, and the lamp in the hook stays lit whether you do or not — that is the whole of what it is for.\n\nIt will be here. That is the one thing about this village you can rely on."
+              ]
+            }
+          ]
+        },
+        {
+          "interactionId": "quay-leave-free",
+          "if": ["wave_fallen"],
+          "triggers": ["exit", "escape", "leave", "*leave ambroke*", "*go home*", "*sail*", "*cast off*", "*set out*", "*leave by sea*", "*get out of here*", "*go out*", "*how do i leave*", "*how do i get out*", "*let me out*", "*quit*"],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": ["The way out of Ambroke is the way everybody here always went: off the end of this quay, on the water, in that boat.\n\nIt is still tied. Untie the boat — there is an oar under the thwart, and with the oar in your hand you can leave whenever you say so."]
+            }
+          ]
+        },
+        {
+          "interactionId": "quay-leave-stopped",
+          "triggers": ["exit", "escape", "leave", "*leave ambroke*", "*go home*", "*sail*", "*cast off*", "*set out*", "*leave by sea*", "*get out of here*", "*go out*", "*how do i leave*", "*how do i get out*", "*let me out*", "*quit*"],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": ["There is one road out of Ambroke and it is the sea, and the sea is standing up in front of you with three fish in it.\n\nNobody leaves under that. Put it down first — the village has to be called, and counted, and the lamp lit last — and then the boat is just a boat and the water is just water."]
+            }
+          ]
+        },
+        {
+          "interactionId": "quay-heron-returned",
+      "triggers": [
+        "look at the heron", "look at heron", "*look at the heron*", "*look at heron*",
+        "examine the heron", "examine heron", "*examine the heron*", "*examine heron*",
+        "*look at the bird*", "*look at bird*", "*examine the bird*", "*examine bird*",
+        "*watch the heron*", "*watch heron*", "*look at the grey heron*", "*look at grey heron*"
+      ],
+      "if": ["killed_grey_heron"],
+      "actions": [
+        {
+          "action": "describe",
+          "parameters": ["A grey heron stands at the end of the quay, one leg drawn up, the bill held level, the eye a bead of amber with your whole self in it upside down.\n\nIt is not the one that was killed here. It is the same in every way a heron is the same, which is most of them, and it has taken up the same four feet of wet stone, and it is not troubled by any of this.\n\nThere are still feathers from the other one down in the weed at the edge, going up and down with the water. Nobody swept up and nobody was going to.\n\nHerons come back. That is the whole of the mercy available on this quay, and it is not nothing, and it is not the same as the thing not having happened. The stone holds both of those and comments on neither."]
+        }
+      ]
+    },
+    {
+      "interactionId": "quay-heron-fallen",
+          "if": ["wave_fallen"],
+          "triggers": ["look at the heron", "look at heron", "*look at the heron*", "*look at heron*", "examine the heron", "examine heron", "*examine the heron*", "*examine heron*", "*look at the bird*", "*look at bird*", "*examine the bird*", "*examine bird*", "*watch the heron*", "*watch heron*", "*look at the grey heron*", "*look at grey heron*"],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": ["You look at it and it goes on letting you. One leg drawn up, the bill a spear held level, the eye a bead of amber with your whole self in it upside down.\n\nFor years it fished a wall of standing water, which must have been the softest living any heron ever had: a whole sea held still at head height and three fish in it going nowhere. That is finished. It is working an ordinary tide now, off the end of an ordinary quay, and it does not appear to hold that against anybody.\n\nIt will not start anything with you. That is not the same as it being harmless, and you can tell which by looking at the bill."]
+            }
+          ]
+        },
+        {
+          "interactionId": "quay-heron",
+          "triggers": ["look at the heron", "look at heron", "*look at the heron*", "*look at heron*", "examine the heron", "examine heron", "*examine the heron*", "*examine heron*", "*look at the bird*", "*look at bird*", "*examine the bird*", "*examine bird*", "*watch the heron*", "*watch heron*", "*look at the grey heron*", "*look at grey heron*"],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": ["You look at it and it goes on letting you. One leg drawn up, the bill a spear held level, the eye a bead of amber with your whole self in it upside down.\n\nIt is the only thing in Ambroke that is not stopped. It came after. It stands on the quay under a wall of standing water and fishes in it, and it has been doing that so long that it has stopped being surprised by any of this.\n\nIt will not start anything with you. That is not the same as it being harmless, and you can tell which by looking at the bill."]
+            }
+          ]
+        },
+        {
+          "interactionId": "quay-heron-hands",
+          "triggers": ["*grab the heron*", "*grab heron*", "*catch the heron*", "*catch heron*", "*take the heron*", "*take heron*", "*touch the heron*", "*touch heron*", "*pet the heron*", "*pet heron*", "*stroke the heron*", "*sneak up on*", "*sneak*", "*creep up*", "*approach the heron*", "*approach heron*", "*scare the heron*", "*shoo*", "*chase the heron*", "*chase heron*", "*grab the bird*", "*catch the bird*", "*take the bird*", "*the bill*", "*bill*", "*the spear*", "*spear*", "*the feather*", "*feather*", "*talk to the heron*", "*yell at the heron*", "*shout at the heron*", "*the heron*", "*heron*", "*the bird*", "*bird*"],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": ["You go at it slowly, the way anybody would go at a thing with a spear on the front of it. The heron lets you get to about arm's length, then unfolds one step sideways, unhurried, and keeps exactly that distance.\n\nThe spear is its bill. It is attached to the bird, it is level with your eye, and it is the only part of Ambroke that has been awake this whole time.\n\nYou are not getting hold of it with your hands. You could fight it, and it would not be quick, and it will never start that itself."]
+            }
+          ]
+        },
+        {
+          "interactionId": "quay-hook-returned",
+          "triggers": ["*the hook*", "*iron hook*", "*hook*", "*the soot*", "*soot*", "*bollard*"],
+          "if": ["wave_fallen", "has_left"],
+          "actions": [
+            { "action": "describe", "parameters": ["The hook is iron, set deep, with a wear-bright patch on its underside where a handle sat for years — and the lamp is sitting in it now, brass gone green, burning small and steady in broad daylight.\n\nThe fan of soot on the stone above is being added to again, for the first time in a long while.\n\nSomebody hung it, and lit it, and went. Then came back, which is not in the job description and is not held against them either. A lamp is lit for whoever is still out there in the dark. You have been out there. You came back in, and it is still burning, and that is the whole of what it was for."] }
+          ]
+        },
+        {
+          "interactionId": "quay-hook-lit",
+          "if": ["wave_fallen"],
+          "triggers": ["*the hook*", "*iron hook*", "*hook*", "*the soot*", "*soot*", "*bollard*"],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": ["The hook is iron, set deep, with a wear-bright patch on its underside where a handle sat for years — and the lamp is sitting in it now, brass gone green, burning small and steady in broad daylight.\n\nThe fan of soot on the stone above is being added to again, for the first time in a long while. Somebody whose whole job this was would know the shape of it.\n\nThey are not here. Somebody else hung it, and lit it, and went."]
+            }
+          ]
+        },
+        {
+          "interactionId": "quay-sit-fallen",
+      "triggers": ["sit", "sit down", "*sit down*", "*sit on the quay*", "*sit on*", "*sit*", "rest", "*rest*", "*lie down*", "*lay down*", "*catch my breath*", "*sit and*"],
+      "scope": "World",
+      "once": false,
+      "disabled": false,
+      "if": ["wave_fallen"],
+      "ifNot": [],
+      "actions": [
+        {
+          "action": "describe",
+          "parameters": ["You sit down on the edge of the stone with your legs over the side, which is what this quay is shaped for and what it has not been used for in years.\n\nThe sea goes up and down below your boots, close enough to get spray on them. The boat knocks. A gull works the far end and ignores you entirely.\n\nNothing comes of sitting here. That is the point of it: it is the first thing anybody has done on this quay that nothing was waiting on. Whatever is wrong with you is still wrong with you, and it is easier to carry sitting down."],
+          "scope": "world"
+        }
+      ]
+    },
+    {
+      "interactionId": "quay-east-fallen",
+      "triggers": ["east", "go east", "*go east*", "*head east*", "*walk east*", "*east along*", "*out to sea*", "*off the end*"],
+      "if": ["wave_fallen"],
+      "ifNot": [],
+      "actions": [
+        {
+          "action": "describe",
+          "parameters": ["East is the end of the stone and then the sea, ordinary and busy with itself, sliding along the quay and slapping underneath.\n\nYou cannot walk it. Nobody from Ambroke ever could. East is where this village always went and it always went by boat — that is the whole reason there is a quay here at all, and a bollard, and a line, and one oar wrapped in sacking under the thwart against exactly this long a wait.\n\nSo: not on foot. The boat goes east the moment you mean it to."]
+        }
+      ]
+    },
+    {
+      "interactionId": "quay-east-wave",
+      "triggers": ["east", "go east", "*go east*", "*head east*", "*walk east*", "*east along*", "*out to sea*", "*off the end*"],
+      "if": [],
+      "ifNot": ["wave_fallen"],
+      "actions": [
+        {
+          "action": "describe",
+          "parameters": ["East is four more paces of wet stone and then the wave, standing where the open sea ought to be, with three fish in it turned to face the village.\n\nThere is nothing to walk into. There is a wall of held water and the green light coming through it onto the backs of your hands.\n\nEast was the way out of Ambroke, once, off the end of this quay and by boat. It still is. It is simply underneath a sea that has not been told it can come down."]
+        }
+      ]
+    },
+    {
+      "interactionId": "quay-sit-wave",
+      "triggers": ["sit", "sit down", "*sit down*", "*sit on the quay*", "*sit on*", "*sit*", "rest", "*rest*", "*lie down*", "*lay down*", "*catch my breath*", "*sit and*"],
+      "scope": "World",
+      "once": false,
+      "disabled": false,
+      "if": [],
+      "ifNot": [],
+      "actions": [
+        {
+          "action": "describe",
+          "parameters": ["You sit down on the edge of the stone with your legs over the side, and stop, because there is nowhere for them to hang. The sea is not down there. It is standing up in front of you with three fish in it, and the green light comes through it onto the backs of your hands.\n\nSo you sit against the bollard instead, and get your breath, and the wave does not come down and does not go away, and the line creaks on the iron.\n\nNothing here mends while you sit. But nothing here is hurrying you either, and whatever is wrong with you is easier to carry sitting down."],
+          "scope": "world"
+        }
+      ]
+    },
+    {
+      "interactionId": "quay-hook",
+          "triggers": ["*the hook*", "*iron hook*", "*hook*", "*the soot*", "*soot*", "*bollard*"],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": ["The hook is iron, set deep, with a wear-bright patch on its underside where a handle sat for years. Above it the stone carries a fan of soot, the shape a lamp leaves when it has burned in one place through a great many nights.\n\nSomething was kept alight here on purpose, by somebody whose whole job it was, right up until it wasn't."]
+            }
+          ]
+        },
+        {
+          "interactionId": "quay-look-wave",
+          "ifNot": ["wave_fallen"],
+          "triggers": ["look at the wave", "look at wave", "*look at the wave*", "*look at the water*", "*look at water*", "*look at the sea*", "*look at sea*", "*look at the fish*", "*look at fish*", "*examine the wave*", "*examine wave*", "*examine the water*", "*examine water*", "*examine the fish*", "*examine fish*", "*examine the sea*", "*examine sea*", "*watch the fish*", "*watch fish*", "*look up*"],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": ["Close to, it is not a wall. It is a room's worth of sea stood on end and still going about its business very slowly: a thread of weed turning over, grit suspended halfway down, the light coming through green and moving the way light moves underwater.\n\nThree fish hang in it at about the height of the tower window, side on, all facing the village. They are not stopped. Every so often one corrects itself with a fin, the way a fish does in a current, and waits again.\n\nWhatever holds this up is holding it up now, in front of you, and did not ask for help and is not tired."]
+            }
+          ]
+        },
+        {
+          "interactionId": "quay-look-fallen",
+          "if": ["wave_fallen"],
+          "triggers": ["look at the wave", "look at wave", "*look at the wave*", "*look at the water*", "*look at water*", "*look at the sea*", "*look at sea*", "*look at the fish*", "*look at fish*", "*examine the wave*", "*examine wave*", "*examine the water*", "*examine water*", "*examine the fish*", "*examine fish*", "*examine the sea*", "*examine sea*", "*watch the fish*", "*watch fish*", "*look up*"],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": ["The sea is down where a sea goes, sliding along the stone and slapping under the quay, brown at the edges with all the sand it has put back. Overhead there is nothing now but weather.\n\nLook for a while and you can still find the tower window in the corner of your eye and think, that high, it was that high, it was up to there. Then a gull goes over and you stop.\n\nNo fish. They were only ever waiting, the same as everything else here."]
+            }
+          ]
+        },
+        {
+          "interactionId": "quay-fish",
+          "triggers": [
+            "grab the fish",
+            "grab fish",
+            "*grab the fish*",
+            "*grab fish*",
+            "*grab a fish*",
+            "*catch the fish*",
+            "*catch fish*",
+            "*catch a fish*",
+            "*take the fish*",
+            "*take fish*",
+            "*take a fish*",
+            "*touch the fish*",
+            "*touch fish*",
+            "*reach for the fish*",
+            "*reach for fish*",
+            "*pull the fish*",
+            "*pull fish*",
+            "*the three fish*",
+            "*three fish*"
+          ],
+          "scope": "World",
+          "ifNot": ["wave_fallen"],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": [
+                "You reach up into the wall of it. The cold goes through your sleeve to the elbow, and the water gives, and does not come down, and your fingers close on nothing twice.\n\nThe third time you get a hand round one. It is a mackerel, and it is warm — not cold, warm, the temperature of something that is still going. It does not fight you. It turns over in your palm the way it turns against a current, unhurried, and looks at you, and waits for you to be finished.\n\nYou could carry it out of there. Then it would be a fish in the air, in a village that has not had an ordinary minute in years, and it would die of that, and there would be two left facing the village instead of three.\n\nYou put it back. It corrects itself with one fin and goes on waiting, which is what it was doing before you came."
+              ],
+              "scope": "World"
+            }
+          ]
+        },
+        {
+          "interactionId": "quay-enter-wave",
+          "triggers": [
+            "jump in the water",
+            "jump in water",
+            "*jump in the water*",
+            "*jump in water*",
+            "*jump in the wave*",
+            "*jump in wave*",
+            "*jump into the water*",
+            "*jump into water*",
+            "*jump into the wave*",
+            "*jump into wave*",
+            "swim",
+            "*swim in the wave*",
+            "*swim in wave*",
+            "*swim into*",
+            "*enter the wave*",
+            "*enter wave*",
+            "*walk into the wave*",
+            "*walk into wave*",
+            "*get in the water*",
+            "*get in water*",
+            "*go into the water*",
+            "*go into water*",
+            "*climb into the wave*",
+            "*climb into wave*",
+            "*dive in*",
+            "*dive into*"
+          ],
+          "scope": "World",
+          "ifNot": ["wave_fallen"],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": [
+                "You get both arms in, and then your head, and the sea closes round you standing up, which is the wrong way round for a sea to be.\n\nIt is quiet in there. Green, and lit, and going about its business very slowly. The three fish hang at about the height of the tower window with their sides to you, facing the village, and not one of them moves on your account.\n\nYour feet are still on the quay. That is what turns you round in the end: all of this is being held, and you are not — you are a warm thing with about a minute of air in it, inside something that has not needed to breathe since before you were born.\n\nYou come back out. You are wet through and the wave is not even marked where you went in."
+              ],
+              "scope": "World"
+            }
+          ]
+        },
+        {
+          "interactionId": "quay-touch-wave",
+          "ifNot": ["wave_fallen"],
+          "triggers": ["touch the wave", "*touch the wave*", "*touch the water*", "*put your hand*", "*touch it*", "*touch the sea*", "*touch sea*", "*reach into*", "*the water*", "*water*", "*the sea*", "*sea*", "*the wave*", "*wave*", "*the fish*", "*three fish*", "*fish*"],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": ["It is cold, and it gives — it is water, it is only water — and it does not come apart or come down. Your hand goes in to the wrist. When you take it out, it is wet, and that is somehow the most frightening thing that has happened to you today.\n\nOne of the fish has turned to look at you."]
+            }
+          ]
+        },
+        {
+          "interactionId": "quay-sea-fallen",
+          "triggers": ["touch the wave", "*touch the wave*", "*touch the water*", "*put your hand*", "*touch it*", "swim", "*swim*", "*dive in*", "*dive into*", "*jump in*", "*the wave*", "*wave*", "*the water*", "*water*", "*the sea*", "*sea*", "*the fish*", "*three fish*", "*fish*"],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": ["You can put a hand in it, or go off the end there yourself and come up shouting at the cold, which is what this quay was always for. It is only water now — ordinary, unremarkable, entirely busy with itself, sliding along the stone and slapping underneath.\n\nThere is no wave to touch any more. There is weed going up and down on the stone, and a gull arguing somewhere behind you, and the three fish are wherever fish go when they are finally allowed to."]
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "index": 7,
+      "name": "The Wellhead",
+      "description": "A low wall of mossed brick around a black circle. The bucket is up on its rope and has been dry for years.\n\nA long way down — further than a village well has any business going — something gives back a very small amount of light.\n\nThis is where Ambroke's lamp-keeper went in, the last time anybody here chose anything.",
+      "connections": { "south": 5 },
+      "interactions": [
+        {
+          "interactionId": "well-listen",
+          "triggers": [
+            "listen",
+            "*listen*",
+            "*put my ear*",
+            "*put your ear*",
+            "*ear to the well*",
+            "*ear to well*",
+            "*hold my breath*",
+            "*hold your breath*",
+            "*be quiet*",
+            "*keep still*",
+            "*wait and listen*"
+          ],
+          "scope": "World",
+          "ifNot": ["wave_fallen"],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": [
+                "You lean out over the brick and stop breathing.\n\nThe rope creaks once, settling, the way rope does when it remembers it is holding something. Under that, a long way down: water. Not falling. Turning over very slightly in the dark, the way water does when something displaced it a long time ago and has still not entirely finished.\n\nAnd nothing else. No voice. No knocking. Nothing down there that wants anything from you.\n\nYou stay bent over the wall longer than you meant to. That is the whole of it: somebody went down so that the light would keep, and the well has been exactly this quiet ever since, and you are the first person in a long while to come and check."
+              ],
+              "scope": "World"
+            }
+          ]
+        },
+        {
+          "interactionId": "well-listen-after",
+          "triggers": [
+            "listen",
+            "*listen*",
+            "*put my ear*",
+            "*put your ear*",
+            "*ear to the well*",
+            "*ear to well*",
+            "*hold my breath*",
+            "*hold your breath*",
+            "*be quiet*",
+            "*keep still*",
+            "*wait and listen*"
+          ],
+          "scope": "World",
+          "if": ["wave_fallen"],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": [
+                "You lean out and listen, out of habit now.\n\nWater turning over slowly. The rope creaking. And behind you, carrying all the way up the shore road, the sea doing what a sea does — coming in, going out, the sound Ambroke had stopped noticing was gone.\n\nThe well has nothing to say and owes you nothing. It is a well again. That took some arranging."
+              ],
+              "scope": "World"
+            }
+          ]
+        },
+        {
+          "interactionId": "well-call",
+          "triggers": [
+            "hello",
+            "hello?",
+            "*hello*",
+            "*call down*",
+            "*shout down*",
+            "*yell down*",
+            "*call into the well*",
+            "*call into well*",
+            "*shout into the well*",
+            "*yell into the well*",
+            "*yell into well*",
+            "*call out*",
+            "*shout*",
+            "*anybody down there*",
+            "*anyone down there*",
+            "*is anyone there*",
+            "*is anybody there*",
+            "*talk to them*",
+            "*speak to them*",
+            "*call to them*",
+            "*answer them*",
+            "*say hello*",
+            "*halloo*"
+          ],
+          "scope": "World",
+          "ifNot": ["wave_fallen"],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": [
+                "You put both hands on the brick and shout down into the dark. No word in particular — just a voice, which is the thing actually being asked for.\n\nIt goes a long way before it comes back. When it comes back it is your own voice and only your own voice, worn thin by wet brick, arriving late enough that you had already started to hope.\n\nThe small light at the bottom does not move.\n\nNobody in the village comes to a door. Ambroke gave up answering shouts some years ago. But standing here with your ears ringing, you notice something anyway: you are the one making the noise now. Nobody has done that here in a long time."
+              ],
+              "scope": "World"
+            }
+          ]
+        },
+        {
+          "interactionId": "well-call-after",
+          "triggers": [
+            "hello",
+            "hello?",
+            "*hello*",
+            "*call down*",
+            "*shout down*",
+            "*yell down*",
+            "*call into the well*",
+            "*call into well*",
+            "*shout into the well*",
+            "*yell into the well*",
+            "*yell into well*",
+            "*call out*",
+            "*shout*",
+            "*anybody down there*",
+            "*anyone down there*",
+            "*is anyone there*",
+            "*is anybody there*",
+            "*talk to them*",
+            "*speak to them*",
+            "*call to them*",
+            "*answer them*",
+            "*say hello*",
+            "*halloo*"
+          ],
+          "scope": "World",
+          "if": ["wave_fallen"],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": [
+                "You shout down into the dark and your own voice comes back, and that is all — but you are not really listening for an answer this time. You are checking that sound still carries out of this place. It does.\n\nBehind you the lamp is burning on the quay and the water is moving again. Whoever is at the bottom of this well went down for exactly that, and got it, late.\n\nYou could say thank you. Nobody would hear it but you, which is very likely the correct size for it."
+              ],
+              "scope": "World"
+            }
+          ]
+        },
+        {
+          "interactionId": "well-cut-rope",
+          "triggers": ["cut the rope", "cut rope", "*cut the rope*", "*cut rope*", "*saw the rope*", "*saw rope*", "*break the rope*", "*break rope*", "*sever*", "*cut it*", "*cut the line*", "*cut line*"],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": ["The clasp-knife is sharp enough and the rope is old enough. It would take about a minute and it would be the easiest thing you have done all day.\n\nThen the bucket is at the bottom with the rope on top of it, and there is no reaching anything down there again — not the light, not the lamp, not the one who went in after it. The well would just be a hole.\n\nYou put the knife away. That rope is the only thing in this village still attached to anything."]
+            }
+          ]
+        },
+        {
+          "interactionId": "well-descend",
+          "triggers": ["jump down the well", "jump down well", "*jump down the well*", "*jump in*", "*jump*", "*get in the bucket*", "*get in bucket*", "*climb into the well*", "*climb into well*", "*climb in*", "*lower myself*", "*lower yourself*", "*go in after*", "*dive*", "*swim down*"],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": ["You put both hands on the brick and look properly. It goes down further than the orchard is wide, and the light at the bottom is small enough to cover with a thumbnail.\n\nAnd then you do not. Not because the drop frightens you — it does — but because somebody is already down there. They stood at this wall and did this same arithmetic, and Ambroke has been holding its breath ever since.\n\nThe bucket goes down on a rope and comes back up. That is what it is for. Nothing here is improved by a second keeper at the bottom of a well."]
+            }
+          ]
+        },
+        {
+          "interactionId": "lamp-have",
+          "if": ["has_lamp"],
+          "triggers": ["lower the bucket", "*lower the bucket*", "climb down", "*down the well*", "*into the well*", "*the well*", "*the bucket*", "*look in the well*", "*well*", "*bucket*", "*rope*", "*the light*", "*light*"],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": ["The bucket is up and the well is just a well. The lamp is looped over your arm, dripping cold water down your side."]
+            }
+          ]
+        },
+        {
+          "interactionId": "lamp-gone",
+          "if": ["wave_fallen"],
+          "triggers": ["lower the bucket", "*lower the bucket*", "climb down", "*down the well*", "*into the well*", "*the well*", "*the bucket*", "*look in the well*", "*well*", "*bucket*", "*rope*", "*the light*", "*light*"],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": ["Nothing down there now but water and the cold smell of brick. What was giving back the light is on the quay, burning, where it was always supposed to be."]
+            }
+          ]
+        },
+        {
+          "interactionId": "lamp-take",
+          "ifNot": ["has_lamp", "lamp_lit", "wave_fallen"],
+          "triggers": ["lower the bucket", "*lower the bucket*", "climb down", "*down the well*", "*into the well*", "*the well*", "*the bucket*", "*look in the well*", "*well*", "*bucket*", "*rope*", "*the light*", "*light*"],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": ["You put the bucket down on its rope, hand over hand, much further than you expect, until the rope goes slack and then taut in a different way — the weight of something caught.\n\nWhat comes up is a keeper's storm-lamp, brass gone green, glass unbroken, full of oil, with a strand of weed round the handle. It is not rusted through. It has waited the way everything in Ambroke has waited.\n\nYou do not look too closely at what else is down there, and nothing down there asks you to."]
+            },
+            { "action": "additems", "parameters": ["drowned lamp"] },
+            { "action": "addcondition", "parameters": ["has_lamp"], "scope": "player" }
+          ]
+        }
+      ]
+    }
+  ]
+}

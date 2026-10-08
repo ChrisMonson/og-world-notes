@@ -1,0 +1,17 @@
+{
+  "title": "Run 003: the valley",
+  "model": "Claude Opus",
+  "writeup": null,
+  "seed": 0,
+  "tick": [],
+  "welcome": [
+    "You have not been here before, so: the four compass directions move you, and everything else you may simply write in plain words.",
+    "Look at things. Ask about things. Say what you mean to do. Every place in this valley answers to a good deal more than a list of verbs would suggest, and trying is the only way anyone has ever found out what.",
+    "Type help for the short list the world keeps of its own verbs. It is not the whole of it and it was never meant to be."
+  ],
+  "fragments": [
+    "010-hollow-south.json",
+    "020-troll-bone.json",
+    "030-first-three-rooms.json"
+  ]
+}

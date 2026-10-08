@@ -1,0 +1,33 @@
+{
+  "locations": [
+    {
+      "index": 1,
+      "interactions": [
+        {
+          "interactionId": "hollow-south",
+          "triggers": [
+            "*south*",
+            "*village*",
+            "*way home*",
+            "*way back*",
+            "*path back*",
+            "*get home*",
+            "*go home*",
+            "*came from*",
+            "*road*",
+            "*merchant*"
+          ],
+          "scope": "world",
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": [
+                "South is the shut side of the hollow. A bank of pale stone and thorn going up, no gap in it, no path down through it, and nothing to see over the top of it but more of the same.\n\nWhatever way you believe you came in by is not there. Nobody has ever found one. People arrive in this valley the way you arrived in it, and the only road out of it that anyone has walked is the one on the far side of the door in the north — and that is a proper road, going down through scrub and out of sight, and roads go where roads go. Whatever a man is carrying when he goes through that door stays his.\n\nOut of the hollow: north, east, west. The door is north, past the cave mouth and the passage, and it wants a key."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

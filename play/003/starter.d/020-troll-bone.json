@@ -1,0 +1,67 @@
+{
+  "locations": [
+    {
+      "index": 4,
+      "interactionsFirst": [
+        {
+          "interactionId": "troll-bone",
+          "triggers": [
+            "*bone*"
+          ],
+          "scope": "world",
+          "ifCarrying": [
+            "bone"
+          ],
+          "ifNot": [
+            "troll-fed"
+          ],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": [
+                "You have to get its attention first, which means standing where it can see you, which is not a thing anybody does twice.\n\nThen you throw the bone. It comes off the wall in one movement, faster than something twice your weight has any business being, and takes the bone out of the air, and goes down on its haunches with it held in both hands like a man with a chicken leg.\n\nSomewhere in the middle of that the cord comes off over its head. The key is on the stone by your boot and you pick it up and it does not look up. It was never guarding the key. It was wearing it, the way it wears the scars, because it has been down here a long time and nothing has ever offered it anything.\n\nThe passage north is open. It is still eating."
+              ]
+            },
+            {
+              "action": "removeitems",
+              "parameters": [
+                "bone"
+              ]
+            },
+            {
+              "action": "additems",
+              "parameters": [
+                "key"
+              ]
+            },
+            {
+              "action": "addcondition",
+              "parameters": [
+                "troll-fed"
+              ],
+              "scope": "player"
+            }
+          ]
+        },
+        {
+          "interactionId": "troll-bone-again",
+          "triggers": [
+            "*bone*"
+          ],
+          "scope": "world",
+          "if": [
+            "troll-fed"
+          ],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": [
+                "It has had one off you and it has not forgotten, which you can tell because it watches your hands now instead of your face. There is nothing else on it worth having and nothing else it wants.\n\nWhatever else you are carrying, keep it. The way north is open and it was open the moment the key came off the cord."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

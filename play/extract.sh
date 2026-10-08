@@ -24,6 +24,21 @@ rm -rf "$ROOT/engines/$NAME/Og.Core"
 mkdir -p "$ROOT/engines/$NAME" "$ROOT/play/$NAME"
 git -C "$TMP/repo" archive "$FULL" src/Og.Core | tar -x -C "$TMP"
 mv "$TMP/src/Og.Core" "$ROOT/engines/$NAME/Og.Core"
-cp "$ARCHIVE/world/maps/starter.json" "$ROOT/play/$NAME/world.json"
+# The world the live server was reading, where the archive kept it; otherwise the
+# world as committed at the same point.
+if [ -f "$ARCHIVE/world/maps/starter.json" ]; then
+    cp "$ARCHIVE/world/maps/starter.json" "$ROOT/play/$NAME/world.json"
+    FRAGMENTS="$ARCHIVE/world/maps/starter.d"
+else
+    git -C "$TMP/repo" show "$FULL:world/maps/starter.json" > "$ROOT/play/$NAME/world.json"
+    git -C "$TMP/repo" archive "$FULL" world/maps | tar -x -C "$TMP"
+    FRAGMENTS="$TMP/world/maps/starter.d"
+fi
+rm -rf "$ROOT/play/$NAME/starter.d"
+if compgen -G "$FRAGMENTS/*.json" >/dev/null; then
+    mkdir -p "$ROOT/play/$NAME/starter.d"
+    cp "$FRAGMENTS"/*.json "$ROOT/play/$NAME/starter.d/"
+    echo "$NAME: fragments $(cd "$ROOT/play/$NAME/starter.d" && ls | tr '\n' ' ')"
+fi
 printf '%s %s\n' "$RUN" "$FULL" > "$ROOT/engines/$NAME/SOURCE"
 echo "$NAME: engine at ${FULL:0:12}, world $(wc -c < "$ROOT/play/$NAME/world.json" | xargs) bytes"

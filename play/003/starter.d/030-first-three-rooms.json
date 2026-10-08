@@ -1,0 +1,75 @@
+{
+  "locations": [
+    {
+      "index": 1,
+      "description": "A shallow bowl of grass and grit, out of the wind, with the valley walls standing up all round it. You are in the middle of it and you do not remember arriving. Your legs say you walked a long way; nothing else says anything at all.\n\nPale stones lie about the floor of it — a good many, flat and weathered and far too heavy to have rolled anywhere. They are not scattered. They are laid. From down here they are stones at your feet and no more than that, and whoever set them out was not setting them out for somebody standing where you are standing.\n\nThe air is still. North the ground narrows toward a dark slot in the rock. West it climbs. East it runs flat and open, and there is a smell of old ash on the wind from that way."
+    },
+    {
+      "index": 2,
+      "description": "The grass gives up and the rock comes down to meet you: a slot about the width of two men standing, with a lintel of stone laid across the top of it and worn smooth at head height by a great many people ducking under.\n\nCold air spills out of it and goes on spilling, steady, like something breathing out and never in. Air that does that is coming from somewhere else. Whatever is in there, it is not a dead end — it has another door.\n\nThe floor just inside is trodden. Not scoured by water: trodden, by boots, and all of the going is inward. Nothing here says how many came back out this way, and standing in the cold of it you can work out for yourself that they would not have needed to.",
+      "interactions": [
+        {
+          "interactionId": "mouth-threshold",
+          "triggers": [
+            "*mouth*",
+            "*cave*",
+            "*lintel*",
+            "*cold*",
+            "*air*",
+            "*breath*",
+            "*draught*",
+            "*draft*",
+            "*trodden*",
+            "*tracks*",
+            "*boots*",
+            "*footprints*",
+            "*threshold*",
+            "*entrance*"
+          ],
+          "scope": "world",
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": [
+                "Put a hand up into the gap and the cold runs over it and keeps running. It is not the cold of a hole in the ground, which sits still and waits for you. This is moving, and it has been moving since long before you got here.\n\nThe lintel is a single stone and it was cut. Somebody squared this mouth off by hand, and everything since has been wear: the smooth place at head height, the trodden floor, the grease of a hundred shoulders on the left-hand jamb where people steady themselves going in.\n\nThey all went in. The road out of this valley is on the far side of this hill and there is no way to it that does not start here. The cave is north; you walk into it on your own feet, and nothing in the dark asks you first."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "description": "Flat ground in the lee of a boulder, east of the hollow and out of sight of the cave. Somebody camped here, and not for one night: the firepit is dug properly and ringed with stones, there is a windbreak of stacked brush that has had real work done to it, and the grass is worn off the ground in the shape of one person's habits.\n\nThe fire is long cold — grey the whole way down. A bedroll lies flattened where it was thrown back. Around it is the scattering a person makes while they are living somewhere and expect to be back by dark: a pot, a strap, a tin cup lying on its side.\n\nNothing has been packed. Whoever kept this camp walked off to do something with the day, and the day has been over a long while.",
+      "interactions": [
+        {
+          "interactionId": "camp-leavings",
+          "triggers": [
+            "*pot*",
+            "*cup*",
+            "*strap*",
+            "*windbreak*",
+            "*brush*",
+            "*boulder*",
+            "*scattering*",
+            "*bedroll*",
+            "*kit*",
+            "*gear*",
+            "*whose*",
+            "*who lived*",
+            "*who camped*"
+          ],
+          "scope": "world",
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": [
+                "A clay pot with a crack in it and nothing in the crack. A leather strap off a pack, cut rather than broken. A tin cup on its side, and under the cup a ring of green where it has sat through more than one winter.\n\nNone of it is worth carrying, and every bit of it was worth carrying once, a long way, up into this valley.\n\nThe brush of the windbreak was cut with something and stacked by somebody who meant to be here a while. There is no second bedroll and no second cup. Whoever this was, they were on their own, the same as you."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -114,16 +114,20 @@ async function start() {
   $("game").classList.remove("hidden");
   add("Loading the world…", "sys");
 
-  const [{ dotnet }, world] = await Promise.all([
+  const text = path => fetch(path).then(r => { if (!r.ok) throw new Error(`${path}: ${r.status}`); return r.text(); });
+  const [{ dotnet }, world, fragmentTexts] = await Promise.all([
     import(`./${run}/engine/dotnet.js`),
-    fetch(`${run}/world.json`).then(r => r.text()),
+    text(`${run}/world.json`),
+    Promise.all((config.fragments ?? []).map(name => text(`${run}/starter.d/${name}`))),
   ]);
+  const fragments = Object.fromEntries((config.fragments ?? []).map((name, i) => [name, fragmentTexts[i]]));
   const runtime = await dotnet.create();
   const { Game } = await runtime.getAssemblyExports(runtime.getConfig().mainAssemblyName);
   const call = (f, ...a) => JSON.parse(Game[f](...a));
 
-  const loaded = call("Load", world, JSON.stringify({ seed: config.seed ?? 0, tick: config.tick ?? [], welcome: config.welcome ?? [] }));
+  const loaded = call("Load", world, JSON.stringify({ seed: config.seed ?? 0, tick: config.tick ?? [], welcome: config.welcome ?? [], fragments }));
   if (loaded.type !== "loaded") throw new Error(loaded.message);
+  if (loaded.missing?.length) console.warn("this engine has no", loaded.missing.join(", "));
   screen.textContent = "";
 
   let naming = true;

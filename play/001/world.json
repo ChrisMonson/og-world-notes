@@ -1,0 +1,449 @@
+{
+  "name": "starter",
+  "spawnLocation": 1,
+  "startingItems": [
+    "dagger"
+  ],
+  "items": [
+    {
+      "name": "dagger",
+      "description": "A short, worn blade. Better than nothing.",
+      "kind": "weapon",
+      "attackBonus": 0,
+      "attackDice": 4
+    },
+    {
+      "name": "shortsword",
+      "description": "A plain iron shortsword.",
+      "kind": "weapon",
+      "attackBonus": 1,
+      "attackDice": 6
+    },
+    {
+      "name": "leather armor",
+      "description": "Cracked but serviceable leather.",
+      "kind": "armor",
+      "armorClassBonus": 2
+    },
+    {
+      "name": "health potion",
+      "description": "A cloudy red liquid.",
+      "kind": "consumable",
+      "healAmount": 10
+    },
+    {
+      "name": "apple",
+      "description": "A shiny red apple with a small worm hole in the side.",
+      "kind": "consumable",
+      "healAmount": 2
+    },
+    {
+      "name": "bone",
+      "description": "A gnawed bone."
+    },
+    {
+      "name": "shiny spoon",
+      "description": "It is, unmistakably, a shiny spoon."
+    },
+    {
+      "name": "key",
+      "description": "A heavy iron key.",
+      "isKey": true
+    }
+  ],
+  "monsters": [
+    {
+      "name": "goblin",
+      "description": "A goblin crouches in the corner, watching you.",
+      "hitPoints": 7,
+      "armorClass": 12,
+      "attackStrength": 1,
+      "attackDice": 6,
+      "inventory": [
+        "bone"
+      ],
+      "respawnSeconds": 300
+    },
+    {
+      "name": "cave troll",
+      "description": "A cave troll blocks the passage, breathing slowly.",
+      "hitPoints": 20,
+      "armorClass": 14,
+      "attackStrength": 3,
+      "attackDice": 8,
+      "inventory": [
+        "key"
+      ],
+      "respawnSeconds": 900
+    }
+  ],
+  "locations": [
+    {
+      "index": 1,
+      "name": "The Hollow",
+      "description": "You stand in a shallow hollow ringed by pale stones. The air is still. Words are cut into the nearest stone, worn but readable by anyone who stops to read them.",
+      "connections": {
+        "north": 2,
+        "east": 3,
+        "west": 6
+      },
+      "interactions": [
+        {
+          "interactionId": "hollow-stones",
+          "triggers": [
+            "*stones*",
+            "*stone*",
+            "*read*",
+            "*writing*",
+            "*words*",
+            "*cut*"
+          ],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": [
+                "Someone scratched this deep, with time and no tools worth the name, for whoever came after:\n\n  THE WORLD IS DEAF IN PLACES. LEARN WHERE.\n  GO, LOOK, TAKE, DROP, ATTACK, PRAY — THESE IT HEARS ANYWHERE.\n  READ, SEARCH, OPEN, TURN — THESE ONLY A PLACE CAN HEAR, AND ONLY\n  WHERE THAT PLACE HAS SOMETHING TO SAY BACK.\n  USE AND INSPECT IT DOES NOT KNOW AT ALL. THEY FALL INTO SILENCE.\n  SPEAK PLAINLY. SEARCH THE ASHES. READ THE STONES. TURN THE KEY.\n  WHEN YOU GET SILENCE, THE LACK IS THE WORLD'S AND NOT YOURS.\n  TRY A PLAINER WORD.\n  AND IF YOU ARE LOST: PRAY. IT IS NOT ALWAYS ANSWERED AT ONCE.\n  IT IS ALWAYS HEARD.\n\nUnderneath, fainter, as if added later: the ledge west of here looks down on all of these stones at once."
+              ]
+            }
+          ]
+        },
+        {
+          "interactionId": "hollow-around",
+          "triggers": [
+            "*west*",
+            "*east*",
+            "*north*",
+            "*south*",
+            "*ledge*",
+            "*around*",
+            "*hollow*"
+          ],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": [
+                "North the hollow narrows into a cave mouth, and cold air comes steadily out of it. East is a camp that nobody came back to. West the ground climbs to a ledge standing over this place. South the stones close the ring; there is no way out that way."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "Cave Mouth",
+      "description": "The hollow narrows into a cave mouth. Cold air spills out of it.",
+      "connections": {
+        "south": 1,
+        "north": 4
+      },
+      "monster": "goblin",
+      "interactions": [
+        {
+          "interactionId": "mouth-goblin",
+          "triggers": [
+            "*goblin*",
+            "*corner*",
+            "*watching*",
+            "*talk*",
+            "*speak*",
+            "*ask*",
+            "*hello*",
+            "*greet*"
+          ],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": [
+                "It has no words, and it will not be given any. But look at the corner it keeps: the rock is worn smooth and hollowed by sitting. It has crouched at the edge of that dark for a long time, facing it, and never once gone in. Whatever else it is, it is the only thing here that knows what is down there and has decided against it."
+              ]
+            }
+          ]
+        },
+        {
+          "interactionId": "mouth-air",
+          "triggers": [
+            "*air*",
+            "*cave*",
+            "*mouth*",
+            "*cold*",
+            "*dark*",
+            "*deep*",
+            "*inside*"
+          ],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": [
+                "The cold comes from a long way in. Something big lives down there — the corner here is worn smooth where a smaller thing has sat a long time, watching the dark and not going into it. Whatever is deeper hits harder than you do. Go in carrying more than a dagger, or go in ready to run."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "Old Camp",
+      "description": "An abandoned camp. Someone has swept the ashes into a neat grey cone.",
+      "connections": {
+        "west": 1
+      },
+      "interactions": [
+        {
+          "interactionId": "camp-search",
+          "once": true,
+          "scope": "player",
+          "triggers": [
+            "*firepit*",
+            "*belongings*",
+            "*camp*",
+            "*ashes*",
+            "*search*",
+            "*scattering*"
+          ],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": [
+                "Sifting through the ashes, you turn up a potion and a spoon. They were not dropped. They were left under the cone where the rain would not reach them, by someone who swept up before going, for whoever came after."
+              ]
+            },
+            {
+              "action": "addItems",
+              "parameters": [
+                "health potion",
+                "shiny spoon"
+              ]
+            },
+            {
+              "action": "setFlag",
+              "parameters": [
+                "camp-searched"
+              ]
+            }
+          ]
+        },
+        {
+          "interactionId": "camp-emptied",
+          "scope": "player",
+          "if": [
+            "camp-searched"
+          ],
+          "triggers": [
+            "*firepit*",
+            "*belongings*",
+            "*camp*",
+            "*ashes*",
+            "*search*",
+            "*scattering*"
+          ],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": [
+                "Only ashes now, gone through and gone through again, and the cold ring of stones they were swept into. This camp has given you everything it was keeping. What is left is yours to leave for the next one."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "The Deep Passage",
+      "description": "The passage runs deep into the rock. The floor is scattered with bones and the leavings of whatever has denned here.",
+      "connections": {
+        "south": 2,
+        "north": 5
+      },
+      "monster": "cave troll",
+      "interactions": [
+        {
+          "interactionId": "passage-floor",
+          "triggers": [
+            "*floor*",
+            "*bones*",
+            "*leavings*",
+            "*search*",
+            "*ground*",
+            "*key*",
+            "*troll*",
+            "*body*"
+          ],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": [
+                "Bones, mostly, cracked open for the marrow. Anything better than a bone that falls in this passage is lying in plain sight on the stone, and will still be lying there whenever you think to stoop for it. Take it."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "name": "The Door",
+      "description": "A heavy door, banded in iron, set into the living rock.",
+      "connections": {
+        "south": 4
+      },
+      "isExit": true,
+      "interactions": [
+        {
+          "interactionId": "door-unlock",
+          "scope": "player",
+          "triggers": [
+            "*key*",
+            "*unlock*",
+            "*turn*",
+            "*lock*"
+          ],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": [
+                "The key goes in stiffly. Then the lock gives all at once, with a sound like a bone going back into its socket, and the door swings inward on cold daylight. The key stays where it stands in the lock. It has done the one thing it was cut to do. Step through."
+              ]
+            },
+            {
+              "action": "removeItems",
+              "parameters": [
+                "key"
+              ]
+            },
+            {
+              "action": "disableInteraction",
+              "parameters": [
+                "door-unlock"
+              ]
+            },
+            {
+              "action": "disableInteraction",
+              "parameters": [
+                "door-keyhole"
+              ]
+            },
+            {
+              "action": "enableInteraction",
+              "parameters": [
+                "door-open"
+              ]
+            },
+            {
+              "action": "enableInteraction",
+              "parameters": [
+                "door-through"
+              ]
+            }
+          ]
+        },
+        {
+          "interactionId": "door-keyhole",
+          "triggers": [
+            "*door*",
+            "*open*",
+            "*push*",
+            "*pull*",
+            "*knock*",
+            "*iron*",
+            "*keyhole*",
+            "*handle*"
+          ],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": [
+                "There is no handle on this side. Only a keyhole, worn bright at the edges, and cold air coming steadily through it. The iron key the troll carried is cut for this: put it in and turn it. Say so plainly — turn the key."
+              ]
+            }
+          ]
+        },
+        {
+          "interactionId": "door-open",
+          "scope": "player",
+          "disabled": true,
+          "triggers": [
+            "*door*",
+            "*open*",
+            "*push*",
+            "*pull*",
+            "*keyhole*",
+            "*iron*",
+            "*handle*"
+          ],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": [
+                "The door stands open. Beyond it there is daylight and a great deal of sky. Step through it — say: step through."
+              ]
+            }
+          ]
+        },
+        {
+          "interactionId": "door-through",
+          "scope": "player",
+          "disabled": true,
+          "triggers": [
+            "*through*",
+            "*step*",
+            "*out*",
+            "*ledge*",
+            "*daylight*",
+            "*sky*",
+            "*leave*",
+            "*exit*",
+            "*forward*"
+          ],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": [
+                "You step through, and the rock lets go of you. It is a ledge, high and bright, and far below it the pale stones of the hollow lie in their pattern: an arrow, pointing back at the door you have just walked out of. Someone laid it there for whoever came after. You are whoever came after."
+              ]
+            },
+            {
+              "action": "changeLocation",
+              "parameters": [
+                "6"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "name": "The Overlook",
+      "description": "A ledge above the hollow. From here the pale stones make a pattern you could read, if you read it.",
+      "connections": {
+        "south": 1
+      },
+      "interactions": [
+        {
+          "interactionId": "overlook-pattern",
+          "triggers": [
+            "*stones*",
+            "*stone*",
+            "*pattern*",
+            "*read*",
+            "*hollow*",
+            "*down*",
+            "*below*",
+            "*arrow*"
+          ],
+          "actions": [
+            {
+              "action": "describe",
+              "parameters": [
+                "From up here the stones are not scattered at all. They are an arrow, and the arrow points north, into the rock. Someone laid them out for whoever came after, and then did not come back to say why."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

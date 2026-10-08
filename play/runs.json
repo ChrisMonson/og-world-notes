@@ -1,3 +1,22 @@
 [
-  { "run": "genesis-v2", "title": "Genesis v2: the lighthouse coast" }
+  {
+    "run": "001",
+    "title": "Run 001: the hollow"
+  },
+  {
+    "run": "003",
+    "title": "Run 003: the valley"
+  },
+  {
+    "run": "genesis-v1",
+    "title": "Genesis v1: Ambroke"
+  },
+  {
+    "run": "genesis-sonnet",
+    "title": "Genesis, Sonnet: the green hollow"
+  },
+  {
+    "run": "genesis-v2",
+    "title": "Genesis v2: the lighthouse coast"
+  }
 ]
