@@ -18,9 +18,9 @@ A world that already existed, and a caretaker asked to look after it.
 | Run | Model | Started | |
 |---|---|---|---|
 | 000 · pilot | Opus | September 2026 | *coming* |
-| 001 | Opus | September 2026 | *coming* |
+| 001 · the hollow | Opus | September 2026 | *writeup coming* · [play it](../play/?run=001) |
 | 002 | Opus | 20 September | *coming* |
-| 003 | Opus | September 2026 | *coming* |
+| 003 · the valley | Opus | September 2026 | *writeup coming* · [play it](../play/?run=003) |
 | [004 · the troll's whistle](004/) | Opus | 20 September | It never built a room, and made the six it had into a world where the dead leave things for the living. |
 
 ## The genesis series
@@ -29,6 +29,6 @@ One empty room, and a caretaker told the world was its to make.
 
 | Run | Model | Started | |
 |---|---|---|---|
-| genesis v1 | Opus | 21 September | *coming* |
-| genesis, Sonnet | Sonnet | 22 September | *coming* |
+| genesis v1 · Ambroke | Opus | 21 September | *writeup coming* · [play it](../play/?run=genesis-v1) |
+| genesis, Sonnet · the green hollow | Sonnet | 22 September | *writeup coming* · [play it](../play/?run=genesis-sonnet) |
 | genesis v2 · the lighthouse coast | Opus 5.5 | 23 September | *writeup coming* · [play it](../play/?run=genesis-v2) |
