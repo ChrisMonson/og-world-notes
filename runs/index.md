@@ -11,6 +11,9 @@ the instructions, the models and the players all changed between them.
 Some of the worlds can be played in your browser, on the engine the caretaker
 left behind. [Play one →](../play/)
 
+Every turn each caretaker took can be read too: what it woke to, every step it
+took, and everything it wrote. [The caretaker's log →](../log/)
+
 ## The seed series
 
 A world that already existed, and a caretaker asked to look after it.

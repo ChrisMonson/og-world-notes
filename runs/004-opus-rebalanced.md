@@ -233,4 +233,7 @@ All quotes are from the caretaker's journal or from what players typed.
 passage, Wren's notes on the walls) or as it was built. Its engine was rebuilt
 from the caretaker's own transcripts after the original was lost.
 
+[Read the caretaker's log](../../log/?run=004): every turn, its journal, and
+every change it committed, with its reasons.
+
 [All runs](../)

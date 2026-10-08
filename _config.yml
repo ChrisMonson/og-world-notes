@@ -12,3 +12,4 @@ exclude:
   - play/dev/
   - play/*.sh
   - _build/
+  - log/build.py

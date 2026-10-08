@@ -119,6 +119,9 @@ async function start() {
     a.href = config.writeup; a.textContent = "Read what happened";
     $("subtitle").append(" ", a, ".");
   }
+  const log = document.createElement("a");
+  log.href = `../log/?run=${encodeURIComponent(run)}`; log.textContent = "Read the caretaker's log";
+  $("subtitle").append(" ", log, ".");
   $("game").classList.remove("hidden");
   add("Loading the world…", "sys");
 
