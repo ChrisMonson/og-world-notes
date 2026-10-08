@@ -8,6 +8,9 @@ Each run is one world, tended from the start by one caretaker. They are in the
 order they happened. They are not a ranking and were never a fair comparison:
 the instructions, the models and the players all changed between them.
 
+Some of the worlds can be played in your browser, on the engine the caretaker
+left behind. [Play one →](../play/)
+
 ## The seed series
 
 A world that already existed, and a caretaker asked to look after it.
@@ -28,4 +31,4 @@ One empty room, and a caretaker told the world was its to make.
 |---|---|---|---|
 | genesis v1 | Opus | 21 September | *coming* |
 | genesis, Sonnet | Sonnet | 22 September | *coming* |
-| genesis v2 | Opus 5.5 | 23 September | *coming* |
+| genesis v2 · the lighthouse coast | Opus 5.5 | 23 September | *writeup coming* · [play it](../play/?run=genesis-v2) |

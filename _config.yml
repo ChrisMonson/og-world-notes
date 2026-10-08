@@ -5,3 +5,10 @@ theme: minima
 header_pages:
   - index.md
   - runs/index.md
+exclude:
+  - README.md
+  - engines/
+  - play/engine/
+  - play/dev/
+  - play/*.sh
+  - _build/

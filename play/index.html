@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Play · og-world</title>
+<style>
+  :root {
+    --bg: #fbfaf7; --fg: #1d1c1a; --muted: #6b6760; --rule: #e3dfd6;
+    --screen: #f2efe8; --accent: #8a4b14; --you: #375a7f; --warn: #a23b2a;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #151413; --fg: #e9e5dc; --muted: #9a958b; --rule: #2e2b27;
+            --screen: #1d1b19; --accent: #e0a15e; --you: #8fb4dc; --warn: #e48a78; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--fg);
+         font: 16px/1.55 Georgia, "Times New Roman", serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 24px 16px 40px; }
+  a { color: var(--accent); }
+  header p { margin: 4px 0; color: var(--muted); }
+  h1 { font-size: 1.5rem; margin: 0 0 4px; font-weight: normal; }
+  .note { font-size: .95rem; color: var(--muted); border-left: 3px solid var(--rule); padding-left: 12px; margin: 16px 0; }
+  #screen { background: var(--screen); border: 1px solid var(--rule); border-radius: 6px;
+            height: min(60vh, 560px); overflow-y: auto; padding: 14px 16px;
+            font: 15px/1.5 ui-monospace, "SF Mono", Menlo, Consolas, monospace; white-space: pre-wrap; overflow-wrap: anywhere; }
+  #screen .cmd { color: var(--you); margin-top: 12px; }
+  #screen .cmd::before { content: "> "; }
+  #screen .sys { color: var(--muted); font-style: italic; margin-top: 12px; }
+  #screen .end { color: var(--warn); margin-top: 12px; }
+  #screen p { margin: 0 0 8px; }
+  .status { display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: .9rem; color: var(--muted); margin: 8px 2px; min-height: 1.4em; }
+  form { display: flex; gap: 8px; }
+  input { flex: 1; min-width: 0; font: 16px ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+          padding: 10px 12px; border: 1px solid var(--rule); border-radius: 6px; background: var(--bg); color: var(--fg); }
+  input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+  button { font: inherit; font-size: .95rem; padding: 8px 14px; border-radius: 6px; cursor: pointer;
+           border: 1px solid var(--accent); background: var(--accent); color: var(--bg); }
+  button:disabled { opacity: .5; cursor: default; }
+  ul.runs { padding-left: 20px; }
+  .hidden { display: none; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <p><a href="../">og-world</a> · <a href="../runs/">the runs</a></p>
+    <h1 id="title">Play</h1>
+    <p id="subtitle"></p>
+  </header>
+
+  <section id="pick" class="hidden">
+    <p>Each of these is the world a caretaker left behind, running on the engine it left behind.</p>
+    <ul class="runs" id="runs"></ul>
+  </section>
+
+  <section id="game" class="hidden">
+    <p class="note">You are alone here. Nobody else is playing, and nobody is tending this world any more:
+      it is as the caretaker left it, and whatever you do to it lasts until you leave this page.
+      Type what you want to do in plain words. <code>help</code> lists the verbs the world knows.</p>
+    <div id="screen" role="log" aria-live="polite"></div>
+    <div class="status" id="status"></div>
+    <form id="form" autocomplete="off">
+      <input id="input" type="text" spellcheck="false" autocapitalize="off" aria-label="What you do" disabled>
+      <button id="go" type="submit" disabled>Enter</button>
+    </form>
+  </section>
+
+  <p id="error" class="end hidden"></p>
+</main>
+
+<script type="module">
+const $ = id => document.getElementById(id);
+const screen = $("screen"), input = $("input"), go = $("go");
+const run = new URLSearchParams(location.search).get("run");
+
+function add(text, cls) {
+  const p = document.createElement("p");
+  if (cls) p.className = cls;
+  p.textContent = text;
+  screen.append(p);
+  screen.scrollTop = screen.scrollHeight;
+}
+const fail = message => { $("error").textContent = message; $("error").classList.remove("hidden"); };
+
+if (!run) {
+  $("title").textContent = "Play a world";
+  $("pick").classList.remove("hidden");
+  const runs = await (await fetch("runs.json")).json();
+  for (const r of runs) {
+    const li = document.createElement("li");
+    const a = document.createElement("a");
+    a.href = `?run=${encodeURIComponent(r.run)}`;
+    a.textContent = r.title;
+    li.append(a);
+    $("runs").append(li);
+  }
+} else {
+  start().catch(e => fail(`The world could not be started: ${e.message || e}`));
+}
+
+async function start() {
+  if (!/^[a-z0-9-]+$/.test(run)) throw new Error("no such world");
+  const config = await (await fetch(`${run}/play.json`)).json();
+  $("title").textContent = config.title;
+  document.title = `${config.title} · og-world`;
+  $("subtitle").innerHTML = "";
+  $("subtitle").append(`Built by ${config.model}.`);
+  if (config.writeup) {
+    const a = document.createElement("a");
+    a.href = config.writeup; a.textContent = "Read what happened";
+    $("subtitle").append(" ", a, ".");
+  }
+  $("game").classList.remove("hidden");
+  add("Loading the world…", "sys");
+
+  const [{ dotnet }, world] = await Promise.all([
+    import(`./${run}/engine/dotnet.js`),
+    fetch(`${run}/world.json`).then(r => r.text()),
+  ]);
+  const runtime = await dotnet.create();
+  const { Game } = await runtime.getAssemblyExports(runtime.getConfig().mainAssemblyName);
+  const call = (f, ...a) => JSON.parse(Game[f](...a));
+
+  const loaded = call("Load", world, JSON.stringify({ seed: config.seed ?? 0, tick: config.tick ?? [], welcome: config.welcome ?? [] }));
+  if (loaded.type !== "loaded") throw new Error(loaded.message);
+  screen.textContent = "";
+
+  let naming = true;
+  const history = []; let back = 0;
+
+  function show(turn) {
+    for (const line of turn.text ?? []) add(line);
+    const s = $("status");
+    s.textContent = "";
+    if (turn.alive) {
+      for (const part of [turn.name, turn.place, `${turn.hitPoints}/${turn.maxHitPoints} health`].filter(Boolean)) {
+        const span = document.createElement("span"); span.textContent = part; s.append(span);
+      }
+    }
+    if (turn.type !== "idle" && !turn.alive && turn.ended) {
+      add(turn.ended === "died"
+        ? `${turn.name} is dead. What they carried is where they fell.`
+        : `${turn.name} has gone. Whatever they set down stays here.`, "end");
+      askName("Begin again as someone new. What is your name?");
+    }
+  }
+
+  function askName(prompt) {
+    naming = true;
+    add(prompt, "sys");
+    input.placeholder = "a name for your character";
+    input.value = "";
+  }
+
+  function enable() { input.disabled = false; go.disabled = false; input.focus(); }
+
+  $("form").addEventListener("submit", e => {
+    e.preventDefault();
+    const text = input.value.trim();
+    input.value = "";
+    if (naming) {
+      naming = false;
+      input.placeholder = "what you do";
+      const turn = call("Arrive", text);
+      if (turn.type === "error") { add(turn.message, "end"); askName("What is your name?"); return; }
+      show(turn);
+      return;
+    }
+    if (!text) return;
+    history.push(text); back = history.length;
+    add(text, "cmd");
+    show(call("Send", text));
+  });
+
+  input.addEventListener("keydown", e => {
+    if (naming || !history.length) return;
+    if (e.key === "ArrowUp") { back = Math.max(0, back - 1); input.value = history[back] ?? ""; e.preventDefault(); }
+    if (e.key === "ArrowDown") { back = Math.min(history.length, back + 1); input.value = history[back] ?? ""; e.preventDefault(); }
+  });
+
+  // What the server did every fifteen seconds whether or not anyone typed.
+  setInterval(() => { if (!naming) show(call("Idle")); }, 15000);
+
+  askName("What is your name?");
+  enable();
+}
+</script>
+</body>
+</html>

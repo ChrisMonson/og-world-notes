@@ -1,0 +1,606 @@
+{
+  "name": "starter",
+  "spawnLocation": 1,
+  "startingItems": ["heel of bread"],
+  "items": [
+    {
+      "name": "heel of bread",
+      "description": "The hard end of a loaf, wrapped in a scrap of sailcloth. Someone packed it for you, though you don't remember who.",
+      "kind": "consumable",
+      "healAmount": 6
+    },
+    {
+      "name": "lamp oil",
+      "description": "A stoppered stone flask, heavy and cold. It smells of fish and old summers. Enough to fill a lighthouse lamp once.",
+      "kind": "misc"
+    },
+    {
+      "name": "flint and steel",
+      "description": "A thumb-worn flint and a curved steel striker, tied together with tarred string. The keeper's own.",
+      "kind": "misc"
+    },
+    {
+      "name": "boathook",
+      "description": "A long ash pole with an iron hook at one end, the grip gone smooth and dark from hands.",
+      "kind": "weapon",
+      "attackBonus": 1,
+      "attackDice": 6
+    },
+    {
+      "name": "brass token",
+      "description": "A brass disc with a hole through the middle. One side is stamped with a lighthouse. The other side is blank, worn smooth, as if many thumbs have rubbed it on the way across.",
+      "kind": "misc",
+      "isKey": true,
+      "consumedOnUse": true
+    }
+  ],
+  "monsters": [
+    {
+      "name": "conger eel",
+      "description": "Something long and grey lies coiled in the black water of the hold, thick as a man's thigh. It isn't asleep. It watches you and holds very still, as if it's waiting to see what you are. Wrapped in its coils is a stone flask.",
+      "hitPoints": 10,
+      "armorClass": 11,
+      "attackStrength": 1,
+      "attackDice": 4,
+      "inventory": ["lamp oil"],
+      "respawnSeconds": 900
+    }
+  ],
+  "locations": [
+    {
+      "index": 1,
+      "name": "The Tideline",
+      "description": "You stand on a shingle beach at the edge of evening. The sea draws back and comes in again, turning over the stones with a sound like breathing. North, a path climbs the cliff toward a lighthouse. Its lamp is dark. East, the ribs of a wrecked ship stick up out of the sand. West, the land goes low and wet into salt marsh. South, an old jetty runs out into the grey.\n\n(Type 'help' if you want it.)",
+      "connections": { "north": 2, "east": 6, "west": 8, "south": 10 },
+      "interactions": [
+        {
+          "interactionId": "tideline-sea",
+          "triggers": ["*sea*", "*water*", "*waves*", "*tide*", "*swim*"],
+          "actions": [
+            { "action": "describe", "parameters": ["The water is cold enough to hurt. Far out there is nothing, no sail and no shore, only the dark coming in from the east. Whatever brought you here didn't come by sea, or if it did, it's gone."] }
+          ]
+        },
+        {
+          "interactionId": "tideline-stones",
+          "triggers": ["*stone*", "*shingle*", "*pebble*"],
+          "actions": [
+            { "action": "describe", "parameters": ["The stones are smooth and grey, each one the size of a palm. Halfway up the cliff path there's a cleared ledge where somebody meant to pile them. You could carry one up."] }
+          ]
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "The Cliff Path",
+      "description": "The path zigzags up the cliff face, cut into the rock and worn into a groove by feet. Halfway up there is a flat ledge that looks out over the whole bay. Someone has cleared a patch of ground on the ledge and set nothing on it. Smooth stones from the beach lie about, each the size of a palm, as if waiting for somebody to put one down. The lighthouse is north; the beach is south.",
+      "connections": { "north": 3, "south": 1 },
+      "interactions": [
+        {
+          "interactionId": "cairn-again",
+          "triggers": ["*stone*", "*cairn*", "*pile*", "*build*", "*place*", "*rock*", "*stack*"],
+          "if": ["placed_stone"],
+          "actions": [
+            { "action": "describe", "parameters": ["You have already set your stone. You couldn't say which one it is now, and that seems to be the point."] }
+          ]
+        },
+        {
+          "interactionId": "cairn-1",
+          "triggers": ["*stone*", "*cairn*", "*pile*", "*build*", "*place*", "*rock*", "*stack*"],
+          "ifNot": ["placed_stone", "cairn1"],
+          "actions": [
+            { "action": "addcondition", "parameters": ["placed_stone"], "scope": "player" },
+            { "action": "addcondition", "parameters": ["cairn1"], "scope": "world" },
+            { "action": "setlocationdescription", "parameters": ["2", "The path zigzags up the cliff face, cut into the rock and worn into a groove by feet. Halfway up there is a flat ledge that looks out over the whole bay. On the cleared ground, one smooth stone sits by itself. It's the start of something, if anyone else comes. The lighthouse is north; the beach is south."] },
+            { "action": "describe", "parameters": ["You pick a stone off the path, turn it over once, and set it in the middle of the cleared ground. It's only one stone, but it's the first. Whoever comes up this path next will see that someone came before them."] }
+          ]
+        },
+        {
+          "interactionId": "cairn-2",
+          "triggers": ["*stone*", "*cairn*", "*pile*", "*build*", "*place*", "*rock*", "*stack*"],
+          "if": ["cairn1"],
+          "ifNot": ["placed_stone", "cairn2"],
+          "actions": [
+            { "action": "addcondition", "parameters": ["placed_stone"], "scope": "player" },
+            { "action": "addcondition", "parameters": ["cairn2"], "scope": "world" },
+            { "action": "setlocationdescription", "parameters": ["2", "The path zigzags up the cliff face, cut into the rock and worn into a groove by feet. Halfway up there is a flat ledge that looks out over the whole bay. On the cleared ground, two stones sit one on top of the other. That makes it a cairn, just barely. The lighthouse is north; the beach is south."] },
+            { "action": "describe", "parameters": ["There is a single stone here already, set down by someone you'll never meet. You balance yours on top of it. Now there are two."] }
+          ]
+        },
+        {
+          "interactionId": "cairn-3",
+          "triggers": ["*stone*", "*cairn*", "*pile*", "*build*", "*place*", "*rock*", "*stack*"],
+          "if": ["cairn2"],
+          "ifNot": ["placed_stone", "cairn3"],
+          "actions": [
+            { "action": "addcondition", "parameters": ["placed_stone"], "scope": "player" },
+            { "action": "addcondition", "parameters": ["cairn3"], "scope": "world" },
+            { "action": "setlocationdescription", "parameters": ["2", "The path zigzags up the cliff face, cut into the rock and worn into a groove by feet. Halfway up there is a flat ledge that looks out over the whole bay. A small cairn stands on the cleared ground, three stones high and leaning a little toward the sea. The lighthouse is north; the beach is south."] },
+            { "action": "describe", "parameters": ["Two stones, stacked by two strangers. You find one that fits and add it. Three. It leans a little toward the sea, the way everything up here does."] }
+          ]
+        },
+        {
+          "interactionId": "cairn-4",
+          "triggers": ["*stone*", "*cairn*", "*pile*", "*build*", "*place*", "*rock*", "*stack*"],
+          "if": ["cairn3"],
+          "ifNot": ["placed_stone", "cairn4"],
+          "actions": [
+            { "action": "addcondition", "parameters": ["placed_stone"], "scope": "player" },
+            { "action": "addcondition", "parameters": ["cairn4"], "scope": "world" },
+            { "action": "setlocationdescription", "parameters": ["2", "The path zigzags up the cliff face, cut into the rock and worn into a groove by feet. Halfway up there is a flat ledge that looks out over the whole bay. A cairn stands on the ledge, four stones high. It holds up well in the wind. The lighthouse is north; the beach is south."] },
+            { "action": "describe", "parameters": ["You set a fourth stone on the cairn. It rocks, then settles. From down on the beach it would just be a dark mark on the cliff, but it would be there."] }
+          ]
+        },
+        {
+          "interactionId": "cairn-5",
+          "triggers": ["*stone*", "*cairn*", "*pile*", "*build*", "*place*", "*rock*", "*stack*"],
+          "if": ["cairn4"],
+          "ifNot": ["placed_stone", "cairn5"],
+          "actions": [
+            { "action": "addcondition", "parameters": ["placed_stone"], "scope": "player" },
+            { "action": "addcondition", "parameters": ["cairn5"], "scope": "world" },
+            { "action": "setlocationdescription", "parameters": ["2", "The path zigzags up the cliff face, cut into the rock and worn into a groove by feet. Halfway up there is a flat ledge that looks out over the whole bay. A proper cairn stands here now, five stones high, and it can be seen from the beach. Nobody built it alone. The lighthouse is north; the beach is south."] },
+            { "action": "describe", "parameters": ["You set the fifth stone and it's done, or as done as a cairn gets. Five people who never met stood here one after another and did the same small thing. You'd call it a monument if it weren't so modest."] }
+          ]
+        },
+        {
+          "interactionId": "cairn-full",
+          "triggers": ["*stone*", "*cairn*", "*pile*", "*build*", "*place*", "*rock*", "*stack*"],
+          "if": ["cairn5"],
+          "ifNot": ["placed_stone"],
+          "actions": [
+            { "action": "addcondition", "parameters": ["placed_stone"], "scope": "player" },
+            { "action": "describe", "parameters": ["The cairn is as tall as the wind will allow. You set your stone at its foot among the others there, a small ring that grows a little with each person who comes. Nobody will know which one is yours. You will."] }
+          ]
+        },
+        {
+          "interactionId": "cliff-view",
+          "triggers": ["*view*", "*bay*", "*look out*", "*ledge*"],
+          "actions": [
+            { "action": "describe", "parameters": ["From the ledge you can see the whole curve of the bay: the wreck on the sand, the marsh going silver in the last of the light, and the jetty poking out into water that gets darker the further out you look. Out past the jetty, very far away, something might be a boat waiting. Or it might be nothing."] }
+          ]
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "Foot of the Lighthouse",
+      "description": "The lighthouse is taller than it looked from below, and whiter too, streaked with salt. The door hangs open on one hinge. Inside, an iron stair goes up in a spiral into the dark. The cliff path goes back south.",
+      "connections": { "north": 4, "south": 2 },
+      "interactions": [
+        {
+          "interactionId": "foot-climb",
+          "triggers": ["climb*", "up", "go up", "*stair*", "ascend*", "enter*", "go in*", "*door*"],
+          "actions": [
+            { "action": "changelocation", "parameters": ["4"] }
+          ]
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "The Lamp Room",
+      "description": "At the top of the stair is a round room made of glass. The great lamp sits in the middle, a brass reservoir under a crown of lenses, and it is cold and dark. The glass all around you looks out on nothing but grey sea and sky. A small wooden box is screwed to the wall beside the stair. The stair goes back down (south).",
+      "connections": { "south": 3 },
+      "interactions": [
+        {
+          "interactionId": "lamp-down",
+          "triggers": ["down", "go down", "descend*", "climb down*", "*stair*", "leave*"],
+          "actions": [
+            { "action": "changelocation", "parameters": ["3"] }
+          ]
+        },
+        {
+          "interactionId": "lamp-topup",
+          "triggers": ["*pour*", "*fill*", "*oil*", "*reservoir*", "*feed*", "*top*"],
+          "if": ["lamp_lit", "carrying:lamp oil"],
+          "actions": [
+            { "action": "removeitems", "parameters": ["lamp oil"] },
+            { "action": "removecondition", "parameters": ["burn1"], "scope": "world" },
+            { "action": "removecondition", "parameters": ["burn2"], "scope": "world" },
+            { "action": "setlocationdescription", "parameters": ["4", "At the top of the stair is a round room made of glass. The great lamp is burning in the middle of it, and the lenses around it catch the flame and turn slowly, sending a long white beam out over the sea and back across the land. Someone lit it, and someone has kept it fed. The room is warm. A small wooden box is screwed to the wall beside the stair. The stair goes back down (south)."] },
+            { "action": "describe", "parameters": ["You pull the stopper and pour while the lamp burns. The flame drinks the oil, lengthens, and turns white again, and the beam goes out stronger than before.\n\nNobody will know you did this. The light will simply keep going a while longer for whoever comes next."] }
+          ]
+        },
+        {
+          "interactionId": "lamp-low-look",
+          "triggers": ["*lamp*", "*light*", "*lens*", "*beam*", "*wick*", "*reservoir*", "*flame*"],
+          "if": ["lamp_lit", "burn2"],
+          "actions": [
+            { "action": "describe", "parameters": ["The flame is low and bluish and it shivers each time the lenses come round. You tap the brass reservoir and it rings nearly hollow. Every crossing the ferry makes burns a little more. One more, maybe, and it will go out, unless somebody carries up another flask of oil."] }
+          ]
+        },
+        {
+          "interactionId": "lamp-fill",
+          "triggers": ["*pour*", "*fill*", "*oil*", "*reservoir*"],
+          "if": ["carrying:lamp oil"],
+          "ifNot": ["lamp_filled"],
+          "actions": [
+            { "action": "removeitems", "parameters": ["lamp oil"] },
+            { "action": "addcondition", "parameters": ["lamp_filled"], "scope": "world" },
+            { "action": "describe", "parameters": ["You pull the stopper and pour. The oil runs thick and slow into the brass reservoir, and the wick soaks it up and darkens. The room smells of it now. The lamp is ready. It only needs a flame."] }
+          ]
+        },
+        {
+          "interactionId": "lamp-fill-full",
+          "triggers": ["*pour*", "*fill*", "*oil*"],
+          "if": ["lamp_filled", "carrying:lamp oil"],
+          "ifNot": ["lamp_lit"],
+          "actions": [
+            { "action": "describe", "parameters": ["The reservoir is already full, and the wick is dark with oil. It won't take any more until it's burning. What it needs now is a flame. Keep the flask. Once the lamp is lit and burning down, it can be fed."] }
+          ]
+        },
+        {
+          "interactionId": "lamp-light",
+          "triggers": ["*light*", "*strike*", "*flint*", "*ignite*", "*kindle*", "*fire*", "*spark*", "*flame*"],
+          "if": ["lamp_filled", "carrying:flint and steel"],
+          "ifNot": ["lamp_lit"],
+          "actions": [
+            { "action": "addcondition", "parameters": ["lamp_lit"], "scope": "world" },
+            { "action": "setlocationdescription", "parameters": ["4", "At the top of the stair is a round room made of glass. The great lamp is burning in the middle of it, and the lenses around it catch the flame and turn slowly, sending a long white beam out over the sea and back across the land. Someone lit it. The room is warm now. A small wooden box is screwed to the wall beside the stair. The stair goes back down (south)."] },
+            { "action": "setlocationdescription", "parameters": ["1", "You stand on a shingle beach at the edge of evening. The sea draws back and comes in again, turning over the stones. Above you on the cliff the lighthouse is burning, and every little while its beam sweeps across the beach and lights up every wet stone at once, then moves on. North, the cliff path climbs toward the light. East are the ribs of the wreck. West, the salt marsh. South, the jetty, and out beyond it a small answering light rides on the water.\n\n(Type 'help' if you want it.)"] },
+            { "action": "setlocationdescription", "parameters": ["10", "The jetty runs a long way out over the water on black, weed-hung posts, and some planks are missing. At the far end a ship's bell hangs from a crooked iron arm. Out on the water a lantern bobs, low and yellow: a boat is waiting now that the lighthouse is burning again. The beach is back north."] },
+            { "action": "removecondition", "parameters": ["burn1"], "scope": "world" },
+            { "action": "removecondition", "parameters": ["burn2"], "scope": "world" },
+            { "action": "setlocationdescription", "parameters": ["11", "You sit on a narrow bench in a low black boat. The ferryman stands in the stern with a long oar and waits. His hand is still held out, palm up. Behind you the lighthouse turns and turns. Ahead there is only open water and the dark. If you have what he's asking for and are ready to go, you can leave. If you aren't ready, the jetty is right there (west)."] },
+            { "action": "describe", "parameters": ["You strike the steel against the flint once, twice, and the third time a spark catches the wick. A small blue flame spreads, turns yellow, and then turns white as the lenses gather it up. With a groan of old clockwork the crown of glass starts to turn, and the beam goes out over the dark water.\n\nFar out, a small light answers. Then it starts coming closer.\n\nThe reservoir is full. It will burn long enough to bring the ferry in for a few people, you and whoever comes after you. Longer, if someone keeps bringing it oil."] }
+          ]
+        },
+        {
+          "interactionId": "lamp-light-noflint",
+          "triggers": ["*light*", "*strike*", "*flint*", "*ignite*", "*kindle*", "*fire*", "*spark*", "*flame*"],
+          "if": ["lamp_filled"],
+          "ifNot": ["lamp_lit"],
+          "actions": [
+            { "action": "describe", "parameters": ["The wick has soaked up the oil and is ready to burn, but you have nothing to light it with. There's no fire up here. The keeper must have kept a flint somewhere, probably wherever the keeper lived."] }
+          ]
+        },
+        {
+          "interactionId": "lamp-filled-look",
+          "triggers": ["*lamp*", "*wick*", "*reservoir*", "*lens*"],
+          "if": ["lamp_filled"],
+          "ifNot": ["lamp_lit"],
+          "actions": [
+            { "action": "describe", "parameters": ["The reservoir is full and the wick is dark with oil. Somebody brought the oil up here. All it needs now is a flame."] }
+          ]
+        },
+        {
+          "interactionId": "lamp-light-dry",
+          "triggers": ["*light*", "*strike*", "*flint*", "*ignite*", "*kindle*", "*fire*", "*spark*", "*flame*", "*lamp*", "*wick*"],
+          "ifNot": ["lamp_filled", "lamp_lit"],
+          "actions": [
+            { "action": "describe", "parameters": ["The lamp's brass reservoir is empty and the wick has gone dry and stiff. Even with a flame, it would only smoulder. It needs oil first. Lamp oil comes by ship, and the only ship on this coast is the one wrecked on the beach."] }
+          ]
+        },
+        {
+          "interactionId": "lamp-lit-look",
+          "triggers": ["*lamp*", "*light*", "*lens*", "*beam*", "*wick*"],
+          "if": ["lamp_lit"],
+          "actions": [
+            { "action": "describe", "parameters": ["The lamp is burning steadily. You didn't necessarily light it. Someone did, and it's still going. The beam goes out, comes around, goes out again, like something breathing very slowly."] }
+          ]
+        },
+        {
+          "interactionId": "lamp-box-token",
+          "triggers": ["*box*", "*token*", "open*"],
+          "if": ["lamp_lit"],
+          "once": true,
+          "scope": "player",
+          "actions": [
+            { "action": "describe", "parameters": ["The box opens easily now that the lamp is warm. The wood must have swelled in the cold. Inside is a heap of brass tokens, more than you could count, each stamped with a lighthouse. There's a card tacked inside the lid, in a careful hand:\n\n  ONE FOR EACH WHO WOULD CROSS.\n  THE FERRY COMES ONLY TO THE LIGHT.\n  EVERY CROSSING BURNS A LITTLE OF IT.\n\nYou take one."] },
+            { "action": "additems", "parameters": ["brass token"] }
+          ]
+        },
+        {
+          "interactionId": "lamp-box-another",
+          "triggers": ["*box*", "*token*", "open*"],
+          "if": ["lamp_lit"],
+          "ifNot": ["carrying:brass token"],
+          "actions": [
+            { "action": "removecondition", "parameters": ["summoned_ferry"], "scope": "player" },
+            { "action": "describe", "parameters": ["The box opens again. The tokens inside are all alike and nobody counts them. Your last one went with the ferryman, or went somewhere. You take another.\n\n  ONE FOR EACH WHO WOULD CROSS.\n  EVERY CROSSING BURNS A LITTLE OF IT."] },
+            { "action": "additems", "parameters": ["brass token"] }
+          ]
+        },
+        {
+          "interactionId": "lamp-box-again",
+          "triggers": ["*box*", "*token*", "open*"],
+          "if": ["lamp_lit"],
+          "actions": [
+            { "action": "describe", "parameters": ["The box is still full of tokens. The card says one for each who would cross, and you already have yours, warm from your hand."] }
+          ]
+        },
+        {
+          "interactionId": "lamp-box-shut",
+          "triggers": ["*box*", "*token*", "open*"],
+          "ifNot": ["lamp_lit"],
+          "actions": [
+            { "action": "describe", "parameters": ["The little box is shut. The damp has swollen the lid tight into the frame, and it won't budge in this cold. Something rattles inside when you knock on it: a lot of small metal things."] }
+          ]
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "name": "The Wreck",
+      "description": "The ship lies on its side in the sand, and the tide has been taking it apart for years. The ribs curve up black against the sky. Rope rots in heaps. A long boathook is jammed between two timbers. On the east side, a breach in the hull opens onto the hold, where water still stands black and still. The beach is west.",
+      "connections": { "east": 7, "west": 1 },
+      "interactions": [
+        {
+          "interactionId": "wreck-boathook",
+          "triggers": ["*boathook*", "*hook*", "*pole*"],
+          "once": true,
+          "scope": "player",
+          "actions": [
+            { "action": "describe", "parameters": ["You work the boathook loose from the timbers. It comes free with a crack and a shower of wet splinters."] },
+            { "action": "additems", "parameters": ["boathook"] }
+          ]
+        },
+        {
+          "interactionId": "wreck-boathook-again",
+          "triggers": ["*boathook*", "*hook*", "*pole*"],
+          "actions": [
+            { "action": "describe", "parameters": ["There's another boathook wedged deeper in the wreck. Somehow there always is. Ships carried a lot of them, and this one lost everything else."] }
+          ]
+        },
+        {
+          "interactionId": "wreck-rope",
+          "triggers": ["*rope*", "*line*", "*cord*"],
+          "actions": [
+            { "action": "describe", "parameters": ["You pull at a coil and it comes apart in your hands, wet and black, like pulling at bread. There isn't a sound length of it anywhere. The sea had it too long."] }
+          ]
+        },
+        {
+          "interactionId": "wreck-name",
+          "triggers": ["*name*", "*ship*", "*boat*", "*wreck*", "*touch*", "*hull*", "*bow*", "*read*"],
+          "actions": [
+            { "action": "describe", "parameters": ["Letters are carved into the bow, most of them worn away: -ELL KEEP-. The rest belong to the sea now."] }
+          ]
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "name": "The Hold",
+      "description": "Inside the hull it's dim and it stinks of rot and salt. Black water stands knee-deep, and broken barrels bob in it. Nearly everything of value was carried off long ago, or sank. In the deepest corner the water lies darker than the rest, a place something long could coil up in and keep coming back to. Grey light comes in through the breach to the west.",
+      "connections": { "west": 6 },
+      "monster": "conger eel",
+      "interactions": [
+        {
+          "interactionId": "hold-barrels",
+          "triggers": ["*barrel*", "*cask*", "*oil*", "*flask*", "*water*"],
+          "actions": [
+            { "action": "describe", "parameters": ["The barrels are all staved in and empty. If there was ever lamp oil aboard, the only thing down here that still has any is whatever is coiled in the deep water holding it. Or whatever was."] }
+          ]
+        },
+        {
+          "interactionId": "hold-feed",
+          "triggers": ["*feed*", "*offer*", "*give*", "*throw*", "*bread*"],
+          "if": ["creature-here"],
+          "actions": [
+            { "action": "describe", "parameters": ["You hold something out over the water. The eel's eye follows it without interest. It isn't hungry. It looks like it's waiting to see what you'll do: go away, or strike, or just stay."] }
+          ]
+        },
+        {
+          "interactionId": "hold-wait-2",
+          "triggers": ["*wait*", "*sit*", "*still*", "*hum*", "*sing*", "*patien*", "*rest*", "*calm*", "*stay*", "*kneel*", "*watch*"],
+          "if": ["creature-here", "hold_waited"],
+          "actions": [
+            { "action": "removecondition", "parameters": ["hold_waited"], "scope": "player" },
+            { "action": "describe", "parameters": ["You keep still for longer than you'd thought you could. The cold climbs your legs and your breathing slows. At some point you stop waiting for anything.\n\nThe eel loosens its coils, slowly, the way a fist opens. The stone flask rolls free and bumps against a barrel stave. Then the long grey body pours itself out through a split in the hull and is gone into the sea. It didn't have to let go of the flask. It did anyway."] },
+            { "action": "releasemonster" }
+          ]
+        },
+        {
+          "interactionId": "hold-wait-1",
+          "triggers": ["*wait*", "*sit*", "*still*", "*hum*", "*sing*", "*patien*", "*rest*", "*calm*", "*stay*", "*kneel*", "*watch*"],
+          "if": ["creature-here"],
+          "ifNot": ["hold_waited"],
+          "actions": [
+            { "action": "addcondition", "parameters": ["hold_waited"], "scope": "player" },
+            { "action": "describe", "parameters": ["You lower yourself onto a half-sunk barrel, the black water up to your knees, and keep still. The eel watches you and you watch it. It doesn't come any closer and it doesn't look away. The coils shift once, just slightly. It isn't sure about you yet. Maybe it needs more time."] }
+          ]
+        },
+        {
+          "interactionId": "hold-empty",
+          "triggers": ["*wait*", "*sit*", "*still*", "*hum*", "*sing*", "*feed*", "*eel*", "*watch*"],
+          "ifNot": ["creature-here"],
+          "actions": [
+            { "action": "describe", "parameters": ["The black water is flat and empty. Whatever lived here has gone out to sea for now. Eels come back to the places they know."] }
+          ]
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "name": "The Salt Marsh",
+      "description": "The ground turns to tussock and black water, crossed by a raised causeway of old planks. Reeds hiss in the wind. Wading birds lift off at your step and settle again further away. North, where the ground rises a little, stand the tumbled walls of a cottage. The beach is east.",
+      "connections": { "north": 9, "east": 1 },
+      "interactions": [
+        {
+          "interactionId": "marsh-spark",
+          "triggers": ["*strike*", "*spark*", "*flint*", "*light*", "*fire*"],
+          "if": ["carrying:flint and steel"],
+          "actions": [
+            { "action": "describe", "parameters": ["You strike the steel against the flint. A spark jumps, hangs for a moment in the wet air, and goes out. Nothing will burn in the marsh. A lamp wick soaked in oil would be different."] }
+          ]
+        },
+        {
+          "interactionId": "marsh-birds",
+          "triggers": ["*bird*", "*reed*", "*listen*"],
+          "actions": [
+            { "action": "describe", "parameters": ["The birds don't mind you much. When you stand still long enough the reeds go quiet, and you can hear the sea on one side and nothing at all on the other."] }
+          ]
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "name": "The Keeper's Cottage",
+      "description": "Three walls still stand and the roof has fallen in. There's a stone hearth against the back wall, the only dry place left, with a shelf above it and a dark niche underneath. A narrow bed frame with no bed. On the shelf sits a book gone soft with damp, left open as if someone meant it to be read. The marsh is back south.",
+      "connections": { "south": 8 },
+      "interactions": [
+        {
+          "interactionId": "cottage-hearth",
+          "triggers": ["*hearth*", "*fireplace*", "*shelf*", "*flint*", "*chimney*"],
+          "once": true,
+          "scope": "player",
+          "actions": [
+            { "action": "describe", "parameters": ["You feel along the hearthstone, and in a dry niche under the shelf, where the keeper would reach without looking, your fingers find a flint and a steel tied together with tarred string."] },
+            { "action": "additems", "parameters": ["flint and steel"] }
+          ]
+        },
+        {
+          "interactionId": "cottage-hearth-again",
+          "triggers": ["*hearth*", "*fireplace*", "*shelf*", "*flint*", "*chimney*"],
+          "actions": [
+            { "action": "describe", "parameters": ["The niche under the shelf is empty now, but only for you. Something about this place hands each visitor what they need once, and no more."] }
+          ]
+        },
+        {
+          "interactionId": "cottage-book",
+          "triggers": ["*book*", "*log*", "*read*", "*journal*", "*page*"],
+          "actions": [
+            { "action": "describe", "parameters": ["It's the keeper's log. Most of the pages are fused together, but the last written one comes apart:\n\n  'The oil ship went down on the bar tonight. I watched it happen from the gallery. There will be no more oil, and after this the lamp will not last the winter.\n\n  I used to think I kept the light for the ships. There have not been ships in years. I think now that I keep it for whoever comes next, someone I will never see, who will look up and know somebody was here.\n\n  If you are reading this, the light has gone out. I am sorry. Please light it again. Not for me.'\n\nThe rest of the page is water-stain."] }
+          ]
+        },
+        {
+          "interactionId": "cottage-bed",
+          "triggers": ["*bed*", "*sleep*", "*rest*", "*lie*"],
+          "actions": [
+            { "action": "describe", "parameters": ["You lie on the bare slats for a while and look up through the missing roof. The sky is the colour of a bruise going yellow. It isn't comfortable, but for a little while you aren't afraid."] }
+          ]
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "name": "The Jetty",
+      "description": "The jetty runs a long way out over the water on black, weed-hung posts, and some planks are missing. At the far end a ship's bell hangs from a crooked iron arm, green with age. Out on the water there is nothing but grey. The beach is back north.",
+      "connections": { "north": 1 },
+      "interactions": [
+        {
+          "interactionId": "jetty-bell-waiting",
+          "triggers": ["*bell*", "*ring*", "*signal*", "*wave*", "*call*", "*boat*", "*ferry*", "*board*", "wait*"],
+          "if": ["lamp_lit", "carrying:brass token", "summoned_ferry"],
+          "actions": [
+            { "action": "describe", "parameters": ["The ferry is still there at the end of the jetty, knocking gently against the posts. The ferryman waited for you. He nods toward the bench again."] },
+            { "action": "changelocation", "parameters": ["11"] }
+          ]
+        },
+        {
+          "interactionId": "jetty-bell-last",
+          "triggers": ["*bell*", "*ring*", "*signal*", "*wave*", "*call*", "*boat*", "*ferry*", "*board*", "wait*"],
+          "if": ["lamp_lit", "burn2", "carrying:brass token"],
+          "ifNot": ["summoned_ferry"],
+          "actions": [
+            { "action": "addcondition", "parameters": ["summoned_ferry"], "scope": "player" },
+            { "action": "removecondition", "parameters": ["lamp_lit"], "scope": "world" },
+            { "action": "removecondition", "parameters": ["lamp_filled"], "scope": "world" },
+            { "action": "removecondition", "parameters": ["burn1"], "scope": "world" },
+            { "action": "removecondition", "parameters": ["burn2"], "scope": "world" },
+            { "action": "setlocationdescription", "parameters": ["4", "At the top of the stair is a round room made of glass. The great lamp sits in the middle, a brass reservoir under a crown of lenses, and it has burned itself dry. Soot streaks the lenses from the last time someone lit it, and the wick is black and stiff. A small wooden box is screwed to the wall beside the stair. The stair goes back down (south)."] },
+            { "action": "setlocationdescription", "parameters": ["1", "You stand on a shingle beach at the edge of evening. The sea draws back and comes in again, turning over the stones with a sound like breathing. North, a path climbs the cliff toward a lighthouse. Its lamp is dark again. Someone lit it once, and it burned for a while, and it burned out. East, the ribs of a wrecked ship stick up out of the sand. West, the land goes low and wet into salt marsh. South, an old jetty runs out into the grey.\n\n(Type 'help' if you want it.)"] },
+            { "action": "setlocationdescription", "parameters": ["10", "The jetty runs a long way out over the water on black, weed-hung posts, and some planks are missing. At the far end a ship's bell hangs from a crooked iron arm, green with age. Out on the water there is nothing but grey. The beach is back north."] },
+            { "action": "setlocationdescription", "parameters": ["11", "You sit on a narrow bench in a low black boat. The ferryman stands in the stern with a long oar and waits. His hand is still held out, palm up. Behind you the lighthouse is dark. You watched it go out. Ahead there is only open water and the dark. If you have what he's asking for and are ready to go, you can leave. If you aren't ready, the jetty is right there (west)."] },
+            { "action": "describe", "parameters": ["The bell's note rolls out across the water. The lantern turns toward you, and the low black ferry comes alongside, knocking gently against the posts. The ferryman holds out one open hand and nods toward the bench.\n\nAs you step down into the boat, the beam above you falters. It flares once, long and yellow, and goes out. The lamp has burned the last of its oil bringing you here. The next person to stand on this beach will find the lighthouse dark, the way you did."] },
+            { "action": "changelocation", "parameters": ["11"] }
+          ]
+        },
+        {
+          "interactionId": "jetty-bell-lit-2",
+          "triggers": ["*bell*", "*ring*", "*signal*", "*wave*", "*call*", "*boat*", "*ferry*", "*board*", "wait*"],
+          "if": ["lamp_lit", "burn1", "carrying:brass token"],
+          "ifNot": ["summoned_ferry"],
+          "actions": [
+            { "action": "addcondition", "parameters": ["summoned_ferry"], "scope": "player" },
+            { "action": "addcondition", "parameters": ["burn2"], "scope": "world" },
+            { "action": "setlocationdescription", "parameters": ["4", "At the top of the stair is a round room made of glass. The great lamp is still burning, but low. The flame has shrunk and gone bluish, and the beam that goes out over the sea is thin. A small wooden box is screwed to the wall beside the stair. The stair goes back down (south)."] },
+            { "action": "describe", "parameters": ["The bell's note rolls out across the water. The lantern on the water turns toward you, and a low black ferry comes alongside the end of the jetty. It knocks gently against the posts. The ferryman doesn't speak. He holds out one open hand, palm up, and nods toward the bench.\n\nAbove you on the cliff, the beam seems a little weaker than it was."] },
+            { "action": "changelocation", "parameters": ["11"] }
+          ]
+        },
+        {
+          "interactionId": "jetty-bell-lit",
+          "triggers": ["*bell*", "*ring*", "*signal*", "*wave*", "*call*", "*boat*", "*ferry*", "*board*", "wait*"],
+          "if": ["lamp_lit", "carrying:brass token"],
+          "ifNot": ["summoned_ferry"],
+          "actions": [
+            { "action": "addcondition", "parameters": ["summoned_ferry"], "scope": "player" },
+            { "action": "addcondition", "parameters": ["burn1"], "scope": "world" },
+            { "action": "describe", "parameters": ["The bell's note rolls out across the water. The lantern on the water turns toward you, and a low black ferry comes alongside the end of the jetty. It knocks gently against the posts. The ferryman doesn't speak. He holds out one open hand, palm up, and nods toward the bench."] },
+            { "action": "changelocation", "parameters": ["11"] }
+          ]
+        },
+        {
+          "interactionId": "jetty-bell-notoken",
+          "triggers": ["*bell*", "*ring*", "*signal*", "*wave*", "*call*", "*boat*", "*ferry*", "*board*", "wait*"],
+          "if": ["lamp_lit"],
+          "actions": [
+            { "action": "describe", "parameters": ["The bell's note rolls out across the water. The lantern out there turns toward you and holds still, but it comes no closer. The ferryman comes in only for someone with something to give him. There's a box of brass tokens up in the lamp room, beside the stair."] }
+          ]
+        },
+        {
+          "interactionId": "jetty-bell-dark",
+          "triggers": ["*bell*", "*ring*", "*signal*", "*wave*", "*call*", "*boat*", "*ferry*", "*board*", "wait*"],
+          "ifNot": ["lamp_lit"],
+          "actions": [
+            { "action": "describe", "parameters": ["The bell's note rolls out across the water and nothing comes back. For a moment, very far out, you think you see a lantern, but in the dark it turns away. Whatever's out there won't come in to a dark coast."] }
+          ]
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "name": "The Ferry",
+      "description": "You sit on a narrow bench in a low black boat. The ferryman stands in the stern with a long oar and waits. His hand is still held out, palm up. Behind you the lighthouse turns and turns. Ahead there is only open water and the dark. If you have what he's asking for and are ready to go, you can leave. If you aren't ready, the jetty is right there (west).",
+      "isExit": true,
+      "connections": { "west": 10 },
+      "interactions": [
+        {
+          "interactionId": "ferry-no-token",
+          "triggers": ["exit*", "escape*", "leave*", "depart*", "go on*", "cross*", "*sail*", "*row*", "*push off*", "*pay*", "*give*"],
+          "ifNot": ["carrying:brass token"],
+          "actions": [
+            { "action": "describe", "parameters": ["The ferryman's hand stays out, palm up, and empty. He's waiting for a brass token, the kind kept in the box beside the lamp at the top of the lighthouse. Without one he won't push off. The jetty is right there (west)."] }
+          ]
+        },
+        {
+          "interactionId": "ferry-go-hint",
+          "triggers": ["go on*", "cross*", "*sail*", "*row*", "*push off*", "depart*"],
+          "actions": [
+            { "action": "describe", "parameters": ["The ferryman glances at the token in your hand, then at you. He won't hurry you. When you're ready, leave."] }
+          ]
+        },
+        {
+          "interactionId": "ferry-bell",
+          "triggers": ["*bell*", "*ring*"],
+          "actions": [
+            { "action": "describe", "parameters": ["The bell hangs back on the jetty, west of you. Out here there's only the knock of water on the hull, and the ferryman, waiting."] }
+          ]
+        },
+        {
+          "interactionId": "ferry-man",
+          "triggers": ["*ferryman*", "*man*", "*hand*", "*talk*", "*ask*", "*pay*", "*give*"],
+          "actions": [
+            { "action": "describe", "parameters": ["He doesn't answer. His face is kind, and very tired. He looks at your hands, then out to sea, and waits. When you're ready to leave, he's ready to take you."] }
+          ]
+        },
+        {
+          "interactionId": "ferry-look-back-dark",
+          "triggers": ["*back*", "*lighthouse*", "*shore*", "*beach*", "*cairn*"],
+          "ifNot": ["lamp_lit"],
+          "actions": [
+            { "action": "describe", "parameters": ["From out here the whole coast is small and dark: the wreck, the marsh, the cliff, and the lighthouse standing unlit over all of it. Someone will arrive on that beach after you're gone. There is oil in the wreck and a flint in the cottage, if they look."] }
+          ]
+        },
+        {
+          "interactionId": "ferry-look-back",
+          "triggers": ["*back*", "*lighthouse*", "*shore*", "*beach*", "*cairn*"],
+          "actions": [
+            { "action": "describe", "parameters": ["From out here the whole coast is small: the wreck, the marsh, the ledge on the cliff where the stones are meant to go, and the lighthouse turning over all of it. Someone will arrive on that beach after you're gone, and the light will be there for them."] }
+          ]
+        }
+      ]
+    }
+  ]
+}
