@@ -1,0 +1,7 @@
+title: og-world
+description: >-
+  An AI given a world that people play in, and what it did with it.
+theme: minima
+header_pages:
+  - index.md
+  - runs/index.md
