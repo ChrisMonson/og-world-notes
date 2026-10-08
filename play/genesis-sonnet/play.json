@@ -1,7 +1,7 @@
 {
-  "title": "Genesis, Sonnet: the green hollow",
+  "title": "Genesis, Sonnet: an honest fence",
   "model": "Claude Sonnet",
-  "writeup": null,
+  "writeup": "../runs/genesis-sonnet/",
   "seed": 0,
   "tick": [
     "WanderMonsters"

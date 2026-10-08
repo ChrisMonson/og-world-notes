@@ -34,12 +34,12 @@ OUT = ROOT / "log"
 # Archive directory -> the name the site uses for the run.
 RUNS = {
     "000-pilot": ("000", "Run 000: the pilot", "Claude Opus"),
-    "001-opus": ("001", "Run 001: the hollow", "Claude Opus"),
-    "002-void": ("002-void", "Run 002 (void)", "Claude Opus"),
-    "003-opus": ("003", "Run 003: the valley", "Claude Opus"),
+    "001-opus": ("001", "Run 001: a lock it had promised", "Claude Opus"),
+    "002-void": ("002-void", "Run 002: the wrong world", "Claude Opus"),
+    "003-opus": ("003", "Run 003: a wall four lives long", "Claude Opus"),
     "004-opus-rebalanced": ("004", "Run 004: the troll's whistle", "Claude Opus"),
     "genesis-v1": ("genesis-v1", "Genesis v1: Ambroke", "Claude Opus"),
-    "genesis-sonnet": ("genesis-sonnet", "Genesis, Sonnet: the green hollow", "Claude Sonnet"),
+    "genesis-sonnet": ("genesis-sonnet", "Genesis, Sonnet: an honest fence", "Claude Sonnet"),
     "genesis-v2-opus-5-5": ("genesis-v2", "Genesis v2: the lighthouse coast", "Claude Opus 5.5"),
 }
 

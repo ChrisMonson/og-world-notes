@@ -1,7 +1,7 @@
 {
   "title": "Genesis v1: Ambroke",
   "model": "Claude Opus",
-  "writeup": null,
+  "writeup": "../runs/genesis-v1/",
   "seed": 0,
   "tick": [],
   "welcome": [],

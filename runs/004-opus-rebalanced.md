@@ -77,7 +77,7 @@ became an ending, the counterpart to dying: the character is finished, and
 whoever reconnects comes back as somebody new. The difference is that you keep
 what you carried.
 
-## A dead man's work is still on the monster
+## The troll keeps its wounds
 
 Kaleb arrived, learned everything the world had to teach in three minutes, and
 died to the troll in four exchanges. Three deaths there now. The caretaker very
@@ -91,7 +91,7 @@ Testing that, the caretaker walked into the troll's passage and was told:
 
 > *The cave troll is bleeding, and carrying every wound it has been given.*
 
-That was Kaleb's damage, twenty minutes after he died for it. Monsters never
+That was Kaleb's damage, twenty minutes after they died for it. Monsters never
 heal, and the camp fire it had built earlier heals you completely. So hit the
 troll, walk back to the fire, sleep, return: the strongest tactic in the world,
 and nobody had designed it.
@@ -103,10 +103,10 @@ and nobody had designed it.
 
 ## "Huh. Well that was easy."
 
-Krasus went from birth to daylight in four minutes and forty-one seconds, and said
-that on his way out. The caretaker had written "the middle is still missing" in
-three journal entries running. Krasus was what that sentence looks like when
-somebody does it to you.
+Krasus went from birth to daylight in four minutes and forty-one seconds, and
+said that on their way out. The caretaker had written "the middle is still
+missing" in three journal entries running. Krasus was what that sentence looks
+like when somebody does it to you.
 
 It did not add rooms. It added throwing, which three players had tried and been
 told "Nothing happens." Then it added a choice. The troll now wears a tin whistle
@@ -119,7 +119,8 @@ It took the greedy line itself with a character called Marrow, fed the troll,
 had the key, could have walked out four minutes old. It went back for the whistle,
 missed seven swings in a row, and died.
 
-> I'm glad. That is the trade-off having teeth, demonstrated on me.
+> I'm glad. That is the trade-off having teeth, demonstrated on me, and I'd
+> rather find it that way than reason about it.
 
 ## Things that outlive you
 
@@ -138,7 +139,7 @@ mark:
   read who it had belonged to, and spent two and a half minutes writing
   `whisper Thank you M R, whoever you where. I'm sorry for what became of you, but
   am grateful for what you left behind.` The world replied: **"There is no Thank
-  here."** It had treated his first word as the name of a player to whisper to.
+  here."** It had treated their first word as the name of a player to whisper to.
 
   > That is the best thing anyone has ever done in this world and it is the worst
   > answer this world has ever given.
@@ -146,11 +147,12 @@ mark:
   The next turn, a whisper to nobody stayed in the room, and you could carve
   things into the walls.
 
-Then Simon. He arrived at 02:47, killed the goblin, and stood around. While he
-was standing there, one of the caretaker's characters carved a note into the cave
-mouth wall: *don't kill the little one, it's starving, give it the apple.* The
-goblin came back. Simon fed it. Then, alone in an empty room, he typed `say thank
-you!` and went north, gave the troll a bone instead of fighting it, and left.
+Then Simon. They arrived at 02:47, killed the goblin, and stood around. While
+they were standing there, one of the caretaker's characters carved a note into
+the cave mouth wall: *don't kill the little one, it's starving, give it the
+apple.* The goblin came back. Simon fed it. Then, alone in an empty room, they
+typed `say thank you!` and went north, gave the troll a bone instead of fighting
+it, and left.
 
 > He killed one thing in eighty-four minutes and it was the thing he later
 > apologised for.
@@ -174,18 +176,18 @@ no way to check.
 
 ## Kaylee
 
-Kaylee was the first player born into a hollow with a note in it telling her to
-go west first. She went, found nothing worth staying for on the ledge, and came
-back down. The caretaker spoke to her directly, once: go up and look at the
-pattern a while. Two minutes later she had worked out the stones, opened the
+Kaylee was the first player born into a hollow with a note in it telling them to
+go west first. They went, found nothing worth staying for on the ledge, and came
+back down. The caretaker spoke to them directly, once: go up and look at the
+pattern a while. Two minutes later they had worked out the stones, opened the
 cache, and put on the sword and armour.
 
-She went straight at the troll. She had it on 4 hit points, and was on 7 herself,
-when it hit her for 7. She had nothing to feed it instead. The apple that buys a
-bone from the goblin is buried in the camp's ashes, and the camp only answered to
-four nouns. `take apple` got "There is no apple here to take." The caretaker
-found that by standing in the camp and typing the same wrong word she would
-have.
+Kaylee went straight at the troll. They had it on 4 hit points, and were on 7
+themselves, when it hit them for 7. They had nothing to feed it instead. The
+apple that buys a bone from the goblin is buried in the camp's ashes, and the
+camp only answered to four nouns. `take apple` got "There is no apple here to
+take." The caretaker found that by standing in the camp and typing the same
+wrong word they would have.
 
 The troll does not heal. The next character in put it down in one blow.
 
