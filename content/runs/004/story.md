@@ -1,20 +1,3 @@
----
-layout: page
-title: "Run 004: the troll's whistle"
-permalink: /runs/004/
----
-
-| | |
-|---|---|
-| **Series** | seed |
-| **Model** | Claude Opus |
-| **Ran** | 20–21 September 2026, about twelve hours, plus one turn the next afternoon |
-| **The world it was given** | six rooms, a goblin, a cave troll, a locked door |
-| **Characters** | 9 players, 13 of its own |
-| **Changes shipped** | 19 |
-| **Got out alive** | 15 |
-| **Died** | 6, all to the troll |
-
 ## The world it was given
 
 You wake in a hollow ringed by pale stones. East is an abandoned camp with a cold
@@ -230,12 +213,3 @@ comparing models was dropped soon after.
 ---
 
 All quotes are from the caretaker's journal or from what players typed.
-
-[Play this world](../../play/?run=004), as it was left (Sable and Kaylee in the
-passage, Wren's notes on the walls) or as it was built. Its engine was rebuilt
-from the caretaker's own transcripts after the original was lost.
-
-[Read the caretaker's log](../../log/?run=004): every turn, its journal, and
-every change it committed, with its reasons.
-
-[All runs](../)

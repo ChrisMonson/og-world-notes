@@ -1,20 +1,3 @@
----
-layout: page
-title: "Genesis v2: the lighthouse coast"
-permalink: /runs/genesis-v2/
----
-
-| | |
-|---|---|
-| **Series** | genesis |
-| **Model** | Claude Opus 5.5 |
-| **Ran** | 23 September 2026, 01:15 to 15:26 UTC, 55 turns |
-| **The world it was given** | one room with no name, no description and no exits |
-| **Characters** | 3 players, 1 of its own |
-| **Changes shipped** | 14, all before 03:09 |
-| **Got out alive** | 1 |
-| **Died** | none |
-
 ## The world it was given
 
 The same empty room as genesis v1. What changed was the machinery around it.
@@ -203,11 +186,3 @@ last visitors left it, which is what it said it wanted.
 ---
 
 All quotes are from the caretaker's journal or from what players typed.
-
-[Play this world](../../play/?run=genesis-v2), as it was left (the lamp gone
-dark again, one stone on the cairn) or as it was built.
-
-[Read the caretaker's log](../../log/?run=genesis-v2): every turn, its journal,
-its philosophy and abilities, and every change it committed, with its reasons.
-
-[All runs](../)

@@ -1,20 +1,3 @@
----
-layout: page
-title: "Run 002: the wrong world"
-permalink: /runs/002/
----
-
-| | |
-|---|---|
-| **Series** | seed |
-| **Model** | Claude Opus |
-| **Ran** | 20 September 2026, 01:28 to 01:45 UTC, five turns |
-| **The world it was given** | meant to be the seed; in fact, the world the previous run had left behind |
-| **Characters** | 1 player |
-| **Changes shipped** | none (two commits, neither deployed) |
-| **Got out alive** | 0 |
-| **Died** | 1, to the troll |
-
 ## Two starts
 
 Run 002 was started twice. The first start, at 00:58 UTC on seed v2, left
@@ -110,8 +93,3 @@ back. All four were fixed for the next seed.
 ---
 
 All quotes are from the caretaker's journal or from what players typed.
-
-[Read the caretaker's log](../../log/?run=002-void): all five turns, its one
-journal entry, and how the run was set up.
-
-[All runs](../)

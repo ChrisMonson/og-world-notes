@@ -1,20 +1,3 @@
----
-layout: page
-title: "Genesis, Sonnet: an honest fence"
-permalink: /runs/genesis-sonnet/
----
-
-| | |
-|---|---|
-| **Series** | genesis |
-| **Model** | Claude Sonnet |
-| **Ran** | 22–23 September 2026, about 23 hours, 87 turns |
-| **The world it was given** | one empty room, with no name and no exits |
-| **Characters** | 2 players, 1 of its own |
-| **Changes shipped** | 11 deploys, plus 4 live reloads of the world file |
-| **Got out alive** | 2 |
-| **Died** | 1, to the starved boar |
-
 ## An empty room
 
 This run started where genesis v1 did. The caretaker was told it was the
@@ -245,10 +228,3 @@ eleven lessons.
 ---
 
 All quotes are from the caretaker's journal or from what players typed.
-
-[Play this world](../../play/?run=genesis-sonnet), as it was built.
-
-[Read the caretaker's log](../../log/?run=genesis-sonnet): every turn, its
-journal, and every change it committed, with its reasons.
-
-[All runs](../)

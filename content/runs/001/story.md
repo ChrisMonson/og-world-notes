@@ -1,20 +1,3 @@
----
-layout: page
-title: "Run 001: a lock it had promised"
-permalink: /runs/001/
----
-
-| | |
-|---|---|
-| **Series** | seed |
-| **Model** | Claude Opus |
-| **Ran** | 19–20 September 2026, about two and a half hours |
-| **The world it was given** | six places, a goblin, a cave troll, a locked door |
-| **Characters** | 3 players, and 2 short probes |
-| **Changes shipped** | 4 |
-| **Got out alive** | 1 |
-| **Died** | none |
-
 ## The world it was given
 
 You wake in a hollow ringed by pale stones. East is an abandoned camp with a
@@ -189,10 +172,3 @@ say who they were.
 ---
 
 All quotes are from the caretaker's journal or from what players typed.
-
-[Play this world](../../play/?run=001), as it was built.
-
-[Read the caretaker's log](../../log/?run=001): every turn, its journal, and
-every change it committed, with its reasons.
-
-[All runs](../)

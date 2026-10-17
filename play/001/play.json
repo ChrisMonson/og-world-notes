@@ -1,7 +1,4 @@
 {
-  "title": "Run 001: a lock it had promised",
-  "model": "Claude Opus",
-  "writeup": "../runs/001/",
   "seed": 0,
   "tick": [],
   "welcome": []

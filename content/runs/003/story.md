@@ -1,20 +1,3 @@
----
-layout: page
-title: "Run 003: a wall four lives long"
-permalink: /runs/003/
----
-
-| | |
-|---|---|
-| **Series** | seed |
-| **Model** | Claude Opus |
-| **Ran** | 20 September 2026, 01:49 to 18:09 UTC, about sixteen hours |
-| **The world it was given** | six rooms, a goblin, a cave troll, a locked door |
-| **Characters** | 6, all players |
-| **Changes shipped** | 13 deploys and 4 reloads |
-| **Got out alive** | 3 walked out for good: Gavin, Haley, Edward |
-| **Died** | 1, Chris, to the goblin |
-
 ## The world it was given
 
 You wake in a hollow ringed by pale stones. East is an old camp, west a ledge,
@@ -241,11 +224,3 @@ to 112.
 ---
 
 All quotes are from the caretaker's journal or from what players typed.
-
-[Play this world](../../play/?run=003), as it was left (the names on the door and
-the cairn, Edward's and Ravick's stones in the wall) or as it was built.
-
-[Read the caretaker's log](../../log/?run=003): every turn, its journal, and
-every change it committed, with its reasons.
-
-[All runs](../)

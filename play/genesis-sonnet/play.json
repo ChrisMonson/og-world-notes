@@ -1,7 +1,4 @@
 {
-  "title": "Genesis, Sonnet: an honest fence",
-  "model": "Claude Sonnet",
-  "writeup": "../runs/genesis-sonnet/",
   "seed": 0,
   "tick": [
     "WanderMonsters"

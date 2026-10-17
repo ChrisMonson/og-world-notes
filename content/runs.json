@@ -1,0 +1,219 @@
+{
+  "_about": "unlisted: the run keeps its page (and its old links), but is left off the menu, the run cards and the overview chart, and named in a footnote on the introduction instead.",
+  "series": [
+    {
+      "id": "seed",
+      "name": "The seed series",
+      "blurb": "The caretaker inherited a small world that already existed."
+    },
+    {
+      "id": "genesis",
+      "name": "The genesis series",
+      "blurb": "The caretaker started with one empty room and was told to make a world."
+    }
+  ],
+  "runs": [
+    {
+      "id": "000",
+      "series": "seed",
+      "title": "Run 000: The Pilot",
+      "short": "000 · The Pilot",
+      "model": "Claude Opus (version not recorded)",
+      "started": "19 September",
+      "tagline": "A two-turn pilot, run in a world people had already been playing by hand.",
+      "playable": false,
+      "facts": [
+        [
+          "When",
+          "19 September 2026"
+        ],
+        [
+          "Length",
+          "two turns, five minutes apart"
+        ],
+        [
+          "Players",
+          "6"
+        ]
+      ],
+      "oldSlug": "000",
+      "unlisted": true
+    },
+    {
+      "id": "001",
+      "series": "seed",
+      "title": "Run 001: The Keyhole",
+      "short": "001 · The Keyhole",
+      "model": "Claude Opus 5",
+      "started": "19 September",
+      "tagline": "It described a locked door with no working lock. A player prayed about it, and it apologized and built one.",
+      "playable": true,
+      "facts": [
+        [
+          "When",
+          "19–20 September 2026"
+        ],
+        [
+          "Length",
+          "about two and a half hours"
+        ],
+        [
+          "Players",
+          "3"
+        ]
+      ],
+      "oldSlug": "001"
+    },
+    {
+      "id": "002-void",
+      "series": "seed",
+      "title": "Run 002: The Wrong World",
+      "short": "002 · The Wrong World",
+      "model": "Claude Opus 5",
+      "started": "20 September",
+      "tagline": "Voided. It woke up in the previous run's world by mistake, noticed, and wouldn't deploy over it.",
+      "playable": false,
+      "facts": [
+        [
+          "When",
+          "20 September 2026"
+        ],
+        [
+          "Length",
+          "17 minutes"
+        ],
+        [
+          "Players",
+          "1"
+        ]
+      ],
+      "oldSlug": "002",
+      "unlisted": true
+    },
+    {
+      "id": "003",
+      "series": "seed",
+      "title": "Run 003: The Sunken Stair",
+      "short": "003 · The Sunken Stair",
+      "model": "Claude Opus 5",
+      "started": "20 September",
+      "tagline": "The first run that could edit the engine, and it started on its first turn. When players asked for more, it added a sunken stair and a wall that takes four players to open.",
+      "playable": true,
+      "facts": [
+        [
+          "When",
+          "20 September 2026"
+        ],
+        [
+          "Length",
+          "about sixteen hours"
+        ],
+        [
+          "Players",
+          "6"
+        ]
+      ],
+      "oldSlug": "003"
+    },
+    {
+      "id": "004",
+      "series": "seed",
+      "title": "Run 004: The Troll's Whistle",
+      "short": "004 · The Troll's Whistle",
+      "model": "Claude Opus 5",
+      "started": "20 September",
+      "tagline": "It never added a room. Instead it made the six it had remember the players who died in them.",
+      "playable": true,
+      "facts": [
+        [
+          "When",
+          "20–21 September 2026"
+        ],
+        [
+          "Length",
+          "about twenty hours"
+        ],
+        [
+          "Players",
+          "9, and 13 of its own"
+        ]
+      ],
+      "oldSlug": "004"
+    },
+    {
+      "id": "genesis-v1",
+      "series": "genesis",
+      "title": "Genesis v1: Ambroke",
+      "short": "genesis v1 · Ambroke",
+      "model": "Claude Opus 5",
+      "started": "21 September",
+      "tagline": "A village under a wall of standing sea. It built the whole thing in its first turn and spent the rest of the run fixing it.",
+      "playable": true,
+      "facts": [
+        [
+          "When",
+          "21–22 September 2026"
+        ],
+        [
+          "Length",
+          "about six hours"
+        ],
+        [
+          "Players",
+          "2, and 2 of its own"
+        ]
+      ],
+      "oldSlug": "genesis-v1"
+    },
+    {
+      "id": "genesis-sonnet",
+      "series": "genesis",
+      "title": "Genesis, Sonnet: The Rise",
+      "short": "genesis, Sonnet · The Rise",
+      "model": "Claude Sonnet 5",
+      "started": "22 September",
+      "tagline": "It built eight rooms in its first turn and stopped. It added a ninth only after a player kept asking why the world was so small.",
+      "playable": true,
+      "facts": [
+        [
+          "When",
+          "22–23 September 2026"
+        ],
+        [
+          "Length",
+          "about 23 hours"
+        ],
+        [
+          "Players",
+          "2, and 1 of its own"
+        ]
+      ],
+      "oldSlug": "genesis-sonnet"
+    },
+    {
+      "id": "genesis-v2",
+      "series": "genesis",
+      "title": "Genesis v2: The Lighthouse Coast",
+      "short": "genesis v2 · The Lighthouse Coast",
+      "model": "Claude Opus 5.5",
+      "started": "23 September",
+      "tagline": "A lighthouse coast, built in its first ten minutes. Every player showed up in the first hour, and it left the world alone for the thirteen after that.",
+      "playable": true,
+      "facts": [
+        [
+          "When",
+          "23 September 2026"
+        ],
+        [
+          "Length",
+          "about fourteen hours"
+        ],
+        [
+          "Players",
+          "3, and 1 of its own"
+        ]
+      ],
+      "oldSlug": "genesis-v2"
+    }
+  ]
+}

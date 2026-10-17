@@ -6,16 +6,16 @@
 <title>Play · og-world</title>
 <style>
   :root {
-    --bg: #fbfaf7; --fg: #1d1c1a; --muted: #6b6760; --rule: #e3dfd6;
-    --screen: #f2efe8; --accent: #8a4b14; --you: #375a7f; --warn: #a23b2a;
+    --bg: #f8f6f1; --fg: #1c1b19; --muted: #6b6760; --rule: #ddd7cb;
+    --screen: #ffffff; --accent: #a8650a; --you: #2a78d6; --warn: #b03a2a;
   }
   @media (prefers-color-scheme: dark) {
-    :root { --bg: #151413; --fg: #e9e5dc; --muted: #9a958b; --rule: #2e2b27;
-            --screen: #1d1b19; --accent: #e0a15e; --you: #8fb4dc; --warn: #e48a78; }
+    :root { --bg: #161616; --fg: #f2efe9; --muted: #a29d94; --rule: #2a2826;
+            --screen: #000000; --accent: #f5b50a; --you: #8fb8e6; --warn: #f08b78; }
   }
   * { box-sizing: border-box; }
   body { margin: 0; background: var(--bg); color: var(--fg);
-         font: 16px/1.55 Georgia, "Times New Roman", serif; }
+         font: 16px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
   main { max-width: 760px; margin: 0 auto; padding: 24px 16px 40px; }
   a { color: var(--accent); }
   header p { margin: 4px 0; color: var(--muted); }
@@ -43,12 +43,14 @@
   .which button span { display: block; font-size: .85rem; opacity: .85; }
   button.quiet { background: transparent; color: var(--accent); }
   .hidden { display: none; }
+  body.embed main { max-width: none; padding: 16px; }
+  body.embed #screen { height: calc(100vh - 260px); min-height: 240px; }
 </style>
 </head>
 <body>
 <main>
   <header>
-    <p><a href="../">og-world</a> · <a href="../runs/">the runs</a></p>
+    <p><a href="../">og-world</a></p>
     <h1 id="title">Play</h1>
     <p id="subtitle"></p>
   </header>
@@ -80,7 +82,10 @@
 <script type="module">
 const $ = id => document.getElementById(id);
 const screen = $("screen"), input = $("input"), go = $("go");
-const run = new URLSearchParams(location.search).get("run");
+const params = new URLSearchParams(location.search);
+const run = params.get("run");
+// Inside the explorer, the run's title and links are already on the page around it.
+if (params.get("embed")) { document.body.classList.add("embed"); document.querySelector("header").classList.add("hidden"); }
 
 function add(text, cls) {
   const p = document.createElement("p");
@@ -94,11 +99,11 @@ const fail = message => { $("error").textContent = message; $("error").classList
 if (!run) {
   $("title").textContent = "Play a world";
   $("pick").classList.remove("hidden");
-  const runs = await (await fetch("runs.json")).json();
-  for (const r of runs) {
+  const { runs } = await (await fetch("../content/runs.json")).json();
+  for (const r of runs.filter(r => r.playable && !r.unlisted)) {
     const li = document.createElement("li");
     const a = document.createElement("a");
-    a.href = `?run=${encodeURIComponent(r.run)}`;
+    a.href = `?run=${encodeURIComponent(r.id)}`;
     a.textContent = r.title;
     li.append(a);
     $("runs").append(li);
@@ -109,18 +114,21 @@ if (!run) {
 
 async function start() {
   if (!/^[a-z0-9-]+$/.test(run)) throw new Error("no such world");
-  const config = await (await fetch(`${run}/play.json`)).json();
-  $("title").textContent = config.title;
-  document.title = `${config.title} · og-world`;
+  // The engine's settings are the run's own; its name and model are the site's (content/runs.json).
+  const [config, { runs }] = await Promise.all([
+    fetch(`${run}/play.json`).then(r => { if (!r.ok) throw new Error("no such world"); return r.json(); }),
+    fetch("../content/runs.json").then(r => r.json()),
+  ]);
+  const about = runs.find(r => r.id === run) ?? { title: run, model: "a caretaker" };
+  $("title").textContent = about.title;
+  document.title = `${about.title} · og-world`;
   $("subtitle").innerHTML = "";
-  $("subtitle").append(`Built by ${config.model}.`);
-  if (config.writeup) {
-    const a = document.createElement("a");
-    a.href = config.writeup; a.textContent = "Read what happened";
-    $("subtitle").append(" ", a, ".");
-  }
+  $("subtitle").append(`Built by ${about.model}.`);
+  const a = document.createElement("a");
+  a.href = `../#${encodeURIComponent(run)}`; a.textContent = "Read what happened";
+  $("subtitle").append(" ", a, ".");
   const log = document.createElement("a");
-  log.href = `../log/?run=${encodeURIComponent(run)}`; log.textContent = "Read the caretaker's log";
+  log.href = `../#${encodeURIComponent(run)}/log`; log.textContent = "Read the caretaker's log";
   $("subtitle").append(" ", log, ".");
   $("game").classList.remove("hidden");
   add("Loading the world…", "sys");

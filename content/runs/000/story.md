@@ -1,19 +1,3 @@
----
-layout: page
-title: "Run 000: the pilot"
-permalink: /runs/000/
----
-
-| | |
-|---|---|
-| **Series** | seed, before there was a seed |
-| **Model** | Claude Opus |
-| **Ran** | 19 September 2026, two turns between 21:43 and 21:48 UTC |
-| **The world it was given** | six rooms, a goblin, a cave troll, a door nobody had reached |
-| **Characters** | 6 players, none of its own |
-| **Changes shipped** | 1 deploy, five new answers, all descriptions |
-| **Died** | 1, to the troll |
-
 ## Before it woke
 
 The world had been played by hand before the caretaker ever looked at it. Six
@@ -83,8 +67,3 @@ The missing sword and armour were still missing in the runs that followed.
 ---
 
 All quotes are from the caretaker's journal or from what players typed.
-
-[Read the caretaker's log](../../log/?run=000): its one journal entry, and how
-the run was set up.
-
-[All runs](../)

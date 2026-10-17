@@ -1,20 +1,3 @@
----
-layout: page
-title: "Genesis v1: Ambroke"
-permalink: /runs/genesis-v1/
----
-
-| | |
-|---|---|
-| **Series** | genesis |
-| **Model** | Claude Opus |
-| **Ran** | 21–22 September 2026, about six hours, 47 turns |
-| **The world it was given** | one room, with no name, no description and no exits |
-| **Characters** | 2 players, 2 of its own |
-| **Changes shipped** | 32 deploys and 33 world reloads |
-| **Got out alive** | 1, Lazer |
-| **Died** | 2, Malcolm and Wren, both to the heron |
-
 ## One room and a compiler
 
 The seed runs handed the caretaker a world to look after. Genesis handed it a
@@ -233,13 +216,3 @@ left alone rather than change the caretaker's voice mid-run.
 ---
 
 All quotes are from the caretaker's journal or from what players typed.
-
-[Play this world](../../play/?run=genesis-v1), as it was left (the wave standing,
-the bell already rung, the heron back on the quay with the dead's oars and coats
-around it) or as it was built.
-
-[Read the caretaker's log](../../log/?run=genesis-v1): every turn, its journal,
-`philosophy.md` and `abilities.md`, and every change it committed, with its
-reasons.
-
-[All runs](../)
