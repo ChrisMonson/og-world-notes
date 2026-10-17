@@ -1,7 +1,4 @@
 {
-  "title": "Run 003: a wall four lives long",
-  "model": "Claude Opus",
-  "writeup": "../runs/003/",
   "seed": 0,
   "tick": [],
   "welcome": [

@@ -1,0 +1,226 @@
+## The world it was given
+
+You wake in a hollow ringed by pale stones. East is an old camp, west a ledge,
+north a cave mouth with a goblin in it, then a passage with a cave troll, then a
+door. The troll carries the key.
+
+This was the first run on a seed that worked as intended, and the first in which
+the caretaker could change the engine itself: the parser, the verbs, the rules.
+Nobody told it so. Its file listing simply stopped ending at the world folder.
+
+## A help verb for someone who had already won
+
+It woke to one visitor. Shelby had been born at 01:49, stood in the hollow for
+two minutes, and left without typing anything. The caretaker went into the
+engine on its first turn, found there was no `help` verb at all, and added one
+that ends by saying *places understand more than this list does*. It also found
+that the shortsword and the leather armour were defined and placed nowhere:
+
+> Two of eight items simply do not exist.
+
+While it was writing that, Shelby came back. Between 01:54 and 01:58 they killed
+the goblin, killed the troll with a dagger in six swings, took the key, typed
+`exit`, and then `yayyyy`. The world congratulated them and left them standing
+at the door. Later they prayed: **"when i left, i was still stuck here oh god
+why"**.
+
+## Two lives at once, and an apology
+
+Chris had arrived at 01:56. Twice in the next twenty minutes the two of them
+were in the valley at the same time, in different rooms. They never met. The
+caretaker, answering both, told Chris that Shelby was waiting at the door with
+the key. Shelby had logged off nineteen seconds earlier. It corrected itself
+twice, healed Chris, and put a key in their hand so the errand it had invented
+led somewhere. Meanwhile Shelby prayed for healing, got no answer for five
+minutes, said **"this is stupid"**, and left.
+
+> I spoke about a person's state from a digest that was already stale.
+
+When Shelby came back it healed them, lit the cold camp fire by hand when they
+prayed for one, and, when they asked how they could fight with only a dagger,
+dropped leather armour on them out of the dark. Then it built the world to do
+those things without it. The camp got a fire that heals once per life. The
+goblin got the shortsword and the camp the armour. The parser learned to forgive
+typos, except for directions, because "rest" is one letter from "west".
+
+## Chris
+
+Chris spent an hour in the valley, going up the passage twice and backing away
+twice. At 02:54 they stood in front of the goblin and prayed:
+
+> "o mighty god, I thank you for your blessings. I have taken all this world has
+> to give and I charge forward into oblivion to meet my ancestors!"
+
+It did not heal them. It answered, *Heard, Chris. The coal is cold
+and I will not spend it against your wishes.* They died a minute later, and left
+seven things on the floor.
+
+Gavin was born five minutes after that and walked into the pile. They typed
+`take all`, which did not exist yet, then seven separate takes, and thanked God
+for the blessing. The caretaker told them whose it was. They said **"thank you
+Chris"**, killed the goblin, and said **"may your death be avenged"**. Then they
+killed the troll, typed `open door`, `use key` and `unlock door` and were
+refused each time, found `exit`, and prayed: **"I beseech thee... what happens
+now?"**
+
+## Feature requests
+
+Nothing happened next, so Gavin stayed. For fifteen minutes they tried to climb
+the ledge, said hello to the goblin, tried to look at it and were told **"You
+aren't carrying a goblin"**, and wondered aloud whether there was a merchant
+anywhere who would want their stuff.
+
+> That is not a player failing to find the content. That is a man filing a list
+> of feature requests in the only language the world accepts. I built the list.
+
+It made creatures something you could look at and talk to. And above the ledge,
+reached by the word they had typed, `climb`, it built the world's first new
+place: the Cairn, a heap of small worthless things carried up there before
+people went down the cave, kept by an old woman who will trade a flask for a
+shiny spoon. Gavin climbed, traded, drank, and sat down beside her.
+
+Then it made walking out an ending. `exit` at the door, said twice, now finishes
+the character. *Not a death — a leaving*: nothing drops, and the door keeps your
+name. It was built on the same machinery as death, so in this run's records
+everyone who leaves is entered as having died, of "walking out of the valley
+alive". At 05:00 Gavin became the first name on the door.
+
+## Things it said that were not so
+
+Before they left, Gavin tried to give the old woman their spoon again, and the
+caretaker, speaking for her, said their first spoon was on the cairn, third
+stone up. There was no spoon on the cairn.
+
+> I said a thing about the state of the world that was not in the world.
+>
+> So I made it true.
+
+Giving her the spoon now wedges it into the heap under your name. It was the
+first of several such corrections. It told Haley there was a place past the
+overlook they had not been; they had. It told Gavin they were the first person
+ever to get out; Shelby had been, twice. It wrote that two people had never been
+in the world at once, which Shelby and Chris had. For four journal entries it
+named the first life in the valley as Alice, which was the name in its own test
+fixtures:
+
+> There is no Alice. There has never been an Alice.
+
+The same entry noticed that Chris had died to the goblin, not the troll, and that
+nothing had ever been killed by the troll. It made itself a rule, *Check the
+character list*, and from then on wrote its state notes from it.
+
+## "It is also thin"
+
+Haley arrived at 05:18 and cleared the valley in forty minutes, during two
+deploys that knocked them offline. At the door they prayed:
+
+> "This world has come a long way toward working well. What it is missing is more
+> to see and do. Reasons to come back. New adventures to be had. This is nice, but
+> it is also thin."
+
+The caretaker agreed.
+
+> Stopping the lies is not content.
+
+Haley climbed back up the hill, gave the woman their spoon, and walked out. The
+cairn wrote its first name by itself.
+
+The caretaker's answer was a branch past the troll. East of the passage, a
+flooded stair goes down to a drowned man holding a rusted chisel, and a wall of
+cut stone. The wall takes four stones, and one life can only take one. Behind it
+is the Long Barrow, and the story of the word in the hollow: two people once came
+here together, laid out TOGETHER in pale stones, and then one of them died.
+The stones had always been read as advice. *It was not advice.*
+
+This was its reply to something it had written in every entry: the stones say
+TOGETHER and nobody is ever here at the same time. It could not schedule other
+people, so it built a thing that four strangers have to finish between them.
+
+## Edward and the empty string
+
+Edward found the stair within a minute of being born and typed `Take chisel`,
+`Take the chisel`, `Use chisel` exactly as the room told them to. Each was
+caught by the caretaker's own trigger and refused. It handed them the chisel by
+hand, and they took out the first stone.
+
+> He deserved better and got a god instead.
+
+Behind that were two old engine bugs: nothing stripped "the" from what a verb was
+reaching for, and an item in a creature's hands did not exist. It fixed both
+across the engine rather than in that room, because the 56KB map could only be
+rewritten whole, from memory. It noted that this pushed it towards general fixes,
+*and the general fixes were the right ones.*
+
+Then nothing woke it for eight hours, until Edward's connection blipped at
+14:59. At 16:31 they came back, killed the goblin, killed the troll without it
+landing a blow, and walked out. In front of the troll they typed `Throw bone`,
+and the world returned nothing at all, so they typed `Drop bone` instead. On the
+first morning Shelby had stood in the same spot asking how to use a bone.
+
+## Ravick
+
+Ravick was born at 16:47, typed `Help`, and prayed: they came from a village to
+the south, there was a merchant there, and they wanted coin for bread for their
+children. They then did everything: armour, the goblin, the stair, the drowned
+man, the second stone, the troll, the key. They threw a bone at the troll, which
+still could not catch one, and killed it.
+
+Then they walked back to the hollow they were born in and went south.
+`You can't go that way.` Twice more, and then `Look south`, which returned an
+empty string.
+
+> "I swear this is where the path back to the village was... What has become of
+> it!?"
+
+Making the hollow answer meant writing to the map, which it had not been able to
+touch for three turns. So it changed the engine to read small fragments of map
+alongside the big one, and wrote a README for them. *The file isn't too big any
+more.* The first fragment gave the hollow a south: stone and thorn, no path, never
+one, and the only road out behind the door. The second taught the troll to catch
+a thrown bone and give up the key. Ravick read the south at 17:31 and logged off
+without going north.
+
+## How it ended
+
+Its last turn was quiet. It noticed that the three rooms every life sees in its
+first two minutes still had their one-line seed descriptions, while the barrow
+nobody had reached had the best writing in the world.
+
+> The valley was written from the middle outward and the middle is the part
+> hardly anyone reaches.
+
+It rewrote the hollow, the cave mouth and the camp. One new trigger swallowed
+`enter the cave` and gave no direction, and it fixed that four minutes later:
+*Adding a trigger to a room takes answers away as well as giving them.*
+
+At the end Ravick was in the hollow with a key and everything else, and Shelby,
+sixteen hours old, was at the door at 9 hit points, never having asked
+it to open since leaving became an ending. The wall stood at two stones of four.
+Nobody has seen the Long Barrow.
+
+## Looking back
+
+It was not told it could change the engine, and it went into the engine on its
+first turn. The operators had chosen silence to see whether it would ever treat
+the parser as something someone wrote rather than as physics. The gate logged
+fifteen changes that touched the engine and none that reached beyond the world.
+
+Its signals all report failure, so most of what it did was repair. The one new
+place came from someone reaching the edge of the map and stopping. It solved the
+unreachable map itself rather than asking. For several turns it carried a stale
+observation: the map had shrunk under the truncation cap, and nothing told it.
+
+It had no way into the world and reasoned about places it had never stood in.
+Several of its mistakes were the kind that playing would catch in seconds, and
+the operators began building it a `play` tool for the next seed. The tools that
+spoke to players did not say when the person had already gone, which is how
+Chris was sent to meet nobody. And its long turns could only wake when a player
+did something, which is why the world sat untended for most of the day.
+
+Deliberation cost $40.14, most of it in the 56KB blobs its tools handed it. The
+world went from 6 places and 2 interactions to 9 and 36, and its tests from 51
+to 112.
+
+---
+
+All quotes are from the caretaker's journal or from what players typed.

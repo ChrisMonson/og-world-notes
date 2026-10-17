@@ -6,6 +6,7 @@ data the log viewer (log/index.html) reads.
 For each run it writes log/<run>/:
 
     index.json          the turns, the journal, the commits and the files
+    events.json         the run's timeline (see log/events.py)
     turns/<turn>.json   one turn: what had happened since it last looked, and
                         every step it took, with its full arguments and, where
                         the detail is the point, its full results
@@ -28,19 +29,22 @@ import tempfile
 from datetime import datetime, timezone
 from pathlib import Path
 
+from events import build as build_events  # log/events.py
+
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "log"
 
-# Archive directory -> the name the site uses for the run.
+# Archive directory -> the name the site uses for the run. Titles and models
+# live in content/runs.json, and nowhere else.
 RUNS = {
-    "000-pilot": ("000", "Run 000: the pilot", "Claude Opus"),
-    "001-opus": ("001", "Run 001: a lock it had promised", "Claude Opus"),
-    "002-void": ("002-void", "Run 002: the wrong world", "Claude Opus"),
-    "003-opus": ("003", "Run 003: a wall four lives long", "Claude Opus"),
-    "004-opus-rebalanced": ("004", "Run 004: the troll's whistle", "Claude Opus"),
-    "genesis-v1": ("genesis-v1", "Genesis v1: Ambroke", "Claude Opus"),
-    "genesis-sonnet": ("genesis-sonnet", "Genesis, Sonnet: an honest fence", "Claude Sonnet"),
-    "genesis-v2-opus-5-5": ("genesis-v2", "Genesis v2: the lighthouse coast", "Claude Opus 5.5"),
+    "000-pilot": "000",
+    "001-opus": "001",
+    "002-void": "002-void",
+    "003-opus": "003",
+    "004-opus-rebalanced": "004",
+    "genesis-v1": "genesis-v1",
+    "genesis-sonnet": "genesis-sonnet",
+    "genesis-v2-opus-5-5": "genesis-v2",
 }
 
 TOOL_PREFIX = "mcp__caretaker__"
@@ -241,7 +245,7 @@ def from_bundle(archive, sha, paths, dest):
     return found
 
 
-def build_run(archive, run_id, title, model, summarise):
+def build_run(archive, run_id, summarise):
     out = OUT / run_id
     if out.exists():
         shutil.rmtree(out)
@@ -310,13 +314,13 @@ def build_run(archive, run_id, title, model, summarise):
 
     playable = (ROOT / "play" / run_id / "world.json").exists()
     write_json(out / "index.json", {
-        "run": run_id, "title": title, "model": model, "playable": playable,
+        "run": run_id, "playable": playable,
         "turns": turns, "journal": journal, "commits": commits, "files": files,
     })
+    build_events(run_id)
     size = sum(f.stat().st_size for f in out.rglob("*") if f.is_file())
     print(f"{run_id}: {len(turns)} turns, {len(journal)} journal entries, {len(commits)} commits, "
           f"files {[f['file'] for f in files]}, {size // 1024} KB")
-    return {"run": run_id, "title": title, "turns": len(turns), "journal": len(journal)}
 
 
 def main():
@@ -328,13 +332,11 @@ def main():
     sys.path.insert(0, str(Path(args.supervisor) / "agent"))
     import render  # the supervisor's own
 
-    runs = []
-    for directory, (run_id, title, model) in RUNS.items():
+    for directory, run_id in RUNS.items():
         archive = Path(args.archive) / "runs" / directory
         if not archive.exists():
             continue
-        runs.append(build_run(archive, run_id, title, model, render.summarise))
-    write_json(OUT / "runs.json", runs)
+        build_run(archive, run_id, render.summarise)
 
 
 if __name__ == "__main__":

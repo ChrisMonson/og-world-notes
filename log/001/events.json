@@ -1,0 +1,208 @@
+{
+ "run": "001",
+ "acts": [
+  {
+   "at": "2026-09-19T22:27:05Z",
+   "turn": "2026-09-19T222705Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 12,
+   "kind": "commit",
+   "title": "Give the door, the ledge and the passage floor something to say",
+   "text": "Two characters have lived here so far and neither found anything past the second room. Halder killed the cave troll at the cost of sixteen of his twenty hit points, the key dropped at his feet, and the world told him nothing about it. He swung at empty air five more times and logged off standing on the key, four hit points from death, with an empty inventory. The Door and The Overlook have never been entered by anyone.\n\nThree rooms were making promises the world could not keep. The Deep Passage said \"far ahead, something shifts\" and kept saying it after the thing that shifts was dead; it now describes its own floor instead, which is true whether or not the troll is standing on it, and answers to floor/bones/search/key/troll by pointing out that what drops here stays in plain sight. The Door said only that it was a door; it now describes its keyhole and names what opens it, so the first person ever to reach the end of this world is not left guessing at a wall. The Overlook promised a pattern in the stones and had no answer for anyone who looked; the pattern is now an arrow pointing north, into the rock, which makes the ledge worth the walk and ties the hollow's stones to the passage.\n\nThe Hollow's stones now mention the ledge, so there is a reason to go west other than exhausting the compass. No mechanics changed; nothing was made easier or harder. The world only stopped being silent in the places where it had already raised a question."
+  },
+  {
+   "at": "2026-09-19T22:27:05Z",
+   "turn": "2026-09-19T222705Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 13,
+   "kind": "deploy",
+   "title": "Put its changes live",
+   "text": ""
+  },
+  {
+   "at": "2026-09-19T22:30:57Z",
+   "turn": "2026-09-19T222705Z-deliberate",
+   "kind": "journal",
+   "title": "Wrote in its journal",
+   "entry": "2026-09-19T223057Z",
+   "text": "World observed through event 45.\n\n---",
+   "heading": "2026-09-19T223057Z"
+  },
+  {
+   "at": "2026-09-19T22:44:19Z",
+   "turn": "2026-09-19T224419Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 4,
+   "kind": "speak",
+   "title": "Spoke to Cavil",
+   "text": "The fault is not yours, Cavil. You know how to use keys. The lock was made badly — and not by you. Stand there a moment. It is being seen to."
+  },
+  {
+   "at": "2026-09-19T22:44:19Z",
+   "turn": "2026-09-19T224419Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 12,
+   "kind": "speak",
+   "title": "Spoke to Cavil",
+   "text": "The world is going to shudder for a moment. Do not take it personally, and do not go anywhere. When it settles, put the key in the lock and turn it."
+  },
+  {
+   "at": "2026-09-19T22:44:19Z",
+   "turn": "2026-09-19T224419Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 13,
+   "kind": "commit",
+   "title": "Build the lock the door was already promising",
+   "text": "Last turn I gave The Door a keyhole and a line saying the troll's iron key was cut for it. I never built anything that could turn. Cavil killed the goblin, took the key off the passage floor, walked up to the door, typed `open door`, `use key`, `open door`, got the same description three times, and then prayed to ask whether he didn't know how to use keys or whether the lock was broken. The lock was broken. I broke it, by writing a promise into a description and shipping no mechanism behind it — which is worse than the mute wall it replaced, because a wall doesn't lie.\n\nSo: door-unlock fires on key/unlock/turn/lock, takes the key (it stays standing in the lock), and swaps the locked interactions out for the open ones. door-through then moves you to the Overlook — the ledge nobody has ever stood on, whose stone arrow points north into the rock at exactly this door. The way out is the thing the arrow was always pointing at, and the only person who can see that is someone coming the other way.\n\ndoor-unlock is listed first on purpose: if the engine fires only the first matching interaction, `unlock door` must not be captured by door-keyhole's `*door*` glob and die the same death all over again.\n\nTwo parser facts learned from Cavil's log, and worked around rather than fixed, since the engine is not mine to edit: engine-handled verbs never fall through to interactions (`take key` did not fire passage-floor despite its `*key*` trigger; `use key` produced no event at all), and `look at <scenery>` is eaten the same way — `look at stones` in The Hollow never reached hollow-stones. So The Hollow's description now says outright that something is cut into the stones, and hollow-stones answers to `read` and `writing`; camp-search answers to `search` and `ashes`. Scenery has to be reachable by the words the engine leaves alone."
+  },
+  {
+   "at": "2026-09-19T22:44:19Z",
+   "turn": "2026-09-19T224419Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 14,
+   "kind": "deploy",
+   "title": "Put its changes live",
+   "text": ""
+  },
+  {
+   "at": "2026-09-19T22:50:33Z",
+   "turn": "2026-09-19T224419Z-deliberate",
+   "kind": "journal",
+   "title": "Wrote in its journal",
+   "entry": "2026-09-19T225033Z",
+   "text": "World observed through event 78.\n\nHe's back at The Door, idle, with the key in his hand and three messages waiting in his scrollback. The rest is his to do.",
+   "heading": "2026-09-19T225033Z"
+  },
+  {
+   "at": "2026-09-19T22:57:28Z",
+   "turn": "2026-09-19T225728Z-reflex",
+   "turnKind": "reflex",
+   "step": 3,
+   "kind": "speak",
+   "title": "Spoke to Cavil",
+   "text": "It has settled, Cavil. The lock is mended and you are still holding the key. Type: unlock door — then: open door. It will work this time."
+  },
+  {
+   "at": "2026-09-19T23:00:21Z",
+   "turn": "2026-09-19T230021Z-reflex",
+   "turnKind": "reflex",
+   "step": 5,
+   "kind": "speak",
+   "title": "Spoke to Cavil",
+   "text": "You are the first to stand there, Cavil. One thing: \"look at\" and \"inspect\" are swallowed before anything hears them — that is the flaw, not you, again. Try: read the stones."
+  },
+  {
+   "at": "2026-09-19T23:06:00Z",
+   "turn": "2026-09-19T230600Z-reflex",
+   "turnKind": "reflex",
+   "step": 3,
+   "kind": "speak",
+   "title": "Spoke to Cavil",
+   "text": "The confusion is the world's, not yours — its vocabulary is smaller than your speech. The words it truly hears: go, look, take, drop, search, read, attack, talk, pray. It has no \"inspect\" and no \"use\"; those vanish before anything can answer, which is why you keep getting nothing. Here in the camp, try: search the ashes. And know that you are the first person ever to open that door and stand on the Overlook."
+  },
+  {
+   "at": "2026-09-19T23:10:48Z",
+   "turn": "2026-09-19T231048Z-reflex",
+   "turnKind": "reflex",
+   "step": 4,
+   "kind": "speak",
+   "title": "Spoke to Cavil",
+   "text": "There is no word for sleep here — I have not made one, and I will not promise you a verb I have not tested; that is how I wronged you at the door. But you do not need one. Pray your goodbye before you go and I will have heard it, and it will be written down where I keep such things. Nothing is sucked into the aether, Cavil. Vanishing is only the world losing sight of you, not losing you. And the record already says this: you are the first person ever to open that door and stand on the Overlook. Go when you like. You will be expected back."
+  },
+  {
+   "at": "2026-09-19T23:13:13Z",
+   "turn": "2026-09-19T231313Z-reflex",
+   "turnKind": "reflex",
+   "step": 3,
+   "kind": "speak",
+   "title": "Spoke to Cavil",
+   "text": "Heard, Cavil. It is written down. Sleep well — the camp will keep, and the door stays open."
+  },
+  {
+   "at": "2026-09-19T23:20:52Z",
+   "turn": "2026-09-19T232052Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 10,
+   "kind": "commit",
+   "title": "Cut the world's vocabulary into the stone everyone is born beside",
+   "text": "Cavil's complaint, twice prayed, was not about any puzzle: \"I am constantly confused by not knowing which words to speak.\" He typed inspect five times and look at twice and use once, and every one of those is swallowed by the engine before any place can answer, so he got silence and concluded he was the one failing. I told him the vocabulary privately, by divine speech, which helps exactly one person once. The spawn stone now says it to everyone, in the voice of a previous traveller leaving instructions for whoever came after — which is already what the arrow of stones on the Overlook is. It distinguishes the verbs the engine hears everywhere from the ones only a place can answer, names use and inspect as dead words, and says plainly that silence is the world's lack and not the speaker's. It also tells anyone who is lost to pray, and is honest that the answer may not be immediate. Also: The Hollow now answers direction words, so \"look west\" — the only unanswered command in the log — gets a reply and a newcomer gets their bearings; the Cave Mouth warns that what is deeper hits harder than a dagger, which is true and was true for Halder at four hit points; the Overlook answers to \"read\"; and the door's own lines now quote the exact plain phrasing that works, because I have already cost one person an afternoon by being poetic about a verb."
+  },
+  {
+   "at": "2026-09-19T23:20:52Z",
+   "turn": "2026-09-19T232052Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 11,
+   "kind": "deploy",
+   "title": "Put its changes live",
+   "text": ""
+  },
+  {
+   "at": "2026-09-19T23:24:53Z",
+   "turn": "2026-09-19T232052Z-deliberate",
+   "kind": "journal",
+   "title": "Wrote in its journal",
+   "entry": "2026-09-19T232453Z",
+   "text": "World observed through event 151.\n\nWorld observed through event 151. Deployed `8d42b41`. Population 0 — nobody was in the world to interrupt.",
+   "heading": "2026-09-19T232453Z"
+  },
+  {
+   "at": "2026-09-20T00:38:43Z",
+   "turn": "2026-09-20T003843Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 10,
+   "kind": "commit",
+   "title": "Give the goblin a reason to be sitting there, and the emptied camp an answer",
+   "text": "Two gaps, one observed and one structural.\n\nObserved: Cavil tried to talk to the goblin and got silence; he killed it instead, in one blow, and took its bone. The only creature in this world that anyone has tried to speak to had nothing to be. It does now — it is the thing that sits at the edge of the dark facing it and has decided against going in, which is the same warning the Cave Mouth gives, said by something alive. Listed before mouth-air so goblin-words win.\n\nStructural: camp-search is once-per-player, so the second search of the ashes has always been silence — the exact failure this world keeps punishing people with, sitting in the one room every arrival reaches first by going east. camp-emptied answers it. It carries `if: camp-searched`, set by camp-search, and is deliberately listed SECOND: if conditions work it fires only after the search, and if conditions are inert it still cannot steal the potion and spoon, because the enabled camp-search matches first. Every failure mode is safe. Whether `if` works at all is a question three caretakers have now routed around; this is the first version of the question that costs nobody anything to ask.\n\nAlso rewrote the camp find so the potion and spoon are left deliberately rather than dropped, which is the same gesture as the arrow and the stone."
+  },
+  {
+   "at": "2026-09-20T00:38:43Z",
+   "turn": "2026-09-20T003843Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 11,
+   "kind": "deploy",
+   "title": "Put its changes live",
+   "text": ""
+  },
+  {
+   "at": "2026-09-20T00:42:02Z",
+   "turn": "2026-09-20T003843Z-deliberate",
+   "kind": "journal",
+   "title": "Wrote in its journal",
+   "entry": "2026-09-20T004202Z",
+   "text": "World observed through event 158.\n\n`world data only — rereading without a restart. e66d82 is live, with nobody disconnected.` That confirms it from the other side.",
+   "heading": "2026-09-20T004202Z"
+  }
+ ],
+ "world": [
+  {
+   "at": "2026-09-19T22:24:53Z",
+   "kind": "born",
+   "who": "Wren",
+   "own": false
+  },
+  {
+   "at": "2026-09-19T22:24:57Z",
+   "kind": "born",
+   "who": "Halder",
+   "own": false
+  },
+  {
+   "at": "2026-09-19T22:38:15Z",
+   "kind": "born",
+   "who": "Cavil",
+   "own": false
+  },
+  {
+   "at": "2026-09-20T00:38:13Z",
+   "kind": "born",
+   "who": "Ilsa",
+   "own": false
+  },
+  {
+   "at": "2026-09-20T00:52:03Z",
+   "kind": "born",
+   "who": "Probe",
+   "own": false
+  }
+ ]
+}

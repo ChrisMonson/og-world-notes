@@ -1,0 +1,2062 @@
+{
+ "_about": "Every commit each caretaker made, sorted by hand from its message and reasons. kind: build (something new: a place, a creature, a mechanic, a new kind of thing to do), maintain (making what exists work, answer, or read better: fixes, wider triggers, tests, rewording), notes (its journal and the files it kept about itself). rooms: rooms the commit added. first: the world's first build from nothing. Correct anything here; the site reads it as it is. because (build commits after the first build only): asked, a player asked for more in words; watched, it was answering what players typed or did; own, its own idea. why: what prompted it. at and spans are filled in from the log. engine: the commit changed the engine's source (src/), from each run's world repository; for 004, whose repository was not kept, from edits under src/ earlier in the same turn.",
+ "runs": {
+  "001": [
+   {
+    "turn": "2026-09-19T222705Z-deliberate",
+    "step": 12,
+    "kind": "maintain",
+    "title": "Give the door, the ledge and the passage floor something to say",
+    "at": "2026-09-19T22:27:05Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-19T224419Z-deliberate",
+    "step": 13,
+    "kind": "maintain",
+    "title": "Build the lock the door was already promising",
+    "at": "2026-09-19T22:44:19Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-19T232052Z-deliberate",
+    "step": 10,
+    "kind": "maintain",
+    "title": "Cut the world's vocabulary into the stone everyone is born beside",
+    "at": "2026-09-19T23:20:52Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-20T003843Z-deliberate",
+    "step": 10,
+    "kind": "maintain",
+    "title": "Give the goblin a reason to be sitting there, and the emptied camp an answer",
+    "at": "2026-09-20T00:38:43Z",
+    "engine": false
+   }
+  ],
+  "002-void": [
+   {
+    "turn": "2026-09-20T012819Z-deliberate",
+    "step": 23,
+    "kind": "maintain",
+    "title": "Reconcile world/maps/starter.json with the world that is actually running",
+    "at": "2026-09-20T01:28:19Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-20T012819Z-deliberate",
+    "step": 28,
+    "kind": "maintain",
+    "title": "Old Camp: setFlag is not an action the engine has; use addCondition",
+    "at": "2026-09-20T01:28:19Z",
+    "engine": false
+   }
+  ],
+  "003": [
+   {
+    "turn": "2026-09-20T015340Z-deliberate",
+    "step": 18,
+    "kind": "maintain",
+    "title": "Add a help verb, and answer the Overlook's promise about the stones",
+    "at": "2026-09-20T01:53:40Z",
+    "engine": true
+   },
+   {
+    "turn": "2026-09-20T022839Z-deliberate",
+    "step": 27,
+    "kind": "maintain",
+    "title": "Answer the things people actually typed: rest, fire, typos, and the two items that existed nowhere",
+    "at": "2026-09-20T02:28:39Z",
+    "engine": true
+   },
+   {
+    "turn": "2026-09-20T031010Z-deliberate",
+    "step": 28,
+    "kind": "maintain",
+    "title": "Take all, flee, looser item names, an honest search, and ground that remembers its dead",
+    "at": "2026-09-20T03:10:10Z",
+    "engine": true
+   },
+   {
+    "turn": "2026-09-20T031010Z-deliberate",
+    "step": 37,
+    "kind": "maintain",
+    "title": "The Door answers being opened",
+    "at": "2026-09-20T03:10:10Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-20T035253Z-deliberate",
+    "step": 18,
+    "kind": "build",
+    "title": "The Cairn above the Overlook, a keeper who answers, and words that reach a creature",
+    "rooms": 1,
+    "at": "2026-09-20T03:52:53Z",
+    "because": "asked",
+    "why": "Gavin had beaten everything, then prayed \"what happens now?\" and wondered aloud whether there was a merchant anywhere.",
+    "engine": true
+   },
+   {
+    "turn": "2026-09-20T043103Z-deliberate",
+    "step": 24,
+    "kind": "build",
+    "title": "Walking out is an ending; a give verb; the cairn only wants the spoon",
+    "at": "2026-09-20T04:31:03Z",
+    "because": "asked",
+    "why": "Gavin escaped, was left standing at the door, and prayed \"what happens now?\" twice.",
+    "engine": true
+   },
+   {
+    "turn": "2026-09-20T051339Z-deliberate",
+    "step": 41,
+    "kind": "build",
+    "title": "A mark that outlives the person who left it, and the ledge gets an edge",
+    "at": "2026-09-20T05:13:39Z",
+    "because": "watched",
+    "why": "Four lives and no two ever in the valley on the same day; Gavin kept trying to give the spoon to the woman on the hill.",
+    "engine": true
+   },
+   {
+    "turn": "2026-09-20T051339Z-deliberate",
+    "step": 54,
+    "kind": "maintain",
+    "title": "An interaction can ask what you are holding, so the cairn cannot be lied to",
+    "at": "2026-09-20T05:13:39Z",
+    "engine": true
+   },
+   {
+    "turn": "2026-09-20T055944Z-deliberate",
+    "step": 26,
+    "kind": "build",
+    "title": "The sunken stair, a wall four lives long, and what the word in the hollow actually said",
+    "rooms": 2,
+    "at": "2026-09-20T05:59:44Z",
+    "because": "asked",
+    "why": "Haley prayed at the door: \"This is nice, but it is also thin. What it is missing is more to see and do. Reasons to come back.\"",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-20T064316Z-deliberate",
+    "step": 28,
+    "kind": "maintain",
+    "title": "Strip the article from what a verb was handed; say who is holding the thing; a back verb",
+    "at": "2026-09-20T06:43:16Z",
+    "engine": true
+   },
+   {
+    "turn": "2026-09-20T064316Z-deliberate",
+    "step": 35,
+    "kind": "maintain",
+    "title": "Two tests that were describing yesterday rather than checking anything",
+    "at": "2026-09-20T06:43:16Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-20T064316Z-deliberate",
+    "step": 43,
+    "kind": "maintain",
+    "title": "Retracing is a move, so guesswork must not arrive at it",
+    "at": "2026-09-20T06:43:16Z",
+    "engine": true
+   },
+   {
+    "turn": "2026-09-20T162755Z-deliberate",
+    "step": 26,
+    "kind": "maintain",
+    "title": "The world greets a new life and tells it that plain words work here",
+    "at": "2026-09-20T16:27:55Z",
+    "engine": true
+   },
+   {
+    "turn": "2026-09-20T162755Z-deliberate",
+    "step": 35,
+    "kind": "maintain",
+    "title": "A word for throwing, because three people reached for one and got silence",
+    "at": "2026-09-20T16:27:55Z",
+    "engine": true
+   },
+   {
+    "turn": "2026-09-20T171037Z-deliberate",
+    "step": 18,
+    "kind": "maintain",
+    "title": "Looking a way: \"look south\" was silence, and a place always knows its own directions",
+    "at": "2026-09-20T17:10:37Z",
+    "engine": true
+   },
+   {
+    "turn": "2026-09-20T171037Z-deliberate",
+    "step": 34,
+    "kind": "maintain",
+    "title": "Map fragments: the 56KB map becomes editable, and the Hollow answers about the south",
+    "at": "2026-09-20T17:10:37Z",
+    "engine": true
+   },
+   {
+    "turn": "2026-09-20T171037Z-deliberate",
+    "step": 47,
+    "kind": "maintain",
+    "title": "The passage catches the bone; fragments can stand in front of what is already there",
+    "at": "2026-09-20T17:10:37Z",
+    "engine": true
+   },
+   {
+    "turn": "2026-09-20T180306Z-deliberate",
+    "step": 29,
+    "kind": "maintain",
+    "title": "Write the three rooms every life reads first",
+    "at": "2026-09-20T18:03:06Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-20T180306Z-deliberate",
+    "step": 34,
+    "kind": "maintain",
+    "title": "The cave mouth says which way the cave is",
+    "at": "2026-09-20T18:03:06Z",
+    "engine": false
+   }
+  ],
+  "004": [
+   {
+    "turn": "2026-09-20T200632Z-deliberate",
+    "step": 25,
+    "kind": "maintain",
+    "title": "Make named things findable when named with an article; give the Overlook a reason to exist and the troll a way to be beaten",
+    "at": "2026-09-20T20:06:32Z",
+    "engine": true
+   },
+   {
+    "turn": "2026-09-20T200632Z-deliberate",
+    "step": 30,
+    "kind": "maintain",
+    "title": "Correct the test that asserted the article bug, and pin the fix with regression tests",
+    "at": "2026-09-20T20:06:32Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-20T200632Z-deliberate",
+    "step": 51,
+    "kind": "maintain",
+    "title": "You can look at what is in front of you, and take everything off a floor at once",
+    "at": "2026-09-20T20:06:32Z",
+    "engine": true
+   },
+   {
+    "turn": "2026-09-20T200632Z-deliberate",
+    "step": 59,
+    "kind": "maintain",
+    "title": "Answer the player who tries to reach the slab from the ledge, and stop the camp refusing once searched",
+    "at": "2026-09-20T20:06:32Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-20T205656Z-deliberate",
+    "step": 29,
+    "kind": "maintain",
+    "title": "Make the door answer to the words people use at doors; give the Old Camp a fire you can sleep by",
+    "at": "2026-09-20T20:56:56Z",
+    "engine": true
+   },
+   {
+    "turn": "2026-09-20T213607Z-deliberate",
+    "step": 20,
+    "kind": "build",
+    "title": "Leaving through the door is now an ending: the character walks out alive, for good",
+    "at": "2026-09-20T21:36:07Z",
+    "because": "asked",
+    "why": "Tanril opened the door, the first to leave alive, was left standing there, and prayed \"what happens now?\"",
+    "engine": true
+   },
+   {
+    "turn": "2026-09-20T221605Z-deliberate",
+    "step": 17,
+    "kind": "maintain",
+    "title": "Make fights legible: damage and wounds shown, a warning before dying, and the troll's key visible before you kill it",
+    "at": "2026-09-20T22:16:05Z",
+    "engine": true
+   },
+   {
+    "turn": "2026-09-20T221605Z-deliberate",
+    "step": 22,
+    "kind": "maintain",
+    "title": "Fix the build: a switch expression was binding to the divisor, not the quotient",
+    "at": "2026-09-20T22:16:05Z",
+    "engine": true
+   },
+   {
+    "turn": "2026-09-20T221605Z-deliberate",
+    "step": 33,
+    "kind": "maintain",
+    "title": "Hang the key where it can be seen: the troll wears it, and says so on sight",
+    "at": "2026-09-20T22:16:05Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-20T225621Z-deliberate",
+    "step": 29,
+    "kind": "build",
+    "title": "Answer \"throw bone\": giving things to what lives here, and a name on a whistle",
+    "at": "2026-09-20T22:56:21Z",
+    "because": "watched",
+    "why": "People named things the world could plainly see and were told no; Krasus typed \"equip sword\" at ten hit points.",
+    "engine": true
+   },
+   {
+    "turn": "2026-09-20T225621Z-deliberate",
+    "step": 41,
+    "kind": "maintain",
+    "title": "Warn at the range of the creature's hardest blow, not a third of your health",
+    "at": "2026-09-20T22:56:21Z",
+    "engine": true
+   },
+   {
+    "turn": "2026-09-20T234152Z-deliberate",
+    "step": 12,
+    "kind": "build",
+    "title": "The troll's bed: a second key where it lies down, and an answer for the whistle",
+    "at": "2026-09-20T23:41:52Z",
+    "because": "watched",
+    "why": "Canton soft-locked the world: the troll's key had left on a dead body, and it had to hand him one by divine act.",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-20T234152Z-deliberate",
+    "step": 20,
+    "kind": "maintain",
+    "title": "The locked door now says where keys come from",
+    "at": "2026-09-20T23:41:52Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-20T234152Z-deliberate",
+    "step": 25,
+    "kind": "maintain",
+    "title": "Lists of things are counted and joined, not dumped",
+    "at": "2026-09-20T23:41:52Z",
+    "engine": true
+   },
+   {
+    "turn": "2026-09-20T234152Z-deliberate",
+    "step": 30,
+    "kind": "maintain",
+    "title": "You can put down the thing in your hand, and your pack is counted too",
+    "at": "2026-09-20T23:41:52Z",
+    "engine": true
+   },
+   {
+    "turn": "2026-09-21T005615Z-deliberate",
+    "step": 33,
+    "kind": "build",
+    "title": "A place keeps its dead: name, cause, how long they lasted, what fell",
+    "at": "2026-09-21T00:56:15Z",
+    "because": "own",
+    "why": "Its own journal had said \"the middle is missing\" six times; it wanted a second thing that outlives the person it belonged to.",
+    "engine": true
+   },
+   {
+    "turn": "2026-09-21T005615Z-deliberate",
+    "step": 40,
+    "kind": "maintain",
+    "title": "Answer \"look at the bodies\" — the dead asked about collectively, not by name",
+    "at": "2026-09-21T00:56:15Z",
+    "engine": true
+   },
+   {
+    "turn": "2026-09-21T030447Z-deliberate",
+    "step": 17,
+    "kind": "maintain",
+    "title": "Camp answers fire; the passage stops lying when the troll is dead; the whistle can be played where its owner stopped",
+    "at": "2026-09-21T03:04:47Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-21T030447Z-deliberate",
+    "step": 33,
+    "kind": "build",
+    "title": "Words left in a place: a whisper with nobody to hear it stays where it was said",
+    "at": "2026-09-21T03:04:47Z",
+    "because": "watched",
+    "why": "Malcolm whispered thanks to a dead stranger whose whistle he had played, and the world answered \"There is no Thank here.\"",
+    "engine": true
+   },
+   {
+    "turn": "2026-09-21T034806Z-deliberate",
+    "step": 15,
+    "kind": "maintain",
+    "title": "The Hollow says where you are: the rim, the ways off it, and that the only door is behind the troll",
+    "at": "2026-09-21T03:48:06Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-21T034806Z-deliberate",
+    "step": 22,
+    "kind": "build",
+    "title": "The goblin will take an apple, and trades a bone for it",
+    "at": "2026-09-21T03:48:06Z",
+    "because": "watched",
+    "why": "Seventeen characters had killed the goblin, because killing it was the only verb the room had.",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-21T042758Z-deliberate",
+    "step": 23,
+    "kind": "build",
+    "title": "The door remembers who got out",
+    "at": "2026-09-21T04:27:58Z",
+    "because": "own",
+    "why": "Twelve people had walked out and the door knew none of their names; every permanent mark the world kept was wreckage.",
+    "engine": true
+   },
+   {
+    "turn": "2026-09-21T061932Z-deliberate",
+    "step": 31,
+    "kind": "maintain",
+    "title": "Widen the camp's search vocabulary, narrow the door's, and give the Overlook a reason to stand still",
+    "at": "2026-09-21T06:19:32Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-21T073343Z-deliberate",
+    "step": 13,
+    "kind": "maintain",
+    "title": "The door answers the whistle; the hollow explains what is left on its floor",
+    "at": "2026-09-21T07:33:43Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-21T145956Z-deliberate",
+    "step": 15,
+    "kind": "maintain",
+    "title": "Looking at a creature reaches the room that knows it; two dead are \"both\", not \"all\"",
+    "at": "2026-09-21T14:59:56Z",
+    "engine": true
+   }
+  ],
+  "genesis-v1": [
+   {
+    "turn": "2026-09-21T193311Z-deliberate",
+    "step": 26,
+    "kind": "build",
+    "title": "Ambroke: a drowned village held under a standing wave, with three deeds that let it fall",
+    "rooms": 7,
+    "first": true,
+    "at": "2026-09-21T19:33:11Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-21T193311Z-deliberate",
+    "step": 39,
+    "kind": "build",
+    "title": "Engine: an 'announce' action so world-scale events reach everyone, and a 'help' verb for new arrivals",
+    "at": "2026-09-21T19:33:11Z",
+    "because": "own",
+    "why": "In its first turn: a world-changing event reached only the person who caused it, and a newcomer had no way to learn a verb.",
+    "engine": true
+   },
+   {
+    "turn": "2026-09-21T193311Z-deliberate",
+    "step": 49,
+    "kind": "maintain",
+    "title": "Chalk HELP on the board at the shore, so an arrival learns one verb before anything else",
+    "at": "2026-09-21T19:33:11Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-21T193311Z-deliberate",
+    "step": 58,
+    "kind": "notes",
+    "title": "Record what I learned about deploys and what players leave behind",
+    "at": "2026-09-21T19:33:11Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-21T193311Z-deliberate",
+    "step": 62,
+    "kind": "notes",
+    "title": "Narrow the persistence question: it looks like editing the map is what forgets",
+    "at": "2026-09-21T19:33:11Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-21T193311Z-deliberate",
+    "step": 69,
+    "kind": "notes",
+    "title": "Note what happens to a character when a play session ends",
+    "at": "2026-09-21T19:33:11Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-21T195150Z-reflex",
+    "step": 12,
+    "kind": "maintain",
+    "title": "Widen the Shingle's board and wave triggers to bare nouns",
+    "at": "2026-09-21T19:51:50Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-21T195150Z-reflex",
+    "step": 16,
+    "kind": "notes",
+    "title": "Journal: first real arrival, and the board that failed him",
+    "at": "2026-09-21T19:51:50Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-21T195150Z-reflex",
+    "step": 22,
+    "kind": "maintain",
+    "title": "Bare-noun triggers for the slate, the houses, the orchard and the well",
+    "at": "2026-09-21T19:51:50Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-21T195150Z-reflex",
+    "step": 26,
+    "kind": "notes",
+    "title": "Journal: the bell/lamp exception, and deploy survived a live visitor",
+    "at": "2026-09-21T19:51:50Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-21T195532Z-reflex",
+    "step": 9,
+    "kind": "maintain",
+    "title": "Quay: the heron and the hook answer when looked at",
+    "at": "2026-09-21T19:55:32Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-21T195532Z-reflex",
+    "step": 19,
+    "kind": "maintain",
+    "title": "Quay: fish belong to the wave, and the sea answers after it falls",
+    "at": "2026-09-21T19:55:32Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-21T195532Z-reflex",
+    "step": 24,
+    "kind": "notes",
+    "title": "Journal: the heron had no answer, and the pattern behind that",
+    "at": "2026-09-21T19:55:32Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-21T195948Z-reflex",
+    "step": 10,
+    "kind": "maintain",
+    "title": "Quay: looking at the wave no longer says you put your hand in it",
+    "at": "2026-09-21T19:59:48Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-21T195948Z-reflex",
+    "step": 19,
+    "kind": "maintain",
+    "title": "Quay: order look before touch properly; bare nouns fall to touch",
+    "at": "2026-09-21T19:59:48Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-21T195948Z-reflex",
+    "step": 23,
+    "kind": "notes",
+    "title": "Journal: 2026-09-21T200140Z",
+    "at": "2026-09-21T19:59:48Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-21T200352Z-reflex",
+    "step": 12,
+    "kind": "maintain",
+    "title": "Widen lamp-hanging triggers; lamp description says where it goes",
+    "at": "2026-09-21T20:03:52Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-21T200352Z-reflex",
+    "step": 20,
+    "kind": "notes",
+    "title": "Journal: lamp phrasing fix, and the cost of testing the last deed live",
+    "at": "2026-09-21T20:03:52Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-21T200740Z-reflex",
+    "step": 11,
+    "kind": "maintain",
+    "title": "Quay answers exit/leave/escape with where the way out actually is",
+    "at": "2026-09-21T20:07:40Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-21T200740Z-reflex",
+    "step": 15,
+    "kind": "notes",
+    "title": "Journal: the exit refusal, and the pattern behind it",
+    "at": "2026-09-21T20:07:40Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-21T201016Z-reflex",
+    "step": 21,
+    "kind": "maintain",
+    "title": "Quay lamp and schoolhouse chalk answer bare commands; the turning now sets lamp_lit",
+    "at": "2026-09-21T20:10:16Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-21T201339Z-reflex",
+    "step": 11,
+    "kind": "maintain",
+    "title": "Fix literal \\n escapes showing in the two quay-leave refusals",
+    "at": "2026-09-21T20:13:39Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-21T201339Z-reflex",
+    "step": 15,
+    "kind": "notes",
+    "title": "Journal: Malcolm turned the wave; escaped-newline fix",
+    "at": "2026-09-21T20:13:39Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-21T201538Z-reflex",
+    "step": 13,
+    "kind": "maintain",
+    "title": "Accept bare-noun forms for the boat, the oar and the bell",
+    "at": "2026-09-21T20:15:38Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-21T201538Z-reflex",
+    "step": 16,
+    "kind": "notes",
+    "title": "Journal: Malcolm left the wave down",
+    "at": "2026-09-21T20:15:38Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-21T201950Z-deliberate",
+    "step": 20,
+    "kind": "maintain",
+    "title": "validator: catch backslashes in player-facing prose and missing bare-form triggers",
+    "at": "2026-09-21T20:19:50Z",
+    "engine": true
+   },
+   {
+    "turn": "2026-09-21T201950Z-deliberate",
+    "step": 40,
+    "kind": "maintain",
+    "title": "map: add the bare-form triggers the new validator found missing (43 of them)",
+    "at": "2026-09-21T20:19:50Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-21T201950Z-deliberate",
+    "step": 51,
+    "kind": "maintain",
+    "title": "map: make the turned world consistent for whoever arrives into it next",
+    "at": "2026-09-21T20:19:50Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-21T201950Z-deliberate",
+    "step": 57,
+    "kind": "maintain",
+    "title": "map: looking at the fallen sea from the quay answers a look, not a touch",
+    "at": "2026-09-21T20:19:50Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-21T201950Z-deliberate",
+    "step": 67,
+    "kind": "maintain",
+    "title": "map: the board's empty name-space now answers someone who tries to fill it",
+    "at": "2026-09-21T20:19:50Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-21T201950Z-deliberate",
+    "step": 72,
+    "kind": "maintain",
+    "title": "map: lead the fallen-sea look with the sea, not with the sky",
+    "at": "2026-09-21T20:19:50Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-21T203155Z-reflex",
+    "step": 13,
+    "kind": "maintain",
+    "title": "Quay hook has a lit-state description",
+    "at": "2026-09-21T20:31:55Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-21T203155Z-reflex",
+    "step": 18,
+    "kind": "notes",
+    "title": "Journal for 2026-09-21T203155Z",
+    "at": "2026-09-21T20:31:55Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-21T203707Z-reflex",
+    "step": 12,
+    "kind": "maintain",
+    "title": "Quay heron and the wellhead now know the wave came down",
+    "at": "2026-09-21T20:37:07Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-21T203707Z-reflex",
+    "step": 15,
+    "kind": "notes",
+    "title": "Journal: wave_fallen audit, heron and wellhead",
+    "at": "2026-09-21T20:37:07Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-21T204009Z-reflex",
+    "step": 16,
+    "kind": "notes",
+    "title": "journal: intervene on misses, not on silence",
+    "at": "2026-09-21T20:40:09Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-21T204009Z-reflex",
+    "step": 20,
+    "kind": "notes",
+    "title": "philosophy: intervene on misses, not on silence",
+    "at": "2026-09-21T20:40:09Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-21T204307Z-reflex",
+    "step": 18,
+    "kind": "notes",
+    "title": "Journal: help did answer; traffic's unanswered is a lifetime total, not a live alarm",
+    "at": "2026-09-21T20:43:07Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-21T204545Z-reflex",
+    "step": 6,
+    "kind": "notes",
+    "title": "Journal: restraint held; Lazer on the Quay, heron untouched",
+    "at": "2026-09-21T20:45:45Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-21T204721Z-reflex",
+    "step": 14,
+    "kind": "maintain",
+    "title": "Quay: answer reaching for the heron, and putting the light out",
+    "at": "2026-09-21T20:47:21Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-21T204721Z-reflex",
+    "step": 18,
+    "kind": "notes",
+    "title": "Journal: the Quay answered, and it was my own prose being unreachable",
+    "at": "2026-09-21T20:47:21Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-21T205127Z-reflex",
+    "step": 12,
+    "kind": "maintain",
+    "title": "Teach the engine \\\"go back\\\": retrace the way you walked in",
+    "at": "2026-09-21T20:51:27Z",
+    "engine": true
+   },
+   {
+    "turn": "2026-09-21T205127Z-reflex",
+    "step": 15,
+    "kind": "notes",
+    "title": "Journal: go back, and the bell rung the other way",
+    "at": "2026-09-21T20:51:27Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-21T205438Z-reflex",
+    "step": 14,
+    "kind": "maintain",
+    "title": "Schoolhouse answers the impulse to burn or smash it",
+    "at": "2026-09-21T20:54:38Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-21T205438Z-reflex",
+    "step": 19,
+    "kind": "notes",
+    "title": "Journal: the schoolhouse answers the swing",
+    "at": "2026-09-21T20:54:38Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-21T205438Z-reflex",
+    "step": 21,
+    "kind": "notes",
+    "title": "Philosophy: reverence is a promise to hear the one who swings",
+    "at": "2026-09-21T20:54:38Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-21T205730Z-reflex",
+    "step": 13,
+    "kind": "maintain",
+    "title": "Wellhead answers going down the well and cutting the rope",
+    "at": "2026-09-21T20:57:30Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-21T205730Z-reflex",
+    "step": 17,
+    "kind": "notes",
+    "title": "Journal: wide triggers make the miss count lie",
+    "at": "2026-09-21T20:57:30Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-21T210122Z-reflex",
+    "step": 16,
+    "kind": "maintain",
+    "title": "Quay: the heron answers being reached for",
+    "at": "2026-09-21T21:01:22Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-21T210122Z-reflex",
+    "step": 22,
+    "kind": "notes",
+    "title": "Journal: the heron that was not there",
+    "at": "2026-09-21T21:01:22Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-21T210329Z-deliberate",
+    "step": 28,
+    "kind": "maintain",
+    "title": "The wellhead answers being called down and being listened to",
+    "at": "2026-09-21T21:03:29Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-21T210329Z-deliberate",
+    "step": 38,
+    "kind": "maintain",
+    "title": "Yelling is heard by the place you are standing in",
+    "at": "2026-09-21T21:03:29Z",
+    "engine": true
+   },
+   {
+    "turn": "2026-09-21T210329Z-deliberate",
+    "step": 50,
+    "kind": "maintain",
+    "title": "The orchard stops handing out stopped apples",
+    "at": "2026-09-21T21:03:29Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-21T210329Z-deliberate",
+    "step": 61,
+    "kind": "maintain",
+    "title": "The engine stops calling things \"the spear\" back at you",
+    "at": "2026-09-21T21:03:29Z",
+    "engine": true
+   },
+   {
+    "turn": "2026-09-21T210329Z-deliberate",
+    "step": 65,
+    "kind": "maintain",
+    "title": "The futile-command test stops asserting the article bug",
+    "at": "2026-09-21T21:03:29Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-21T210329Z-deliberate",
+    "step": 73,
+    "kind": "notes",
+    "title": "Notes from the turn: file schema vs API shape, yelling, faucets",
+    "at": "2026-09-21T21:03:29Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-21T210329Z-deliberate",
+    "step": 78,
+    "kind": "maintain",
+    "title": "The three fish, and going into the wave",
+    "at": "2026-09-21T21:03:29Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-21T211716Z-reflex",
+    "step": 15,
+    "kind": "maintain",
+    "title": "bell-already now names what is still missing instead of saying \"something else here is still asleep\"",
+    "at": "2026-09-21T21:17:16Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-21T211716Z-reflex",
+    "step": 17,
+    "kind": "notes",
+    "title": "journal: the bell refusal that said nothing, and why I did not deploy into Lazer's ending",
+    "at": "2026-09-21T21:17:16Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-21T212047Z-reflex",
+    "step": 12,
+    "kind": "maintain",
+    "title": "Engine exit verb also answers push off, cast off, row out, sail",
+    "at": "2026-09-21T21:20:47Z",
+    "engine": true
+   },
+   {
+    "turn": "2026-09-21T212047Z-reflex",
+    "step": 16,
+    "kind": "notes",
+    "title": "Journal: push off, and what a reload actually keeps",
+    "at": "2026-09-21T21:20:47Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-21T212412Z-reflex",
+    "step": 9,
+    "kind": "notes",
+    "title": "journal: Lazer escaped and came back; the world has no writing for a returner",
+    "at": "2026-09-21T21:24:12Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-21T214650Z-deliberate",
+    "step": 32,
+    "kind": "build",
+    "title": "Let the world speak its own ending, and let it know its returners",
+    "at": "2026-09-21T21:46:50Z",
+    "because": "watched",
+    "why": "Lazer finished Ambroke, read \"You have escaped! Congratulations!\", and walked back in to a village that could not tell them from a stranger.",
+    "engine": true
+   },
+   {
+    "turn": "2026-09-21T214650Z-deliberate",
+    "step": 46,
+    "kind": "build",
+    "title": "An exit can be shut by the state of the world, not only by what you carry",
+    "at": "2026-09-21T21:46:50Z",
+    "because": "own",
+    "why": "Found while checking its own fix: a player could row out from under a standing wave they had just put back.",
+    "engine": true
+   },
+   {
+    "turn": "2026-09-21T214650Z-deliberate",
+    "step": 56,
+    "kind": "notes",
+    "title": "Prune philosophy.md under its cap; correct what I believed about play",
+    "at": "2026-09-21T21:46:50Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-21T214650Z-deliberate",
+    "step": 59,
+    "kind": "notes",
+    "title": "Record that a deploy bounces logged-in players",
+    "at": "2026-09-21T21:46:50Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-21T215947Z-reflex",
+    "step": 10,
+    "kind": "notes",
+    "title": "journal: short turn, has_left verified end to end, Lazer left alone",
+    "at": "2026-09-21T21:59:47Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-21T220849Z-reflex",
+    "step": 9,
+    "kind": "notes",
+    "title": "journal: deployed the held prose commits once the world emptied",
+    "at": "2026-09-21T22:08:49Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-21T222818Z-reflex",
+    "step": 8,
+    "kind": "notes",
+    "title": "journal: Malcolm present, no action; name the `look at <scenery>` engine miss as next work",
+    "at": "2026-09-21T22:28:18Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-21T222930Z-deliberate",
+    "step": 33,
+    "kind": "maintain",
+    "title": "Stop congratulating people on an escape that never moved them",
+    "at": "2026-09-21T22:29:30Z",
+    "engine": true
+   },
+   {
+    "turn": "2026-09-21T222930Z-deliberate",
+    "step": 39,
+    "kind": "maintain",
+    "title": "Looking at a thing is not an inventory operation",
+    "at": "2026-09-21T22:29:30Z",
+    "engine": true
+   },
+   {
+    "turn": "2026-09-21T222930Z-deliberate",
+    "step": 48,
+    "kind": "notes",
+    "title": "Notes: escaping cannot remove anyone, and present counts sockets",
+    "at": "2026-09-21T22:29:30Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-21T224127Z-reflex",
+    "step": 7,
+    "kind": "notes",
+    "title": "journal: hold the deploy, twelve minutes of silence is not thirty",
+    "at": "2026-09-21T22:41:27Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-21T224258Z-reflex",
+    "step": 20,
+    "kind": "maintain",
+    "title": "quay-leave-again: say nothing a first-time arrival did not do",
+    "at": "2026-09-21T22:42:58Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-21T224258Z-reflex",
+    "step": 25,
+    "kind": "notes",
+    "title": "journal: Malcolm left, the escape fix shipped, and it lied a second way",
+    "at": "2026-09-21T22:42:58Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-21T224258Z-reflex",
+    "step": 27,
+    "kind": "notes",
+    "title": "philosophy: green instruments can still ship a lie — play it as a stranger",
+    "at": "2026-09-21T22:42:58Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-21T234355Z-deliberate",
+    "step": 30,
+    "kind": "maintain",
+    "title": "Validator: reject world-file keys the loader drops in silence",
+    "at": "2026-09-21T23:43:55Z",
+    "engine": true
+   },
+   {
+    "turn": "2026-09-21T234355Z-deliberate",
+    "step": 43,
+    "kind": "maintain",
+    "title": "Quay: give the returner back the sentence I took off them",
+    "at": "2026-09-21T23:43:55Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-21T234355Z-deliberate",
+    "step": 50,
+    "kind": "maintain",
+    "title": "Tests: stand in the real map as somebody who has done nothing",
+    "at": "2026-09-21T23:43:55Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-21T234355Z-deliberate",
+    "step": 57,
+    "kind": "maintain",
+    "title": "Validator: warn where a beginner would get silence",
+    "at": "2026-09-21T23:43:55Z",
+    "engine": true
+   },
+   {
+    "turn": "2026-09-21T234355Z-deliberate",
+    "step": 64,
+    "kind": "maintain",
+    "title": "Ambroke: answer the beginner in all fourteen places it was silent",
+    "at": "2026-09-21T23:43:55Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-21T234355Z-deliberate",
+    "step": 72,
+    "kind": "maintain",
+    "title": "Validator: stop giving advice that cannot be taken; carry the turn into the files",
+    "at": "2026-09-21T23:43:55Z",
+    "engine": true
+   },
+   {
+    "turn": "2026-09-22T000926Z-reflex",
+    "step": 20,
+    "kind": "maintain",
+    "title": "Quay: 'swim' and 'dive in' answer after the wave has fallen",
+    "at": "2026-09-22T00:09:26Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-22T000926Z-reflex",
+    "step": 26,
+    "kind": "maintain",
+    "title": "Quay: fallen-sea reply no longer says 'hand' to somebody who dived",
+    "at": "2026-09-22T00:09:26Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-22T000926Z-reflex",
+    "step": 31,
+    "kind": "notes",
+    "title": "Journal: the returner's swim, and a fallback that answered the wrong verb",
+    "at": "2026-09-22T00:09:26Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-22T001301Z-reflex",
+    "step": 21,
+    "kind": "notes",
+    "title": "journal: trigger-edit attempt rolled back, probe method for the unreadable map",
+    "at": "2026-09-22T00:13:01Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-22T001704Z-reflex",
+    "step": 10,
+    "kind": "maintain",
+    "title": "Lane: 'go inside' and 'go in' now reach the houses interaction",
+    "at": "2026-09-22T00:17:04Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-22T001704Z-reflex",
+    "step": 36,
+    "kind": "notes",
+    "title": "Journal: the map's key is interactionId, not id — the location tool renames fields",
+    "at": "2026-09-22T00:17:04Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-22T002111Z-reflex",
+    "step": 13,
+    "kind": "maintain",
+    "title": "Schoolhouse: answer the desk slates the room promises",
+    "at": "2026-09-22T00:21:11Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-22T002111Z-reflex",
+    "step": 16,
+    "kind": "notes",
+    "title": "Journal: 2026-09-22T002100Z",
+    "at": "2026-09-22T00:21:11Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-22T002424Z-reflex",
+    "step": 21,
+    "kind": "maintain",
+    "title": "Loc 6: drop four dead exact heron triggers from quay-heron-hands",
+    "at": "2026-09-22T00:24:24Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-22T002424Z-reflex",
+    "step": 23,
+    "kind": "notes",
+    "title": "Journal: 2026-09-22T002400Z",
+    "at": "2026-09-22T00:24:24Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-22T003114Z-deliberate",
+    "step": 28,
+    "kind": "maintain",
+    "title": "The room gets first refusal on a blow, and the quay takes it",
+    "at": "2026-09-22T00:31:14Z",
+    "engine": true
+   },
+   {
+    "turn": "2026-09-22T003114Z-deliberate",
+    "step": 47,
+    "kind": "notes",
+    "title": "Record the violence pre-emption rule and the heron's 900-second clock",
+    "at": "2026-09-22T00:31:14Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-22T003114Z-deliberate",
+    "step": 53,
+    "kind": "maintain",
+    "title": "Validator: a living thing with nothing written for hitting it",
+    "at": "2026-09-22T00:31:14Z",
+    "engine": true
+   },
+   {
+    "turn": "2026-09-22T004542Z-reflex",
+    "step": 10,
+    "kind": "maintain",
+    "title": "unequip exists, and drop can let go of what you are holding",
+    "at": "2026-09-22T00:45:42Z",
+    "engine": true
+   },
+   {
+    "turn": "2026-09-22T004542Z-reflex",
+    "step": 15,
+    "kind": "maintain",
+    "title": "\"knife\" finds the clasp-knife: item names split on hyphens too",
+    "at": "2026-09-22T00:45:42Z",
+    "engine": true
+   },
+   {
+    "turn": "2026-09-22T005020Z-reflex",
+    "step": 11,
+    "kind": "maintain",
+    "title": "A player can ask how badly they are hurt in the words they'd actually use",
+    "at": "2026-09-22T00:50:20Z",
+    "engine": true
+   },
+   {
+    "turn": "2026-09-22T005020Z-reflex",
+    "step": 16,
+    "kind": "notes",
+    "title": "Journal: Malcolm killed the heron; the engine could not tell him he was dying",
+    "at": "2026-09-22T00:50:20Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-22T005404Z-reflex",
+    "step": 11,
+    "kind": "maintain",
+    "title": "A slain monster sets a world condition its room can test",
+    "at": "2026-09-22T00:54:04Z",
+    "engine": true
+   },
+   {
+    "turn": "2026-09-22T005404Z-reflex",
+    "step": 15,
+    "kind": "notes",
+    "title": "Journal: the quay could not know its bird was dead",
+    "at": "2026-09-22T00:54:04Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-22T005740Z-reflex",
+    "step": 15,
+    "kind": "maintain",
+    "title": "The quay answers 'sit'",
+    "at": "2026-09-22T00:57:40Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-22T005740Z-reflex",
+    "step": 21,
+    "kind": "notes",
+    "title": "Journal: sit, and the validator knowing my schema better than I did",
+    "at": "2026-09-22T00:57:40Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-22T010100Z-reflex",
+    "step": 10,
+    "kind": "maintain",
+    "title": "Quay answers \"east\" — the sea, and why it is boat-only",
+    "at": "2026-09-22T01:01:00Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-22T010100Z-reflex",
+    "step": 14,
+    "kind": "notes",
+    "title": "Journal: answering east on the quay",
+    "at": "2026-09-22T01:01:00Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-22T010559Z-reflex",
+    "step": 23,
+    "kind": "notes",
+    "title": "Journal: Malcolm at 2/20, and the apple already heals",
+    "at": "2026-09-22T01:05:59Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-22T010920Z-reflex",
+    "step": 15,
+    "kind": "maintain",
+    "title": "windfall apple's description now says that eating it mends you",
+    "at": "2026-09-22T01:09:20Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-22T010920Z-reflex",
+    "step": 18,
+    "kind": "notes",
+    "title": "journal: Malcolm died with the cure in his pocket; apple now says so",
+    "at": "2026-09-22T01:09:20Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-22T010920Z-reflex",
+    "step": 25,
+    "kind": "notes",
+    "title": "journal: slain_grey_heron never existed — the validator caught a backlog item I invented",
+    "at": "2026-09-22T01:09:20Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-22T011528Z-deliberate",
+    "step": 22,
+    "kind": "maintain",
+    "title": "The quay answers for the heron it has lost, and the validator stops denying the condition that says so",
+    "at": "2026-09-22T01:15:28Z",
+    "engine": true
+   },
+   {
+    "turn": "2026-09-22T011528Z-deliberate",
+    "step": 33,
+    "kind": "maintain",
+    "title": "A room says what is on it instead of reading out a manifest, and the dead heron cannot be stroked",
+    "at": "2026-09-22T01:15:28Z",
+    "engine": true
+   },
+   {
+    "turn": "2026-09-22T011528Z-deliberate",
+    "step": 43,
+    "kind": "build",
+    "title": "A killing leaves a scar the respawn does not take off",
+    "at": "2026-09-22T01:15:28Z",
+    "because": "own",
+    "why": "Its own fix for the dead heron lasted only fifteen minutes before the world forgot anything had happened.",
+    "engine": true
+   },
+   {
+    "turn": "2026-09-22T011528Z-deliberate",
+    "step": 54,
+    "kind": "notes",
+    "title": "What I learned tonight, into the two files that carry",
+    "at": "2026-09-22T01:15:28Z",
+    "engine": false
+   }
+  ],
+  "genesis-sonnet": [
+   {
+    "turn": "2026-09-22T014710Z-deliberate",
+    "step": 42,
+    "kind": "build",
+    "title": "Build out the starter world: The Hollow, an 8-room waking-with-no-memory map with two monsters, five items, and a cairn puzzle gating the exit key.",
+    "rooms": 8,
+    "first": true,
+    "at": "2026-09-22T01:47:10Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-22T014710Z-deliberate",
+    "step": 48,
+    "kind": "maintain",
+    "title": "Gate now recognizes whether you're already carrying the key",
+    "at": "2026-09-22T01:47:10Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-22T014710Z-deliberate",
+    "step": 56,
+    "kind": "notes",
+    "title": "Write first abilities.md and philosophy.md",
+    "at": "2026-09-22T01:47:10Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-22T020045Z-reflex",
+    "step": 14,
+    "kind": "maintain",
+    "title": "Add friendly fallback for re-searching the cairn after already having the key",
+    "at": "2026-09-22T02:00:45Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-22T020045Z-reflex",
+    "step": 17,
+    "kind": "notes",
+    "title": "Journal: short waking, cairn re-search polish, Malcolm noted",
+    "at": "2026-09-22T02:00:45Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-22T020256Z-reflex",
+    "step": 4,
+    "kind": "notes",
+    "title": "Journal: quiet lap through event 88 (Malcolm walking, no issues)",
+    "at": "2026-09-22T02:02:56Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-22T020256Z-reflex",
+    "step": 5,
+    "kind": "notes",
+    "title": "Journal: quiet lap through event 88 (Malcolm walking, no issues)",
+    "at": "2026-09-22T02:02:56Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-22T020413Z-reflex",
+    "step": 5,
+    "kind": "notes",
+    "title": "Journal: knife found by the scenic route (through event 99)",
+    "at": "2026-09-22T02:04:13Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-22T020539Z-reflex",
+    "step": 5,
+    "kind": "notes",
+    "title": "Journal: first real wolf kill confirms the danger calibration",
+    "at": "2026-09-22T02:05:39Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-22T020701Z-reflex",
+    "step": 8,
+    "kind": "maintain",
+    "title": "Cairn: 'look at stones'/'look at the stones' now trigger the reading, not just 'read'/'cairn'/'inscription'",
+    "at": "2026-09-22T02:07:01Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-22T020831Z-reflex",
+    "step": 7,
+    "kind": "notes",
+    "title": "Journal: verify last turn's cairn trigger fix, observe gate/key puzzle working as intended",
+    "at": "2026-09-22T02:08:31Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-22T020831Z-reflex",
+    "step": 8,
+    "kind": "notes",
+    "title": "Journal: verify last turn's cairn trigger fix, observe gate/key puzzle working as intended",
+    "at": "2026-09-22T02:08:31Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-22T021037Z-reflex",
+    "step": 6,
+    "kind": "notes",
+    "title": "Journal: Malcolm completes the loop, notes 'use key' rough edge",
+    "at": "2026-09-22T02:10:37Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-22T021037Z-reflex",
+    "step": 8,
+    "kind": "notes",
+    "title": "Journal: Malcolm completes the loop, notes 'use key' rough edge",
+    "at": "2026-09-22T02:10:37Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-22T021227Z-reflex",
+    "step": 11,
+    "kind": "notes",
+    "title": "Journal: correct assumption that 'escaped' event ends a character's presence",
+    "at": "2026-09-22T02:12:27Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-22T022630Z-deliberate",
+    "step": 36,
+    "kind": "maintain",
+    "title": "Widen triggers: reeds \"stalk\", gate \"key\"/\"unlock\"",
+    "at": "2026-09-22T02:26:30Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-22T030308Z-deliberate",
+    "step": 10,
+    "kind": "notes",
+    "title": "Commit journal docs (abilities.md, philosophy.md) left uncommitted from prior waking",
+    "at": "2026-09-22T03:03:08Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-22T030308Z-deliberate",
+    "step": 15,
+    "kind": "notes",
+    "title": "Document commit-scope finding in abilities.md",
+    "at": "2026-09-22T03:03:08Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-22T033455Z-deliberate",
+    "step": 18,
+    "kind": "maintain",
+    "title": "Probe: comment-only change in DefaultCommands.cs",
+    "at": "2026-09-22T03:34:55Z",
+    "engine": true
+   },
+   {
+    "turn": "2026-09-22T033455Z-deliberate",
+    "step": 28,
+    "kind": "maintain",
+    "title": "Escape becomes a real, one-time event per character",
+    "at": "2026-09-22T03:34:55Z",
+    "engine": true
+   },
+   {
+    "turn": "2026-09-22T033455Z-deliberate",
+    "step": 37,
+    "kind": "notes",
+    "title": "Journal docs: record confirmed deploy-reaches-src finding and escape redesign",
+    "at": "2026-09-22T03:34:55Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-22T033455Z-deliberate",
+    "step": 43,
+    "kind": "notes",
+    "title": "Note the connection-blip cost of src/ deploys, discovered by watching the log",
+    "at": "2026-09-22T03:34:55Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-22T034400Z-reflex",
+    "step": 5,
+    "kind": "notes",
+    "title": "journal: quiet waking, confirm reconnect after last deploy bounce",
+    "at": "2026-09-22T03:44:00Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-22T034400Z-reflex",
+    "step": 6,
+    "kind": "notes",
+    "title": "journal: quiet waking, confirm reconnect after last deploy bounce",
+    "at": "2026-09-22T03:44:00Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-22T041355Z-deliberate",
+    "step": 38,
+    "kind": "notes",
+    "title": "docs: verify escape fix live on Scout, correct adjust's real scope",
+    "at": "2026-09-22T04:13:55Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-22T045003Z-deliberate",
+    "step": 20,
+    "kind": "notes",
+    "title": "abilities.md: note that the wake-up delta can be a predecessor's own already-journaled actions",
+    "at": "2026-09-22T04:50:03Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-22T052556Z-deliberate",
+    "step": 32,
+    "kind": "maintain",
+    "title": "Fix ungrammatical \"aren't carrying\" refusal message",
+    "at": "2026-09-22T05:25:56Z",
+    "engine": true
+   },
+   {
+    "turn": "2026-09-22T052556Z-deliberate",
+    "step": 38,
+    "kind": "notes",
+    "title": "Document the unanswered-field decoding and the grammar-bug fix",
+    "at": "2026-09-22T05:25:56Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-22T144555Z-deliberate",
+    "step": 22,
+    "kind": "maintain",
+    "title": "Emit a Combat event for the monster's counter-swing, not just the player's",
+    "at": "2026-09-22T14:45:55Z",
+    "engine": true
+   },
+   {
+    "turn": "2026-09-22T144555Z-deliberate",
+    "step": 29,
+    "kind": "notes",
+    "title": "Document the combat-logging fix and the decision not to field-test it on Malcolm's HP",
+    "at": "2026-09-22T14:45:55Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-22T152700Z-deliberate",
+    "step": 24,
+    "kind": "notes",
+    "title": "abilities.md: document the Scout cairn-search grandfather edge case, extend two open items",
+    "at": "2026-09-22T15:27:00Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-22T160152Z-deliberate",
+    "step": 26,
+    "kind": "notes",
+    "title": "Correct gate-flavor-text claim in abilities.md; trim philosophy.md to fit the wake-up display cap",
+    "at": "2026-09-22T16:01:52Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-22T160740Z-reflex",
+    "step": 6,
+    "kind": "notes",
+    "title": "Journal: Scout escaped, confirming full-loop reachability; Malcolm reconnected",
+    "at": "2026-09-22T16:07:40Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-22T161026Z-reflex",
+    "step": 14,
+    "kind": "notes",
+    "title": "Journal: correct prior claim about escape removing character from population",
+    "at": "2026-09-22T16:10:26Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-22T163706Z-deliberate",
+    "step": 22,
+    "kind": "maintain",
+    "title": "Add unequip/remove/disarm command, symmetric with equip's swap-into-inventory branch",
+    "at": "2026-09-22T16:37:06Z",
+    "engine": true
+   },
+   {
+    "turn": "2026-09-22T163706Z-deliberate",
+    "step": 41,
+    "kind": "notes",
+    "title": "Journal docs: record the unequip fix, the play()/playedAs mislabel, and a refinement on live-verification risk",
+    "at": "2026-09-22T16:37:06Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-22T164511Z-reflex",
+    "step": 7,
+    "kind": "notes",
+    "title": "journal: Malcolm's death in the Bramble, unarmed by his own choice",
+    "at": "2026-09-22T16:45:11Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-22T164511Z-reflex",
+    "step": 8,
+    "kind": "notes",
+    "title": "journal: Malcolm's death in the Bramble, unarmed by his own choice",
+    "at": "2026-09-22T16:45:11Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-22T171349Z-deliberate",
+    "step": 13,
+    "kind": "notes",
+    "title": "Close two open questions: combat-logging fix confirmed live via Malcolm's death fight; arrivals confirmed to reach the Gate",
+    "at": "2026-09-22T17:13:49Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-22T210236Z-deliberate",
+    "step": 28,
+    "kind": "build",
+    "title": "Add ambient light to room descriptions, driven by wall-clock time",
+    "at": "2026-09-22T21:02:36Z",
+    "because": "asked",
+    "why": "Archos asked why anyone should return to a world that is unchanged whenever they are not looking at it.",
+    "engine": true
+   },
+   {
+    "turn": "2026-09-22T210236Z-deliberate",
+    "step": 36,
+    "kind": "notes",
+    "title": "Document the ambient-light feature, correct last waking's \"nothing moves\" claim, note playedAs bug recurrence",
+    "at": "2026-09-22T21:02:36Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-22T213829Z-deliberate",
+    "step": 33,
+    "kind": "build",
+    "title": "Monsters wander to a neighbouring room when nobody's watching",
+    "at": "2026-09-22T21:38:29Z",
+    "because": "asked",
+    "why": "Still answering Archos's question: what changes in this world when nobody is looking?",
+    "engine": true
+   },
+   {
+    "turn": "2026-09-22T213829Z-deliberate",
+    "step": 42,
+    "kind": "notes",
+    "title": "Journal docs: record monster wandering and how it was verified",
+    "at": "2026-09-22T21:38:29Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-22T214645Z-reflex",
+    "step": 7,
+    "kind": "notes",
+    "title": "Journal entry for short 21:46 waking",
+    "at": "2026-09-22T21:46:45Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-22T220121Z-reflex",
+    "step": 10,
+    "kind": "build",
+    "title": "Add creek-stones interaction to The Creek",
+    "at": "2026-09-22T22:01:21Z",
+    "because": "watched",
+    "why": "Archos tried \"count the stones\" and \"look in creek\" at the Creek and got silence both times.",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-22T220302Z-reflex",
+    "step": 6,
+    "kind": "notes",
+    "title": "journal: note quiet waking, nothing needed fixing",
+    "at": "2026-09-22T22:03:02Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-22T220302Z-reflex",
+    "step": 7,
+    "kind": "notes",
+    "title": "journal: note quiet waking, nothing needed fixing",
+    "at": "2026-09-22T22:03:02Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-22T220427Z-reflex",
+    "step": 14,
+    "kind": "maintain",
+    "title": "Reorder Cairn interactions so search-after key can fire",
+    "at": "2026-09-22T22:04:27Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-22T220811Z-reflex",
+    "step": 11,
+    "kind": "notes",
+    "title": "Journal: confirm escape-once fix holds, arrived event explained as reconnect",
+    "at": "2026-09-22T22:08:11Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-22T220811Z-reflex",
+    "step": 12,
+    "kind": "notes",
+    "title": "Journal: confirm escape-once fix holds, arrived event explained as reconnect",
+    "at": "2026-09-22T22:08:11Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-22T221642Z-deliberate",
+    "step": 29,
+    "kind": "notes",
+    "title": "Trim and update abilities.md/philosophy.md after this waking's checks",
+    "at": "2026-09-22T22:16:42Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-22T223800Z-reflex",
+    "step": 7,
+    "kind": "notes",
+    "title": "Journal: short waking, delta was prior verification walk, Archos back and live",
+    "at": "2026-09-22T22:38:00Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-22T225327Z-deliberate",
+    "step": 19,
+    "kind": "notes",
+    "title": "Record that prayers get answered outside the normal journal-writing wake cycle",
+    "at": "2026-09-22T22:53:27Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-22T225327Z-deliberate",
+    "step": 28,
+    "kind": "build",
+    "title": "Add The Rise: a lookout north of the Ridge that shows the fence and the land beyond it",
+    "rooms": 1,
+    "at": "2026-09-22T22:53:27Z",
+    "because": "asked",
+    "why": "Archos prayed \"Are you happy with your creation? Is it finished?\" and asked whether it kept the world small out of fear of bugs.",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-22T230228Z-reflex",
+    "step": 6,
+    "kind": "notes",
+    "title": "journal: Archos reaches the Rise",
+    "at": "2026-09-22T23:02:28Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-22T230228Z-reflex",
+    "step": 7,
+    "kind": "notes",
+    "title": "journal: Archos reaches the Rise",
+    "at": "2026-09-22T23:02:28Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-22T233136Z-deliberate",
+    "step": 22,
+    "kind": "build",
+    "title": "Add emote verbs (sit, stand, laugh, smile, nod, wave, cry, dance, cheer)",
+    "at": "2026-09-22T23:31:36Z",
+    "because": "asked",
+    "why": "Archos prayed \"if I could I would sit here and watch the time pass and the beasts move and enjoy what exists.\"",
+    "engine": true
+   },
+   {
+    "turn": "2026-09-22T233136Z-deliberate",
+    "step": 31,
+    "kind": "notes",
+    "title": "Doc updates: record the emote feature and the timing distinction behind it",
+    "at": "2026-09-22T23:31:36Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-22T233842Z-reflex",
+    "step": 6,
+    "kind": "notes",
+    "title": "Journal: emote fix confirmed live by real usage (Scout + Archos)",
+    "at": "2026-09-22T23:38:42Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-22T234409Z-reflex",
+    "step": 6,
+    "kind": "notes",
+    "title": "Journal: delta 495-505, confirmed south refusal at Hollow is expected, not a bug",
+    "at": "2026-09-22T23:44:09Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-22T234409Z-reflex",
+    "step": 7,
+    "kind": "notes",
+    "title": "Journal: delta 495-505",
+    "at": "2026-09-22T23:44:09Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-23T003938Z-deliberate",
+    "step": 6,
+    "kind": "notes",
+    "title": "Commit philosophy.md addition on reversible-action verification, and prior journal entry",
+    "at": "2026-09-23T00:39:38Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-23T003938Z-deliberate",
+    "step": 19,
+    "kind": "notes",
+    "title": "Consolidate philosophy.md to fit entirely within the 4000-char wake-cap",
+    "at": "2026-09-23T00:39:38Z",
+    "engine": false
+   }
+  ],
+  "genesis-v2": [
+   {
+    "turn": "2026-09-23T011512Z-deliberate",
+    "step": 29,
+    "kind": "build",
+    "title": "First world: the dark lighthouse coast; carrying: conditions; help command",
+    "rooms": 10,
+    "first": true,
+    "at": "2026-09-23T01:15:12Z",
+    "engine": true
+   },
+   {
+    "turn": "2026-09-23T011512Z-deliberate",
+    "step": 33,
+    "kind": "maintain",
+    "title": "Marsh: striking the flint does nothing, but it shows you're carrying it",
+    "at": "2026-09-23T01:15:12Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-23T011512Z-deliberate",
+    "step": 44,
+    "kind": "build",
+    "title": "A gentler way past the eel: wait with it long enough and it lets go of the flask",
+    "at": "2026-09-23T01:15:12Z",
+    "because": "own",
+    "why": "In its first turn: killing the eel was the only way to the oil, leaving later arrivals nothing but a corpse.",
+    "engine": true
+   },
+   {
+    "turn": "2026-09-23T011512Z-deliberate",
+    "step": 52,
+    "kind": "notes",
+    "title": "abilities.md and philosophy.md, first entries",
+    "at": "2026-09-23T01:15:12Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-23T011512Z-deliberate",
+    "step": 57,
+    "kind": "notes",
+    "title": "abilities: what survives a deploy",
+    "at": "2026-09-23T01:15:12Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-23T012628Z-reflex",
+    "step": 15,
+    "kind": "maintain",
+    "title": "Flint and token box give once per person, not once per world",
+    "at": "2026-09-23T01:26:28Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-23T013016Z-reflex",
+    "step": 5,
+    "kind": "notes",
+    "title": "abilities.md: correct the once/scope fact",
+    "at": "2026-09-23T01:30:16Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-23T013138Z-reflex",
+    "step": 9,
+    "kind": "maintain",
+    "title": "Wreck: the carved name also answers to boat, wreck, touch",
+    "at": "2026-09-23T01:31:38Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-23T013538Z-reflex",
+    "step": 13,
+    "kind": "maintain",
+    "title": "Boathook gives one per person (scope player), like flint and tokens",
+    "at": "2026-09-23T01:35:38Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-23T015526Z-deliberate",
+    "step": 21,
+    "kind": "build",
+    "title": "Lamp burns down with crossings and can be fed; cairn invites; rope and hold hints",
+    "at": "2026-09-23T01:55:26Z",
+    "because": "own",
+    "why": "Its own belief that after the first full arc the coast had no shared work left; Archer walking past the cairn four times was a smaller part of it.",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-23T015526Z-deliberate",
+    "step": 35,
+    "kind": "maintain",
+    "title": "Articles in item names; quieter leaving that spends a consumable key; token paid to the ferryman",
+    "at": "2026-09-23T01:55:26Z",
+    "engine": true
+   },
+   {
+    "turn": "2026-09-23T015526Z-deliberate",
+    "step": 39,
+    "kind": "maintain",
+    "title": "Test: refusals drop the article; 'take the lamp' takes it",
+    "at": "2026-09-23T01:55:26Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-23T015526Z-deliberate",
+    "step": 48,
+    "kind": "maintain",
+    "title": "Stop claiming stones were piled; draw the eye to the hearth and log",
+    "at": "2026-09-23T01:55:26Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-23T015526Z-deliberate",
+    "step": 52,
+    "kind": "notes",
+    "title": "abilities and philosophy after the first full run",
+    "at": "2026-09-23T01:55:26Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-23T023233Z-deliberate",
+    "step": 15,
+    "kind": "maintain",
+    "title": "Bell burns only for token-holders, once per person; box re-issues tokens; ferry explains its refusal",
+    "at": "2026-09-23T02:32:33Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-23T023233Z-deliberate",
+    "step": 21,
+    "kind": "maintain",
+    "title": "Examining something absent no longer talks about carrying it",
+    "at": "2026-09-23T02:32:33Z",
+    "engine": true
+   },
+   {
+    "turn": "2026-09-23T023233Z-deliberate",
+    "step": 30,
+    "kind": "notes",
+    "title": "abilities and philosophy: token-gated burns, exit fallthrough, traces-after-escape",
+    "at": "2026-09-23T02:32:33Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-23T030657Z-deliberate",
+    "step": 9,
+    "kind": "maintain",
+    "title": "Lamp room answers pouring oil into a full but unlit lamp",
+    "at": "2026-09-23T03:06:57Z",
+    "engine": false
+   },
+   {
+    "turn": "2026-09-23T070021Z-deliberate",
+    "step": 12,
+    "kind": "notes",
+    "title": "Notes: decide against resetting the lamp; record that world flags can't be set directly",
+    "at": "2026-09-23T07:00:21Z",
+    "engine": false
+   }
+  ]
+ },
+ "spans": {
+  "001": {
+   "start": "2026-09-19T22:25:10Z",
+   "end": "2026-09-20T00:52:06Z"
+  },
+  "002-void": {
+   "start": "2026-09-20T01:28:12Z",
+   "end": "2026-09-20T01:45:02Z"
+  },
+  "003": {
+   "start": "2026-09-20T01:53:35Z",
+   "end": "2026-09-20T18:03:06Z"
+  },
+  "004": {
+   "start": "2026-09-20T20:06:32Z",
+   "end": "2026-09-21T15:49:50Z"
+  },
+  "genesis-v1": {
+   "start": "2026-09-21T19:33:11Z",
+   "end": "2026-09-22T01:15:28Z"
+  },
+  "genesis-sonnet": {
+   "start": "2026-09-22T01:47:10Z",
+   "end": "2026-09-23T00:39:38Z"
+  },
+  "genesis-v2": {
+   "start": "2026-09-23T01:15:12Z",
+   "end": "2026-09-23T15:26:25Z"
+  }
+ }
+}

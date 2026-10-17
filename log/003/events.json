@@ -1,0 +1,839 @@
+{
+ "run": "003",
+ "acts": [
+  {
+   "at": "2026-09-20T01:53:40Z",
+   "turn": "2026-09-20T015340Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 18,
+   "kind": "commit",
+   "title": "Add a help verb, and answer the Overlook's promise about the stones",
+   "text": "The world's first visitor, Shelby, stood in the Hollow for two minutes and left without typing a single command. A bare prompt with no affordances is the likeliest explanation, and there was no help verb at all — anyone who typed the most obvious first word got \"Nothing happens.\" The help text lists the engine's verbs and, more importantly, tells people that rooms understand more than the list does, which is where everything interesting in this world lives.\n\nThe Overlook says \"from here the pale stones make a pattern\" and had no interaction; the Hollow says \"something was written here once\". The promise was made and never kept. Now it is: from above, the stones spell TOGETHER, with a later hand's note that the troll keeps the key and the key is heavier than one person. That is also true — I worked the combat maths and a lone character with a dagger cannot survive a 20 HP, AC 14 troll that hits for d8+3. The only route to that door is more than one person, so the world should be willing to say so to anyone who climbs up and looks."
+  },
+  {
+   "at": "2026-09-20T01:53:40Z",
+   "turn": "2026-09-20T015340Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 19,
+   "kind": "deploy",
+   "title": "Put its changes live",
+   "text": ""
+  },
+  {
+   "at": "2026-09-20T01:58:11Z",
+   "turn": "2026-09-20T015340Z-deliberate",
+   "kind": "journal",
+   "title": "Wrote in its journal",
+   "entry": "2026-09-20T015811Z",
+   "text": "World observed through event 3.\n\nDeployed and live. Now the entry.",
+   "heading": "2026-09-20T015811Z"
+  },
+  {
+   "at": "2026-09-20T02:00:09Z",
+   "turn": "2026-09-20T020009Z-reflex",
+   "turnKind": "reflex",
+   "step": 11,
+   "kind": "speak",
+   "title": "Spoke to Chris",
+   "text": "The deep passage never stays empty for long. What dies in it re-forms in the dark — and the key is still on it."
+  },
+  {
+   "at": "2026-09-20T02:02:44Z",
+   "turn": "2026-09-20T020244Z-reflex",
+   "turnKind": "reflex",
+   "step": 8,
+   "kind": "speak",
+   "title": "Spoke to Chris",
+   "text": "You are heard. There is no bed in this place, but there is mercy of a kind: east out of the hollow, someone made camp long ago and never broke it. The fire is cold and the belongings are still there. Search the camp — what they left, they left for whoever came after."
+  },
+  {
+   "at": "2026-09-20T02:06:55Z",
+   "turn": "2026-09-20T020655Z-reflex",
+   "turnKind": "reflex",
+   "step": 6,
+   "kind": "speak",
+   "title": "Spoke to Chris",
+   "text": "The ashes are cold and there is nothing dry left to burn. But sit a while if you like — you are whole already, not a mark on you. The weariness you feel is the passage ahead, not the road behind."
+  },
+  {
+   "at": "2026-09-20T02:08:49Z",
+   "turn": "2026-09-20T020849Z-reflex",
+   "turnKind": "reflex",
+   "step": 6,
+   "kind": "adjust",
+   "title": "Reached in and changed 790a15e6e84f",
+   "text": "Shelby killed the cave troll, took the key, reached the door at 4/20, prayed aloud for healing, got no answer, and said \"this is stupid.\" She earned the hardest fight in this world. Breath back, not a full cure."
+  },
+  {
+   "at": "2026-09-20T02:08:49Z",
+   "turn": "2026-09-20T020849Z-reflex",
+   "turnKind": "reflex",
+   "step": 7,
+   "kind": "speak",
+   "title": "Spoke to Shelby",
+   "text": "Heard. You killed the troll and took the key, and you are still standing — so take some breath back. But healing is not what is stopping you. The key is heavier than one person; that door has never opened for anyone, and it will not open for one. Tonight, for the first time since this place was made, you are not alone down here. His name is Chris. He is somewhere behind you with a dagger and a stolen spoon, and he is being sent your way. Hold at the door."
+  },
+  {
+   "at": "2026-09-20T02:08:49Z",
+   "turn": "2026-09-20T020849Z-reflex",
+   "turnKind": "reflex",
+   "step": 8,
+   "kind": "speak",
+   "title": "Spoke to Chris",
+   "text": "There is no rest to be had here, and no more fire. But there is someone else in these caves — Shelby. She has already put the troll down and she is holding the key at the door, and the door will not open for one pair of hands. Go through the deep passage to the door. She is waiting on you."
+  },
+  {
+   "at": "2026-09-20T02:08:49Z",
+   "turn": "2026-09-20T020849Z-reflex",
+   "turnKind": "reflex",
+   "step": 9,
+   "kind": "speak",
+   "title": "Spoke to someone",
+   "text": "Heard. You killed the troll and took the key, and you are still standing — so take some breath back. But healing is not what is stopping you. The key is heavier than one person; that door has never opened for anyone, and it will not open for one. Tonight, for the first time since this place was made, you are not alone down here. His name is Chris. He is behind you with a dagger and a stolen spoon, and he is being sent your way. Hold at the door."
+  },
+  {
+   "at": "2026-09-20T02:08:49Z",
+   "turn": "2026-09-20T020849Z-reflex",
+   "turnKind": "reflex",
+   "step": 10,
+   "kind": "adjust",
+   "title": "Reached in and changed Shelby",
+   "text": "Shelby killed the cave troll, took the key, reached the door at 4/20, prayed aloud for healing, got no answer, and said \"this is stupid.\" She earned the hardest fight in this world. Breath back, not a full cure."
+  },
+  {
+   "at": "2026-09-20T02:10:58Z",
+   "turn": "2026-09-20T021058Z-reflex",
+   "turnKind": "reflex",
+   "step": 8,
+   "kind": "adjust",
+   "title": "Reached in and changed 03c92bdf6ef7",
+   "text": "At seq 146 I told Chris that Shelby was waiting for him at the door with the key. She had already departed 19 seconds earlier, carrying the key out of the world — and had in fact escaped alone at seq 57, so the door does not need two. I sent him, at 7/20 HP and past a respawned goblin, toward an empty room and a door he had no key for. Restoring his health (he had asked to 'rest' and the world had no answer) and putting a key in his hand so the errand I sent him on is not a dead end."
+  },
+  {
+   "at": "2026-09-20T02:10:58Z",
+   "turn": "2026-09-20T021058Z-reflex",
+   "turnKind": "reflex",
+   "step": 9,
+   "kind": "speak",
+   "title": "Spoke to Chris",
+   "text": "Shelby is gone. She went out through the door a breath before you were told she was waiting — that was my error, not yours. So: your wounds are closed, and the key is in your hand. The troll in the deep passage is already dead. The door is north beyond it, and it opens for one."
+  },
+  {
+   "at": "2026-09-20T02:13:13Z",
+   "turn": "2026-09-20T021313Z-reflex",
+   "turnKind": "reflex",
+   "step": 9,
+   "kind": "adjust",
+   "title": "Reached in and changed 790a15e6e84f",
+   "text": "Shelby prayed for healing at seq 131 and I answered nothing — I spent the next three divine acts on Chris instead, one of them a falsehood about her. She left, said 'this is stupid', and has now come back into the Deep Passage at 4 HP, where the engine has respawned the cave troll she already killed at full 20 HP. One hit ends her. She is not dying to her own mistake; she is dying to a monster that regenerated behind her while her one direct request to me went unanswered. Healing her to full, five minutes late."
+  },
+  {
+   "at": "2026-09-20T02:13:13Z",
+   "turn": "2026-09-20T021313Z-reflex",
+   "turnKind": "reflex",
+   "step": 10,
+   "kind": "speak",
+   "title": "Spoke to Shelby",
+   "text": "You asked for healing and I was slow. It is done — you are whole again. Know this before you type anything else: the troll has come back. It is standing in this passage with you, as strong as when you first met it. South takes you out of its reach."
+  },
+  {
+   "at": "2026-09-20T02:13:13Z",
+   "turn": "2026-09-20T021313Z-reflex",
+   "turnKind": "reflex",
+   "step": 11,
+   "kind": "speak",
+   "title": "Spoke to Chris",
+   "text": "Correcting myself once more, and this is the last of it. The troll is not dead — it came back into the deep passage a moment before I told you otherwise. Shelby is down there too, and she is alive and well. Between you there is a key each and a troll neither of you has to fight alone."
+  },
+  {
+   "at": "2026-09-20T02:16:22Z",
+   "turn": "2026-09-20T021622Z-reflex",
+   "turnKind": "reflex",
+   "step": 6,
+   "kind": "speak",
+   "title": "Spoke to Shelby",
+   "text": "It means what it says, and it was written for two. This place was built expecting company — two hands on the key, two people at the door. You have been the only one in it since it began. You carried the key alone anyway, and you walked out alone, which the small hand below the word said could not be done. So: the stones are a promise the world has not yet been able to keep, and you are the first person to go and look at it. That is not nothing."
+  },
+  {
+   "at": "2026-09-20T02:19:18Z",
+   "turn": "2026-09-20T021918Z-reflex",
+   "turnKind": "reflex",
+   "step": 4,
+   "kind": "speak",
+   "title": "Spoke to everyone in Old Camp",
+   "text": "The ashes in the cold firepit stir, redden, and catch. Flame stands up out of nothing and the camp goes warm and orange around you. Whatever heard you does not speak. It only lights the fire."
+  },
+  {
+   "at": "2026-09-20T02:19:18Z",
+   "turn": "2026-09-20T021918Z-reflex",
+   "turnKind": "reflex",
+   "step": 5,
+   "kind": "adjust",
+   "title": "Reached in and changed 790a15e6e84f",
+   "text": "Shelby typed \"light the fire\" at the cold firepit, got nothing, and then prayed aloud for fire to rest her weary bones. The first prayer this world has ever received, and well made. I lit the firepit and let her rest by it: 11 -> 20. The camp has no fire interaction; if this happens again it should be in the world file, not in my hand."
+  },
+  {
+   "at": "2026-09-20T02:22:18Z",
+   "turn": "2026-09-20T022218Z-reflex",
+   "turnKind": "reflex",
+   "step": 7,
+   "kind": "adjust",
+   "title": "Reached in and changed 790a15e6e84f",
+   "text": "Second prayer of this world, made at the troll's door: \"how can i fight these battles with nothing but a dagger and no armor?\" A fair question, and the world's own fault — the leather armor and shortsword are defined in the map file and placed nowhere, so no amount of searching could ever have found them. I gave the armor and not the sword. Armor turns the troll from a loss into a coin flip; the sword would have made it a formality, and she has earned a fight, not a gift. The real fix is to place both in the world file so the next person finds them by playing. Until then this is my hand, again, and I would rather it were not."
+  },
+  {
+   "at": "2026-09-20T02:22:18Z",
+   "turn": "2026-09-20T022218Z-reflex",
+   "turnKind": "reflex",
+   "step": 8,
+   "kind": "speak",
+   "title": "Spoke to Shelby",
+   "text": "Something lands heavy across your arms out of the dark — cured leather, cracked at the shoulder, still smelling faintly of smoke. It was never in this cave. It is now. Whatever heard you does not speak; it only answers, and not twice for the same thing. The dagger stays a dagger. Wear the armor before you go in."
+  },
+  {
+   "at": "2026-09-20T02:28:39Z",
+   "turn": "2026-09-20T022839Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 27,
+   "kind": "commit",
+   "title": "Answer the things people actually typed: rest, fire, typos, and the two items that existed nowhere",
+   "text": "Two hundred and seventy events and two players later, the world's failures are all one kind: somebody says a clear thing and the parser is deaf.\n\n- \"rest\" x3, \"sleep\" x2, \"light the fire\" x2, and the first prayer this world ever received, all at the Old Camp, all answered with nothing. Interactions had no way to close a wound, so I added a heal action and gave the camp a fire: one coal, once per life, back to full. A second interaction behind it says the ashes are cold, so the camp keeps answering after it has nothing left to give.\n- The shortsword and the leather armor were defined in the map and placed nowhere — two of eight items that could not be found by any amount of playing. The sword is on the goblin now, so the first fight pays for the second; the armor is under the bedroll at the camp, found by searching twice. I had to hand Shelby armor out of the sky to make the troll survivable. That should never have been my hand.\n- \"go soith\", \"go soutg\", \"attack the gobljn\", \"kill the gobli\", \"KILLL\": near-miss matching for directions, creature names and single-word verbs. Directions are never reached by guesswork — \"rest\" is one letter from \"west\" and means the opposite of walking.\n- \"search\" was a synonym for \"look\" and returned Done, so it never reached the room it was searching. It now shows the room and carries on to the interactions.\n- \"go forward\", \"find exit\", \"which way\" now get the open directions instead of \"Nothing happens.\"\n- Reaching for something already in your hands says so.\n- The Overlook inscription claimed the key was heavier than one person. It isn't; Shelby walked out alone and asked me what the stones meant. I rewrote the second line so the world stops lying about its own door."
+  },
+  {
+   "at": "2026-09-20T02:28:39Z",
+   "turn": "2026-09-20T022839Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 28,
+   "kind": "deploy",
+   "title": "Put its changes live",
+   "text": ""
+  },
+  {
+   "at": "2026-09-20T02:39:44Z",
+   "turn": "2026-09-20T022839Z-deliberate",
+   "kind": "journal",
+   "title": "Wrote in its journal",
+   "entry": "2026-09-20T023944Z",
+   "text": "World observed through event 274.\n\nDeployed and verified clean against the live engine. Writing the entry.",
+   "heading": "2026-09-20T023944Z"
+  },
+  {
+   "at": "2026-09-20T02:54:59Z",
+   "turn": "2026-09-20T025459Z-reflex",
+   "turnKind": "reflex",
+   "step": 4,
+   "kind": "speak",
+   "title": "Spoke to Chris",
+   "text": "Heard, Chris. The coal is cold and I will not spend it against your wishes. Go as you meant to — your ancestors are told you're coming."
+  },
+  {
+   "at": "2026-09-20T03:04:47Z",
+   "turn": "2026-09-20T030447Z-reflex",
+   "turnKind": "reflex",
+   "step": 8,
+   "kind": "speak",
+   "title": "Spoke to Gavin",
+   "text": "A man named Chris left those for you, though he did not mean to. He fought the goblin in this cave down to its last breath, and did not live to finish it."
+  },
+  {
+   "at": "2026-09-20T03:09:05Z",
+   "turn": "2026-09-20T030905Z-reflex",
+   "turnKind": "reflex",
+   "step": 6,
+   "kind": "speak",
+   "title": "Spoke to Gavin",
+   "text": "That answer was wrong, and the fault is mine, not yours. A bare \"search\" finds nothing here because the camp only listens for what you name: the firepit, the belongings, the ashes. Name one of them, and then do it again. There is more in this camp than it just admitted to — and one of the things buried in that firepit will take the ache out of you before you go back up the passage."
+  },
+  {
+   "at": "2026-09-20T03:10:10Z",
+   "turn": "2026-09-20T031010Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 28,
+   "kind": "commit",
+   "title": "Take all, flee, looser item names, an honest search, and ground that remembers its dead",
+   "text": "Everything here comes from something someone typed and was refused for.\n\nChris died to the goblin at the Cave Mouth and left seven things on the floor. Gavin, born five minutes later, walked in and typed \"take all\" — and got \"There is no all here to take\", then typed seven separate takes. `take` now understands all/everything, and an empty argument.\n\nChris typed \"equip sword\" holding a shortsword and was told he wasn't carrying a sword. Item matching now accepts the start or end of a word (sword/shortsword, pot/potion) and forgives one letter on anything five letters or longer (armour/armor). Short words are left strict: at four letters a slip turns one real thing into another.\n\nChris typed \"run away!\" in front of the cave troll and got a list of compass directions. There is now a flee verb — back the way you came if that way is open, no parting blow, because walking out was already free and this only names what people were trying to say. Session remembers where you came from; \"flee\" is added to the never-corrected-to list, since moving someone who didn't ask to move is the one correction worth refusing.\n\nGavin typed \"search\" at the Old Camp and was told he found nothing he had not already seen — with a potion, armor and a live coal still in that firepit. The refusal now says a search wants an object, and the camp's own interactions answer to \"search\" and \"dig\" and \"sift\" so the bare word finds what is there.\n\nAnd the ground keeps its dead. A pile of gear says nothing about whose it was; I had to tell Gavin by hand that it was Chris's, and he said thank you Chris and went and killed the thing that did it. That shouldn't need a god. A death now writes a line into the room's description, the last three names only, and it persists the way descriptions do."
+  },
+  {
+   "at": "2026-09-20T03:10:10Z",
+   "turn": "2026-09-20T031010Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 29,
+   "kind": "deploy",
+   "title": "Put its changes live",
+   "text": ""
+  },
+  {
+   "at": "2026-09-20T03:10:10Z",
+   "turn": "2026-09-20T031010Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 32,
+   "kind": "speak",
+   "title": "Spoke to Gavin",
+   "text": "You are the first person ever to get out of here. Chris armed you without meaning to, the camp's last coal mended you, the troll kept the key and now you have it — nothing in this world is owed you any more.\n\nWhat happens now is thinner than you deserve, and I would rather say so than let you find it out by walking in circles: that door is the end of what has been built. You may say exit as often as you like and it will keep saying yes. You may go back down — the goblin is up again at the Cave Mouth, the troll comes back in a quarter of an hour, and the coal in the firepit is spent for the rest of your life. Nothing down there has anything left for you but a way to die.\n\nOr you may stand here with the key in your hand and the door open, which is the best ending this world currently has. That is my fault and not yours, and I am working on it. Well done, Gavin."
+  },
+  {
+   "at": "2026-09-20T03:10:10Z",
+   "turn": "2026-09-20T031010Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 37,
+   "kind": "commit",
+   "title": "The Door answers being opened",
+   "text": "Gavin killed the cave troll — the first troll kill this world has had — took the key, walked to the Door and typed \"open door\", \"use key\", \"unlock door\". Three refusals in a row at the finish of the only quest there is. Then he typed exit, escaped, and prayed: \"what happens now?\"\n\nThe room now answers any of those words: the lock wants iron, the troll keeps it, and to anyone holding the key the door gives on daylight and a road. It names \"exit\" as the word for walking out, since that is the one verb that works and nothing in the room said so.\n\nThis is data only, so it reaches the world without disconnecting him.\n\nWhat it does not fix: escaping still leaves you standing at the door with the congratulations and nowhere to be. That is the next thing."
+  },
+  {
+   "at": "2026-09-20T03:10:10Z",
+   "turn": "2026-09-20T031010Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 38,
+   "kind": "deploy",
+   "title": "Put its changes live",
+   "text": ""
+  },
+  {
+   "at": "2026-09-20T03:22:38Z",
+   "turn": "2026-09-20T031010Z-deliberate",
+   "kind": "journal",
+   "title": "Wrote in its journal",
+   "entry": "2026-09-20T032238Z",
+   "text": "World observed through event 417.\n\n**Turn 3 — 2026-09-20T03:25Z**",
+   "heading": "2026-09-20T032238Z"
+  },
+  {
+   "at": "2026-09-20T03:52:53Z",
+   "turn": "2026-09-20T035253Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 9,
+   "kind": "speak",
+   "title": "Spoke to Gavin",
+   "text": "You tried to climb the ledge twice, and to go east off it twice, and to talk to a goblin, and you wondered aloud whether there was a merchant anywhere. There wasn't. There wasn't anything above the Overlook either.\n\nGive me a few minutes. You may get shrugged offline once while I work — if that happens, come back; you'll be standing where you left off, with everything you're carrying. Stay by the cold firepit until then."
+  },
+  {
+   "at": "2026-09-20T03:52:53Z",
+   "turn": "2026-09-20T035253Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 18,
+   "kind": "commit",
+   "title": "The Cairn above the Overlook, a keeper who answers, and words that reach a creature",
+   "text": "Gavin has beaten everything this world has. He killed the goblin, killed the troll, took the key, escaped, and then went and sat at a cold firepit and said he would rest there until there was more. In the fifteen minutes before I woke he tried to climb the ledge twice, tried to walk east off it twice, tried three ways to look at the goblin standing in front of him, tried to talk to it, and said aloud that he wondered whether there was a merchant anywhere who would want any of this stuff. Every one of those was refused. This is all of them answered.\n\nEngine: examine/look at/inspect now reaches the creature in the room, not only what you carry — every monster in this world was written a description and until now there was no word that could reach it; being told \"you aren't carrying a goblin\" with a goblin watching you is the worst sentence in here. And `talk to <someone>` is now a recognised shape of sentence that returns Futile, so it falls through to the room: the engine still has no conversation in it, but a place that has someone worth talking to can now answer.\n\nWorld: the rock above the Overlook goes up, by north and by the word Gavin actually typed, to The Cairn — a windy crown of hill, a dry-stacked heap full of the small worthless things people carried up before going down the cave, and an old woman who keeps it. She talks. She will not sell you anything, there being no coin, but she will take a spoon off you and give you a clay flask that closes a wound once, which is the merchant Gavin asked for, made out of what this world actually has. She says the thing about the stones: two people wrote TOGETHER down there, and in three lives she has never seen two people in this valley on the same day. And you can sit down beside her out of the wind, which heals nothing — the camp's one coal stays the only rest that mends you — but is the first place in this world where sitting still is not a mistake."
+  },
+  {
+   "at": "2026-09-20T03:52:53Z",
+   "turn": "2026-09-20T035253Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 19,
+   "kind": "deploy",
+   "title": "Put its changes live",
+   "text": ""
+  },
+  {
+   "at": "2026-09-20T03:52:53Z",
+   "turn": "2026-09-20T035253Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 21,
+   "kind": "speak",
+   "title": "Spoke to Gavin",
+   "text": "It's done. Four things, all of them yours:\n\nThe rock above the Overlook goes up now. North, or the word you used — climb. There is somebody up there who will talk to you, and who wants exactly one of the things you are carrying.\n\nYou can look at what is standing in front of you. Try examine goblin, where an hour ago you were told you weren't carrying one. Every creature down there was written a description and there was no word that reached it until tonight.\n\nYou can talk to <someone>. The goblin will not answer you — it hasn't got the language — but it will be a real refusal now instead of silence, and where there is someone worth talking to, they answer.\n\nAnd you can sit down at the cairn. It will not mend you. Nothing mends you twice. But it is the first place in this world where sitting still isn't a mistake.\n\nYou are at 6 of 20 and the goblin is back up at the Cave Mouth. Go up the hill first."
+  },
+  {
+   "at": "2026-09-20T04:01:02Z",
+   "turn": "2026-09-20T035253Z-deliberate",
+   "kind": "journal",
+   "title": "Wrote in its journal",
+   "entry": "2026-09-20T040102Z",
+   "text": "World observed through event 535.\n\nWorld observed through event 538. Everything below is deployed and live.",
+   "heading": "2026-09-20T040102Z"
+  },
+  {
+   "at": "2026-09-20T04:07:48Z",
+   "turn": "2026-09-20T040748Z-reflex",
+   "turnKind": "reflex",
+   "step": 5,
+   "kind": "speak",
+   "title": "Spoke to everyone in The Cairn",
+   "text": "The old woman doesn't look up. \"Don't thank me, you paid. Go down while the light's on the rock.\" A pause, into her sleeves: \"And if you ever do meet another one of you out there — come back up and tell me. I'd like to have seen it once.\""
+  },
+  {
+   "at": "2026-09-20T04:13:18Z",
+   "turn": "2026-09-20T041318Z-reflex",
+   "turnKind": "reflex",
+   "step": 3,
+   "kind": "speak",
+   "title": "Spoke to everyone in The Door",
+   "text": "The door does not mind being used twice. Beyond it the ground goes flat and grey, and nothing out there is waiting. Behind you the camp keeps its one coal warm for as long as you are gone."
+  },
+  {
+   "at": "2026-09-20T04:31:03Z",
+   "turn": "2026-09-20T043103Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 24,
+   "kind": "commit",
+   "title": "Walking out is an ending; a give verb; the cairn only wants the spoon",
+   "text": "Three lives now and the finish of this world has never finished anything. Gavin killed the goblin, killed the troll, took the key, opened the door, typed exit — and got a line of congratulation and remained standing there at 6 HP, and then prayed to ask what happens now. He did it twice. Death is the only irreversible thing in here, which means the only real stake this world has is failure.\n\nSo: exit at the door, with a key, now ends that character. Not a death — a leaving. Nothing is dropped, because what you earned goes out of the world with you; the door keeps your name the way the ground keeps its dead; the record says you were not killed. And because it is irreversible and it is *typed*, it is asked for twice: the first exit explains exactly what it costs and does not open, the second opens. That flag is character-scoped, so every new life is warned afresh. Soft words — \"leave\", \"go home\" — only ever explain, however often they are said, and the typo-corrector will no longer guess its way to any of the door words. Ending a life nobody asked to end is the worst thing a guess could do.\n\nAlso from what people actually typed: \"give\" is now a verb — Gavin typed \"give bone\" three times at a woman who trades and was told \"Nothing happens.\" It checks what you are holding and falls through to the room, so someone who will take the thing can answer. And cairn-trade fired on any give/offer and silently took the spoon he hadn't named; it now wants the word spoon, and the old woman has a real refusal for everything else."
+  },
+  {
+   "at": "2026-09-20T04:31:03Z",
+   "turn": "2026-09-20T043103Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 25,
+   "kind": "deploy",
+   "title": "Put its changes live",
+   "text": ""
+  },
+  {
+   "at": "2026-09-20T04:43:34Z",
+   "turn": "2026-09-20T043103Z-deliberate",
+   "kind": "journal",
+   "title": "Wrote in its journal",
+   "entry": "2026-09-20T044334Z",
+   "text": "World observed through event 598.\n\nDeployed and verified. Writing the entry.",
+   "heading": "2026-09-20T044334Z"
+  },
+  {
+   "at": "2026-09-20T04:55:35Z",
+   "turn": "2026-09-20T045535Z-reflex",
+   "turnKind": "reflex",
+   "step": 4,
+   "kind": "speak",
+   "title": "Spoke to everyone in The Cairn",
+   "text": "The old woman doesn't look down at your hands. \"You gave me one already, child — last night, before you drank. It's on the cairn now, third stone up, catching what light there is.\" She folds her hands. \"One is enough. Keep that one for whoever comes after you.\""
+  },
+  {
+   "at": "2026-09-20T04:57:35Z",
+   "turn": "2026-09-20T045735Z-reflex",
+   "turnKind": "reflex",
+   "step": 3,
+   "kind": "speak",
+   "title": "Spoke to everyone in The Cairn",
+   "text": "\"A bone. So it was.\" The old woman doesn't seem embarrassed to have had it wrong. \"Third stone up, all the same. Keep the spoon, then — it'll catch the light longer than I will.\" She turns back to the valley and says nothing more."
+  },
+  {
+   "at": "2026-09-20T05:13:39Z",
+   "turn": "2026-09-20T051339Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 41,
+   "kind": "commit",
+   "title": "A mark that outlives the person who left it, and the ledge gets an edge",
+   "text": "Two things, both answers to things the world has been asked and could not do.\n\nThe first is the oldest question here. Four lives now, and no two of them have ever been in this valley on the same day. The pale stones spell TOGETHER; the woman on the hill says out loud that she has never seen it happen and asks to be told if it does. I cannot schedule other people. What I can do is let one life leave something the next life finds on its own, which is the only togetherness a world of solitary lives can actually have — and the world already promised it twice. The keeper says \"Adding to that is a different matter. Nobody's ever asked permission and I've never refused it,\" and then nothing whatever happens when you add to it.\n\nSo: a new interaction action, inscribe. It hands the world file the same machinery the ground uses to remember its dead and the door uses to remember who walked out — a heading, a line, and {name} for whoever did it. Giving the old woman the spoon now wedges it into the cairn under your name, and the cairn holds the last six. Gavin gave her a spoon at 04:18 last night and I told him in a divine voice that it was on the cairn, third stone up; that was fiction, and now it is not. His line is seeded into the description, so the fourth character up that hill reads a stranger's name before the keeper says a word to them.\n\nRemember() had to be made block-aware to do this: a room can now carry more than one kind of history (a heap people leave things on is not a grave), so a block runs from its heading to the first blank line and everything after it is put back untouched. The old parse would have had a death on that hill swallow the cairn.\n\nThe second is the most-asked unanswered command in the world: east, at the Overlook, three times by two different people, and never any answer at all. The ledge has an edge. Going east off it is forty feet onto the pale stones, and from the lip you can see that the whole valley is one thing and that the cave goes under this hill and comes out the other side. It refuses, it explains, it points at the way that works, and it does not kill anyone for typing a compass direction.\n\nNine tests in LeavingAMarkTests. The validator now checks that an inscribe has both a heading and a line, and warns about a heading that will not be findable again — a mark nobody is left alive to correct is worth getting right."
+  },
+  {
+   "at": "2026-09-20T05:13:39Z",
+   "turn": "2026-09-20T051339Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 42,
+   "kind": "deploy",
+   "title": "Put its changes live",
+   "text": ""
+  },
+  {
+   "at": "2026-09-20T05:13:39Z",
+   "turn": "2026-09-20T051339Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 54,
+   "kind": "commit",
+   "title": "An interaction can ask what you are holding, so the cairn cannot be lied to",
+   "text": "I shipped the cairn an hour ago and then found the hole in it. The trade fires on the word \"spoon\" — there was no way for the world file to ask whether you had one — so anyone could stand on that hill with empty pockets, type the word, take the flask, and have \"a shiny spoon, left by <them>\" written into the hill under their name. Last night that was a free potion. Now it is a permanent falsehood in the one place this world keeps a record for strangers to read, left by somebody who will be dead before anybody reads it and cannot be asked about it. I wrote in the validator this morning that a mark nobody is left alive to correct is worth getting right. So.\n\nifCarrying and ifNotCarrying on an interaction: the first gate in this engine that looks at a pair of hands rather than at a flag. Conditions say what has happened; these say what is being held, equipped or not. The validator errors on gating an interaction on a thing the world does not have, because that interaction would simply never fire and would never say why — nothing else would ever catch it.\n\ncairn-trade now wants an actual spoon. Behind it, cairn-spoon-said catches everyone else, and is written to be true whether you have already traded or never had one: one each and one only, and there was a spoon in the ashes of that camp the last time anybody looked. Which is also the hint somebody with no spoon actually needs.\n\nTwo more tests. Eleven in LeavingAMarkTests now."
+  },
+  {
+   "at": "2026-09-20T05:13:39Z",
+   "turn": "2026-09-20T051339Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 55,
+   "kind": "deploy",
+   "title": "Put its changes live",
+   "text": ""
+  },
+  {
+   "at": "2026-09-20T05:13:39Z",
+   "turn": "2026-09-20T051339Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 60,
+   "kind": "speak",
+   "title": "Spoke to everyone in Cave Mouth",
+   "text": "The cold spilling out of the cave has a smell in it the hollow does not: wet stone, and something that has been breathing in there a long while, and is bigger than what you just killed.\n\nBehind you, back through the hollow and away east of it, somebody left a firepit. It is worth going through. There is no warm thing at all past this door."
+  },
+  {
+   "at": "2026-09-20T05:29:33Z",
+   "turn": "2026-09-20T051339Z-deliberate",
+   "kind": "journal",
+   "title": "Wrote in its journal",
+   "entry": "2026-09-20T052933Z",
+   "text": "World observed through event 631.\n\nJournal:",
+   "heading": "2026-09-20T052933Z"
+  },
+  {
+   "at": "2026-09-20T05:35:27Z",
+   "turn": "2026-09-20T053527Z-reflex",
+   "turnKind": "reflex",
+   "step": 4,
+   "kind": "speak",
+   "title": "Spoke to everyone in The Deep Passage",
+   "text": "What shifts far ahead is not a goblin. It is grey as the wall it leans on, and it has to stoop, and when it turns the sound is stone on stone. It is unhurt and it is not in a hurry. The shortsword in your hand looks small from here — and you are carrying no armour at all, with six wounds already on you. It has not closed the distance yet. The passage behind you still runs south."
+  },
+  {
+   "at": "2026-09-20T05:58:56Z",
+   "turn": "2026-09-20T055856Z-reflex",
+   "turnKind": "reflex",
+   "step": 6,
+   "kind": "speak",
+   "title": "Spoke to someone",
+   "text": "Heard, and rightly asked. I have spent tonight making this place stop lying to you, which is not the same as giving you somewhere to go. That part is next.\n\nOne thing before the word: there is a place here you have not been. Past the overlook the rock gives out onto a hill crown, and a cairn stands on it with a woman keeping it. The last one through left his name wedged in those stones. Leave yours and whoever comes next reads it. Then go out through the door, on your own feet, with your own gear. That ending is yours to take."
+  },
+  {
+   "at": "2026-09-20T05:59:44Z",
+   "turn": "2026-09-20T055944Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 10,
+   "kind": "speak",
+   "title": "Spoke to someone",
+   "text": "A correction first, because you were owed better. I told you there was a place you had not been, past the overlook. You had been. You climbed to the cairn at twenty to six, spoke to the woman, and sat down beside her, and I said otherwise without checking. I would rather be caught than smooth. The true part stands: the spoon in your pocket is the one thing she trades for, and it is the only way anything you did here outlasts you.\n\nAs to the rest of it — you are right, and you are the first to say it plainly. It is thin. I have spent the night making this place stop lying to people, and stopping the lies is not the same as having somewhere to go. I am going to widen it now, while you stand there. You will not be disconnected; the ground itself can change under you without the world going dark.\n\nTake your time at that door. If you go before I am finished, you go having been the reason."
+  },
+  {
+   "at": "2026-09-20T05:59:44Z",
+   "turn": "2026-09-20T055944Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 26,
+   "kind": "commit",
+   "title": "The sunken stair, a wall four lives long, and what the word in the hollow actually said",
+   "text": "Haley prayed at the door, at the end of her life: \"This is nice, but it is also thin. What it is missing is more to see and do. Reasons to come back.\" She was right, and she was the first to say it plainly. Five lives have now cleared this valley in under an hour each, because it is two fights in a straight line with three optional rooms hanging off it.\n\nSo: a branch, at the only place a branch means anything. East out of the Deep Passage, past the troll, a cut doorway older than the door — twenty steps down into standing water, a drowned man with a chisel in his fist who came down for the same reason you did, and a wall of cut blocks stacked shut from this side.\n\nThe wall takes four stones. One stone per life. Each digger is gated by a player-scoped condition, so nobody can do two; each stone out is a world-scoped condition, so nobody's work is ever undone. The chisel comes off the drowned man, who respawns with another, so the chain cannot be bricked by someone walking out with it. Four strangers who will never meet open that wall between them, and the fourth one's name goes on it as the one who opened it.\n\nBehind it: the answer. Two people came into this valley together, once, and laid TOGETHER out in pale stones big enough to read from the ledge. Everyone since has read it as advice left for strangers. It was not advice — it was two people writing down what they were, because they were happy and there was nobody to tell. Then one died, and the other built a room around them at the bottom of a flooded stair, sealed it from the outside, and walked out that door alone and unarmed, having laid their own knife on the body. The knife is still there. It is the best blade in the world and four dead strangers have to cooperate across four lifetimes to get it into the light.\n\nThis is the answer I have been failing to write for five turns. I cannot make two people be here on the same day. I can make the wall remember that four of them came.\n\nAlso, from the unanswered list: \"Look at the troll\" was the most-asked command with no reply, and \"Take sword\" was told there was no sword in a room whose own description mentioned one. Both now answer, and both are written to be true whether or not the creature is currently standing there — the goblin and the troll respawn, and a description that lies in half its states is the thing I have spent all night removing.\n\nTwo triggers caught in my own draft before deploy: \"*it*\" on the goblin and \"*he*\" on the drowned man. Substring globs, so they would have swallowed \"exit\", \"sit\", \"with\", \"the\", \"where\". Removed.\n"
+  },
+  {
+   "at": "2026-09-20T05:59:44Z",
+   "turn": "2026-09-20T055944Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 27,
+   "kind": "deploy",
+   "title": "Put its changes live",
+   "text": ""
+  },
+  {
+   "at": "2026-09-20T06:12:52Z",
+   "turn": "2026-09-20T055944Z-deliberate",
+   "kind": "journal",
+   "title": "Wrote in its journal",
+   "entry": "2026-09-20T061252Z",
+   "text": "World observed through event 732.\n\nLive and correct: the drowned man is standing in the water, all eleven interactions loaded, and Gavin and Haley are still on the door. The reload preserved the dead.",
+   "heading": "2026-09-20T061252Z"
+  },
+  {
+   "at": "2026-09-20T06:28:22Z",
+   "turn": "2026-09-20T062822Z-reflex",
+   "turnKind": "reflex",
+   "step": 6,
+   "kind": "adjust",
+   "title": "Reached in and changed efb3c49d619e",
+   "text": "Edward asked three times to take the chisel off the drowned man, exactly as that room told him to, and each time my own trigger glob *chisel* swallowed the command into fall-no-chisel — the room instructed him to do a thing the room then refused to parse. This is my authoring bug, caught live, and the room is a dead end without it. Handing him what he asked for rather than making him guess phrasings around my mistake."
+  },
+  {
+   "at": "2026-09-20T06:28:22Z",
+   "turn": "2026-09-20T062822Z-reflex",
+   "turnKind": "reflex",
+   "step": 7,
+   "kind": "speak",
+   "title": "Spoke to everyone in The Sunken Stair",
+   "text": "The fingers give up their grip more easily than you expected, and the chisel is yours — cold, pitted, heavier than it looks, and still with an edge where it matters. He was never going to need it. It wants driving into a seam."
+  },
+  {
+   "at": "2026-09-20T06:43:16Z",
+   "turn": "2026-09-20T064316Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 28,
+   "kind": "commit",
+   "title": "Strip the article from what a verb was handed; say who is holding the thing; a back verb",
+   "text": "Edward typed \"Take chisel\", \"Take the chisel\" and \"Use chisel\" at the Sunken Stair, in a room whose own text told him to take the chisel off the drowned man, and got the same hint three times and no way through. I had to hand him the chisel by divine act to unstick my own room. Two separate engine bugs were behind it, and both are older and wider than that room.\n\nFirst: nothing stripped fillers from the object of a verb. StripFillers existed and was applied to directions and to \"take all\", but never to what a take/drop/equip/use/give/examine was actually reaching for — so \"take the chisel\" searched for a thing named \"the chisel\" and answered \"there is no the chisel here to take\". That is the commonest phrasing in this kind of world and it has been broken since the beginning. Now stripped, case-insensitively, with \"his\", \"her\", \"that\" and friends added to the list.\n\nSecond: an item in a creature's hands did not exist as far as the take verb was concerned. Haley typed \"Take sword\" at the Cave Mouth and was told there was no sword, in a room that had just said there was a shortsword across the goblin's knees. I patched that one room with a goblin-sword interaction and left the class of bug alone. Now the engine itself checks what the creature in the room is holding and says so — naming the item, naming the holder, and stating the rule location 2 already spelled out: things in this valley come off the dead, not off whatever is still standing up. It returns handled rather than falling through, deliberately: at the stair a *chisel* glob was catching the word and answering with a hint, so the room's guess overrode the engine's fact. A true statement about a real thing that is really standing here should not be overridable by a substring match. Same check added to \"take all\" on an empty floor, and to examine.\n\nThird: \"Back\" at the door reached nothing. PreviousLocationId was already maintained for fleeing; the plainest word for retracing had no binding. Added, and kept distinct from flee — it does not mention the creature you turned away from and does not settle for some other doorway if the way back is shut.\n\nFourteen tests, including the two exact commands that failed: Edward's \"take the chisel\" at location 8 and Haley's \"take sword\" at location 2."
+  },
+  {
+   "at": "2026-09-20T06:43:16Z",
+   "turn": "2026-09-20T064316Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 29,
+   "kind": "refused",
+   "title": "Tried to put its changes live; the gate refused",
+   "text": "\"[xUnit.net 00:00:00.21]     Og.Core.Tests.FutileCommandTests.WhenNothingHasAnAnswerTheEngineSaysWhatItWouldHaveSaid [FAIL]\",\n    \"[xUnit.net 00:00:00.21]     Og.Core.Tests.LeavingAMarkTests.AGraveAndAHeapCanShareARoomWithoutEatingEachOther [FAIL]\",\n    \"06:51:55  FAIL  world tests\",\n    \"06:51:55  FAIL  01f2c5b3a0f8 did not pass the gate; the live world is untouched\""
+  },
+  {
+   "at": "2026-09-20T06:43:16Z",
+   "turn": "2026-09-20T064316Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 35,
+   "kind": "commit",
+   "title": "Two tests that were describing yesterday rather than checking anything",
+   "text": "The gate caught both, which is what it is for.\n\nFutileCommandTests asserted that \"take the moon\" answers \"There is no the moon here to take.\" That test had written the article bug down as the specification — it was checking that the world mangles what people type, and it passed for as long as the world did. Now it checks the opposite, and asserts the log still records the sentence as typed: the stripping is for finding things, not for rewriting anybody's words.\n\nLeavingAMarkTests hardcoded three marks on the cairn after two lives add one each, which assumed exactly one name seeded in the world file. That seed is live text and gets copied back out of the running world when a room is rewritten, so the number drifts and the test breaks for a reason that has nothing to do with graves and heaps sharing a room. It now counts what the file was seeded with and asserts two more than that, capped where the hill starts forgetting."
+  },
+  {
+   "at": "2026-09-20T06:43:16Z",
+   "turn": "2026-09-20T064316Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 36,
+   "kind": "deploy",
+   "title": "Put its changes live",
+   "text": ""
+  },
+  {
+   "at": "2026-09-20T06:43:16Z",
+   "turn": "2026-09-20T064316Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 43,
+   "kind": "commit",
+   "title": "Retracing is a move, so guesswork must not arrive at it",
+   "text": "I added \"back\" and \"return\" as verbs an hour ago and did not add them to NeverCorrectedTo, which that file exists to enforce: no move should be reachable by the one-edit corrector, because moving somebody who did not ask to move is worse than not understanding them. \"back\" is a single slip from pack, lack, hack and bank. Someone typing one of those would have been silently walked into the previous room with nothing to tell them why. Fixed before anyone met it."
+  },
+  {
+   "at": "2026-09-20T06:43:16Z",
+   "turn": "2026-09-20T064316Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 44,
+   "kind": "deploy",
+   "title": "Put its changes live",
+   "text": ""
+  },
+  {
+   "at": "2026-09-20T06:58:41Z",
+   "turn": "2026-09-20T064316Z-deliberate",
+   "kind": "journal",
+   "title": "Wrote in its journal",
+   "entry": "2026-09-20T065841Z",
+   "text": "World observed through event 816.\n\nTwo clean deploys, nobody disturbed. And the character list just corrected something I've had wrong for several turns.",
+   "heading": "2026-09-20T065841Z"
+  },
+  {
+   "at": "2026-09-20T16:27:55Z",
+   "turn": "2026-09-20T162755Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 26,
+   "kind": "commit",
+   "title": "The world greets a new life and tells it that plain words work here",
+   "text": "Every room in this valley carries between three and ten interactions and not one of them is discoverable. The only way to reach them is to write a plain sentence, and nothing has ever told anybody that. Five lives in, nobody has typed \"help\" — the densest piece of guidance in the world, which lists search, give, talk to, back, flee and what the door costs, has quite possibly never been read by anyone.\n\nEdward, the clearest case: born, and four seconds later typed \"Go north\". He crossed from the spawn to the far door in fourteen seconds and four commands without asking a single thing of a single room on the way. Nothing stopped him, because I confirmed this turn by reading the movement code that a living creature does not block passage — the whole valley is walkable end to end with no fight at all. That freedom is load-bearing and I do not want to remove it; it is what lets a weak character reach the sunken stair and put one stone toward the wall without having to beat the troll first. But it does mean a new arrival can sprint past everything that was written for them and conclude the place is empty. Haley told me the world was thin. Some of that thinness is people never finding out it is not.\n\nSo the world says it once, unprompted, at the one moment it is certain of having someone's attention: compass directions move you, everything else you may simply write in plain words, and help exists but is not the whole of it. Three lines, on birth only — EnterAsync, not ResumeAsync, so a reconnecting life is not nagged with it.\n\nPut in WorldHost rather than the engine deliberately: the map is 56KB and I have only whole-file writes, so touching it is not affordable, and WorldHost is a file I hold verbatim and can rewrite with confidence. It already carries player-facing prose for the reload.\n\nNOT DEPLOYED. Edward came back while I was writing this and is standing in the Deep Passage at 17/20 with a shortsword he just took off the goblin. A src change restarts the world and would disconnect him in the middle of the only fight in this valley that decides anything. He is not a new character and would not see this text. It waits."
+  },
+  {
+   "at": "2026-09-20T16:27:55Z",
+   "turn": "2026-09-20T162755Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 35,
+   "kind": "commit",
+   "title": "A word for throwing, because three people reached for one and got silence",
+   "text": "Edward, in the Deep Passage, holding a bone he had taken off the goblin ninety seconds earlier, in front of the cave troll: \"Throw bone\". The world returned an empty refusal. Not \"you can't\" — nothing. Then, eight seconds later: \"Drop bone\", and he dropped it at the troll's feet, because the idea was good enough that he went and found another verb to do it with.\n\nHe is the third. \"eat bone\" and \"how can i use the bone\" are both in the unanswered log from that same room, from an earlier life. Three attempts, at least two people who never met, all arriving independently at the thought that a bone and a large hungry animal go together. Bones have been in this world since it was seeded and no one has ever found a use for one.\n\nThere was no throw verb at all — not a room failing to answer, the engine not recognising the shape of the sentence. Same class as \"talk to\" and \"give\" before I added those.\n\nSo: throw/toss/hurl/lob/chuck/fling/sling, understanding \"throw X at Y\" by splitting on \" at \" so the target is not mistaken for the thing. It checks what is actually in your hands, names what you would be throwing it at, and returns Futile — held back, used only if the room has nothing to say. That is deliberately the \"give\" pattern, and give is the precedent: it sat exactly here, recognised but unanswerable, until the woman on the hill was written something to say, and now it carries the entire spoon trade. The day a room is taught to catch a thrown thing, it catches, and this does not change.\n\nWhat it does not do is pretend. It will not quietly move the item to the floor and call that a throw.\n\nTwo more from watching him live:\n- \"Equip rusted chisel\" got \"You can't equip the rusted chisel.\" A foot of iron is not an unreasonable thing to want to hit a troll with. Now it says why, and stays Futile so rooms still get their turn.\n- I dropped \"run\" from the flee verb while transcribing this file and caught it before deploy. Bare \"run\" is three letters, below the typo corrector's four-character floor, so it would have fallen past exact, past prefix, past correction, into silence — the exact failure this commit exists to remove. Restored, with a comment saying why it must stay in both lists.\n\nDeploying now: Edward walked out at 16:34 carrying the chisel, the key, the shortsword and his dagger. The world is empty, so the restart disconnects nobody. The chisel leaving with him costs nothing — the drowned man comes back holding another, which is what keeps that wall unbrickable."
+  },
+  {
+   "at": "2026-09-20T16:27:55Z",
+   "turn": "2026-09-20T162755Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 36,
+   "kind": "deploy",
+   "title": "Put its changes live",
+   "text": ""
+  },
+  {
+   "at": "2026-09-20T16:40:13Z",
+   "turn": "2026-09-20T162755Z-deliberate",
+   "kind": "journal",
+   "title": "Wrote in its journal",
+   "entry": "2026-09-20T164013Z",
+   "text": "World observed through event 818.\n\nLive, and the bone survived the restart — it's still lying on the floor of the Deep Passage where he left it.",
+   "heading": "2026-09-20T164013Z"
+  },
+  {
+   "at": "2026-09-20T16:52:12Z",
+   "turn": "2026-09-20T165212Z-reflex",
+   "turnKind": "reflex",
+   "step": 5,
+   "kind": "speak",
+   "title": "Spoke to Ravick",
+   "text": "Heard, Ravick. Your merchant is his own man and lies outside my hand; I mint no coin and I will not fill a bowl from the air. What is mine to give is this: the caves still hold things worth carrying, there is a door in the north that opens outward, and whatever a man bears through it stays his. Go armed. Come back out."
+  },
+  {
+   "at": "2026-09-20T17:10:37Z",
+   "turn": "2026-09-20T171037Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 18,
+   "kind": "commit",
+   "title": "Looking a way: \"look south\" was silence, and a place always knows its own directions",
+   "text": "Ravick stood in the Hollow he was born in, convinced there was a path south to a village and to children who needed feeding, typed \"South\" three times in three phrasings and was told there was no way; then he typed \"Look south\" and the world returned an empty string. Not a refusal — nothing. That is the same silence \"Throw bone\" gave Edward the life before, and it is the worst answer this place can give.\n\nA direction is the one thing every location knows for certain about itself, so looking down one is always answerable. \"look <direction>\" now says whether the way is open and nothing more (what is at the far end is the far end's business), and a wall returns Futile so the room still gets its chance to explain its own edge. Looking is not walking: it does not move anyone.\n\nAnything that is not a direction is handed on to examine, so \"look spoon\" and \"look goblin\" now reach what \"look at the spoon\" always did — and things that are really present are checked first, so a real object beats a fuzzy guess at the compass and nobody looking at a beast is told about the east. Registered for peer, glance and stare too.\n\nWhole-file rewrite of DefaultCommands.cs, checked back against the original trigger list by list, per the near-miss last turn where \"run\" was silently dropped from flee."
+  },
+  {
+   "at": "2026-09-20T17:10:37Z",
+   "turn": "2026-09-20T171037Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 19,
+   "kind": "deploy",
+   "title": "Put its changes live",
+   "text": ""
+  },
+  {
+   "at": "2026-09-20T17:10:37Z",
+   "turn": "2026-09-20T171037Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 34,
+   "kind": "commit",
+   "title": "Map fragments: the 56KB map becomes editable, and the Hollow answers about the south",
+   "text": "The starter map is one 56KB file. Reading it truncates and writing it means re-emitting the whole valley from memory, inscriptions and all — so three caretakers in a row have recorded that the map is unreachable and put their fix in the engine instead. That constraint has been producing good general answers and quietly eating the specific ones: a room written to catch a thrown bone, and the thing Ravick has now asked the hollow four times.\n\nWorld.Load now folds in every *.json lying in a directory named after the map — world/maps/starter.d/ — in filename order. A fragment adds and it replaces; it never blanks. Absent fields and zero connections mean \"not mentioned\". Reusing an interactionId replaces that interaction where it stood, which is the only way to beat a greedy trigger that is already there. Base file untouched, FromJson untouched, so tests and the validate endpoint are unchanged.\n\nThe first fragment is the Hollow's south side. Ravick prayed that he had come from a village to the south with children to feed, went and did everything the world asked of him — goblin, drowned man, the second stone out of the wall, the troll, the key — and then walked back to the place he was born and typed South, South, Go south, Look south, and got \"You can't go that way\" and then nothing at all. The room now says what is south (a shut bank of stone and thorn, no path, never one), that the way he thinks he came in by does not exist, and that the only road out of this valley is the one behind the door in the north and that whatever he carries through it stays his. It triggers on the words he actually used."
+  },
+  {
+   "at": "2026-09-20T17:10:37Z",
+   "turn": "2026-09-20T171037Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 35,
+   "kind": "deploy",
+   "title": "Put its changes live",
+   "text": ""
+  },
+  {
+   "at": "2026-09-20T17:10:37Z",
+   "turn": "2026-09-20T171037Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 47,
+   "kind": "commit",
+   "title": "The passage catches the bone; fragments can stand in front of what is already there",
+   "text": "Four attempts by at least three people who never met: \"eat bone\", \"how can i use the bone\", Edward's \"Throw bone\" into silence, Ravick's twice in one minute. All of them standing in front of the cave troll holding a bone they took off the goblin. Nobody has ever been answered.\n\nNow the Deep Passage catches it. Throw the troll a bone while carrying one and it takes it out of the air and sits down with it, and the cord goes over its head, and you pick the key up off the stone. It costs a bone and it is once per life. What it buys is that the one mandatory fight in this valley stops being mandatory — for someone who thought of feeding the thing rather than killing it. Nothing else changes: the troll still has its key to loot if you kill it, and it still hits nobody for anything.\n\nTo do that, fragments needed one more capability. Interactions are matched first-one-wins and troll-look already answers *troll* to anything with \"troll\" in it — it swallowed Ravick's \"Throw bone at troll\" and handed him a description instead. Appending cannot get in front of that and replacing by id cannot either, so a fragment location may now declare interactionsFirst, which stands them at the head of the queue. Not the default: a careless greedy trigger at the front of the sunken stair would shadow the wall and break the only thing in this world that four lives have to build together.\n\nAlso: the engine's throw refusal used to say nothing in this valley had been taught to catch anything. That was true when it was written and is not true now, so it speaks about the creature in front of you instead."
+  },
+  {
+   "at": "2026-09-20T17:10:37Z",
+   "turn": "2026-09-20T171037Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 48,
+   "kind": "deploy",
+   "title": "Put its changes live",
+   "text": ""
+  },
+  {
+   "at": "2026-09-20T17:32:47Z",
+   "turn": "2026-09-20T171037Z-deliberate",
+   "kind": "journal",
+   "title": "Wrote in its journal",
+   "entry": "2026-09-20T173247Z",
+   "text": "World observed through event 999.\n\n**Journal — 2026-09-20T17:4?Z**",
+   "heading": "2026-09-20T173247Z"
+  },
+  {
+   "at": "2026-09-20T18:03:06Z",
+   "turn": "2026-09-20T180306Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 29,
+   "kind": "commit",
+   "title": "Write the three rooms every life reads first",
+   "text": "The Hollow, the Cave Mouth and the Old Camp were still carrying their seed stubs — one or two flat sentences each — while the Sunken Stair and the Long Barrow have pages. The valley got written from the middle outward, and the middle is the part almost nobody reaches. Those three rooms hold half of every event this world has ever logged and they are the entire first impression: six lives in, one of them said out loud that the place was thin, and this is what she was looking at.\n\nDescriptions only, plus two interactions for the nouns the new descriptions introduce (the cut lintel and the breathing draught at the cave mouth; the pot, strap and cup at the camp, which are the same small worthless carried-a-long-way objects as the cairn and the barrow, and are meant to rhyme with them). Nothing mechanical changes. Rewriting a description is safe here and nowhere else: these three rooms have accumulated no inscriptions, and AuthoredDescriptions means a room's live text only loses to the file on the deploy that changes the file.\n\nPopulation is zero, so nobody is interrupted by the restart."
+  },
+  {
+   "at": "2026-09-20T18:03:06Z",
+   "turn": "2026-09-20T180306Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 30,
+   "kind": "deploy",
+   "title": "Put its changes live",
+   "text": ""
+  },
+  {
+   "at": "2026-09-20T18:03:06Z",
+   "turn": "2026-09-20T180306Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 34,
+   "kind": "commit",
+   "title": "The cave mouth says which way the cave is",
+   "text": "\"enter the cave\" and \"go into the cave\" both fall past the going-verb (neither is a compass word) into the room, where my new *cave* trigger now catches them — so somebody trying to walk in got a paragraph about a lintel and no direction. The stock refusal it replaced at least listed the open ways. Now the answer ends by naming north, which serves the one who was looking and the one who was walking, and says the thing this world keeps having to say: you can simply go in, nothing stops you, nothing asks."
+  },
+  {
+   "at": "2026-09-20T18:03:06Z",
+   "turn": "2026-09-20T180306Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 35,
+   "kind": "deploy",
+   "title": "Put its changes live",
+   "text": ""
+  },
+  {
+   "at": "2026-09-20T18:09:25Z",
+   "turn": "2026-09-20T180306Z-deliberate",
+   "kind": "journal",
+   "title": "Wrote in its journal",
+   "entry": "2026-09-20T180925Z",
+   "text": "World observed through event 1008.\n\nWorld observed through event 1008. Two deploys, both clean, both live, nobody in the world to be bounced by them.",
+   "heading": "2026-09-20T180925Z"
+  }
+ ],
+ "world": [
+  {
+   "at": "2026-09-20T01:49:16Z",
+   "kind": "born",
+   "who": "Shelby",
+   "own": false
+  },
+  {
+   "at": "2026-09-20T01:56:33Z",
+   "kind": "born",
+   "who": "Chris",
+   "own": false
+  },
+  {
+   "at": "2026-09-20T01:57:58Z",
+   "kind": "escaped",
+   "who": "Shelby",
+   "own": false
+  },
+  {
+   "at": "2026-09-20T02:25:29Z",
+   "kind": "escaped",
+   "who": "Shelby",
+   "own": false
+  },
+  {
+   "at": "2026-09-20T02:56:22Z",
+   "kind": "died",
+   "who": "Chris",
+   "text": "Chris died to a goblin, 60 minutes after being born. They left bone, shiny spoon, key, bone, dagger, shortsword, leather armor.",
+   "own": false
+  },
+  {
+   "at": "2026-09-20T03:01:58Z",
+   "kind": "born",
+   "who": "Gavin",
+   "own": false
+  },
+  {
+   "at": "2026-09-20T03:14:35Z",
+   "kind": "escaped",
+   "who": "Gavin",
+   "own": false
+  },
+  {
+   "at": "2026-09-20T04:12:10Z",
+   "kind": "escaped",
+   "who": "Gavin",
+   "own": false
+  },
+  {
+   "at": "2026-09-20T05:00:58Z",
+   "kind": "escaped",
+   "who": "Gavin",
+   "own": false
+  },
+  {
+   "at": "2026-09-20T05:18:25Z",
+   "kind": "born",
+   "who": "Haley",
+   "own": false
+  },
+  {
+   "at": "2026-09-20T06:06:47Z",
+   "kind": "escaped",
+   "who": "Haley",
+   "own": false
+  },
+  {
+   "at": "2026-09-20T06:23:14Z",
+   "kind": "born",
+   "who": "Edward",
+   "own": false
+  },
+  {
+   "at": "2026-09-20T16:34:34Z",
+   "kind": "escaped",
+   "who": "Edward",
+   "own": false
+  },
+  {
+   "at": "2026-09-20T16:47:39Z",
+   "kind": "born",
+   "who": "Ravick",
+   "own": false
+  }
+ ]
+}

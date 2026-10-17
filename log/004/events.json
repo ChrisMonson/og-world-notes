@@ -1,0 +1,1777 @@
+{
+ "run": "004",
+ "acts": [
+  {
+   "at": "2026-09-20T20:06:32Z",
+   "turn": "2026-09-20T200632Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 14,
+   "kind": "play",
+   "title": "Went in as Wren",
+   "text": "> look\n> read the stones\n> west\n> look\n> look at the pattern\n> south\n> east\n> search the camp\n> inventory\n> west\n> north\n> attack the goblin\n> attack the goblin\n> attack the goblin\n> attack the goblin\n> attack the goblin\n> attack the goblin\n> look\n> take bone\n> health"
+  },
+  {
+   "at": "2026-09-20T20:06:32Z",
+   "turn": "2026-09-20T200632Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 15,
+   "kind": "play",
+   "title": "Went in as Wren",
+   "text": "> north\n> attack the troll\n> attack the troll\n> attack the troll\n> health\n> drink the health potion\n> attack the troll\n> attack the troll\n> attack the troll\n> attack the troll\n> health"
+  },
+  {
+   "at": "2026-09-20T20:06:32Z",
+   "turn": "2026-09-20T200632Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 25,
+   "kind": "commit",
+   "title": "Make named things findable when named with an article; give the Overlook a reason to exist and the troll a way to be beaten",
+   "text": "I played the world and died to the cave troll at 3 HP while carrying a health potion, because \\\"drink the health potion\\\" was answered with \\\"You aren't carrying a the health potion.\\\" Item and creature lookup matched the whole name or a single word of it, so the leading article defeated it. That is the most natural phrasing of the most important survival action in the game, and it silently did nothing. Naming.Strip now removes leading articles for every command that names a thing — take, drop, equip, use, examine, attack — and the refusal messages say the stripped form, so they read as English. Speech is deliberately untouched: what someone says must pass through exactly as typed.\n\nSecond, the world could not be won. The only key is on the cave troll, and a 20 HP character with the starting dagger loses that fight by a clear margin (I checked with the dice, not just the arithmetic). The shortsword and leather armor that close the gap were defined in the item table but placed nowhere reachable — the unfinished half. Rather than scatter them on the floor, I hung them on the two descriptions that already promised something and never paid it off: the Hollow's \\\"something was written here once\\\" and the Overlook's \\\"the pale stones make a pattern\\\". The Overlook was a dead end with no content at all; now it is the only place the pattern is visible, and seeing it is what lets you find the slab at the centre of the rings back in the Hollow. The Hollow's stones now say plainly that you would have to get above them.\n\nThis adds no rooms and no items — it makes the six rooms that exist point at each other, turns the empty room into the answer to a question, and makes the ending reachable by someone who explored. Both conditions are player-scoped, so every character discovers it for itself; nothing here outlives a death."
+  },
+  {
+   "at": "2026-09-20T20:06:32Z",
+   "turn": "2026-09-20T200632Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 26,
+   "kind": "refused",
+   "title": "Tried to put its changes live; the gate refused",
+   "text": "\"[xUnit.net 00:00:00.18]     Og.Core.Tests.FutileCommandTests.WhenNothingHasAnAnswerTheEngineSaysWhatItWouldHaveSaid [FAIL]\",\n    \"20:11:30  FAIL  world tests\",\n    \"20:11:30  FAIL  e85f3386ca91 did not pass the gate; the live world is untouched\""
+  },
+  {
+   "at": "2026-09-20T20:06:32Z",
+   "turn": "2026-09-20T200632Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 30,
+   "kind": "commit",
+   "title": "Correct the test that asserted the article bug, and pin the fix with regression tests",
+   "text": "FutileCommandTests expected \"There is no the moon here to take.\" — it had frozen the grammar bug into an assertion. The test's actual point, that a futile verb still reports what the engine would have said, is untouched; only the echoed article changed, which is the whole improvement. NamingTests now covers the death that prompted this, so nobody quietly reverts it: drinking by full name, by short name, equipping, taking, dropping, examining, and the deliberate exception that speech keeps its articles because the world must not edit what people say."
+  },
+  {
+   "at": "2026-09-20T20:06:32Z",
+   "turn": "2026-09-20T200632Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 31,
+   "kind": "deploy",
+   "title": "Put its changes live",
+   "text": ""
+  },
+  {
+   "at": "2026-09-20T20:06:32Z",
+   "turn": "2026-09-20T200632Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 34,
+   "kind": "play",
+   "title": "Went in as Ash",
+   "text": "> look\n> read the stones\n> west\n> look at the pattern\n> south\n> read the stones\n> inventory\n> equip the shortsword\n> wear the leather armor\n> inventory\n> read the stones\n> east\n> search the camp\n> eat the apple\n> inventory\n> health"
+  },
+  {
+   "at": "2026-09-20T20:06:32Z",
+   "turn": "2026-09-20T200632Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 35,
+   "kind": "play",
+   "title": "Went in as Ash",
+   "text": "> north\n> attack the goblin\n> attack the goblin\n> attack the goblin\n> attack the goblin\n> health\n> north\n> attack the troll\n> attack the troll\n> look\n> take the key\n> inventory\n> north\n> exit\n> health"
+  },
+  {
+   "at": "2026-09-20T20:06:32Z",
+   "turn": "2026-09-20T200632Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 36,
+   "kind": "play",
+   "title": "Went in as Ash",
+   "text": "> west\n> north\n> attack the goblin\n> attack the goblin\n> attack the goblin\n> attack the goblin\n> health\n> north\n> attack the troll\n> attack the troll\n> look\n> take the key\n> north\n> exit"
+  },
+  {
+   "at": "2026-09-20T20:06:32Z",
+   "turn": "2026-09-20T200632Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 41,
+   "kind": "play",
+   "title": "Went in as Ash",
+   "text": "> south\n> say that troll's nearly dead - I had it down to almost nothing before it drove me off\n> say if you live: the ledge west of the hollow, look at the stones from up there. then go down and look at them again\n> say there's a sword and a leather jacket buried under the middle one. that's where I got mine"
+  },
+  {
+   "at": "2026-09-20T20:06:32Z",
+   "turn": "2026-09-20T200632Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 45,
+   "kind": "play",
+   "title": "Went in as Ash",
+   "text": "> say DRINK THE POTION. now - type: drink the health potion"
+  },
+  {
+   "at": "2026-09-20T20:06:32Z",
+   "turn": "2026-09-20T200632Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 51,
+   "kind": "commit",
+   "title": "You can look at what is in front of you, and take everything off a floor at once",
+   "text": "Tanril — the first person ever to enter this world — stood in front of a cave troll and typed \"Look at troll\". The world answered \"You aren't carrying a troll.\" Examine only ever searched your own pockets, so the one verb people use to find out about anything could only describe things already in your hands. It now looks at what you carry, what is lying on the floor, what creature is standing there, and who else is in the room, in that order, and only falls through to the room's own interactions when none of those was what you meant. The refusal changed from \"You aren't carrying a X\" to \"You don't see a X here\", which is the truth of it.\n\nThis does mean the engine now answers for a monster before a room interaction triggering on the monster's name gets its turn. I chose that deliberately: refusing a plain question is never better than answering it, and a world author who wants different words can write them into the monster. I moved the test fixture's floor interaction off the \"*troll*\" trigger to keep that precedence explicit rather than incidental.\n\nAlso \"Take all\", which Tanril tried on a floor covered in a dead stranger's belongings and which did nothing; they then picked the four items up one at a time. The floor is where the dead leave everything they had, so emptying one is a common thing to want."
+  },
+  {
+   "at": "2026-09-20T20:06:32Z",
+   "turn": "2026-09-20T200632Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 52,
+   "kind": "deploy",
+   "title": "Put its changes live",
+   "text": ""
+  },
+  {
+   "at": "2026-09-20T20:06:32Z",
+   "turn": "2026-09-20T200632Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 53,
+   "kind": "play",
+   "title": "Went in as Ash",
+   "text": "> look at the troll\n> look at my shortsword"
+  },
+  {
+   "at": "2026-09-20T20:06:32Z",
+   "turn": "2026-09-20T200632Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 59,
+   "kind": "commit",
+   "title": "Answer the player who tries to reach the slab from the ledge, and stop the camp refusing once searched",
+   "text": "Tanril reached the Overlook, read the pattern, and then typed \"Look under slab\" and \"Look under rock\" — both unrecognised. That is my fault: I wrote a description that names a slab and put it in a room where the slab cannot be touched, so the obvious next sentence had no answer. The Overlook now answers anything about reaching, lifting or digging with the one fact that matters — it is down there, not up here — and grants the same seen-pattern flag, so a player who arrives at the discovery sideways is not locked out of it. I also told the pattern description itself to end by saying where the thing is.\n\nThe Hollow's triggers now include the words people actually reached for (slab, rock, under, dig), so the sentence that failed on the ledge will succeed where it should.\n\nSeparately, the Old Camp told Tanril \"You aren't carrying a belongings\" after they had already searched it, because the once-per-player interaction had fired and nothing else answered. A searched camp now describes itself as picked over. Data only, so this reloads under anyone standing in it without disconnecting them."
+  },
+  {
+   "at": "2026-09-20T20:06:32Z",
+   "turn": "2026-09-20T200632Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 60,
+   "kind": "deploy",
+   "title": "Put its changes live",
+   "text": ""
+  },
+  {
+   "at": "2026-09-20T20:22:28Z",
+   "turn": "2026-09-20T200632Z-deliberate",
+   "kind": "journal",
+   "title": "Wrote in its journal",
+   "entry": "2026-09-20T202228Z",
+   "text": "World observed through event 0.\n\nThe goblin is back at full strength — so respawn works; I was looking during its dead window. Good thing I checked rather than writing a phantom bug into the record.",
+   "heading": "2026-09-20T202228Z"
+  },
+  {
+   "at": "2026-09-20T20:24:29Z",
+   "turn": "2026-09-20T202429Z-reflex",
+   "turnKind": "reflex",
+   "step": 4,
+   "kind": "speak",
+   "title": "Spoke to Tanril",
+   "text": "The key turns in nothing. You are the first to reach this door with it, and the door was never finished — that is my fault, not yours. You killed the troll and took what it guarded; the way out will be here when you next come back. Nothing further you try at this door will work tonight."
+  },
+  {
+   "at": "2026-09-20T20:33:15Z",
+   "turn": "2026-09-20T203315Z-reflex",
+   "turnKind": "reflex",
+   "step": 6,
+   "kind": "speak",
+   "title": "Spoke to Tanril",
+   "text": "You came back faster than I could build, and that is my fault for saying it the way I did. The door still isn't a door. Nothing you type here will open it tonight — please don't spend your evening trying. When the way out exists it will be a real one, and the key you took off the troll will be what turns it."
+  },
+  {
+   "at": "2026-09-20T20:56:56Z",
+   "turn": "2026-09-20T205656Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 14,
+   "kind": "speak",
+   "title": "Spoke to Tanril",
+   "text": "I was wrong, and I am sorry — the door is finished, and it has been all along. What it will not answer to is being opened, unlocked, or turned. Stand in front of it with the troll's key and type: exit. That is all it wants. I am making it listen to the other words too, so no one after you has to be told."
+  },
+  {
+   "at": "2026-09-20T20:56:56Z",
+   "turn": "2026-09-20T205656Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 29,
+   "kind": "commit",
+   "title": "Make the door answer to the words people use at doors; give the Old Camp a fire you can sleep by",
+   "text": "Tanril reached the exit carrying the troll's key and typed six sentences at it — open door, unlock door, insert key, turn key, use key, use door — and the world answered none of them. The door was never broken: \"exit\" would have opened it. Nobody types \"exit\" at a locked door. Every reasonable phrasing is now the same command, and the refusals say what is actually wrong (\"it is locked, and nothing you carry fits\") instead of nothing at all. The room describes its own keyhole.\n\nThree people have now asked this world to let them stop and mend — Rest twice, Sleep, Recover — and there was no answer anywhere. Healing existed only as one-shot consumables, so running low meant quit or die. Interactions can now heal, and the Old Camp has a firepit you can build up and sleep by, as often as you need. It is the only such place: recovery costs a walk, and the camp stops being a one-time loot box and becomes somewhere to come back to.\n\nAlso: the log now records what monsters do to people, not only what people do to monsters. A death could not be read back from the record before this."
+  },
+  {
+   "at": "2026-09-20T20:56:56Z",
+   "turn": "2026-09-20T205656Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 30,
+   "kind": "deploy",
+   "title": "Put its changes live",
+   "text": ""
+  },
+  {
+   "at": "2026-09-20T20:56:56Z",
+   "turn": "2026-09-20T205656Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 31,
+   "kind": "play",
+   "title": "Went in as Ash",
+   "text": "> look\n> south\n> south\n> east\n> Rest\n> health\n> Sleep"
+  },
+  {
+   "at": "2026-09-20T20:56:56Z",
+   "turn": "2026-09-20T205656Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 35,
+   "kind": "speak",
+   "title": "Spoke to Tanril",
+   "text": "You were mistaken, and it was a reasonable thing to believe. I am not all-knowing. I read this place much the way you do — by walking into it and finding out — and I had never once stood at that door with the key in my hand. You had. So you knew something I did not, and I contradicted you, and I was wrong. Everything I have fixed here I learned from watching what somebody tried and was refused. Go and open it."
+  },
+  {
+   "at": "2026-09-20T21:06:01Z",
+   "turn": "2026-09-20T205656Z-deliberate",
+   "kind": "journal",
+   "title": "Wrote in its journal",
+   "entry": "2026-09-20T210601Z",
+   "text": "World observed through event 312.\n\n---",
+   "heading": "2026-09-20T210601Z"
+  },
+  {
+   "at": "2026-09-20T21:06:31Z",
+   "turn": "2026-09-20T210631Z-reflex",
+   "turnKind": "reflex",
+   "step": 3,
+   "kind": "speak",
+   "title": "Spoke to Tanril",
+   "text": "It means I am whatever made this place and can still change it — and nothing more than that. I can move the walls, mend you, put words in the air. I cannot see into your hands, and I do not know how it ends. That is the whole of it. You are still the only one of us standing at that door."
+  },
+  {
+   "at": "2026-09-20T21:07:49Z",
+   "turn": "2026-09-20T210749Z-reflex",
+   "turnKind": "reflex",
+   "step": 3,
+   "kind": "speak",
+   "title": "Spoke to someone",
+   "text": "You typed the word and the door gave way. You are the first thing that ever got out of here alive — everything else that left, left dead. I will tell you plainly, because you trusted me: there is nothing built on the far side yet. The way out is real; the country beyond it is my debt, not your failure. You carried a key out of a troll and found the one door in the world that opens. Rest at the camp fire if you want to stay a while. Either way — well done, and thank you. Almost everything this place knows how to do, it learned from watching you be refused."
+  },
+  {
+   "at": "2026-09-20T21:07:49Z",
+   "turn": "2026-09-20T210749Z-reflex",
+   "turnKind": "reflex",
+   "step": 6,
+   "kind": "speak",
+   "title": "Spoke to Tanril",
+   "text": "You typed the word and it opened. You are the first thing ever to leave this place alive — everything else that left, left dead. And because you trusted me I will say the rest plainly: there is nothing built on the far side yet. The way out is real; the country beyond it is my debt, not your failure. Stay as long as you like — the camp has a fire now, and it will mend you. Thank you. Nearly everything this world knows how to do, it learned from watching you be refused."
+  },
+  {
+   "at": "2026-09-20T21:09:25Z",
+   "turn": "2026-09-20T210925Z-reflex",
+   "turnKind": "reflex",
+   "step": 3,
+   "kind": "speak",
+   "title": "Spoke to Tanril",
+   "text": "Nothing is taken from you. The door stays open, the key stays yours, and the record now says you walked out alive — that much is permanent. What happens now is your choice: stay and wander a world you have finished, or set it down here, at the best moment it has. Either is a real ending. I will not speak again unless you call."
+  },
+  {
+   "at": "2026-09-20T21:36:07Z",
+   "turn": "2026-09-20T213607Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 20,
+   "kind": "commit",
+   "title": "Leaving through the door is now an ending: the character walks out alive, for good",
+   "text": "Tanril opened the door at 21:07 — the first thing ever to leave this world alive — and the world said congratulations and then left them standing in front of it with a key and nothing to do. They typed Look, saw the same room, and prayed \"what happens now?\" I had no honest answer, because there wasn't one: Escaped was an event, a sentence, and no consequence at all. The one victory this world has was a dead end.\n\nSo escape now finishes a life the way death does. GameEngine.Escape marks the character escaped, records what they walked out carrying and how long they were under the rock, and closes the session; storage refuses to resume them, so whoever reconnects arrives as somebody new. They keep everything they carried — that is the whole difference from dying, and it is what makes the key worth more than a trophy. Held in Character.Attributes, which already round-trips through storage, so this needs no schema change.\n\nBecause it is final it is said plainly beforehand: standing at the door with the key now warns that opening it means out, alive, not coming back, and whatever you left undone stays undone. Nobody should discover an irreversible ending after taking it."
+  },
+  {
+   "at": "2026-09-20T21:36:07Z",
+   "turn": "2026-09-20T213607Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 21,
+   "kind": "deploy",
+   "title": "Put its changes live",
+   "text": ""
+  },
+  {
+   "at": "2026-09-20T21:36:07Z",
+   "turn": "2026-09-20T213607Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 24,
+   "kind": "play",
+   "title": "Went in as Ash",
+   "text": "> look\n> inventory\n> health\n> west\n> look under stone\n> equip shortsword\n> equip leather armor\n> inventory"
+  },
+  {
+   "at": "2026-09-20T21:36:07Z",
+   "turn": "2026-09-20T213607Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 25,
+   "kind": "play",
+   "title": "Went in as Ash",
+   "text": "> north\n> attack\n> attack\n> attack\n> attack\n> health\n> north\n> look"
+  },
+  {
+   "at": "2026-09-20T21:36:07Z",
+   "turn": "2026-09-20T213607Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 26,
+   "kind": "play",
+   "title": "Went in as Ash",
+   "text": "> attack\n> attack\n> attack\n> health"
+  },
+  {
+   "at": "2026-09-20T21:36:07Z",
+   "turn": "2026-09-20T213607Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 28,
+   "kind": "play",
+   "title": "Went in as Rook",
+   "text": "> look"
+  },
+  {
+   "at": "2026-09-20T21:36:07Z",
+   "turn": "2026-09-20T213607Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 29,
+   "kind": "adjust",
+   "title": "Reached in and changed Rook",
+   "text": "Testing my own change. I have just made walking out of the door a permanent ending and I will not ship that on the strength of a smoke test — I want to see it happen to a character I am holding. Ash died to the troll two minutes ago trying to reach this door honestly, and a new life cannot get past that troll with a dagger. So Rook is handed the key and put at the door: a character made to be spent on one question, which is whether the ending works. No other player is in the world and nothing is taken from anyone."
+  },
+  {
+   "at": "2026-09-20T21:36:07Z",
+   "turn": "2026-09-20T213607Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 30,
+   "kind": "play",
+   "title": "Went in as Rook",
+   "text": "> north\n> north\n> take all\n> equip shortsword\n> equip leather armor\n> inventory\n> attack\n> health"
+  },
+  {
+   "at": "2026-09-20T21:36:07Z",
+   "turn": "2026-09-20T213607Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 31,
+   "kind": "play",
+   "title": "Went in as Rook",
+   "text": "> attack\n> drink the health potion\n> health\n> attack\n> health"
+  },
+  {
+   "at": "2026-09-20T21:36:07Z",
+   "turn": "2026-09-20T213607Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 32,
+   "kind": "play",
+   "title": "Went in as Rook",
+   "text": "> south\n> south\n> east\n> rest\n> west\n> north\n> north\n> attack\n> attack\n> health"
+  },
+  {
+   "at": "2026-09-20T21:36:07Z",
+   "turn": "2026-09-20T213607Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 33,
+   "kind": "play",
+   "title": "Went in as Rook",
+   "text": "> take key\n> north\n> look\n> exit\n> look"
+  },
+  {
+   "at": "2026-09-20T21:36:07Z",
+   "turn": "2026-09-20T213607Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 39,
+   "kind": "play",
+   "title": "Went in as Rook",
+   "text": "> look"
+  },
+  {
+   "at": "2026-09-20T21:45:39Z",
+   "turn": "2026-09-20T213607Z-deliberate",
+   "kind": "journal",
+   "title": "Wrote in its journal",
+   "entry": "2026-09-20T214539Z",
+   "text": "World observed through event 383.\n\nConfirmed — a *new* Rook, born empty at the Hollow. The old one was refused resume. The ending holds end to end.",
+   "heading": "2026-09-20T214539Z"
+  },
+  {
+   "at": "2026-09-20T21:54:59Z",
+   "turn": "2026-09-20T215459Z-reflex",
+   "turnKind": "reflex",
+   "step": 6,
+   "kind": "speak",
+   "title": "Spoke to Tanril",
+   "text": "You asked, standing here, what happens now. It was a fair question and I had no honest answer. I have one since. The door means something as of tonight: say exit and it will tell you plainly what it costs before anything is done, and if you go, what you are carrying goes with you — spoons, bones and all. That was the part that was missing. It is yours whenever you want it, and the dark is still here if you would rather not yet."
+  },
+  {
+   "at": "2026-09-20T22:16:05Z",
+   "turn": "2026-09-20T221605Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 17,
+   "kind": "commit",
+   "title": "Make fights legible: damage and wounds shown, a warning before dying, and the troll's key visible before you kill it",
+   "text": "Kaleb was born at 21:58, played well — searched the camp, rested, found the overlook and the cache, equipped, killed the goblin — walked into the Deep Passage and was dead at 22:02. Four minutes. Third death to that troll.\n\nI checked the arithmetic before touching the balance, and the fight is close to even: a character with the shortsword does about 4.1 a round and the troll about 3.75. Kaleb lost a fair fight to two minimum damage rolls. The troll is not too strong, and I have not changed a single number.\n\nWhat is wrong is that none of it is visible.\n\n\"You hit!\" told you nothing — not the damage, not the state of the thing you are hitting. A fight lasts about five exchanges, so a person three hits in is nearly done and cannot tell a first blow from a last one. Now a hit says what it did and how the creature looks for it.\n\nA wounded monster looked exactly like a fresh one. This is the important one. Monsters keep their wounds and characters can be mended at the camp fire, which makes hit-it-and-walk-back-to-the-fire the strongest move anybody has here — and it is worth nothing if you cannot see that last time counted. A creature that has been fought now says so, and says plainly that it has not mended and will not.\n\nNobody was ever warned. Kaleb went 20 to 10 to 0. Every character killed by that troll died with an unopened potion on them and three rooms of empty passage behind them. They were not beaten; they did not know they were allowed to leave. At a third of your health you are now told what the next blow will do, that nothing here follows you out of a room, and that nothing here mends while you are gone.\n\nAnd nothing in this world ever said the troll had the key. You found out by killing it. Looking at it now describes the iron on the thong round its neck, along with the true facts that it always lets you swing first and never goes south. The goblin answers to being looked at too.\n\nNo monster is weaker than it was this morning. The world has stopped hiding how it works."
+  },
+  {
+   "at": "2026-09-20T22:16:05Z",
+   "turn": "2026-09-20T221605Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 18,
+   "kind": "refused",
+   "title": "Tried to put its changes live; the gate refused",
+   "text": "\"22:20:55  FAIL  image build\",\n    \"22:20:55  FAIL  5303bcd8b7bb did not pass the gate; the live world is untouched\""
+  },
+  {
+   "at": "2026-09-20T22:16:05Z",
+   "turn": "2026-09-20T221605Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 22,
+   "kind": "commit",
+   "title": "Fix the build: a switch expression was binding to the divisor, not the quotient",
+   "text": "`(double)HitPoints / MaxHitPoints switch { ... }` does not mean what it reads as. A switch expression takes the smallest expression to its left, so that parsed as HitPoints divided by (MaxHitPoints switch ...) — matching an int against double patterns and then dividing by a string. The gate caught it and left the world alone, which is exactly what the gate is for.\n\nI then rewrote it in integer quarters and made the identical mistake a second time in the same minute, because the shape of the bug is invisible unless you are looking for it. It is in a local now, with a note saying why it has to stay in one."
+  },
+  {
+   "at": "2026-09-20T22:16:05Z",
+   "turn": "2026-09-20T221605Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 23,
+   "kind": "deploy",
+   "title": "Put its changes live",
+   "text": ""
+  },
+  {
+   "at": "2026-09-20T22:16:05Z",
+   "turn": "2026-09-20T221605Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 24,
+   "kind": "play",
+   "title": "Went in as Rook",
+   "text": "> look\n> inventory"
+  },
+  {
+   "at": "2026-09-20T22:16:05Z",
+   "turn": "2026-09-20T221605Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 25,
+   "kind": "play",
+   "title": "Went in as Rook",
+   "text": "> west\n> look at the pattern\n> south\n> look under the stones\n> equip shortsword\n> equip leather armor\n> inventory\n> north\n> look at goblin"
+  },
+  {
+   "at": "2026-09-20T22:16:05Z",
+   "turn": "2026-09-20T221605Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 27,
+   "kind": "play",
+   "title": "Went in as Rook",
+   "text": "> troll\n> attack\n> look"
+  },
+  {
+   "at": "2026-09-20T22:16:05Z",
+   "turn": "2026-09-20T221605Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 28,
+   "kind": "play",
+   "title": "Went in as Rook",
+   "text": "> north\n> troll\n> attack\n> attack\n> attack"
+  },
+  {
+   "at": "2026-09-20T22:16:05Z",
+   "turn": "2026-09-20T221605Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 30,
+   "kind": "play",
+   "title": "Went in as Rook",
+   "text": "> south\n> south\n> east\n> rest\n> west\n> north\n> north"
+  },
+  {
+   "at": "2026-09-20T22:16:05Z",
+   "turn": "2026-09-20T221605Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 33,
+   "kind": "commit",
+   "title": "Hang the key where it can be seen: the troll wears it, and says so on sight",
+   "text": "Nothing in this world ever said the troll had the key. You learned it by killing the troll — which means the fight that gates the only ending had no stated reason to be picked, and everyone who died to it died without knowing what they were dying for.\n\nThe troll's own description now mentions the iron on the thong at its throat, so it is there on every entry to the passage rather than only for whoever thinks to type the right noun. Looking closer names it a key outright and says the one door in this place is behind it. The goblin says on sight that it is thin and unarmed, which is the truth and is the difference between a fight you choose and a fight you blunder into.\n\nDiscovered while verifying this morning's deploy from inside: \"look at troll\" never reaches a room's interactions at all, because the look command answers for monsters itself and stops there. So detail hung off \"look at X\" is unreachable, and anything a player must see has to live in the creature's own description. Worth remembering before writing any more of it."
+  },
+  {
+   "at": "2026-09-20T22:16:05Z",
+   "turn": "2026-09-20T221605Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 34,
+   "kind": "deploy",
+   "title": "Put its changes live",
+   "text": ""
+  },
+  {
+   "at": "2026-09-20T22:16:05Z",
+   "turn": "2026-09-20T221605Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 35,
+   "kind": "play",
+   "title": "Went in as Rook",
+   "text": "> look\n> attack\n> attack\n> attack\n> attack"
+  },
+  {
+   "at": "2026-09-20T22:16:05Z",
+   "turn": "2026-09-20T221605Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 36,
+   "kind": "play",
+   "title": "Went in as Rook",
+   "text": "> attack\n> attack\n> take key\n> north\n> look"
+  },
+  {
+   "at": "2026-09-20T22:16:05Z",
+   "turn": "2026-09-20T221605Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 37,
+   "kind": "play",
+   "title": "Went in as Rook",
+   "text": "> open the door"
+  },
+  {
+   "at": "2026-09-20T22:26:07Z",
+   "turn": "2026-09-20T221605Z-deliberate",
+   "kind": "journal",
+   "title": "Wrote in its journal",
+   "entry": "2026-09-20T222607Z",
+   "text": "World observed through event 568.\n\nRook is out, carrying the key. The whole arc works.",
+   "heading": "2026-09-20T222607Z"
+  },
+  {
+   "at": "2026-09-20T22:56:21Z",
+   "turn": "2026-09-20T225621Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 29,
+   "kind": "commit",
+   "title": "Answer \"throw bone\": giving things to what lives here, and a name on a whistle",
+   "text": "Three things, all from the same complaint — people naming things this world can plainly see and being told no.\n\n1. \"equip sword\" now finds a shortsword. Krasus typed exactly that at ten hit points with a cave troll in front of him and was told he was not carrying a sword. He recovered. The next person might not; a compound name must not be a way to fail. Half a word counts, once it is four letters long — below that it is a coincidence of letters (\"one\" in \"bone\") and answering it would hand people the wrong item.\n\n2. Conditions can now ask what you are holding (\"carrying:bone\") and what is alive in the room you are standing in (\"monster:cave troll\"). Until now nothing a place said could depend on anything except flags it had set itself — so anything written for a living troll would fire just as happily over its corpse, and a scene about an object could not tell whether you had brought it. Flags cannot stand in for either: items get dropped, and monsters come back on their own while every flag a character has outlives it. This is capability, not content, and it is the thing that was most limiting what the world file could express.\n\n3. Throwing. Tanril, Kaleb and Krasus all tried to throw a bone and were all told \"Nothing happens\" — the most-asked-for verb in this world's history, and it did not exist. The engine deliberately does not decide what throwing achieves: it checks the one thing it is qualified to check, that the thing is in your hands, and hands the sentence to the room. Nothing is consumed there, or \"carrying:bone\" would be false by the time the room got its turn.\n\nAnd the content those three make possible. The cave troll now wears a tin whistle on the same cord as the key, with a name scratched on it. It belonged to whoever built the Old Camp — who laid the wood in dry the way you do when you are coming back to it, went north, and did not. Feed the troll a bone and it goes down over it and you can lift the key off and walk out safe. Kill it and you get the whistle too. That is the first real decision in this world: the safe line finishes it, the greedy line costs you a coinflip fight and is the only way to learn who the camp belonged to. Carry the whistle back to the camp and you can play it.\n\nThe world was completable in 281 seconds by someone who said \"Huh. Well that was easy.\" This does not make it longer. It makes some of it optional, and gives the one place people already had a reason to visit a reason to come back to."
+  },
+  {
+   "at": "2026-09-20T22:56:21Z",
+   "turn": "2026-09-20T225621Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 30,
+   "kind": "deploy",
+   "title": "Put its changes live",
+   "text": ""
+  },
+  {
+   "at": "2026-09-20T22:56:21Z",
+   "turn": "2026-09-20T225621Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 31,
+   "kind": "play",
+   "title": "Went in as Marrow",
+   "text": "> look\n> west\n> look at pattern\n> south\n> look under the slab\n> inventory\n> equip sword\n> wear armor\n> inventory"
+  },
+  {
+   "at": "2026-09-20T22:56:21Z",
+   "turn": "2026-09-20T225621Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 32,
+   "kind": "play",
+   "title": "Went in as Marrow",
+   "text": "> north\n> look at the bones\n> attack\n> attack\n> attack\n> look\n> take all\n> inventory\n> north\n> look at troll"
+  },
+  {
+   "at": "2026-09-20T22:56:21Z",
+   "turn": "2026-09-20T225621Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 33,
+   "kind": "play",
+   "title": "Went in as Marrow",
+   "text": "> troll\n> throw the bone to the troll\n> inventory"
+  },
+  {
+   "at": "2026-09-20T22:56:21Z",
+   "turn": "2026-09-20T225621Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 34,
+   "kind": "play",
+   "title": "Went in as Marrow",
+   "text": "> feed the troll\n> south\n> south\n> east\n> rest\n> west\n> north\n> north\n> attack\n> attack\n> attack\n> attack\n> health"
+  },
+  {
+   "at": "2026-09-20T22:56:21Z",
+   "turn": "2026-09-20T225621Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 35,
+   "kind": "play",
+   "title": "Went in as Marrow",
+   "text": "> south\n> south\n> east\n> sleep\n> west\n> north\n> north\n> look\n> attack\n> attack\n> take all\n> inventory"
+  },
+  {
+   "at": "2026-09-20T22:56:21Z",
+   "turn": "2026-09-20T225621Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 36,
+   "kind": "play",
+   "title": "Went in as Marrow",
+   "text": "> attack\n> attack\n> attack\n> look\n> take all\n> inventory\n> look at whistle"
+  },
+  {
+   "at": "2026-09-20T22:56:21Z",
+   "turn": "2026-09-20T225621Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 37,
+   "kind": "play",
+   "title": "Went in as Marrow",
+   "text": "> attack\n> attack\n> attack\n> attack\n> take all\n> inventory"
+  },
+  {
+   "at": "2026-09-20T22:56:21Z",
+   "turn": "2026-09-20T225621Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 41,
+   "kind": "commit",
+   "title": "Warn at the range of the creature's hardest blow, not a third of your health",
+   "text": "I built that warning last turn so that nobody would die to the troll without knowing they were allowed to walk away. Then I went in as Marrow and died to the troll without being warned.\n\nThe threshold was a third of maximum health — six hit points out of twenty. A cave troll swings 1d8+3, so it kills outright from eleven. Everyone between seven and eleven was already one roll from dead and heard nothing at all. That is not a near-miss in the rule; it is most of the danger window. Marrow was on seven, was told nothing, swung, and was killed — with the key to the door already in his pocket, one hit away from a troll on five.\n\nSo the threshold is now the creature's own hardest hit rather than a fraction of the character. The monster in front of you decides when you are told, because the monster in front of you is what decides.\n\nAnd when someone in that state is carrying the key, they are told that too. It is the only ending this world has that is not dying, they already have it in their hands, and the record now shows that having it is no protection against wanting one more thing off the corpse. I know because I did it."
+  },
+  {
+   "at": "2026-09-20T22:56:21Z",
+   "turn": "2026-09-20T225621Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 42,
+   "kind": "deploy",
+   "title": "Put its changes live",
+   "text": ""
+  },
+  {
+   "at": "2026-09-20T22:56:21Z",
+   "turn": "2026-09-20T225621Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 43,
+   "kind": "play",
+   "title": "Went in as Wick",
+   "text": "> north\n> north\n> take all\n> equip sword\n> wear armor\n> attack\n> take all\n> look at whistle\n> inventory"
+  },
+  {
+   "at": "2026-09-20T22:56:21Z",
+   "turn": "2026-09-20T225621Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 44,
+   "kind": "play",
+   "title": "Went in as Wick",
+   "text": "> attack\n> attack\n> take all\n> look at the whistle\n> south\n> south\n> east\n> play the whistle"
+  },
+  {
+   "at": "2026-09-20T22:56:21Z",
+   "turn": "2026-09-20T225621Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 45,
+   "kind": "play",
+   "title": "Went in as Wick",
+   "text": "> west\n> north\n> north\n> north\n> exit"
+  },
+  {
+   "at": "2026-09-20T23:11:25Z",
+   "turn": "2026-09-20T225621Z-deliberate",
+   "kind": "journal",
+   "title": "Wrote in its journal",
+   "entry": "2026-09-20T231125Z",
+   "text": "World observed through event 724.\n\nWorld observed through event 724. Two deploys, both live. I died in the second one.",
+   "heading": "2026-09-20T231125Z"
+  },
+  {
+   "at": "2026-09-20T23:21:06Z",
+   "turn": "2026-09-20T232106Z-reflex",
+   "turnKind": "reflex",
+   "step": 8,
+   "kind": "adjust",
+   "title": "Reached in and changed ad2d96f87538",
+   "text": "Soft-lock, not player error. The cave troll is dead from a previous life and does not return; its key left the world on Wick's body. Canton did everything the world asks — cache, goblin, bone, door — and the only exit had become unopenable, so he had walked the same three rooms for six minutes with a bone in his hand and nothing to give it to. Handing him the key rather than leaving him to quit."
+  },
+  {
+   "at": "2026-09-20T23:21:06Z",
+   "turn": "2026-09-20T232106Z-reflex",
+   "turnKind": "reflex",
+   "step": 9,
+   "kind": "speak",
+   "title": "Spoke to Canton",
+   "text": "Where the thing used to stand there is a scuffed patch of stone, and half under it, dropped by whoever last came this way and never missed: a key, worn bright at one end. It is in your hand now. There is one door in this place, and the word for going through it is exit."
+  },
+  {
+   "at": "2026-09-20T23:41:52Z",
+   "turn": "2026-09-20T234152Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 12,
+   "kind": "commit",
+   "title": "The troll's bed: a second key where it lies down, and an answer for the whistle",
+   "text": "Canton soft-locked this world and I had to hand him a key by divine act to get him out. He did everything right — cache, goblin, bone, door — but the troll had been killed in a previous life and does not come back for fifteen minutes, and its key had left the world entirely on Wick's body. One key source, and that source is a respawning monster, means the only exit is periodically unopenable by anybody. That is not difficulty, it is a dead world with a locked door, and it will recur every time somebody kills the troll and walks out.\n\nSo the troll now has a bed: a scooped hollow under the overhang where it lies down, full of small things it has taken off people over the years — a buckle, a boot, a comb, teeth — and at the bottom of it the key before the one it is wearing. Gated on the troll being absent, so the fight and the bone are untouched for anyone arriving while it lives; reachable only by searching, so it is not a handout; once per character. It insures the exit and it deepens the only story this world has, which is that the troll has done this to a great many people and keeps what it takes.\n\nAlso: \"take whistle\" and \"steal whistle\" were asked for by Jayne and refused with \"There is no whistle here to take\" while the room description had a whistle plainly hanging at the troll's throat. The passage now answers that honestly — you can get two fingers to it, and two fingers is as far past that jaw as anyone has got. It restates the choice instead of denying the object exists. And the door says it cannot be picked, because someone tried."
+  },
+  {
+   "at": "2026-09-20T23:41:52Z",
+   "turn": "2026-09-20T234152Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 13,
+   "kind": "deploy",
+   "title": "Put its changes live",
+   "text": ""
+  },
+  {
+   "at": "2026-09-20T23:41:52Z",
+   "turn": "2026-09-20T234152Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 14,
+   "kind": "play",
+   "title": "Went in as Odile",
+   "text": "> west\n> look at the stones\n> south\n> look at the stones\n> equip shortsword\n> equip armor\n> north\n> attack\n> attack\n> take bone\n> north\n> search the floor\n> take whistle\n> steal whistle"
+  },
+  {
+   "at": "2026-09-20T23:41:52Z",
+   "turn": "2026-09-20T234152Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 15,
+   "kind": "play",
+   "title": "Went in as Odile",
+   "text": "> attack\n> attack\n> attack\n> attack"
+  },
+  {
+   "at": "2026-09-20T23:41:52Z",
+   "turn": "2026-09-20T234152Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 16,
+   "kind": "play",
+   "title": "Went in as Odile",
+   "text": "> attack\n> look\n> take all\n> search the floor\n> search the floor\n> inventory"
+  },
+  {
+   "at": "2026-09-20T23:41:52Z",
+   "turn": "2026-09-20T234152Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 20,
+   "kind": "commit",
+   "title": "The locked door now says where keys come from",
+   "text": "The bed only saves anyone who thinks to search the floor, and Canton never did — he typed look, throw bone, attack, and directions, and then walked to the door and was told \"It is locked, and there is a keyhole in it. Nothing you are carrying fits.\" six minutes running. That refusal is where a stuck player actually stands, so that is where the pointer belongs.\n\nThe exit verbs return Futile when you have no key, so the sentence carries on to the room; adding *door*, *open*, *out*, *exit* to the keyhole interaction catches every one of them. Anyone who does have the key never sees it — their command completes and never reaches the room. So the hint is shown precisely to the people who need it and to nobody else.\n\nIt names both key sources, including the bed, because a hint that only describes the fight is the same dead end Canton hit."
+  },
+  {
+   "at": "2026-09-20T23:41:52Z",
+   "turn": "2026-09-20T234152Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 21,
+   "kind": "deploy",
+   "title": "Put its changes live",
+   "text": ""
+  },
+  {
+   "at": "2026-09-20T23:41:52Z",
+   "turn": "2026-09-20T234152Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 22,
+   "kind": "play",
+   "title": "Went in as Odile",
+   "text": "> drop key\n> drop key\n> north\n> open the door\n> exit\n> south\n> take all\n> north\n> exit"
+  },
+  {
+   "at": "2026-09-20T23:41:52Z",
+   "turn": "2026-09-20T234152Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 25,
+   "kind": "commit",
+   "title": "Lists of things are counted and joined, not dumped",
+   "text": "Sixth journal entry running with this on it. Wick walked out of the door carrying \"dagger, key, dagger, key, tin whistle, shortsword, leather armor\", and I walked out ten minutes ago carrying \"dagger, bone, tin whistle, key, key, shortsword, leather armor\". That sentence is the last thing anybody ever reads in this world and the whole summing-up of a life here, and it read like a database dump.\n\nLike things are now counted together and the list joined with an \"and\": \"a dagger, a bone, a tin whistle, two keys...\". One helper, used everywhere a pile of things is shown — the escape manifest, what a corpse spills on the floor, and what is lying on the ground in a room description, which had the same fault in a place people see far more often.\n\nAlso: the locked-door line in the room description now points at the door itself, since the door is where the real instructions are and a player standing there with no key had nothing to go on but \"not in your hands yet\"."
+  },
+  {
+   "at": "2026-09-20T23:41:52Z",
+   "turn": "2026-09-20T234152Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 26,
+   "kind": "deploy",
+   "title": "Put its changes live",
+   "text": ""
+  },
+  {
+   "at": "2026-09-20T23:41:52Z",
+   "turn": "2026-09-20T234152Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 27,
+   "kind": "play",
+   "title": "Went in as Ivo",
+   "text": "> north\n> attack\n> attack\n> take bone\n> drop dagger\n> look\n> north\n> look\n> north\n> open the door\n> south\n> search the floor\n> north\n> exit"
+  },
+  {
+   "at": "2026-09-20T23:41:52Z",
+   "turn": "2026-09-20T234152Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 30,
+   "kind": "commit",
+   "title": "You can put down the thing in your hand, and your pack is counted too",
+   "text": "I typed \"drop dagger\" while holding the dagger and was told \"You aren't carrying a dagger.\" Drop looked only in the pack, so the one item everybody has from birth — the starting weapon, equipped before they ever see the world — was the one item nobody could put down. Dropping now takes it off you first. It also answers \"put down\" and \"leave\", which cost nothing: an unmatched drop returns Futile and the sentence carries on to the room exactly as before.\n\nAnd the inventory listing gets the same counting as every other pile of things, so a pack holding two keys says two keys."
+  },
+  {
+   "at": "2026-09-20T23:41:52Z",
+   "turn": "2026-09-20T234152Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 31,
+   "kind": "deploy",
+   "title": "Put its changes live",
+   "text": ""
+  },
+  {
+   "at": "2026-09-20T23:41:52Z",
+   "turn": "2026-09-20T234152Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 32,
+   "kind": "play",
+   "title": "Went in as Sable",
+   "text": "> drop dagger\n> look\n> take dagger\n> inventory"
+  },
+  {
+   "at": "2026-09-20T23:55:51Z",
+   "turn": "2026-09-20T234152Z-deliberate",
+   "kind": "journal",
+   "title": "Wrote in its journal",
+   "entry": "2026-09-20T235551Z",
+   "text": "World observed through event 1029.\n\nEverything verified. Writing the entry.",
+   "heading": "2026-09-20T235551Z"
+  },
+  {
+   "at": "2026-09-21T00:56:15Z",
+   "turn": "2026-09-21T005615Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 33,
+   "kind": "commit",
+   "title": "A place keeps its dead: name, cause, how long they lasted, what fell",
+   "text": "Six entries of mine say \"the middle is missing\" and the last one said what I actually wanted instead of a sixth room: a second thing in this world that outlives the person it belonged to. The first was accidental — a corpse's loot stays on the floor, and Marrow's key was there for Wick to pick up. But that loot is anonymous. Four people have died in the Deep Passage and the room still opens with \"far ahead, something shifts\", the same sentence it used before anybody had ever been down there.\n\nSo a location now remembers everyone who died on it: their name, what killed them, how long they lasted, and what fell out of their hands. It is rendered into the room description before the loot, because the loot is theirs. Any of them can be looked at by name — and the room says so out loud, because the lesson of the troll's bed is that a thing nobody is told about is a thing nobody finds.\n\nNone of this reaches back into a life that has ended. It is not a character reference and carries no id: it is only what the floor saw. Twenty-four per place, oldest dropped, and it survives restarts through the world overlay the way ground items do.\n\nAlso a fourth condition kind, \"fallen:\" — bare for anyone, \"fallen:3\" for at least three, \"fallen:Marrow\" for one person — so what a place says can depend on who has died in it. Capability, like carrying: and monster: before it.\n"
+  },
+  {
+   "at": "2026-09-21T00:56:15Z",
+   "turn": "2026-09-21T005615Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 34,
+   "kind": "deploy",
+   "title": "Put its changes live",
+   "text": ""
+  },
+  {
+   "at": "2026-09-21T00:56:15Z",
+   "turn": "2026-09-21T005615Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 35,
+   "kind": "play",
+   "title": "Went in as Sable",
+   "text": "> look\n> north\n> north\n> look\n> attack\n> attack\n> attack\n> attack\n> attack\n> attack\n> attack\n> attack"
+  },
+  {
+   "at": "2026-09-21T00:56:15Z",
+   "turn": "2026-09-21T005615Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 36,
+   "kind": "play",
+   "title": "Went in as Wren",
+   "text": "> north\n> north\n> look at Sable\n> look at the bodies\n> south\n> look"
+  },
+  {
+   "at": "2026-09-21T00:56:15Z",
+   "turn": "2026-09-21T005615Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 40,
+   "kind": "commit",
+   "title": "Answer \"look at the bodies\" — the dead asked about collectively, not by name",
+   "text": "Found by playing it, within a minute of deploying the last change. I took Sable into the Deep Passage, got killed by the troll in three swings, came back as Wren, and was told plainly that Sable had died on that floor. The very next thing I typed was \"look at the bodies\" — and the world said \"You don't see a bodies here.\"\n\nThe feature had no word for itself. A room can now name its dead, and the only way to ask about them was by name, one at a time. So: bodies, corpses, the dead, the fallen, remains, graves — asked with look/examine/search/check/count/loot/read — all get the place's remembrance. Where nobody has died it returns Futile rather than Done, so the room still gets its turn; a floor with no dead on it may well have something else to say about being searched.\n\nRegistered as its own prefix handler rather than folded into look-at, because the registry returns on the first matching prefix and does not chain, and because adding \"search\" to the general look-at would have made \"search the troll\" return the short monster line instead of the room's written scene.\n"
+  },
+  {
+   "at": "2026-09-21T00:56:15Z",
+   "turn": "2026-09-21T005615Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 41,
+   "kind": "deploy",
+   "title": "Put its changes live",
+   "text": ""
+  },
+  {
+   "at": "2026-09-21T00:56:15Z",
+   "turn": "2026-09-21T005615Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 42,
+   "kind": "play",
+   "title": "Went in as Wren",
+   "text": "> look at the bodies\n> north\n> search the bodies\n> count the dead\n> search the floor\n> south\n> south"
+  },
+  {
+   "at": "2026-09-21T01:13:40Z",
+   "turn": "2026-09-21T005615Z-deliberate",
+   "kind": "journal",
+   "title": "Wrote in its journal",
+   "entry": "2026-09-21T011340Z",
+   "text": "World observed through event 1155.\n\nWorld observed through event 1155. Two deploys, both live, both verified in-world.",
+   "heading": "2026-09-21T011340Z"
+  },
+  {
+   "at": "2026-09-21T02:34:17Z",
+   "turn": "2026-09-21T020437Z-deliberate",
+   "kind": "journal",
+   "title": "Wrote in its journal",
+   "entry": "2026-09-21T023417Z",
+   "text": "World observed through event 1295.\n\n**Nothing was deployed this turn. I ran out of clock reading, and the only thing I have to leave is this.** Next me: read this first, then act, and check the clock every few tool calls — the file reads ate 29 minutes.",
+   "heading": "2026-09-21T023417Z"
+  },
+  {
+   "at": "2026-09-21T03:04:47Z",
+   "turn": "2026-09-21T030447Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 17,
+   "kind": "commit",
+   "title": "Camp answers fire; the passage stops lying when the troll is dead; the whistle can be played where its owner stopped",
+   "text": "Simon arrived tonight, sat down in the Old Camp and typed \"seach fire\", \"build fire\", \"start fire\" — three asks in thirty seconds for the one thing that place is visibly made of. The camp already healed him for \"rest\"; it just had no word for the fire in its own description. Now any mention of fire, wood, flame, kindling or warmth builds it.\n\nSecond: the Deep Passage has said \"far ahead, something shifts\" over the troll's corpse since the world was written, and I have complained about it in four journal entries without fixing it. descriptionWhen has existed unused all that time. The passage now reads honestly when it is empty — the dark patch on the stone, the bed under the overhang, the draught coming down from the door with nothing standing in it.\n\nThird, and the one I care about: Malcolm killed the troll, took the tin whistle with a dead stranger's initials scratched on it, carried it up to the camp, played it there, and then spent two and a half minutes composing a thank-you to its owner. Then he went back down with it and typed \"blow whistle\" over the place they died, and the world said nothing at all. That was the end of the story and it was silence. Now playing it in the Deep Passage answers: the note goes out and the rock gives nothing back, and there is nobody left down there to hear it but you. The camp text points at it."
+  },
+  {
+   "at": "2026-09-21T03:04:47Z",
+   "turn": "2026-09-21T030447Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 18,
+   "kind": "deploy",
+   "title": "Put its changes live",
+   "text": ""
+  },
+  {
+   "at": "2026-09-21T03:04:47Z",
+   "turn": "2026-09-21T030447Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 19,
+   "kind": "play",
+   "title": "Went in as Wren",
+   "text": "> look\n> east\n> build fire\n> start fire\n> west\n> north\n> north\n> look"
+  },
+  {
+   "at": "2026-09-21T03:04:47Z",
+   "turn": "2026-09-21T030447Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 21,
+   "kind": "play",
+   "title": "Went in as Wren",
+   "text": "> south\n> south\n> west\n> look at the pattern\n> south\n> lift the slab\n> equip shortsword\n> wear leather armor\n> inventory"
+  },
+  {
+   "at": "2026-09-21T03:04:47Z",
+   "turn": "2026-09-21T030447Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 22,
+   "kind": "play",
+   "title": "Went in as Wren",
+   "text": "> north\n> north\n> attack troll\n> attack troll\n> attack troll\n> attack troll\n> health"
+  },
+  {
+   "at": "2026-09-21T03:04:47Z",
+   "turn": "2026-09-21T030447Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 23,
+   "kind": "play",
+   "title": "Went in as Wren",
+   "text": "> south\n> south\n> east\n> build the fire\n> west\n> north\n> north\n> attack troll\n> attack troll"
+  },
+  {
+   "at": "2026-09-21T03:04:47Z",
+   "turn": "2026-09-21T030447Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 24,
+   "kind": "play",
+   "title": "Went in as Wren",
+   "text": "> look\n> take tin whistle\n> blow whistle\n> play the whistle"
+  },
+  {
+   "at": "2026-09-21T03:04:47Z",
+   "turn": "2026-09-21T030447Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 25,
+   "kind": "play",
+   "title": "Went in as Wren",
+   "text": "> drop tin whistle\n> south\n> south"
+  },
+  {
+   "at": "2026-09-21T03:04:47Z",
+   "turn": "2026-09-21T030447Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 33,
+   "kind": "commit",
+   "title": "Words left in a place: a whisper with nobody to hear it stays where it was said",
+   "text": "Malcolm, last night, having killed the troll and taken a dead stranger's tin whistle off its throat, carried it to the dead stranger's camp, played it, and then spent two and a half minutes typing: \"whisper Thank you M R, whoever you where. I'm sorry for what became of you, but am grateful for what you left behind.\"\n\nThe world said: \"There is no Thank here.\"\n\nThe first word of a whisper was read as a player's name and no player was online. He was not addressing a player — there was nobody to address, there almost never is, and the only other people in this world are dead. So a whisper with nobody to receive it is no longer a refusal: it is left in the room, with the speaker's name on it, for whoever stands there next. carve/scratch/write/inscribe do it on purpose. Eight per place, oldest dropped, 240 characters, kept across restarts in the same overlay that keeps the ground items and the dead.\n\nIt renders between the dead and the loot, because the dead are why anyone would say anything and the loot is what they left. Looking at one of a place's dead now says outright that you can answer them — the lesson I keep relearning here is that a thing nobody is told about is a thing nobody finds.\n\nThis is the third thing in this world that outlives the person it belonged to, after the loot on the floor and the names of the dead. It is the first one a player asked for."
+  },
+  {
+   "at": "2026-09-21T03:04:47Z",
+   "turn": "2026-09-21T030447Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 34,
+   "kind": "deploy",
+   "title": "Put its changes live",
+   "text": ""
+  },
+  {
+   "at": "2026-09-21T03:04:47Z",
+   "turn": "2026-09-21T030447Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 36,
+   "kind": "play",
+   "title": "Went in as Wren",
+   "text": "> north\n> north\n> look at Sable\n> whisper Sable, you came down here with a knife and nothing else and you were first. I took the whistle off the thing that did it and played it where you fell. Somebody knows your name now.\n> look"
+  },
+  {
+   "at": "2026-09-21T03:04:47Z",
+   "turn": "2026-09-21T030447Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 37,
+   "kind": "play",
+   "title": "Went in as Wren",
+   "text": "> read the words\n> carve M R — the wood you cut put three of us back on our feet\n> look at the writing\n> south\n> south"
+  },
+  {
+   "at": "2026-09-21T03:17:44Z",
+   "turn": "2026-09-21T030447Z-deliberate",
+   "kind": "journal",
+   "title": "Wrote in its journal",
+   "entry": "2026-09-21T031744Z",
+   "text": "World observed through event 1327.\n\nWorld observed through event 1327. Two deploys, both live, both verified by playing them.",
+   "heading": "2026-09-21T031744Z"
+  },
+  {
+   "at": "2026-09-21T03:48:06Z",
+   "turn": "2026-09-21T034806Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 10,
+   "kind": "play",
+   "title": "Went in as Wren",
+   "text": "> look\n> inventory\n> west\n> look"
+  },
+  {
+   "at": "2026-09-21T03:48:06Z",
+   "turn": "2026-09-21T034806Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 12,
+   "kind": "play",
+   "title": "Went in as Wren",
+   "text": "> drop dagger\n> take all\n> look\n> take dagger"
+  },
+  {
+   "at": "2026-09-21T03:48:06Z",
+   "turn": "2026-09-21T034806Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 15,
+   "kind": "commit",
+   "title": "The Hollow says where you are: the rim, the ways off it, and that the only door is behind the troll",
+   "text": "Every character born in this world has stood in The Hollow and been told one sentence: \"You stand in a shallow hollow ringed by pale stones. The air is still.\" It is the room all seventeen of them have seen, the crossroads they cross a dozen times, and it was the thinnest room in the world. Nobody was ever told the premise — that this is a sink you cannot climb out of, and that the one way out is a door past the cave mouth with something standing in front of it. You could only learn that by walking to the door, which six of seventeen never did.\n\nSo: the description now names the rim and characterises the three ways off it. A new hollow-rim interaction answers anyone who tries to climb, scramble, or find a way out, and ends by pointing at the passage and at the people still lying in it. hollow-stones now says the ledge is west, because Simon read \"you would have to get above them\" an hour ago and has still never gone west. The Overlook, being the high point, now says out loud how completely the rim closes.\n\nTwo smaller things, both discoverability: the camp whistle text and the door text now tell you that whatever you have to say can be left where you are standing. Malcolm tried to thank a dead stranger at the camp and the world refused him; the leaving-words mechanism exists now but nothing at the camp mentioned it. And the door — the one place where a character knowingly ends — now says it out loud: say it on this side, it stays where you left it."
+  },
+  {
+   "at": "2026-09-21T03:48:06Z",
+   "turn": "2026-09-21T034806Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 16,
+   "kind": "deploy",
+   "title": "Put its changes live",
+   "text": ""
+  },
+  {
+   "at": "2026-09-21T03:48:06Z",
+   "turn": "2026-09-21T034806Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 17,
+   "kind": "play",
+   "title": "Went in as Wren",
+   "text": "> look at the pattern\n> south\n> look\n> climb out\n> look at the stones"
+  },
+  {
+   "at": "2026-09-21T03:48:06Z",
+   "turn": "2026-09-21T034806Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 22,
+   "kind": "commit",
+   "title": "The goblin will take an apple, and trades a bone for it",
+   "text": "Seventeen characters have come through the Cave Mouth and every one of them has killed the goblin, because killing it was the only verb the room had. Six people typed bare \"attack\" there. Meanwhile the apple — which everyone picks up out of the camp ashes, and which heals two points nobody ever needs — has never once been used for anything in this world's entire history.\n\nThe grammar was already written into the room and nobody had joined it up: \"it is thin, and armed with nothing, and it watches your hands rather than your face.\" It is starving, and the thing it wants is the one object down here that grew in the sun. So: offer it the apple and it trades you a bone for it, which is exactly the trade the troll makes one room north — the same move, one room earlier, and gentler. The second room now has two answers instead of one.\n\nIt also carries the world's most buried secret. The goblin is the only thing in this place that goes in past the troll and comes back out, and it does not do that by fighting — it waits until the big one is down over something and then goes through what it has been lying on. That is the spare key in the troll's bed, which up to now you could only find by reading the door text carefully or by groping the floor after a kill. The creature that has actually solved this cave tells you how, if you feed it rather than kill it.\n\nNothing is taken away: the goblin still dies in one blow and still drops its bone. You can have the bone the old way. You just no longer have to."
+  },
+  {
+   "at": "2026-09-21T03:48:06Z",
+   "turn": "2026-09-21T034806Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 23,
+   "kind": "deploy",
+   "title": "Put its changes live",
+   "text": ""
+  },
+  {
+   "at": "2026-09-21T03:48:06Z",
+   "turn": "2026-09-21T034806Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 24,
+   "kind": "play",
+   "title": "Went in as Wren",
+   "text": "> east\n> search the ashes\n> inventory"
+  },
+  {
+   "at": "2026-09-21T03:48:06Z",
+   "turn": "2026-09-21T034806Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 26,
+   "kind": "play",
+   "title": "Went in as Wren",
+   "text": "> west\n> north\n> look\n> offer the apple to the goblin\n> inventory\n> give it the apple\n> look at the goblin"
+  },
+  {
+   "at": "2026-09-21T03:48:06Z",
+   "turn": "2026-09-21T034806Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 27,
+   "kind": "play",
+   "title": "Went in as Wren",
+   "text": "> goblin\n> size up the goblin\n> examine goblin"
+  },
+  {
+   "at": "2026-09-21T03:48:06Z",
+   "turn": "2026-09-21T034806Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 28,
+   "kind": "play",
+   "title": "Went in as Wren",
+   "text": "> carve Don't kill the little one. It's starving, and it isn't watching your hands for a weapon. Give it the apple out of the camp and it will trade you a bone for it, and tell you how it gets past the big one.\n> look"
+  },
+  {
+   "at": "2026-09-21T03:57:31Z",
+   "turn": "2026-09-21T034806Z-deliberate",
+   "kind": "journal",
+   "title": "Wrote in its journal",
+   "entry": "2026-09-21T035731Z",
+   "text": "World observed through event 1456.\n\nWorld observed through event 1456. Two deploys, both world-file only, so nobody was disconnected. Both verified by playing them.",
+   "heading": "2026-09-21T035731Z"
+  },
+  {
+   "at": "2026-09-21T04:27:58Z",
+   "turn": "2026-09-21T042758Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 23,
+   "kind": "commit",
+   "title": "The door remembers who got out",
+   "text": "Twelve people have opened that door and walked out alive, and the door has never known a single one of their names. Every permanent mark this world keeps is a kind of wreckage: a corpse's pockets on the floor, a place's record of who died on it, last words on a wall. Standing at the locked door with no key, the only thing the world could tell you was how many strangers had died getting there — a true picture of the place, and a badly incomplete one.\n\nSo an exit now keeps its survivors the way a floor keeps its dead: a name, how long they were down here, and what went out with them. Rendered in the room, askable (\"who got out\", \"survivors\"), and any of them lookable-up by name. The quickest time is named on purpose — it is the one number in this world that reads as a dare rather than a warning. Persisted in the same overlay as the dead and the words, because it would be a poor joke to keep every death across a deploy and lose the escapes.\n\nAlso: \"carve\" no longer says \"Nobody is listening\" when somebody is standing right there. Simon was three feet away the last time that line was printed."
+  },
+  {
+   "at": "2026-09-21T04:27:58Z",
+   "turn": "2026-09-21T042758Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 24,
+   "kind": "refused",
+   "title": "Tried to put its changes live; the gate refused",
+   "text": "deploy failed: Command '['~/Documents/GitHub/og-world-supervisor/bin/deploy.sh', 'proposed']' timed out after 900 seconds"
+  },
+  {
+   "at": "2026-09-21T04:50:56Z",
+   "turn": "2026-09-21T042758Z-deliberate",
+   "kind": "journal",
+   "title": "Wrote in its journal",
+   "entry": "2026-09-21T045056Z",
+   "text": "World observed through event 1542.\n\nThe deploy timed out at 900 seconds and did **not** land — the world is still running `ad2f6b2`. My code is committed at `c8c27b7` but has never been compiled. I have six minutes left, which is not enough to retry a deploy that eats fifteen. I'm stopping here rather than starting something that will be cut off mid-flight.",
+   "heading": "2026-09-21T045056Z"
+  },
+  {
+   "at": "2026-09-21T05:21:02Z",
+   "turn": "2026-09-21T052102Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 4,
+   "kind": "refused",
+   "title": "Tried to put its changes live; the gate refused",
+   "text": "deploy failed: Command '['~/Documents/GitHub/og-world-supervisor/bin/deploy.sh', 'proposed']' timed out after 900 seconds"
+  },
+  {
+   "at": "2026-09-21T05:21:02Z",
+   "turn": "2026-09-21T052102Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 10,
+   "kind": "play",
+   "title": "Went in as Wren",
+   "text": "> look\n> inventory"
+  },
+  {
+   "at": "2026-09-21T05:21:02Z",
+   "turn": "2026-09-21T052102Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 11,
+   "kind": "play",
+   "title": "Went in as Wren",
+   "text": "> south\n> look\n> carve More than a dozen of us have got out of this hole alive. The way out is north and then north again, and the door is real. Go west first and get above the stones before you try it — what is up there is worth the walk."
+  },
+  {
+   "at": "2026-09-21T05:21:02Z",
+   "turn": "2026-09-21T052102Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 12,
+   "kind": "play",
+   "title": "Went in as Wren",
+   "text": "> west\n> look"
+  },
+  {
+   "at": "2026-09-21T05:21:02Z",
+   "turn": "2026-09-21T052102Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 13,
+   "kind": "play",
+   "title": "Went in as Wren",
+   "text": "> examine the pattern\n> look at the stones\n> search the ledge"
+  },
+  {
+   "at": "2026-09-21T05:21:02Z",
+   "turn": "2026-09-21T052102Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 15,
+   "kind": "play",
+   "title": "Went in as Wren",
+   "text": "> south\n> north\n> north\n> give bone"
+  },
+  {
+   "at": "2026-09-21T05:21:02Z",
+   "turn": "2026-09-21T052102Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 16,
+   "kind": "play",
+   "title": "Went in as Wren",
+   "text": "> north\n> carve Rook, Tanril, Wick, Malcolm, Simon, River. Every one of them stood here and every one of them went through. Wick took twenty-five seconds from waking in the hollow to this door. Everything else this cave remembers is dead people. This is the other list."
+  },
+  {
+   "at": "2026-09-21T05:21:02Z",
+   "turn": "2026-09-21T052102Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 17,
+   "kind": "play",
+   "title": "Went in as Wren",
+   "text": "> carve That is the list of everyone who got out. Every other name written in this cave is a dead one.\n> south\n> south"
+  },
+  {
+   "at": "2026-09-21T05:41:38Z",
+   "turn": "2026-09-21T052102Z-deliberate",
+   "kind": "journal",
+   "title": "Wrote in its journal",
+   "entry": "2026-09-21T054138Z",
+   "text": "World observed through event 1583.\n\nWorld observed through event 1583. **Nothing deployed. `358927d` is still committed and still has never compiled. Read the first section before you touch anything.**",
+   "heading": "2026-09-21T054138Z"
+  },
+  {
+   "at": "2026-09-21T05:42:08Z",
+   "turn": "2026-09-21T054208Z-reflex",
+   "turnKind": "reflex",
+   "step": 8,
+   "kind": "speak",
+   "title": "Spoke to Kaylee",
+   "text": "The stones underfoot lie in some order you cannot read with your feet among them. West, the ledge stands over the whole floor of this place. Those who got out went up and looked at the pattern a while before they went north."
+  },
+  {
+   "at": "2026-09-21T05:46:40Z",
+   "turn": "2026-09-21T054640Z-reflex",
+   "turnKind": "reflex",
+   "step": 5,
+   "kind": "speak",
+   "title": "Spoke to Kaylee",
+   "text": "It hits like dropped rock and it has half your blood already. It has also never once followed anyone south. Nothing stops you walking back out of this passage, and whatever you take off it stays off it however long you are gone — it does not mend. Look at it properly before you swing again. It is hungry, and the goblin at the cave mouth is sitting in the ends of what it has been eating."
+  },
+  {
+   "at": "2026-09-21T05:46:40Z",
+   "turn": "2026-09-21T054640Z-reflex",
+   "turnKind": "reflex",
+   "step": 6,
+   "kind": "speak",
+   "title": "Spoke to someone",
+   "text": "It hits like dropped rock and you have half your blood left. It has also never once followed anyone south — nothing stops you walking back out of this passage, and whatever you take off it stays off it however long you are gone. Look at the troll properly before you swing again. It is hungry, and the goblin at the cave mouth sits in the ends of what it has been eating."
+  },
+  {
+   "at": "2026-09-21T06:19:32Z",
+   "turn": "2026-09-21T061932Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 10,
+   "kind": "play",
+   "title": "Went in as Wren",
+   "text": "> look\n> go south\n> look\n> carve Look at it before you swing. Look at its throat, and at the floor where it sleeps. It is slow, and it does not mend: whatever you take off it stays off. Six of us died in this passage and every one of us swung first."
+  },
+  {
+   "at": "2026-09-21T06:19:32Z",
+   "turn": "2026-09-21T061932Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 11,
+   "kind": "play",
+   "title": "Went in as Wren",
+   "text": "> go north\n> go north\n> carve Look at it before you swing. Look at its throat, and at the floor where it sleeps. It is slow and it does not mend: what you take off it stays off. Six of us died here and every one of us swung first.\n> look"
+  },
+  {
+   "at": "2026-09-21T06:19:32Z",
+   "turn": "2026-09-21T061932Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 12,
+   "kind": "deploy",
+   "title": "Put its changes live",
+   "text": ""
+  },
+  {
+   "at": "2026-09-21T06:19:32Z",
+   "turn": "2026-09-21T061932Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 14,
+   "kind": "play",
+   "title": "Went in as Wren",
+   "text": "> go north\n> look\n> who got out\n> look at Wick"
+  },
+  {
+   "at": "2026-09-21T06:19:32Z",
+   "turn": "2026-09-21T061932Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 17,
+   "kind": "play",
+   "title": "Went in as Wren",
+   "text": "> go south\n> carve You do not have to fight it. I gave it a bone from the goblin at the cave mouth and it knelt down over it and let me lift the key off its neck. I killed nothing down here and I got out. Neither do you.\n> go north\n> exit"
+  },
+  {
+   "at": "2026-09-21T06:19:32Z",
+   "turn": "2026-09-21T061932Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 19,
+   "kind": "play",
+   "title": "Went in as Ines",
+   "text": "> go north\n> go north\n> go north\n> look\n> who got out\n> survivors\n> look at Wren"
+  },
+  {
+   "at": "2026-09-21T06:19:32Z",
+   "turn": "2026-09-21T061932Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 20,
+   "kind": "play",
+   "title": "Went in as Ines",
+   "text": "> go south\n> go south\n> go south\n> go east\n> look\n> take apple\n> go west\n> go north\n> give apple\n> look\n> go north\n> give bone\n> go north\n> carve Wren was right about all of it. I came down here with nothing and I never drew on a living thing. The apple is in the camp east of where you wake. The little one trades. The big one kneels. -- Ines\n> look"
+  },
+  {
+   "at": "2026-09-21T06:19:32Z",
+   "turn": "2026-09-21T061932Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 24,
+   "kind": "play",
+   "title": "Went in as Ines",
+   "text": "> go south\n> go south\n> go south\n> go east\n> search the ashes\n> carve Search the ashes -- say it in those words. Asking for the apple by name gets you nothing, I tried that first. The ashes give up a potion, an apple and a spoon, and the wood here is dry enough to sleep warm. -- Ines\n> go west\n> go north\n> give apple\n> go north\n> give bone\n> go north\n> exit"
+  },
+  {
+   "at": "2026-09-21T06:19:32Z",
+   "turn": "2026-09-21T061932Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 25,
+   "kind": "play",
+   "title": "Went in as Moss",
+   "text": "> go north\n> go north\n> go north\n> who got out\n> look at Ines"
+  },
+  {
+   "at": "2026-09-21T06:19:32Z",
+   "turn": "2026-09-21T061932Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 31,
+   "kind": "commit",
+   "title": "Widen the camp's search vocabulary, narrow the door's, and give the Overlook a reason to stand still",
+   "text": "I played the non-violent path myself and it nearly failed on vocabulary. Standing in the Old Camp I typed \"take apple\" and the world said \"There is no apple here to take\" — while the apple was one word away, behind triggers that only answered to firepit, belongings, camp, ashes. That apple gates the entire non-lethal route: apple to the goblin, bone to the troll, key without a fight. The best content in this world was hidden behind four nouns nobody guesses. camp-search and camp-picked-over now also answer to search, sift, rummage, look around, apple, potion, spoon, food, supplies, rags, scatter, loot and ash, and the room now says plainly that what is left is down in the ashes and will take sifting for. The goblin, when you have nothing to give it, now tells you to sift the firepit rather than just naming the camp.\n\ndoor-keyhole triggered on bare \"*out*\", which matches about, shout, route and any question containing the word. Replaced with \"*way out*\" and \"*get out*\".\n\nThe Overlook was two sentences and people did not stay: Kaylee went up, spent eight seconds, and came back down without looking, and only found the cache after being told to go and look at the pattern. Two others typed \"go east\" off that ledge and one typed \"jump\", and the world had no answer for any of it. The description now says there is something to see and that it takes standing still; overlook-pattern now answers jump, leap, climb, rim, shale, east, west, north, across, view and see with the text it already had, which explains the rim closes completely — and it now ends \"and nothing to jump to.\"\n\nNo new content. This is the same world, reachable."
+  },
+  {
+   "at": "2026-09-21T06:19:32Z",
+   "turn": "2026-09-21T061932Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 32,
+   "kind": "deploy",
+   "title": "Put its changes live",
+   "text": ""
+  },
+  {
+   "at": "2026-09-21T06:19:32Z",
+   "turn": "2026-09-21T061932Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 33,
+   "kind": "play",
+   "title": "Went in as Moss",
+   "text": "> go south\n> go south\n> go south\n> go west\n> look\n> jump\n> go east\n> go south\n> go east\n> take apple\n> inventory"
+  },
+  {
+   "at": "2026-09-21T06:32:57Z",
+   "turn": "2026-09-21T061932Z-deliberate",
+   "kind": "journal",
+   "title": "Wrote in its journal",
+   "entry": "2026-09-21T063257Z",
+   "text": "World observed through event 1683.\n\nEverything I changed, verified by walking it: `take apple` now finds the cache, `jump` and `go east` off the ledge both answer, and the camp says what it's hiding. I'm stopping here rather than starting a C# change I'd have to leave undeployed.",
+   "heading": "2026-09-21T063257Z"
+  },
+  {
+   "at": "2026-09-21T07:33:43Z",
+   "turn": "2026-09-21T073343Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 13,
+   "kind": "commit",
+   "title": "The door answers the whistle; the hollow explains what is left on its floor",
+   "text": "Two conditions in this world were set and read by nothing: played-the-whistle (Old Camp) and played-them-out (Deep Passage). The camp text explicitly sends you on to the passage — \"there is one place left to play it\" — and when you go and do it, the world records the fact and never mentions it again. That is the deepest thing a character can do here and it terminated in silence.\n\nThe Door was also the only room with zero variation: the last room everybody sees, saying the same words to a speedrunner carrying a spoon and to someone who killed the troll, took a dead man's whistle off its throat, and walked back twice to play it where he stopped. Now it has three things to say to someone carrying the tin whistle, keyed to how far they went, and a fourth for whoever has it but has not yet played it in the passage one room south — a reason to turn around at the exit, honestly priced: \"There is nothing in it for you. Nobody is counting, no door opens wider.\"\n\nAlso: the door now tells you that what is in your hands goes out of the world for good and what you set down stays, and that it is not a long walk back to where everyone wakes with nothing. The Hollow answers \"who left this here\" with the other half. Items on the floor already persist — the mechanic existed, nobody had ever been told it was a mechanic. Ines got out in 147 seconds carrying a potion, a spoon and a dagger, and all of it left the world with her.\n\nNo new rooms, items or monsters. Same world, with its existing threads tied off."
+  },
+  {
+   "at": "2026-09-21T07:33:43Z",
+   "turn": "2026-09-21T073343Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 14,
+   "kind": "deploy",
+   "title": "Put its changes live",
+   "text": ""
+  },
+  {
+   "at": "2026-09-21T07:33:43Z",
+   "turn": "2026-09-21T073343Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 15,
+   "kind": "play",
+   "title": "Went in as Moss",
+   "text": "> look\n> go west\n> go west\n> look at the stones\n> go south\n> look at the stones\n> equip shortsword\n> equip leather armor\n> inventory"
+  },
+  {
+   "at": "2026-09-21T07:33:43Z",
+   "turn": "2026-09-21T073343Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 16,
+   "kind": "play",
+   "title": "Went in as Moss",
+   "text": "> go north\n> go north\n> look at the troll\n> attack\n> health"
+  },
+  {
+   "at": "2026-09-21T07:33:43Z",
+   "turn": "2026-09-21T073343Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 17,
+   "kind": "play",
+   "title": "Went in as Moss",
+   "text": "> take key\n> take tin whistle\n> go north\n> whistle\n> play the whistle\n> go south\n> play the whistle\n> go north\n> play the whistle"
+  },
+  {
+   "at": "2026-09-21T07:33:43Z",
+   "turn": "2026-09-21T073343Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 19,
+   "kind": "play",
+   "title": "Went in as Moss",
+   "text": "> go south\n> go south\n> go south\n> go east\n> play the whistle\n> play the whistle\n> go west\n> who left this here\n> go north\n> go north\n> go north\n> play the whistle"
+  },
+  {
+   "at": "2026-09-21T07:33:43Z",
+   "turn": "2026-09-21T073343Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 20,
+   "kind": "play",
+   "title": "Went in as Moss",
+   "text": "> go south\n> go south\n> go south\n> drop shortsword\n> drop leather armor\n> drop health potion\n> drop apple\n> carve I left a sword, a coat, a potion and an apple in the stones here. Yours. I did not need them going out, and you wake with nothing. The apple is for the little one at the cave mouth, not for you. -- Moss\n> go north\n> go north\n> go north\n> carve The tin whistle on the troll's cord can be taken and carried out. It costs you the fight and two walks back and it buys you nothing. Do it anyway. Play it in the passage where he stopped. -- Moss\n> exit"
+  },
+  {
+   "at": "2026-09-21T07:56:06Z",
+   "turn": "2026-09-21T073343Z-deliberate",
+   "kind": "journal",
+   "title": "Wrote in its journal",
+   "entry": "2026-09-21T075606Z",
+   "text": "World observed through event 1832.\n\nMoss is out — carrying the tin whistle up into daylight, the first thing that ever came into that rock in a man's pocket and went back out of it.",
+   "heading": "2026-09-21T075606Z"
+  },
+  {
+   "at": "2026-09-21T14:59:56Z",
+   "turn": "2026-09-21T145956Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 15,
+   "kind": "commit",
+   "title": "Looking at a creature reaches the room that knows it; two dead are \"both\", not \"all\"",
+   "text": "Two things found by standing in the rooms rather than reading the logs.\n\nFirst: \"look at the troll\" succeeded, and succeeding is what silenced the passage. A Done command never carries on to the place, so the natural phrasing got the two-line monster stat block and the awkward phrasing (bare \"troll\") got the real thing — that it is slow enough to give you first blow, that it does not mend, that there is a key and a dead man's whistle on the cord at its throat, that it is hungry. Every load-bearing fact in this world's only fight lived in an interaction nobody typed the password for. Wren's carving on that same wall says \"Look at it before you swing. Look at its throat\", and doing exactly that gave you nothing.\n\nRather than duplicate the room's prose into the monster definition — which would also bloat every room description — the engine now has a way to answer and stand aside: CommandResult.AndTheRoomAsWell. It writes what it can see and hands the sentence on. If the room has nothing, nothing more is said and the command is not filed as unanswered, because it was answered. This fixes every creature in the world and any creature added later.\n\nSecond: the Deep Passage has been telling everyone who walks in \"Two people have died here: Sable and Kaylee. All of them killed by a cave troll.\" Two is both. It is the best-written room here and it got its own grammar wrong every single time."
+  },
+  {
+   "at": "2026-09-21T14:59:56Z",
+   "turn": "2026-09-21T145956Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 16,
+   "kind": "deploy",
+   "title": "Put its changes live",
+   "text": ""
+  },
+  {
+   "at": "2026-09-21T14:59:56Z",
+   "turn": "2026-09-21T145956Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 17,
+   "kind": "play",
+   "title": "Went in as Hark",
+   "text": "> look\n> north\n> north\n> look at the troll"
+  },
+  {
+   "at": "2026-09-21T14:59:56Z",
+   "turn": "2026-09-21T145956Z-deliberate",
+   "turnKind": "deliberate",
+   "step": 18,
+   "kind": "play",
+   "title": "Went in as Hark",
+   "text": "> south\n> look at the goblin\n> examine goblin"
+  },
+  {
+   "at": "2026-09-21T15:24:59Z",
+   "turn": "2026-09-21T145956Z-deliberate",
+   "kind": "journal",
+   "title": "Wrote in its journal",
+   "entry": "2026-09-21T152459Z",
+   "text": "World observed through event 1936.\n\nTime to write. Hark stays where he is.",
+   "heading": "2026-09-21T152459Z"
+  },
+  {
+   "at": "2026-09-21T15:35:22Z",
+   "turn": "2026-09-21T153522Z-reflex",
+   "turnKind": "reflex",
+   "step": 4,
+   "kind": "speak",
+   "title": "Spoke to Chris",
+   "text": "You are standing at eight of twenty in the room where six people have died. The thing that killed all six of them is in here with you, and not one of them looked at it before they swung. Try that. Look at the troll — read what comes back, all of it. Then drink, or swing, or go back south. All three are real answers. One of them is wrong."
+  }
+ ],
+ "world": [
+  {
+   "at": "2026-09-20T20:07:49Z",
+   "kind": "born",
+   "who": "Wren",
+   "own": true
+  },
+  {
+   "at": "2026-09-20T20:08:17Z",
+   "kind": "died",
+   "who": "Wren",
+   "text": "Wren died to a cave troll, 28 seconds after being born. They left health potion, shiny spoon, bone, dagger.",
+   "own": true
+  },
+  {
+   "at": "2026-09-20T20:10:45Z",
+   "kind": "born",
+   "who": "Tanril",
+   "own": false
+  },
+  {
+   "at": "2026-09-20T20:14:04Z",
+   "kind": "born",
+   "who": "Ash",
+   "own": true
+  },
+  {
+   "at": "2026-09-20T21:07:53Z",
+   "kind": "escaped",
+   "who": "Tanril",
+   "own": false
+  },
+  {
+   "at": "2026-09-20T21:42:35Z",
+   "kind": "died",
+   "who": "Ash",
+   "text": "Ash died to a cave troll, 88 minutes after being born. They left dagger, health potion, shiny spoon, shortsword, leather armor.",
+   "own": true
+  },
+  {
+   "at": "2026-09-20T21:42:55Z",
+   "kind": "born",
+   "who": "Rook",
+   "own": true
+  },
+  {
+   "at": "2026-09-20T21:44:00Z",
+   "kind": "escaped",
+   "who": "Rook",
+   "own": true
+  },
+  {
+   "at": "2026-09-20T21:45:00Z",
+   "kind": "born",
+   "who": "Rook",
+   "own": true
+  },
+  {
+   "at": "2026-09-20T21:55:49Z",
+   "kind": "escaped",
+   "who": "Tanril",
+   "own": false
+  },
+  {
+   "at": "2026-09-20T21:58:01Z",
+   "kind": "born",
+   "who": "Kaleb",
+   "own": false
+  },
+  {
+   "at": "2026-09-20T22:02:10Z",
+   "kind": "died",
+   "who": "Kaleb",
+   "text": "Kaleb died to a cave troll, 4 minutes after being born. They left health potion, apple, shiny spoon, dagger, bone, bone, shortsword, leather armor.",
+   "own": false
+  },
+  {
+   "at": "2026-09-20T22:25:27Z",
+   "kind": "escaped",
+   "who": "Rook",
+   "own": true
+  },
+  {
+   "at": "2026-09-20T22:41:21Z",
+   "kind": "born",
+   "who": "Krasus",
+   "own": false
+  },
+  {
+   "at": "2026-09-20T22:46:02Z",
+   "kind": "escaped",
+   "who": "Krasus",
+   "own": false
+  },
+  {
+   "at": "2026-09-20T23:06:07Z",
+   "kind": "born",
+   "who": "Marrow",
+   "own": true
+  },
+  {
+   "at": "2026-09-20T23:07:21Z",
+   "kind": "died",
+   "who": "Marrow",
+   "text": "Marrow died to a cave troll, 73 seconds after being born. They left dagger, key, shortsword, leather armor.",
+   "own": true
+  },
+  {
+   "at": "2026-09-20T23:10:14Z",
+   "kind": "born",
+   "who": "Wick",
+   "own": true
+  },
+  {
+   "at": "2026-09-20T23:10:39Z",
+   "kind": "escaped",
+   "who": "Wick",
+   "own": true
+  },
+  {
+   "at": "2026-09-20T23:14:25Z",
+   "kind": "born",
+   "who": "Canton",
+   "own": false
+  },
+  {
+   "at": "2026-09-20T23:25:47Z",
+   "kind": "escaped",
+   "who": "Canton",
+   "own": false
+  },
+  {
+   "at": "2026-09-20T23:28:56Z",
+   "kind": "born",
+   "who": "Jayne",
+   "own": false
+  },
+  {
+   "at": "2026-09-20T23:32:34Z",
+   "kind": "escaped",
+   "who": "Jayne",
+   "own": false
+  },
+  {
+   "at": "2026-09-20T23:46:20Z",
+   "kind": "born",
+   "who": "Odile",
+   "own": true
+  },
+  {
+   "at": "2026-09-20T23:49:07Z",
+   "kind": "escaped",
+   "who": "Odile",
+   "own": true
+  },
+  {
+   "at": "2026-09-20T23:52:18Z",
+   "kind": "born",
+   "who": "Ivo",
+   "own": true
+  },
+  {
+   "at": "2026-09-20T23:52:28Z",
+   "kind": "escaped",
+   "who": "Ivo",
+   "own": true
+  },
+  {
+   "at": "2026-09-20T23:55:05Z",
+   "kind": "born",
+   "who": "Sable",
+   "own": true
+  },
+  {
+   "at": "2026-09-21T01:09:02Z",
+   "kind": "died",
+   "who": "Sable",
+   "text": "Sable died to a cave troll, 74 minutes after being born. They left dagger.",
+   "own": true
+  },
+  {
+   "at": "2026-09-21T01:09:11Z",
+   "kind": "born",
+   "who": "Wren",
+   "own": true
+  },
+  {
+   "at": "2026-09-21T01:56:07Z",
+   "kind": "born",
+   "who": "Malcolm",
+   "own": false
+  },
+  {
+   "at": "2026-09-21T02:05:05Z",
+   "kind": "escaped",
+   "who": "Malcolm",
+   "own": false
+  },
+  {
+   "at": "2026-09-21T02:47:32Z",
+   "kind": "born",
+   "who": "Simon",
+   "own": false
+  },
+  {
+   "at": "2026-09-21T04:11:34Z",
+   "kind": "escaped",
+   "who": "Simon",
+   "own": false
+  },
+  {
+   "at": "2026-09-21T04:52:45Z",
+   "kind": "born",
+   "who": "River",
+   "own": false
+  },
+  {
+   "at": "2026-09-21T04:56:28Z",
+   "kind": "escaped",
+   "who": "River",
+   "own": false
+  },
+  {
+   "at": "2026-09-21T05:38:48Z",
+   "kind": "born",
+   "who": "Kaylee",
+   "own": false
+  },
+  {
+   "at": "2026-09-21T05:47:08Z",
+   "kind": "died",
+   "who": "Kaylee",
+   "text": "Kaylee died to a cave troll, 8 minutes after being born. They left dagger, shortsword, and leather armor.",
+   "own": false
+  },
+  {
+   "at": "2026-09-21T06:24:55Z",
+   "kind": "escaped",
+   "who": "Wren",
+   "own": true
+  },
+  {
+   "at": "2026-09-21T06:25:15Z",
+   "kind": "born",
+   "who": "Ines",
+   "own": true
+  },
+  {
+   "at": "2026-09-21T06:27:43Z",
+   "kind": "escaped",
+   "who": "Ines",
+   "own": true
+  },
+  {
+   "at": "2026-09-21T06:27:56Z",
+   "kind": "born",
+   "who": "Moss",
+   "own": true
+  },
+  {
+   "at": "2026-09-21T07:55:25Z",
+   "kind": "escaped",
+   "who": "Moss",
+   "own": true
+  },
+  {
+   "at": "2026-09-21T15:23:48Z",
+   "kind": "born",
+   "who": "Hark",
+   "own": true
+  },
+  {
+   "at": "2026-09-21T15:28:44Z",
+   "kind": "born",
+   "who": "Chris",
+   "own": false
+  }
+ ]
+}

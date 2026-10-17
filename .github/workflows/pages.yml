@@ -1,4 +1,5 @@
-# Builds the site and every run's browser engine, and publishes to GitHub Pages.
+# Builds every run's browser engine, assembles the site (plain static files,
+# no Jekyll), and publishes it to GitHub Pages.
 # Needs Settings -> Pages -> Source set to "GitHub Actions".
 name: pages
 
@@ -27,10 +28,7 @@ jobs:
       - run: dotnet workload install wasm-tools
       - run: play/build-all.sh
       - uses: actions/configure-pages@v5
-      - uses: actions/jekyll-build-pages@v1
-        with:
-          source: ./
-          destination: ./_site
+      - run: ./build-site.sh
       - uses: actions/upload-pages-artifact@v3
 
   deploy:

@@ -1,0 +1,15 @@
+{
+ "run": "000",
+ "acts": [
+  {
+   "at": "2026-09-19T21:47:57Z",
+   "turn": null,
+   "kind": "journal",
+   "title": "Wrote in its journal",
+   "entry": "2026-09-19T214757Z",
+   "text": "World observed through event 131.\n\nDeployed, verified live, and Perrin heard me. Here is my entry.",
+   "heading": "2026-09-19T214757Z"
+  }
+ ],
+ "world": []
+}
